@@ -447,33 +447,62 @@ def render_parlament_fairness(rezultat: pd.Series, lista: pd.DataFrame, p1: str)
         f"U trenutnom sustavu propalo je **{glasova_propali:,}** ({pct_propali:.2f} %).".replace(",", ".")
     )
 
-    # ── Roll-up: leading party of each coalition ────────────────────────────
+    # ── Roll-up: coalitions grouped by their leading party ──────────────────
     st.markdown("---")
     st.markdown(
-        "### 🏷️ Roll-up po vodećoj stranci koalicije\n"
-        "Grupira sve liste prema **prvoj imenovanoj stranci** u nazivu (heuristika: "
-        "token prije prve zareza). Time HDZ-koalicije ('HDZ, HSLS, …') i samostalni HDZ "
-        "padaju u istu skupinu. **Nije isto** kao stvarni glasovi po stranci — koalicijski "
-        "partneri (HSLS, HDS, HNS, HSU…) tu nestaju u brand vodeće stranke. Ali je bliži "
-        "stvarnoj 'stranačkoj snazi' nego sirovi popis koalicija iznad."
+        "### 🏷️ Koalicijske obitelji (grupiranje po vodećoj stranci)\n"
+        "Grupira sve **koalicijske liste** prema **prvoj imenovanoj stranci** u nazivu "
+        "(heuristika: token prije prvog zareza). Tako HDZ-led koalicija "
+        "'HDZ, HSLS, HDS, HNS, HSU' i samostalni HDZ završavaju u istom redu.\n\n"
+        "> ⚠️ **Glasovi prikazani u ovom retku NISU samo glasovi za vodeću stranku.** "
+        "To je zbroj glasova svih koalicijskih lista u kojima je ova stranka prijavljena "
+        "kao vodeća — uključujući glasove koalicijskih partnera (npr. HSLS, HDS, HNS, "
+        "HSU u HDZ-led koalicijama). Iz DIP arhive **nije moguće** razdvojiti glasove "
+        "pojedine stranke unutar koalicijske liste — birač glasa za listu kao cjelinu, "
+        "a podjela mandata između stranaka unutar koalicije rezultat je internih "
+        "dogovora koalicijskih partnera, koji nisu javno dostupni u ovom obliku."
     )
 
     rollup = nat_df.copy()
     rollup["stranka_vodeca"] = rollup["naziv"].map(leading_party)
+
+    # Build "partners" column: union of all non-leading party tokens across all
+    # lists with this leading party. Strips quotes and de-dupes.
+    def _partners_for(group: pd.DataFrame) -> str:
+        partners: list[str] = []
+        seen = set()
+        for naziv in group["naziv"]:
+            tokens = [t.strip().strip('"') for t in (naziv or "").split(",")]
+            for t in tokens[1:]:
+                if t and t not in seen:
+                    seen.add(t)
+                    partners.append(t)
+        return ", ".join(partners) if partners else "—"
+
     rollup_grp = rollup.groupby("stranka_vodeca", as_index=False).agg(
         glasova=("glasova", "sum"),
         mandata_stvarno=("mandata_stvarno", "sum"),
         mandata_jedinstvena_IJ=("mandata_jedinstvena_IJ", "sum"),
         broj_lista=("naziv", "nunique"),
     )
+    partners_map = {
+        k: _partners_for(g) for k, g in rollup.groupby("stranka_vodeca")
+    }
+    rollup_grp["partneri"] = rollup_grp["stranka_vodeca"].map(partners_map)
     rollup_grp["%"] = (100 * rollup_grp["glasova"] / total_glasova).round(2)
     rollup_grp = rollup_grp.sort_values("glasova", ascending=False)
-    show = rollup_grp.rename(columns={
+
+    show = rollup_grp[[
+        "stranka_vodeca", "partneri", "broj_lista", "glasova", "%",
+        "mandata_stvarno", "mandata_jedinstvena_IJ",
+    ]].rename(columns={
         "stranka_vodeca": "Vodeća stranka",
-        "glasova": "Glasova (sve liste)",
-        "mandata_stvarno": "Mandata (stvarno)",
-        "mandata_jedinstvena_IJ": "Mandata (jedinstvena IJ)",
+        "partneri": "Koalicijski partneri",
         "broj_lista": "# različitih lista",
+        "glasova": "Glasova koalicijskih lista (uklj. partnere)",
+        "%": "% nacionalno",
+        "mandata_stvarno": "Mandata stvarno (D'Hondt po IJ)",
+        "mandata_jedinstvena_IJ": "Mandata pri jedinstvenoj IJ (5 % nac.)",
     })
     st.dataframe(show, use_container_width=True, hide_index=True)
 
@@ -485,8 +514,12 @@ def render_parlament_fairness(rezultat: pd.Series, lista: pd.DataFrame, p1: str)
         y="stranka_vodeca",
         orientation="h",
         text="%",
-        hover_data={"mandata_stvarno": True, "mandata_jedinstvena_IJ": True},
-        labels={"glasova": "Glasova (sve liste vodeće stranke)", "stranka_vodeca": ""},
+        hover_data={"mandata_stvarno": True, "mandata_jedinstvena_IJ": True,
+                    "partneri": True},
+        labels={
+            "glasova": "Glasova koalicijskih lista (uklj. partnere)",
+            "stranka_vodeca": "",
+        },
         height=max(380, 32 * len(bar_df) + 80),
     )
     fig.update_traces(texttemplate="%{text:.2f} %", textposition="outside")
@@ -506,7 +539,9 @@ def render_parlament_fairness(rezultat: pd.Series, lista: pd.DataFrame, p1: str)
     top_n = st.slider("Koliko kandidata prikazati", 10, 200, 50, step=10)
     seated_ids = parlament_candidate_seats(krug)
     cand_df = pd.read_sql_query(
-        """SELECT k.id, k.naziv AS Kandidat, k.glasova AS Pref_glasova,
+        """SELECT k.id, k.rbr AS Rbr_na_listi,
+                  k.naziv AS Kandidat,
+                  k.glasova AS Pref_glasova,
                   k.posto AS Pref_posto_unutar_liste,
                   l.naziv AS Lista, l.mandata AS Lista_mandata,
                   r.p1 AS IJ
@@ -518,11 +553,13 @@ def render_parlament_fairness(rezultat: pd.Series, lista: pd.DataFrame, p1: str)
            LIMIT ?""",
         get_conn(), params=(krug, top_n),
     )
+    cand_df.insert(0, "Rang", range(1, len(cand_df) + 1))
     cand_df["Mandat"] = cand_df["id"].isin(seated_ids).map({True: "✅", False: ""})
     cand_df["Vodeća stranka"] = cand_df["Lista"].map(leading_party)
     cand_df["IJ"] = cand_df["IJ"].map(lambda i: PARLAMENT_IJ_LABELS.get(i, i))
-    show = cand_df[["Kandidat", "Vodeća stranka", "IJ", "Pref_glasova",
-                    "Pref_posto_unutar_liste", "Mandat", "Lista"]].rename(columns={
+    show = cand_df[["Rang", "Kandidat", "Rbr_na_listi", "Vodeća stranka", "IJ",
+                    "Pref_glasova", "Pref_posto_unutar_liste", "Mandat", "Lista"]].rename(columns={
+        "Rbr_na_listi": "Rbr na listi",
         "Pref_glasova": "Pref. glasovi",
         "Pref_posto_unutar_liste": "% unutar liste",
     })
@@ -542,8 +579,8 @@ def render_parlament_fairness(rezultat: pd.Series, lista: pd.DataFrame, p1: str)
     )
 
     all_cand = pd.read_sql_query(
-        """SELECT k.id, k.naziv AS Kandidat, k.glasova AS Pref,
-                  l.naziv AS Lista, r.p1 AS IJ
+        """SELECT k.id, k.rbr AS Rbr_na_listi, k.naziv AS Kandidat,
+                  k.glasova AS Pref, l.naziv AS Lista, r.p1 AS IJ
            FROM rezultat_kandidat k
            JOIN rezultat_lista l ON l.id = k.lista_id
            JOIN rezultat r ON r.id = l.rezultat_id
@@ -594,8 +631,10 @@ def render_parlament_fairness(rezultat: pd.Series, lista: pd.DataFrame, p1: str)
             top143_show["IJ"] = top143_show["IJ"].map(lambda i: PARLAMENT_IJ_LABELS.get(i, i))
             top143_show.insert(0, "Rang", range(1, len(top143_show) + 1))
             st.dataframe(
-                top143_show[["Rang", "Kandidat", "Vodeća stranka", "IJ", "Pref",
-                             "Mandat (stvarni)", "Lista"]],
+                top143_show[["Rang", "Kandidat", "Rbr_na_listi", "Vodeća stranka",
+                             "IJ", "Pref", "Mandat (stvarni)", "Lista"]].rename(
+                    columns={"Rbr_na_listi": "Rbr na listi"}
+                ),
                 use_container_width=True, hide_index=True,
             )
 
