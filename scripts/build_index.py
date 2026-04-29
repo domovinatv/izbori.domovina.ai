@@ -291,6 +291,100 @@ def index_election(con: sqlite3.Connection, election_dir: Path) -> tuple[int, in
     return n_ok, n_err
 
 
+def synthesize_parlament_rh(con: sqlite3.Connection) -> int:
+    """Sabor 2024 has no national-aggregate file in the DIP archive — only
+    one per izborna jedinica. Compute the RH aggregate by summing the 11
+    geographic IJs (001..010 + 011 inozemstvo). Skip IJ 012 (manjine) since
+    those are 6 separate races, not one.
+    """
+    GEO_IJ = ("001", "002", "003", "004", "005", "006", "007", "008",
+              "009", "010", "011")
+    n = 0
+    for krug, in con.execute(
+        "SELECT DISTINCT krug FROM rezultat WHERE election='parlament-2024' AND level='zup'"
+    ).fetchall():
+        ij_rows = con.execute(
+            f"""SELECT id, biraci_ukupno, biraci_glasovalo,
+                       listici_ukupno, listici_vazeci, listici_nevazeci,
+                       bm_zatvoreno, bm_ukupno, datum, vrijeme, izbori_naziv
+                FROM rezultat
+                WHERE election='parlament-2024' AND krug=? AND level='zup'
+                  AND p1 IN ({','.join('?'*len(GEO_IJ))})""",
+            (krug, *GEO_IJ),
+        ).fetchall()
+        if not ij_rows:
+            continue
+
+        ids = [r[0] for r in ij_rows]
+        biraci_ukupno = sum((r[1] or 0) for r in ij_rows)
+        biraci_glasovalo = sum((r[2] or 0) for r in ij_rows)
+        listici_ukupno = sum((r[3] or 0) for r in ij_rows)
+        listici_vazeci = sum((r[4] or 0) for r in ij_rows)
+        listici_nevazeci = sum((r[5] or 0) for r in ij_rows)
+        bm_zatvoreno = sum((r[6] or 0) for r in ij_rows)
+        bm_ukupno = sum((r[7] or 0) for r in ij_rows)
+        datum = max((r[8] or "") for r in ij_rows)
+        vrijeme = max((r[9] or "") for r in ij_rows)
+        izbori_naziv = next((r[10] for r in ij_rows if r[10]), "Parlamentarni izbori 2024")
+        biraci_glasovalo_posto = (
+            round(100.0 * biraci_glasovalo / biraci_ukupno, 2) if biraci_ukupno else None
+        )
+
+        cur = con.execute(
+            """INSERT OR REPLACE INTO rezultat
+               (election, krug, vrsta, p1, p2, p3, level,
+                izbori_naziv, datum, vrijeme,
+                zup_naziv, grop_naziv, bm_naziv,
+                bm_zatvoreno, bm_ukupno, biraci_ukupno,
+                biraci_glasovalo, biraci_glasovalo_posto,
+                listici_ukupno, listici_vazeci, listici_nevazeci,
+                napomena, source_file)
+               VALUES ('parlament-2024', ?, '02', '00', '0000', '000', 'rh',
+                ?, ?, ?,
+                '', 'UKUPNO RH (sintetizirano: IJ 001-011)', '',
+                ?, ?, ?, ?, ?, ?, ?, ?,
+                'Sintetiziran agregat: SUM po izbornim jedinicama 001-011 (geografske + inozemstvo). Manjine (IJ 012) nisu uključene.',
+                NULL)""",
+            (
+                krug, izbori_naziv, datum, vrijeme,
+                bm_zatvoreno, bm_ukupno, biraci_ukupno,
+                biraci_glasovalo, biraci_glasovalo_posto,
+                listici_ukupno, listici_vazeci, listici_nevazeci,
+            ),
+        )
+        rh_id = cur.lastrowid
+
+        # Aggregate the lista entries by canonical naziv across the 11 IJs.
+        # The same coalition appears under the same `naziv` in each IJ, so
+        # GROUP BY naziv yields the national vote count.
+        rows = con.execute(
+            f"""SELECT l.naziv,
+                       MIN(l.jedinstvena_sifra) AS sif,
+                       SUM(COALESCE(l.glasova,0)) AS suma,
+                       MIN(l.predlagatelji),
+                       MIN(l.stranke)
+                FROM rezultat_lista l
+                JOIN rezultat r ON r.id = l.rezultat_id
+                WHERE r.id IN ({','.join('?'*len(ids))})
+                GROUP BY l.naziv
+                ORDER BY suma DESC""",
+            ids,
+        ).fetchall()
+
+        for rbr, (naziv, sif, glasova, predl, stranke) in enumerate(rows, start=1):
+            posto = (
+                round(100.0 * glasova / listici_vazeci, 2) if listici_vazeci else None
+            )
+            con.execute(
+                """INSERT INTO rezultat_lista
+                   (rezultat_id, rbr, naziv, jedinstvena_sifra, glasova, posto, predlagatelji, stranke)
+                   VALUES (?,?,?,?,?,?,?,?)""",
+                (rh_id, rbr, naziv, sif or "", glasova, posto, predl or "", stranke or ""),
+            )
+        n += 1
+    return n
+
+
 def rebuild_fts(con: sqlite3.Connection) -> None:
     con.executescript("""
         INSERT INTO rezultat_kandidat_fts(rowid, naziv)
@@ -332,6 +426,11 @@ def main() -> int:
         total_ok += ok
         total_err += err
         con.commit()
+
+    print("Synthesizing RH aggregate for parlament-2024 …")
+    n_synth = synthesize_parlament_rh(con)
+    print(f"  inserted {n_synth} synthetic RH rows")
+    con.commit()
 
     print("Rebuilding FTS …")
     for fts in ("rezultat_kandidat_fts", "rezultat_lista_fts"):
