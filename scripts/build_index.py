@@ -64,7 +64,8 @@ CREATE TABLE IF NOT EXISTS rezultat_lista (
     glasova INTEGER,
     posto REAL,
     predlagatelji TEXT,         -- "; "-joined names
-    stranke TEXT                -- "; "-joined names
+    stranke TEXT,               -- "; "-joined names
+    mandata INTEGER             -- seats awarded (parlament D'Hondt / manjine top-N)
 );
 CREATE INDEX IF NOT EXISTS lista_rezultat ON rezultat_lista(rezultat_id);
 CREATE INDEX IF NOT EXISTS lista_naziv ON rezultat_lista(naziv);
@@ -291,6 +292,114 @@ def index_election(con: sqlite3.Connection, election_dir: Path) -> tuple[int, in
     return n_ok, n_err
 
 
+# ── Sabor 2024 seat allocation ──────────────────────────────────────────────
+# Each geographic IJ elects 14 seats by D'Hondt with a 5% threshold (within IJ).
+# IJ 011 (inozemstvo) elects 3 seats.
+# IJ 012 splits into 6 minority races; winners are top-N by candidate votes.
+
+PARLAMENT_IJ_SEATS = {f"{i:03d}": 14 for i in range(1, 11)}
+PARLAMENT_IJ_SEATS["011"] = 3
+
+# manjina_code → number of seats elected from that race (D'Hondt is *not* used)
+PARLAMENT_MANJINE_SEATS = {
+    "13": 3,  # srpska
+    "23": 1,  # mađarska
+    "33": 1,  # talijanska
+    "43": 1,  # češka i slovačka
+    "53": 1,  # austrijska/bugarska/njemačka/poljska/romska/...
+    "63": 1,  # albanska/bošnjačka/crnogorska/makedonska/slovenska
+}
+
+
+def dhondt(votes: dict[str, int], seats: int, threshold_pct: float) -> dict[str, int]:
+    """Allocate `seats` to entries in `votes` using D'Hondt with a percent
+    threshold computed against the total of `votes`. Below-threshold entries
+    are excluded from allocation but still appear in the result with 0."""
+    total = sum(v for v in votes.values() if v)
+    awards = {n: 0 for n in votes}
+    if total == 0 or seats == 0:
+        return awards
+    cutoff = total * threshold_pct / 100.0
+    eligible = {n: v for n, v in votes.items() if (v or 0) >= cutoff}
+    if not eligible:
+        return awards
+    for _ in range(seats):
+        winner = max(eligible, key=lambda n: eligible[n] / (awards[n] + 1))
+        awards[winner] += 1
+    return awards
+
+
+def allocate_parlament_seats(con: sqlite3.Connection) -> int:
+    """Compute and persist mandata in rezultat_lista for parlament-2024:
+      - geographic IJs (001-010, 011): D'Hondt within each IJ, 5% threshold
+      - minority IJ 012: top-N candidates per minority list (no threshold)
+    Returns the number of IJ-level rezultat rows updated.
+    """
+    n_updated = 0
+
+    # Reset any prior values for parlament-2024.
+    con.execute(
+        """UPDATE rezultat_lista SET mandata = 0
+           WHERE rezultat_id IN (SELECT id FROM rezultat WHERE election='parlament-2024')"""
+    )
+
+    # 1) Geographic IJs.
+    for ij, seats in PARLAMENT_IJ_SEATS.items():
+        for krug, in con.execute(
+            """SELECT DISTINCT krug FROM rezultat
+               WHERE election='parlament-2024' AND vrsta='02' AND p1=? AND level='zup'""",
+            (ij,),
+        ).fetchall():
+            rez = con.execute(
+                """SELECT id FROM rezultat WHERE election='parlament-2024'
+                   AND krug=? AND vrsta='02' AND p1=? AND p2='0000' AND p3='000'""",
+                (krug, ij),
+            ).fetchone()
+            if not rez:
+                continue
+            rezultat_id = rez[0]
+            rows = con.execute(
+                "SELECT id, naziv, glasova FROM rezultat_lista WHERE rezultat_id=?",
+                (rezultat_id,),
+            ).fetchall()
+            votes = {r[1]: (r[2] or 0) for r in rows}
+            ids_by_naziv = {r[1]: r[0] for r in rows}
+            awards = dhondt(votes, seats, threshold_pct=5.0)
+            for naziv, m in awards.items():
+                con.execute(
+                    "UPDATE rezultat_lista SET mandata=? WHERE id=?",
+                    (m, ids_by_naziv[naziv]),
+                )
+            n_updated += 1
+
+    # 2) Minority IJ (012). Each manjina file lists candidates directly in
+    #    `lista`; top-N win. The manjina code lives in p0 (vrsta).
+    for vrsta, seats in PARLAMENT_MANJINE_SEATS.items():
+        for krug, in con.execute(
+            """SELECT DISTINCT krug FROM rezultat
+               WHERE election='parlament-2024' AND vrsta=? AND p1='012' AND p2='0000' AND p3='000'""",
+            (vrsta,),
+        ).fetchall():
+            rez = con.execute(
+                """SELECT id FROM rezultat WHERE election='parlament-2024'
+                   AND krug=? AND vrsta=? AND p1='012' AND p2='0000' AND p3='000'""",
+                (krug, vrsta),
+            ).fetchone()
+            if not rez:
+                continue
+            rezultat_id = rez[0]
+            top = con.execute(
+                """SELECT id FROM rezultat_lista WHERE rezultat_id=?
+                   ORDER BY (glasova IS NULL), glasova DESC LIMIT ?""",
+                (rezultat_id, seats),
+            ).fetchall()
+            for (lid,) in top:
+                con.execute("UPDATE rezultat_lista SET mandata=1 WHERE id=?", (lid,))
+            n_updated += 1
+
+    return n_updated
+
+
 def synthesize_parlament_rh(con: sqlite3.Connection) -> int:
     """Sabor 2024 has no national-aggregate file in the DIP archive — only
     one per izborna jedinica. Compute the RH aggregate by summing the 11
@@ -356,11 +465,12 @@ def synthesize_parlament_rh(con: sqlite3.Connection) -> int:
 
         # Aggregate the lista entries by canonical naziv across the 11 IJs.
         # The same coalition appears under the same `naziv` in each IJ, so
-        # GROUP BY naziv yields the national vote count.
+        # GROUP BY naziv yields the national vote count and seat sum.
         rows = con.execute(
             f"""SELECT l.naziv,
                        MIN(l.jedinstvena_sifra) AS sif,
                        SUM(COALESCE(l.glasova,0)) AS suma,
+                       SUM(COALESCE(l.mandata,0)) AS mand,
                        MIN(l.predlagatelji),
                        MIN(l.stranke)
                 FROM rezultat_lista l
@@ -371,15 +481,15 @@ def synthesize_parlament_rh(con: sqlite3.Connection) -> int:
             ids,
         ).fetchall()
 
-        for rbr, (naziv, sif, glasova, predl, stranke) in enumerate(rows, start=1):
+        for rbr, (naziv, sif, glasova, mandata, predl, stranke) in enumerate(rows, start=1):
             posto = (
                 round(100.0 * glasova / listici_vazeci, 2) if listici_vazeci else None
             )
             con.execute(
                 """INSERT INTO rezultat_lista
-                   (rezultat_id, rbr, naziv, jedinstvena_sifra, glasova, posto, predlagatelji, stranke)
-                   VALUES (?,?,?,?,?,?,?,?)""",
-                (rh_id, rbr, naziv, sif or "", glasova, posto, predl or "", stranke or ""),
+                   (rezultat_id, rbr, naziv, jedinstvena_sifra, glasova, posto, predlagatelji, stranke, mandata)
+                   VALUES (?,?,?,?,?,?,?,?,?)""",
+                (rh_id, rbr, naziv, sif or "", glasova, posto, predl or "", stranke or "", mandata),
             )
         n += 1
     return n
@@ -426,6 +536,11 @@ def main() -> int:
         total_ok += ok
         total_err += err
         con.commit()
+
+    print("Allocating parlament-2024 seats (D'Hondt + manjine top-N) …")
+    n_alloc = allocate_parlament_seats(con)
+    print(f"  updated {n_alloc} IJ-level rezultat rows")
+    con.commit()
 
     print("Synthesizing RH aggregate for parlament-2024 …")
     n_synth = synthesize_parlament_rh(con)

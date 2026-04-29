@@ -140,7 +140,8 @@ def fetch_rezultat(election: str, krug: int, vrsta: str | None,
         return None
     rid = int(rezultat.iloc[0]["id"])
     lista = pd.read_sql_query(
-        """SELECT rbr, naziv, stranke, predlagatelji, glasova, posto, jedinstvena_sifra
+        """SELECT rbr, naziv, stranke, predlagatelji, glasova, posto,
+                  jedinstvena_sifra, COALESCE(mandata, 0) AS mandata
            FROM rezultat_lista WHERE rezultat_id=? ORDER BY rbr""",
         get_conn(), params=(rid,),
     )
@@ -239,8 +240,13 @@ with tab_browse:
     st.header(title)
     st.caption(f"{rezultat['izbori_naziv']} · {rezultat['datum'] or ''} {rezultat['vrijeme'] or ''} · krug {krug}")
 
-    # Turnout cards
-    c1, c2, c3, c4 = st.columns(4)
+    # Turnout / seat summary cards
+    has_seats = election == "parlament-2024" and lista["mandata"].sum() > 0
+    if has_seats:
+        c1, c2, c3, c4, c5 = st.columns(5)
+    else:
+        c1, c2, c3, c4 = st.columns(4)
+
     c1.metric("Birača", f"{int(rezultat['biraci_ukupno'] or 0):,}".replace(",", "."))
     c2.metric(
         "Glasovalo",
@@ -249,18 +255,32 @@ with tab_browse:
     )
     c3.metric("Važeći listići", f"{int(rezultat['listici_vazeci'] or 0):,}".replace(",", "."))
     c4.metric("Nevažeći", f"{int(rezultat['listici_nevazeci'] or 0):,}".replace(",", "."))
+    if has_seats:
+        c5.metric("Mandata", int(lista["mandata"].sum()))
 
     if lista.empty:
         st.info("Nema lista u rezultatu.")
         st.stop()
 
+    if has_seats:
+        st.caption(
+            "🪑 **D'Hondtova metoda · 5 % prag unutar izborne jedinice.** "
+            "Geografske IJ 1–10 dijele po 14 mandata, IJ 11 (inozemstvo) 3 mandata; "
+            "IJ 12 (manjine) — 8 mandata, top‑N kandidata po manjini, bez praga."
+        )
+
     # Bar chart
     chart_df = lista.copy()
     chart_df["label"] = chart_df.apply(
-        lambda r: r["naziv"] if not r["stranke"] else f"{r['naziv']}  ({r['stranke'][:60]})",
+        lambda r: (
+            (f"🪑 {int(r['mandata'])}× — " if has_seats and r['mandata'] else "")
+            + (r["naziv"] if not r["stranke"] else f"{r['naziv']}  ({r['stranke'][:60]})")
+        ),
         axis=1,
     )
     chart_df = chart_df.sort_values("glasova", ascending=True).tail(15)
+    chart_df["hover_mandata"] = chart_df["mandata"].astype(int)
+
     fig = px.bar(
         chart_df,
         x="glasova",
@@ -269,13 +289,23 @@ with tab_browse:
         text="posto",
         labels={"glasova": "Glasova", "label": ""},
         height=max(420, 32 * len(chart_df) + 100),
+        hover_data={"hover_mandata": True, "label": False, "posto": ":.2f"},
+        color=chart_df["mandata"] if has_seats else None,
+        color_continuous_scale="Blues" if has_seats else None,
     )
     fig.update_traces(texttemplate="%{text:.2f} %", textposition="outside")
     fig.update_layout(margin=dict(l=10, r=10, t=10, b=10))
+    if has_seats:
+        fig.update_layout(coloraxis_colorbar=dict(title="mandata"))
     st.plotly_chart(fig, use_container_width=True)
 
     with st.expander("📋 Tablica liste (sve)"):
-        show = lista[["rbr", "naziv", "stranke", "predlagatelji", "glasova", "posto"]]
+        cols = ["rbr", "naziv", "stranke", "predlagatelji", "glasova", "posto"]
+        if has_seats:
+            cols.append("mandata")
+        show = lista[cols].copy()
+        if has_seats:
+            show = show.sort_values(["mandata", "glasova"], ascending=[False, False])
         st.dataframe(show, use_container_width=True, hide_index=True)
 
     with st.expander("🛠 Tehnički detalji"):
