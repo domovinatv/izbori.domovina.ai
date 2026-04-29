@@ -79,6 +79,66 @@ def dhondt(votes: dict[str, int], seats: int, threshold_pct: float) -> dict[str,
     return awards
 
 
+def leading_party(naziv: str) -> str:
+    """Best-effort: pick the leading party label from a coalition name like
+    'HDZ, HSLS, HDS, HNS, HSU' → 'HDZ'. Falls back to the full name when
+    no comma is present (single-party lists)."""
+    if not naziv:
+        return ""
+    head = naziv.split(",")[0].strip()
+    # Trim trailing dash-separated short codes (e.g. 'MOŽEMO! - POLITIČKA PLATFORMA').
+    return head
+
+
+def assign_seats_within_coalition(candidates: list[dict], num_seats: int) -> set:
+    """Croatian Sabor rule (Zakon o izborima zastupnika, čl. 40-41):
+    candidates with ≥10 % preferential share within the list get priority
+    in the order of preferential votes; remaining seats go by default rbr
+    order, skipping those already seated."""
+    if num_seats <= 0 or not candidates:
+        return set()
+    pref_first = sorted(
+        [c for c in candidates if (c.get("posto") or 0) >= 10.0],
+        key=lambda c: -(c.get("glasova") or 0),
+    )
+    seated = []
+    for c in pref_first:
+        if len(seated) >= num_seats:
+            break
+        seated.append(c["id"])
+    if len(seated) < num_seats:
+        already = set(seated)
+        for c in sorted(candidates, key=lambda c: c.get("rbr") or 9999):
+            if c["id"] in already:
+                continue
+            seated.append(c["id"])
+            if len(seated) >= num_seats:
+                break
+    return set(seated)
+
+
+@st.cache_data
+def parlament_candidate_seats(krug: int) -> set:
+    """Returns set of rezultat_kandidat.id values that won a seat at the
+    geographic-IJ level (vrsta='02') for parlament-2024 in given krug,
+    applying the 10% preferential rule + default rbr fallback per coalition."""
+    rows = pd.read_sql_query(
+        """SELECT k.id, k.rbr, k.glasova, k.posto, l.id AS lista_id, l.mandata
+           FROM rezultat_kandidat k
+           JOIN rezultat_lista l ON l.id = k.lista_id
+           JOIN rezultat r ON r.id = l.rezultat_id
+           WHERE r.election='parlament-2024' AND r.krug=? AND r.vrsta='02'
+             AND r.level='zup' AND l.mandata > 0""",
+        get_conn(), params=(krug,),
+    )
+    seated = set()
+    for lista_id, group in rows.groupby("lista_id"):
+        cands = group.to_dict(orient="records")
+        seats = int(group["mandata"].iloc[0])
+        seated |= assign_seats_within_coalition(cands, seats)
+    return seated
+
+
 # ────────────────────────────────────────────────────────────────────────────
 # Cached helpers
 # ────────────────────────────────────────────────────────────────────────────
@@ -312,7 +372,12 @@ def render_parlament_fairness(rezultat: pd.Series, lista: pd.DataFrame, p1: str)
         "Što bi se dogodilo da se 143 geografska mandata (IJ 1–11) raspodijele "
         "**D'Hondtovom metodom nad cijelim RH** s **5 % nacionalnim pragom**, "
         "kao što je organiziran izbor za Europski parlament. Manjinske mandate "
-        "(8 mjesta iz IJ 12) ovaj scenarij ostavlja netaknute."
+        "(8 mjesta iz IJ 12) ovaj scenarij ostavlja netaknute.\n\n"
+        "> ⚠️ **Važna ograda:** entiteti raspodjele su **koalicijske liste** kako "
+        "su prijavljene po IJ, ne pojedine stranke. HDZ se npr. pojavljuje i samostalno "
+        "(IJ 11) i u koaliciji 'HDZ, HSLS, HDS, HNS, HSU' (ostale IJ); ova baza "
+        "ne razdvaja koliko od svake liste pripada pojedinoj stranci u koaliciji. "
+        "Vidi *Roll-up po vodećoj stranci* i *Top političari* niže za realniji prikaz."
     )
 
     nat_df = pd.read_sql_query(
@@ -381,6 +446,158 @@ def render_parlament_fairness(rezultat: pd.Series, lista: pd.DataFrame, p1: str)
         f"**{nat_wasted:,}** glasova (**{pct_wasted_nat:.2f} %**). "
         f"U trenutnom sustavu propalo je **{glasova_propali:,}** ({pct_propali:.2f} %).".replace(",", ".")
     )
+
+    # ── Roll-up: leading party of each coalition ────────────────────────────
+    st.markdown("---")
+    st.markdown(
+        "### 🏷️ Roll-up po vodećoj stranci koalicije\n"
+        "Grupira sve liste prema **prvoj imenovanoj stranci** u nazivu (heuristika: "
+        "token prije prve zareza). Time HDZ-koalicije ('HDZ, HSLS, …') i samostalni HDZ "
+        "padaju u istu skupinu. **Nije isto** kao stvarni glasovi po stranci — koalicijski "
+        "partneri (HSLS, HDS, HNS, HSU…) tu nestaju u brand vodeće stranke. Ali je bliži "
+        "stvarnoj 'stranačkoj snazi' nego sirovi popis koalicija iznad."
+    )
+
+    rollup = nat_df.copy()
+    rollup["stranka_vodeca"] = rollup["naziv"].map(leading_party)
+    rollup_grp = rollup.groupby("stranka_vodeca", as_index=False).agg(
+        glasova=("glasova", "sum"),
+        mandata_stvarno=("mandata_stvarno", "sum"),
+        mandata_jedinstvena_IJ=("mandata_jedinstvena_IJ", "sum"),
+        broj_lista=("naziv", "nunique"),
+    )
+    rollup_grp["%"] = (100 * rollup_grp["glasova"] / total_glasova).round(2)
+    rollup_grp = rollup_grp.sort_values("glasova", ascending=False)
+    show = rollup_grp.rename(columns={
+        "stranka_vodeca": "Vodeća stranka",
+        "glasova": "Glasova (sve liste)",
+        "mandata_stvarno": "Mandata (stvarno)",
+        "mandata_jedinstvena_IJ": "Mandata (jedinstvena IJ)",
+        "broj_lista": "# različitih lista",
+    })
+    st.dataframe(show, use_container_width=True, hide_index=True)
+
+    # Bar chart of top 12 by votes
+    bar_df = rollup_grp.head(12).iloc[::-1].copy()
+    fig = px.bar(
+        bar_df,
+        x="glasova",
+        y="stranka_vodeca",
+        orientation="h",
+        text="%",
+        hover_data={"mandata_stvarno": True, "mandata_jedinstvena_IJ": True},
+        labels={"glasova": "Glasova (sve liste vodeće stranke)", "stranka_vodeca": ""},
+        height=max(380, 32 * len(bar_df) + 80),
+    )
+    fig.update_traces(texttemplate="%{text:.2f} %", textposition="outside")
+    fig.update_layout(margin=dict(l=10, r=10, t=10, b=10))
+    st.plotly_chart(fig, use_container_width=True)
+
+    # ── Top politicians by preferential votes ───────────────────────────────
+    st.markdown("---")
+    st.markdown(
+        "### 👤 Najpopularniji kandidati po preferencijalnim glasovima\n"
+        "Birač uz glas za listu može označiti **jednog kandidata s te liste**. Lista koja "
+        "osvoji mandate raspoređuje ih tako da kandidati s ≥ 10 % preferenc. glasova unutar "
+        "liste preuzimaju mjesta po veličini preferenc. potpore; ostalo ide po redoslijedu "
+        "na listi. Ovo je jedini izravni signal individualne popularnosti koji baza nudi."
+    )
+
+    top_n = st.slider("Koliko kandidata prikazati", 10, 200, 50, step=10)
+    seated_ids = parlament_candidate_seats(krug)
+    cand_df = pd.read_sql_query(
+        """SELECT k.id, k.naziv AS Kandidat, k.glasova AS Pref_glasova,
+                  k.posto AS Pref_posto_unutar_liste,
+                  l.naziv AS Lista, l.mandata AS Lista_mandata,
+                  r.p1 AS IJ
+           FROM rezultat_kandidat k
+           JOIN rezultat_lista l ON l.id = k.lista_id
+           JOIN rezultat r ON r.id = l.rezultat_id
+           WHERE r.election='parlament-2024' AND r.krug=? AND r.vrsta='02' AND r.level='zup'
+           ORDER BY k.glasova DESC
+           LIMIT ?""",
+        get_conn(), params=(krug, top_n),
+    )
+    cand_df["Mandat"] = cand_df["id"].isin(seated_ids).map({True: "✅", False: ""})
+    cand_df["Vodeća stranka"] = cand_df["Lista"].map(leading_party)
+    cand_df["IJ"] = cand_df["IJ"].map(lambda i: PARLAMENT_IJ_LABELS.get(i, i))
+    show = cand_df[["Kandidat", "Vodeća stranka", "IJ", "Pref_glasova",
+                    "Pref_posto_unutar_liste", "Mandat", "Lista"]].rename(columns={
+        "Pref_glasova": "Pref. glasovi",
+        "Pref_posto_unutar_liste": "% unutar liste",
+    })
+    st.dataframe(show, use_container_width=True, hide_index=True)
+
+    # ── "Sabor as president": top 143 by preferential votes ─────────────────
+    st.markdown("---")
+    st.markdown(
+        "### 🗳️ Što ako se Sabor bira kao predsjednik?\n"
+        "Misaoni eksperiment: zaboravi liste i koalicije, zaboravi IJ. Svi preferencijalni "
+        "glasovi se rangiraju zajedno; **top 143 kandidata** (broj geografskih mandata) "
+        "ulaze u Sabor. Manjine ostavljamo kako jesu (8 mjesta).\n\n"
+        "> ⚠️ Preferencijalni glasovi **nisu apsolutna popularnost**: birač ih je dao samo "
+        "ako je označio kandidata na svojoj listi. Kandidat koji je na popularnoj listi u "
+        "velikoj IJ ima strukturalnu prednost. Stoga ovo nije fer mjera, već je pokazatelj "
+        "*koji su sabornici trenutno najindividualnije izabrani*."
+    )
+
+    all_cand = pd.read_sql_query(
+        """SELECT k.id, k.naziv AS Kandidat, k.glasova AS Pref,
+                  l.naziv AS Lista, r.p1 AS IJ
+           FROM rezultat_kandidat k
+           JOIN rezultat_lista l ON l.id = k.lista_id
+           JOIN rezultat r ON r.id = l.rezultat_id
+           WHERE r.election='parlament-2024' AND r.krug=? AND r.vrsta='02' AND r.level='zup'
+           ORDER BY k.glasova DESC""",
+        get_conn(), params=(krug,),
+    )
+    if not all_cand.empty:
+        top143 = all_cand.head(143).copy()
+        top143_ids = set(top143["id"])
+        actual_ids = seated_ids
+        overlap = top143_ids & actual_ids
+        new_in_pref = top143_ids - actual_ids
+        lost = actual_ids - top143_ids
+
+        c1, c2, c3 = st.columns(3)
+        c1.metric("Preklapanje sa stvarnim Saborom", f"{len(overlap)} / 143")
+        c2.metric("Novi (samo po preferencijama)", len(new_in_pref))
+        c3.metric("Gube mjesto (stvarni MP)", len(lost))
+
+        # Roll-up of top 143 by leading party
+        top143["Vodeća stranka"] = top143["Lista"].map(leading_party)
+        rollup143 = (
+            top143.groupby("Vodeća stranka", as_index=False)
+            .size()
+            .rename(columns={"size": "Mandata po preferencama"})
+            .merge(
+                rollup_grp[["stranka_vodeca", "mandata_stvarno"]]
+                .rename(columns={
+                    "stranka_vodeca": "Vodeća stranka",
+                    "mandata_stvarno": "Mandata (stvarno, geografski IJ)",
+                }),
+                on="Vodeća stranka",
+                how="outer",
+            )
+            .fillna(0)
+        )
+        rollup143["Mandata po preferencama"] = rollup143["Mandata po preferencama"].astype(int)
+        rollup143["Mandata (stvarno, geografski IJ)"] = rollup143["Mandata (stvarno, geografski IJ)"].astype(int)
+        rollup143["Δ"] = rollup143["Mandata po preferencama"] - rollup143["Mandata (stvarno, geografski IJ)"]
+        rollup143 = rollup143.sort_values("Mandata po preferencama", ascending=False)
+        st.markdown("**Sabor po preferencama vs. stvarni Sabor (po vodećoj stranci):**")
+        st.dataframe(rollup143, use_container_width=True, hide_index=True)
+
+        with st.expander("📋 Top 143 (rang lista po preferencijalnim glasovima)"):
+            top143_show = top143.copy()
+            top143_show["Mandat (stvarni)"] = top143_show["id"].isin(actual_ids).map({True: "✅", False: ""})
+            top143_show["IJ"] = top143_show["IJ"].map(lambda i: PARLAMENT_IJ_LABELS.get(i, i))
+            top143_show.insert(0, "Rang", range(1, len(top143_show) + 1))
+            st.dataframe(
+                top143_show[["Rang", "Kandidat", "Vodeća stranka", "IJ", "Pref",
+                             "Mandat (stvarni)", "Lista"]],
+                use_container_width=True, hide_index=True,
+            )
 
 
 # ────────────────────────────────────────────────────────────────────────────
