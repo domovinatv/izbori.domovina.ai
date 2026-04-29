@@ -117,11 +117,38 @@ def assign_seats_within_coalition(candidates: list[dict], num_seats: int) -> set
     return set(seated)
 
 
+def _seat_order_within_list(cands: list[dict], num_seats: int) -> list[int]:
+    """Return the IDs of seated candidates in the order they take seats:
+    first the preferential winners (≥10 % within list, sorted by pref votes
+    desc), then the rest in default rbr order. The position of an ID in this
+    list is its 'redni broj mandata' (mandate index) within the coalition."""
+    if num_seats <= 0 or not cands:
+        return []
+    pref_first = sorted(
+        [c for c in cands if (c.get("posto") or 0) >= 10.0],
+        key=lambda c: -(c.get("glasova") or 0),
+    )
+    order: list[int] = []
+    for c in pref_first:
+        if len(order) >= num_seats:
+            break
+        order.append(c["id"])
+    if len(order) < num_seats:
+        already = set(order)
+        for c in sorted(cands, key=lambda c: c.get("rbr") or 9999):
+            if c["id"] in already:
+                continue
+            order.append(c["id"])
+            if len(order) >= num_seats:
+                break
+    return order
+
+
 @st.cache_data
-def parlament_candidate_seats(krug: int) -> set:
-    """Returns set of rezultat_kandidat.id values that won a seat at the
-    geographic-IJ level (vrsta='02') for parlament-2024 in given krug,
-    applying the 10% preferential rule + default rbr fallback per coalition."""
+def parlament_candidate_mandate_ranks(krug: int) -> dict:
+    """Returns {kandidat_id: mandate_rank_within_list} for all parlament-2024
+    geographic seats (vrsta='02'). Mandate rank is 1-based: the first seat the
+    list fills, the second, and so on, applying the 10 % preferential rule."""
     rows = pd.read_sql_query(
         """SELECT k.id, k.rbr, k.glasova, k.posto, l.id AS lista_id, l.mandata
            FROM rezultat_kandidat k
@@ -131,12 +158,18 @@ def parlament_candidate_seats(krug: int) -> set:
              AND r.level='zup' AND l.mandata > 0""",
         get_conn(), params=(krug,),
     )
-    seated = set()
-    for lista_id, group in rows.groupby("lista_id"):
+    out: dict[int, int] = {}
+    for _, group in rows.groupby("lista_id"):
         cands = group.to_dict(orient="records")
         seats = int(group["mandata"].iloc[0])
-        seated |= assign_seats_within_coalition(cands, seats)
-    return seated
+        for rank, kid in enumerate(_seat_order_within_list(cands, seats), start=1):
+            out[kid] = rank
+    return out
+
+
+def parlament_candidate_seats(krug: int) -> set:
+    """Backwards-compat shim: just the IDs that won seats."""
+    return set(parlament_candidate_mandate_ranks(krug).keys())
 
 
 # ────────────────────────────────────────────────────────────────────────────
@@ -536,9 +569,11 @@ def render_parlament_fairness(rezultat: pd.Series, lista: pd.DataFrame, p1: str)
         "na listi. Ovo je jedini izravni signal individualne popularnosti koji baza nudi."
     )
 
-    top_n = st.slider("Koliko kandidata prikazati", 10, 200, 50, step=10)
-    seated_ids = parlament_candidate_seats(krug)
-    cand_df = pd.read_sql_query(
+    top_n = st.slider("Koliko kandidata prikazati", 50, 1000, 400, step=50)
+    mandate_ranks = parlament_candidate_mandate_ranks(krug)
+    seated_ids = set(mandate_ranks.keys())
+
+    all_cands_df = pd.read_sql_query(
         """SELECT k.id, k.rbr AS Rbr_na_listi,
                   k.naziv AS Kandidat,
                   k.glasova AS Pref_glasova,
@@ -549,21 +584,84 @@ def render_parlament_fairness(rezultat: pd.Series, lista: pd.DataFrame, p1: str)
            JOIN rezultat_lista l ON l.id = k.lista_id
            JOIN rezultat r ON r.id = l.rezultat_id
            WHERE r.election='parlament-2024' AND r.krug=? AND r.vrsta='02' AND r.level='zup'
-           ORDER BY k.glasova DESC
-           LIMIT ?""",
-        get_conn(), params=(krug, top_n),
+           ORDER BY k.glasova DESC""",
+        get_conn(), params=(krug,),
     )
-    cand_df.insert(0, "Rang", range(1, len(cand_df) + 1))
-    cand_df["Mandat"] = cand_df["id"].isin(seated_ids).map({True: "✅", False: ""})
-    cand_df["Vodeća stranka"] = cand_df["Lista"].map(leading_party)
-    cand_df["IJ"] = cand_df["IJ"].map(lambda i: PARLAMENT_IJ_LABELS.get(i, i))
-    show = cand_df[["Rang", "Kandidat", "Rbr_na_listi", "Vodeća stranka", "IJ",
-                    "Pref_glasova", "Pref_posto_unutar_liste", "Mandat", "Lista"]].rename(columns={
+    all_cands_df.insert(0, "Rang", range(1, len(all_cands_df) + 1))
+    all_cands_df["Mandat"] = all_cands_df["id"].isin(seated_ids).map({True: "✅", False: ""})
+    all_cands_df["Redni_br_mandata"] = all_cands_df["id"].map(mandate_ranks)
+    all_cands_df["Vodeća stranka"] = all_cands_df["Lista"].map(leading_party)
+    all_cands_df["IJ_lbl"] = all_cands_df["IJ"].map(lambda i: PARLAMENT_IJ_LABELS.get(i, i))
+
+    def _format_mandate_rank(v) -> str:
+        if pd.isna(v):
+            return "—"
+        return str(int(v))
+
+    cols_render = {
+        "Rang": "Rang",
+        "Kandidat": "Kandidat",
         "Rbr_na_listi": "Rbr na listi",
+        "Mandat": "Mandat",
+        "Redni_br_mandata_str": "Redni broj mandata",
+        "Vodeća stranka": "Vodeća stranka",
+        "IJ_lbl": "IJ",
         "Pref_glasova": "Pref. glasovi",
         "Pref_posto_unutar_liste": "% unutar liste",
-    })
+        "Lista": "Lista",
+    }
+
+    base = all_cands_df.copy()
+    base["Redni_br_mandata_str"] = base["Redni_br_mandata"].map(_format_mandate_rank)
+
+    show = base.head(top_n)[list(cols_render.keys())].rename(columns=cols_render)
     st.dataframe(show, use_container_width=True, hide_index=True)
+
+    # ── Extremes: biggest losers (popular but no seat) ─────────────────────
+    st.markdown("---")
+    st.markdown(
+        "### 📉 Najveći gubitnici — popularni kandidati bez mandata\n"
+        "Kandidati koji su privukli najviše preferencijalnih glasova **a ipak nisu ušli u "
+        "Sabor**. Najčešći razlog: njihova lista nije prošla 5 % unutar IJ, ili je prošla "
+        "ali je dobila premalo mandata. Ovo su ljudi koji su imali grassroot podršku ali "
+        "nisu pretvoreni u zastupnike."
+    )
+    lose_n = st.slider("Koliko gubitnika prikazati", 10, 100, 25, step=5,
+                       key="lose_slider")
+    losers = base[base["Mandat"] == ""].head(lose_n).copy()
+    losers["Glasova_liste"] = losers["Lista_mandata"].astype(int).map(str) + " mand."
+    show_lose = losers[[
+        "Rang", "Kandidat", "Rbr_na_listi", "Vodeća stranka", "IJ_lbl",
+        "Pref_glasova", "Pref_posto_unutar_liste", "Lista",
+    ]].rename(columns={
+        "Rbr_na_listi": "Rbr na listi", "IJ_lbl": "IJ",
+        "Pref_glasova": "Pref. glasovi", "Pref_posto_unutar_liste": "% unutar liste",
+    })
+    st.dataframe(show_lose, use_container_width=True, hide_index=True)
+
+    # ── Extremes: biggest winners by structure (low support, got seat) ──────
+    st.markdown("---")
+    st.markdown(
+        "### 📈 Politički namještenici — mandat unatoč niskoj potpori\n"
+        "Saborski zastupnici s **najmanje preferencijalnih glasova**. Ušli su u Sabor jer "
+        "su bili visoko pozicionirani na listi koja je osvojila dovoljno mandata — birači "
+        "nisu posebno označili njihovo ime. Default redoslijed na listi sastavljaju "
+        "stranački/koalicijski organi, ne birači."
+    )
+    win_n = st.slider("Koliko prikazati", 10, 100, 25, step=5, key="win_slider")
+    namjestenici = base[base["Mandat"] == "✅"].sort_values(
+        "Pref_glasova", ascending=True,
+    ).head(win_n).copy()
+    show_win = namjestenici[[
+        "Kandidat", "Rbr_na_listi", "Redni_br_mandata_str",
+        "Vodeća stranka", "IJ_lbl",
+        "Pref_glasova", "Pref_posto_unutar_liste", "Lista",
+    ]].rename(columns={
+        "Rbr_na_listi": "Rbr na listi", "IJ_lbl": "IJ",
+        "Redni_br_mandata_str": "Redni broj mandata",
+        "Pref_glasova": "Pref. glasovi", "Pref_posto_unutar_liste": "% unutar liste",
+    })
+    st.dataframe(show_win, use_container_width=True, hide_index=True)
 
     # ── "Sabor as president": top 143 by preferential votes ─────────────────
     st.markdown("---")
@@ -628,11 +726,15 @@ def render_parlament_fairness(rezultat: pd.Series, lista: pd.DataFrame, p1: str)
         with st.expander("📋 Top 143 (rang lista po preferencijalnim glasovima)"):
             top143_show = top143.copy()
             top143_show["Mandat (stvarni)"] = top143_show["id"].isin(actual_ids).map({True: "✅", False: ""})
+            top143_show["Redni br. mandata"] = top143_show["id"].map(mandate_ranks).map(
+                lambda v: "—" if pd.isna(v) else str(int(v))
+            )
             top143_show["IJ"] = top143_show["IJ"].map(lambda i: PARLAMENT_IJ_LABELS.get(i, i))
             top143_show.insert(0, "Rang", range(1, len(top143_show) + 1))
             st.dataframe(
                 top143_show[["Rang", "Kandidat", "Rbr_na_listi", "Vodeća stranka",
-                             "IJ", "Pref", "Mandat (stvarni)", "Lista"]].rename(
+                             "IJ", "Pref", "Mandat (stvarni)", "Redni br. mandata",
+                             "Lista"]].rename(
                     columns={"Rbr_na_listi": "Rbr na listi"}
                 ),
                 use_container_width=True, hide_index=True,
