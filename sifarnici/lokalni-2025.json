@@ -1,0 +1,9027 @@
+{
+  "zupanija": [
+    {
+      "code": "01",
+      "label": "Zagrebačka županija"
+    },
+    {
+      "code": "02",
+      "label": "Krapinsko-zagorska županija"
+    },
+    {
+      "code": "03",
+      "label": "Sisačko-moslavačka županija"
+    },
+    {
+      "code": "04",
+      "label": "Karlovačka županija"
+    },
+    {
+      "code": "05",
+      "label": "Varaždinska županija"
+    },
+    {
+      "code": "06",
+      "label": "Koprivničko-križevačka županija"
+    },
+    {
+      "code": "07",
+      "label": "Bjelovarsko-bilogorska županija"
+    },
+    {
+      "code": "08",
+      "label": "Primorsko-goranska županija"
+    },
+    {
+      "code": "09",
+      "label": "Ličko-senjska županija"
+    },
+    {
+      "code": "10",
+      "label": "Virovitičko-podravska županija"
+    },
+    {
+      "code": "11",
+      "label": "Požeško-slavonska županija"
+    },
+    {
+      "code": "12",
+      "label": "Brodsko-posavska županija"
+    },
+    {
+      "code": "13",
+      "label": "Zadarska županija"
+    },
+    {
+      "code": "14",
+      "label": "Osječko-baranjska županija"
+    },
+    {
+      "code": "15",
+      "label": "Šibensko-kninska županija"
+    },
+    {
+      "code": "16",
+      "label": "Vukovarsko-srijemska županija"
+    },
+    {
+      "code": "17",
+      "label": "Splitsko-dalmatinska županija"
+    },
+    {
+      "code": "18",
+      "label": "Istarska županija"
+    },
+    {
+      "code": "19",
+      "label": "Dubrovačko-neretvanska županija"
+    },
+    {
+      "code": "20",
+      "label": "Međimurska županija"
+    },
+    {
+      "code": "21",
+      "label": "Grad Zagreb"
+    }
+  ],
+  "gradOpcina": [
+    {
+      "code": "1015",
+      "label": "DUGO SELO",
+      "codetop": "01"
+    },
+    {
+      "code": "1589",
+      "label": "IVANIĆ-GRAD",
+      "codetop": "01"
+    },
+    {
+      "code": "1694",
+      "label": "JASTREBARSKO",
+      "codetop": "01"
+    },
+    {
+      "code": "3808",
+      "label": "SAMOBOR",
+      "codetop": "01"
+    },
+    {
+      "code": "4367",
+      "label": "SVETA NEDELJA",
+      "codetop": "01"
+    },
+    {
+      "code": "4294",
+      "label": "SVETI IVAN ZELINA",
+      "codetop": "01"
+    },
+    {
+      "code": "5410",
+      "label": "VELIKA GORICA",
+      "codetop": "01"
+    },
+    {
+      "code": "5088",
+      "label": "VRBOVEC",
+      "codetop": "01"
+    },
+    {
+      "code": "5436",
+      "label": "ZAPREŠIĆ",
+      "codetop": "01"
+    },
+    {
+      "code": "5509",
+      "label": "BEDENICA",
+      "codetop": "01"
+    },
+    {
+      "code": "5479",
+      "label": "BISTRA",
+      "codetop": "01"
+    },
+    {
+      "code": "0337",
+      "label": "BRCKOVLJANI",
+      "codetop": "01"
+    },
+    {
+      "code": "0345",
+      "label": "BRDOVEC",
+      "codetop": "01"
+    },
+    {
+      "code": "0973",
+      "label": "DUBRAVA",
+      "codetop": "01"
+    },
+    {
+      "code": "5495",
+      "label": "DUBRAVICA",
+      "codetop": "01"
+    },
+    {
+      "code": "1147",
+      "label": "FARKAŠEVAC",
+      "codetop": "01"
+    },
+    {
+      "code": "1350",
+      "label": "GRADEC",
+      "codetop": "01"
+    },
+    {
+      "code": "1635",
+      "label": "JAKOVLJE",
+      "codetop": "01"
+    },
+    {
+      "code": "1902",
+      "label": "KLINČA SELA",
+      "codetop": "01"
+    },
+    {
+      "code": "1937",
+      "label": "KLOŠTAR IVANIĆ",
+      "codetop": "01"
+    },
+    {
+      "code": "5339",
+      "label": "KRAŠIĆ",
+      "codetop": "01"
+    },
+    {
+      "code": "5452",
+      "label": "KRAVARSKO",
+      "codetop": "01"
+    },
+    {
+      "code": "2135",
+      "label": "KRIŽ",
+      "codetop": "01"
+    },
+    {
+      "code": "5487",
+      "label": "LUKA",
+      "codetop": "01"
+    },
+    {
+      "code": "5398",
+      "label": "MARIJA GORICA",
+      "codetop": "01"
+    },
+    {
+      "code": "5428",
+      "label": "ORLE",
+      "codetop": "01"
+    },
+    {
+      "code": "3310",
+      "label": "PISAROVINA",
+      "codetop": "01"
+    },
+    {
+      "code": "5444",
+      "label": "POKUPSKO",
+      "codetop": "01"
+    },
+    {
+      "code": "3565",
+      "label": "PRESEKA",
+      "codetop": "01"
+    },
+    {
+      "code": "3620",
+      "label": "PUŠĆA",
+      "codetop": "01"
+    },
+    {
+      "code": "5363",
+      "label": "RAKOVEC",
+      "codetop": "01"
+    },
+    {
+      "code": "3760",
+      "label": "RUGVICA",
+      "codetop": "01"
+    },
+    {
+      "code": "5517",
+      "label": "STUPNIK",
+      "codetop": "01"
+    },
+    {
+      "code": "5401",
+      "label": "ŽUMBERAK",
+      "codetop": "01"
+    },
+    {
+      "code": "0795",
+      "label": "DONJA STUBICA",
+      "codetop": "02"
+    },
+    {
+      "code": "1872",
+      "label": "KLANJEC",
+      "codetop": "02"
+    },
+    {
+      "code": "2119",
+      "label": "KRAPINA",
+      "codetop": "02"
+    },
+    {
+      "code": "3115",
+      "label": "OROSLAVJE",
+      "codetop": "02"
+    },
+    {
+      "code": "3522",
+      "label": "PREGRADA",
+      "codetop": "02"
+    },
+    {
+      "code": "5193",
+      "label": "ZABOK",
+      "codetop": "02"
+    },
+    {
+      "code": "5266",
+      "label": "ZLATAR",
+      "codetop": "02"
+    },
+    {
+      "code": "0116",
+      "label": "BEDEKOVČINA",
+      "codetop": "02"
+    },
+    {
+      "code": "0418",
+      "label": "BUDINŠČINA",
+      "codetop": "02"
+    },
+    {
+      "code": "0701",
+      "label": "DESINIĆ",
+      "codetop": "02"
+    },
+    {
+      "code": "1082",
+      "label": "ĐURMANEC",
+      "codetop": "02"
+    },
+    {
+      "code": "1252",
+      "label": "GORNJA STUBICA",
+      "codetop": "02"
+    },
+    {
+      "code": "1465",
+      "label": "HRAŠĆINA",
+      "codetop": "02"
+    },
+    {
+      "code": "1520",
+      "label": "HUM NA SUTLI",
+      "codetop": "02"
+    },
+    {
+      "code": "5525",
+      "label": "JESENJE",
+      "codetop": "02"
+    },
+    {
+      "code": "2003",
+      "label": "KONJŠČINA",
+      "codetop": "02"
+    },
+    {
+      "code": "2089",
+      "label": "KRALJEVEC NA SUTLI",
+      "codetop": "02"
+    },
+    {
+      "code": "2127",
+      "label": "KRAPINSKE TOPLICE",
+      "codetop": "02"
+    },
+    {
+      "code": "5533",
+      "label": "KUMROVEC",
+      "codetop": "02"
+    },
+    {
+      "code": "2364",
+      "label": "LOBOR",
+      "codetop": "02"
+    },
+    {
+      "code": "2488",
+      "label": "MAČE",
+      "codetop": "02"
+    },
+    {
+      "code": "2569",
+      "label": "MARIJA BISTRICA",
+      "codetop": "02"
+    },
+    {
+      "code": "2658",
+      "label": "MIHOVLJAN",
+      "codetop": "02"
+    },
+    {
+      "code": "5541",
+      "label": "NOVI GOLUBOVEC",
+      "codetop": "02"
+    },
+    {
+      "code": "3298",
+      "label": "PETROVSKO",
+      "codetop": "02"
+    },
+    {
+      "code": "3646",
+      "label": "RADOBOJ",
+      "codetop": "02"
+    },
+    {
+      "code": "4227",
+      "label": "STUBIČKE TOPLICE",
+      "codetop": "02"
+    },
+    {
+      "code": "4308",
+      "label": "SVETI KRIŽ ZAČRETJE",
+      "codetop": "02"
+    },
+    {
+      "code": "4669",
+      "label": "TUHELJ",
+      "codetop": "02"
+    },
+    {
+      "code": "4812",
+      "label": "VELIKO TRGOVIŠĆE",
+      "codetop": "02"
+    },
+    {
+      "code": "5215",
+      "label": "ZAGORSKA SELA",
+      "codetop": "02"
+    },
+    {
+      "code": "5274",
+      "label": "ZLATAR BISTRICA",
+      "codetop": "02"
+    },
+    {
+      "code": "1210",
+      "label": "GLINA",
+      "codetop": "03"
+    },
+    {
+      "code": "1503",
+      "label": "HRVATSKA KOSTAJNICA",
+      "codetop": "03"
+    },
+    {
+      "code": "2208",
+      "label": "KUTINA",
+      "codetop": "03"
+    },
+    {
+      "code": "2933",
+      "label": "NOVSKA",
+      "codetop": "03"
+    },
+    {
+      "code": "3280",
+      "label": "PETRINJA",
+      "codetop": "03"
+    },
+    {
+      "code": "3476",
+      "label": "POPOVAČA",
+      "codetop": "03"
+    },
+    {
+      "code": "3913",
+      "label": "SISAK",
+      "codetop": "03"
+    },
+    {
+      "code": "0833",
+      "label": "DONJI KUKURUZARI",
+      "codetop": "03"
+    },
+    {
+      "code": "1023",
+      "label": "DVOR",
+      "codetop": "03"
+    },
+    {
+      "code": "5100",
+      "label": "GVOZD",
+      "codetop": "03"
+    },
+    {
+      "code": "1490",
+      "label": "HRVATSKA DUBICA",
+      "codetop": "03"
+    },
+    {
+      "code": "1686",
+      "label": "JASENOVAC",
+      "codetop": "03"
+    },
+    {
+      "code": "2283",
+      "label": "LEKENIK",
+      "codetop": "03"
+    },
+    {
+      "code": "2321",
+      "label": "LIPOVLJANI",
+      "codetop": "03"
+    },
+    {
+      "code": "5550",
+      "label": "MAJUR",
+      "codetop": "03"
+    },
+    {
+      "code": "2593",
+      "label": "MARTINSKA VES",
+      "codetop": "03"
+    },
+    {
+      "code": "4260",
+      "label": "SUNJA",
+      "codetop": "03"
+    },
+    {
+      "code": "4570",
+      "label": "TOPUSKO",
+      "codetop": "03"
+    },
+    {
+      "code": "4774",
+      "label": "VELIKA LUDINA",
+      "codetop": "03"
+    },
+    {
+      "code": "0990",
+      "label": "DUGA RESA",
+      "codetop": "04"
+    },
+    {
+      "code": "1791",
+      "label": "KARLOVAC",
+      "codetop": "04"
+    },
+    {
+      "code": "2976",
+      "label": "OGULIN",
+      "codetop": "04"
+    },
+    {
+      "code": "3158",
+      "label": "OZALJ",
+      "codetop": "04"
+    },
+    {
+      "code": "4006",
+      "label": "SLUNJ",
+      "codetop": "04"
+    },
+    {
+      "code": "0078",
+      "label": "BARILOVIĆ",
+      "codetop": "04"
+    },
+    {
+      "code": "0302",
+      "label": "BOSILJEVO",
+      "codetop": "04"
+    },
+    {
+      "code": "0493",
+      "label": "CETINGRAD",
+      "codetop": "04"
+    },
+    {
+      "code": "0906",
+      "label": "DRAGANIĆ",
+      "codetop": "04"
+    },
+    {
+      "code": "1201",
+      "label": "GENERALSKI STOL",
+      "codetop": "04"
+    },
+    {
+      "code": "1724",
+      "label": "JOSIPDOL",
+      "codetop": "04"
+    },
+    {
+      "code": "6238",
+      "label": "KAMANJE",
+      "codetop": "04"
+    },
+    {
+      "code": "2160",
+      "label": "KRNJAK",
+      "codetop": "04"
+    },
+    {
+      "code": "2259",
+      "label": "LASINJA",
+      "codetop": "04"
+    },
+    {
+      "code": "2810",
+      "label": "NETRETIĆ",
+      "codetop": "04"
+    },
+    {
+      "code": "3336",
+      "label": "PLAŠKI",
+      "codetop": "04"
+    },
+    {
+      "code": "3654",
+      "label": "RAKOVICA",
+      "codetop": "04"
+    },
+    {
+      "code": "5568",
+      "label": "RIBNIK",
+      "codetop": "04"
+    },
+    {
+      "code": "3786",
+      "label": "SABORSKO",
+      "codetop": "04"
+    },
+    {
+      "code": "5576",
+      "label": "TOUNJ",
+      "codetop": "04"
+    },
+    {
+      "code": "5037",
+      "label": "VOJNIĆ",
+      "codetop": "04"
+    },
+    {
+      "code": "5304",
+      "label": "ŽAKANJE",
+      "codetop": "04"
+    },
+    {
+      "code": "1562",
+      "label": "IVANEC",
+      "codetop": "05"
+    },
+    {
+      "code": "2291",
+      "label": "LEPOGLAVA",
+      "codetop": "05"
+    },
+    {
+      "code": "2445",
+      "label": "LUDBREG",
+      "codetop": "05"
+    },
+    {
+      "code": "2895",
+      "label": "NOVI MAROF",
+      "codetop": "05"
+    },
+    {
+      "code": "4723",
+      "label": "VARAŽDIN",
+      "codetop": "05"
+    },
+    {
+      "code": "4731",
+      "label": "VARAŽDINSKE TOPLICE",
+      "codetop": "05"
+    },
+    {
+      "code": "0124",
+      "label": "BEDNJA",
+      "codetop": "05"
+    },
+    {
+      "code": "0191",
+      "label": "BERETINEC",
+      "codetop": "05"
+    },
+    {
+      "code": "0361",
+      "label": "BREZNICA",
+      "codetop": "05"
+    },
+    {
+      "code": "1511",
+      "label": "BREZNIČKI HUM",
+      "codetop": "05"
+    },
+    {
+      "code": "0485",
+      "label": "CESTICA",
+      "codetop": "05"
+    },
+    {
+      "code": "0809",
+      "label": "DONJA VOĆA",
+      "codetop": "05"
+    },
+    {
+      "code": "1295",
+      "label": "GORNJI KNEGINEC",
+      "codetop": "05"
+    },
+    {
+      "code": "1651",
+      "label": "JALŽABET",
+      "codetop": "05"
+    },
+    {
+      "code": "1899",
+      "label": "KLENOVNIK",
+      "codetop": "05"
+    },
+    {
+      "code": "2470",
+      "label": "LJUBEŠĆICA",
+      "codetop": "05"
+    },
+    {
+      "code": "2518",
+      "label": "MALI BUKOVEC",
+      "codetop": "05"
+    },
+    {
+      "code": "0850",
+      "label": "MARTIJANEC",
+      "codetop": "05"
+    },
+    {
+      "code": "2607",
+      "label": "MARUŠEVEC",
+      "codetop": "05"
+    },
+    {
+      "code": "3263",
+      "label": "PETRIJANEC",
+      "codetop": "05"
+    },
+    {
+      "code": "4103",
+      "label": "SRAČINEC",
+      "codetop": "05"
+    },
+    {
+      "code": "4375",
+      "label": "SVETI ĐURĐ",
+      "codetop": "05"
+    },
+    {
+      "code": "4383",
+      "label": "SVETI ILIJA",
+      "codetop": "05"
+    },
+    {
+      "code": "4626",
+      "label": "TRNOVEC BARTOLOVEČKI",
+      "codetop": "05"
+    },
+    {
+      "code": "5584",
+      "label": "VELIKI BUKOVEC",
+      "codetop": "05"
+    },
+    {
+      "code": "4847",
+      "label": "VIDOVEC",
+      "codetop": "05"
+    },
+    {
+      "code": "4863",
+      "label": "VINICA",
+      "codetop": "05"
+    },
+    {
+      "code": "4936",
+      "label": "VISOKO",
+      "codetop": "05"
+    },
+    {
+      "code": "1074",
+      "label": "ĐURĐEVAC",
+      "codetop": "06"
+    },
+    {
+      "code": "2011",
+      "label": "KOPRIVNICA",
+      "codetop": "06"
+    },
+    {
+      "code": "2143",
+      "label": "KRIŽEVCI",
+      "codetop": "06"
+    },
+    {
+      "code": "0965",
+      "label": "DRNJE",
+      "codetop": "06"
+    },
+    {
+      "code": "1040",
+      "label": "ĐELEKOVEC",
+      "codetop": "06"
+    },
+    {
+      "code": "1155",
+      "label": "FERDINANDOVAC",
+      "codetop": "06"
+    },
+    {
+      "code": "1228",
+      "label": "GOLA",
+      "codetop": "06"
+    },
+    {
+      "code": "6181",
+      "label": "GORNJA RIJEKA",
+      "codetop": "06"
+    },
+    {
+      "code": "1457",
+      "label": "HLEBINE",
+      "codetop": "06"
+    },
+    {
+      "code": "5592",
+      "label": "KALINOVAC",
+      "codetop": "06"
+    },
+    {
+      "code": "5606",
+      "label": "KALNIK",
+      "codetop": "06"
+    },
+    {
+      "code": "1945",
+      "label": "KLOŠTAR PODRAVSKI",
+      "codetop": "06"
+    },
+    {
+      "code": "2020",
+      "label": "KOPRIVNIČKI BREGI",
+      "codetop": "06"
+    },
+    {
+      "code": "2038",
+      "label": "KOPRIVNIČKI IVANEC",
+      "codetop": "06"
+    },
+    {
+      "code": "2275",
+      "label": "LEGRAD",
+      "codetop": "06"
+    },
+    {
+      "code": "2704",
+      "label": "MOLVE",
+      "codetop": "06"
+    },
+    {
+      "code": "2925",
+      "label": "NOVIGRAD PODRAVSKI",
+      "codetop": "06"
+    },
+    {
+      "code": "5614",
+      "label": "NOVO VIRJE",
+      "codetop": "06"
+    },
+    {
+      "code": "3247",
+      "label": "PETERANEC",
+      "codetop": "06"
+    },
+    {
+      "code": "6165",
+      "label": "PODRAVSKE SESVETE",
+      "codetop": "06"
+    },
+    {
+      "code": "3662",
+      "label": "RASINJA",
+      "codetop": "06"
+    },
+    {
+      "code": "4057",
+      "label": "SOKOLOVAC",
+      "codetop": "06"
+    },
+    {
+      "code": "4391",
+      "label": "SVETI IVAN ŽABNO",
+      "codetop": "06"
+    },
+    {
+      "code": "4421",
+      "label": "SVETI PETAR OREHOVEC",
+      "codetop": "06"
+    },
+    {
+      "code": "4901",
+      "label": "VIRJE",
+      "codetop": "06"
+    },
+    {
+      "code": "0248",
+      "label": "BJELOVAR",
+      "codetop": "07"
+    },
+    {
+      "code": "0639",
+      "label": "ČAZMA",
+      "codetop": "07"
+    },
+    {
+      "code": "0671",
+      "label": "DARUVAR",
+      "codetop": "07"
+    },
+    {
+      "code": "1198",
+      "label": "GAREŠNICA",
+      "codetop": "07"
+    },
+    {
+      "code": "1392",
+      "label": "GRUBIŠNO POLJE",
+      "codetop": "07"
+    },
+    {
+      "code": "0183",
+      "label": "BEREK",
+      "codetop": "07"
+    },
+    {
+      "code": "0710",
+      "label": "DEŽANOVAC",
+      "codetop": "07"
+    },
+    {
+      "code": "1058",
+      "label": "ĐULOVAC",
+      "codetop": "07"
+    },
+    {
+      "code": "1449",
+      "label": "HERCEGOVAC",
+      "codetop": "07"
+    },
+    {
+      "code": "1619",
+      "label": "IVANSKA",
+      "codetop": "07"
+    },
+    {
+      "code": "1767",
+      "label": "KAPELA",
+      "codetop": "07"
+    },
+    {
+      "code": "1996",
+      "label": "KONČANICA",
+      "codetop": "07"
+    },
+    {
+      "code": "2879",
+      "label": "NOVA RAČA",
+      "codetop": "07"
+    },
+    {
+      "code": "3751",
+      "label": "ROVIŠĆE",
+      "codetop": "07"
+    },
+    {
+      "code": "5622",
+      "label": "SEVERIN",
+      "codetop": "07"
+    },
+    {
+      "code": "3905",
+      "label": "SIRAČ",
+      "codetop": "07"
+    },
+    {
+      "code": "5649",
+      "label": "ŠANDROVAC",
+      "codetop": "07"
+    },
+    {
+      "code": "4502",
+      "label": "ŠTEFANJE",
+      "codetop": "07"
+    },
+    {
+      "code": "4782",
+      "label": "VELIKA PISANICA",
+      "codetop": "07"
+    },
+    {
+      "code": "5657",
+      "label": "VELIKA TRNOVITICA",
+      "codetop": "07"
+    },
+    {
+      "code": "4804",
+      "label": "VELIKI GRĐEVAC",
+      "codetop": "07"
+    },
+    {
+      "code": "4839",
+      "label": "VELIKO TROJSTVO",
+      "codetop": "07"
+    },
+    {
+      "code": "5665",
+      "label": "ZRINSKI TOPOLOVAC",
+      "codetop": "07"
+    },
+    {
+      "code": "0043",
+      "label": "BAKAR",
+      "codetop": "08"
+    },
+    {
+      "code": "0523",
+      "label": "CRES",
+      "codetop": "08"
+    },
+    {
+      "code": "0531",
+      "label": "CRIKVENICA",
+      "codetop": "08"
+    },
+    {
+      "code": "0558",
+      "label": "ČABAR",
+      "codetop": "08"
+    },
+    {
+      "code": "0698",
+      "label": "DELNICE",
+      "codetop": "08"
+    },
+    {
+      "code": "1805",
+      "label": "KASTAV",
+      "codetop": "08"
+    },
+    {
+      "code": "2097",
+      "label": "KRALJEVICA",
+      "codetop": "08"
+    },
+    {
+      "code": "2151",
+      "label": "KRK",
+      "codetop": "08"
+    },
+    {
+      "code": "2526",
+      "label": "MALI LOŠINJ",
+      "codetop": "08"
+    },
+    {
+      "code": "2909",
+      "label": "NOVI VINODOLSKI",
+      "codetop": "08"
+    },
+    {
+      "code": "3026",
+      "label": "OPATIJA",
+      "codetop": "08"
+    },
+    {
+      "code": "3638",
+      "label": "RAB",
+      "codetop": "08"
+    },
+    {
+      "code": "3735",
+      "label": "RIJEKA",
+      "codetop": "08"
+    },
+    {
+      "code": "5096",
+      "label": "VRBOVSKO",
+      "codetop": "08"
+    },
+    {
+      "code": "0086",
+      "label": "BAŠKA",
+      "codetop": "08"
+    },
+    {
+      "code": "0388",
+      "label": "BROD MORAVICE",
+      "codetop": "08"
+    },
+    {
+      "code": "0612",
+      "label": "ČAVLE",
+      "codetop": "08"
+    },
+    {
+      "code": "0744",
+      "label": "DOBRINJ",
+      "codetop": "08"
+    },
+    {
+      "code": "1171",
+      "label": "FUŽINE",
+      "codetop": "08"
+    },
+    {
+      "code": "1708",
+      "label": "JELENJE",
+      "codetop": "08"
+    },
+    {
+      "code": "1864",
+      "label": "KLANA",
+      "codetop": "08"
+    },
+    {
+      "code": "5380",
+      "label": "KOSTRENA",
+      "codetop": "08"
+    },
+    {
+      "code": "2372",
+      "label": "LOKVE",
+      "codetop": "08"
+    },
+    {
+      "code": "6246",
+      "label": "LOPAR",
+      "codetop": "08"
+    },
+    {
+      "code": "2429",
+      "label": "LOVRAN",
+      "codetop": "08"
+    },
+    {
+      "code": "2534",
+      "label": "MALINSKA-DUBAŠNICA",
+      "codetop": "08"
+    },
+    {
+      "code": "2615",
+      "label": "MATULJI",
+      "codetop": "08"
+    },
+    {
+      "code": "2739",
+      "label": "MOŠĆENIČKA DRAGA",
+      "codetop": "08"
+    },
+    {
+      "code": "2755",
+      "label": "MRKOPALJ",
+      "codetop": "08"
+    },
+    {
+      "code": "3018",
+      "label": "OMIŠALJ",
+      "codetop": "08"
+    },
+    {
+      "code": "3603",
+      "label": "PUNAT",
+      "codetop": "08"
+    },
+    {
+      "code": "3697",
+      "label": "RAVNA GORA",
+      "codetop": "08"
+    },
+    {
+      "code": "3930",
+      "label": "SKRAD",
+      "codetop": "08"
+    },
+    {
+      "code": "4880",
+      "label": "VINODOLSKA OPĆINA",
+      "codetop": "08"
+    },
+    {
+      "code": "4952",
+      "label": "VIŠKOVO",
+      "codetop": "08"
+    },
+    {
+      "code": "5070",
+      "label": "VRBNIK",
+      "codetop": "08"
+    },
+    {
+      "code": "1309",
+      "label": "GOSPIĆ",
+      "codetop": "09"
+    },
+    {
+      "code": "2887",
+      "label": "NOVALJA",
+      "codetop": "09"
+    },
+    {
+      "code": "3131",
+      "label": "OTOČAC",
+      "codetop": "09"
+    },
+    {
+      "code": "3875",
+      "label": "SENJ",
+      "codetop": "09"
+    },
+    {
+      "code": "0370",
+      "label": "BRINJE",
+      "codetop": "09"
+    },
+    {
+      "code": "0841",
+      "label": "DONJI LAPAC",
+      "codetop": "09"
+    },
+    {
+      "code": "1783",
+      "label": "KARLOBAG",
+      "codetop": "09"
+    },
+    {
+      "code": "2402",
+      "label": "LOVINAC",
+      "codetop": "09"
+    },
+    {
+      "code": "3239",
+      "label": "PERUŠIĆ",
+      "codetop": "09"
+    },
+    {
+      "code": "4553",
+      "label": "PLITVIČKA JEZERA",
+      "codetop": "09"
+    },
+    {
+      "code": "4677",
+      "label": "UDBINA",
+      "codetop": "09"
+    },
+    {
+      "code": "5126",
+      "label": "VRHOVINE",
+      "codetop": "09"
+    },
+    {
+      "code": "3077",
+      "label": "ORAHOVICA",
+      "codetop": "10"
+    },
+    {
+      "code": "3956",
+      "label": "SLATINA",
+      "codetop": "10"
+    },
+    {
+      "code": "4910",
+      "label": "VIROVITICA",
+      "codetop": "10"
+    },
+    {
+      "code": "0540",
+      "label": "CRNAC",
+      "codetop": "10"
+    },
+    {
+      "code": "0566",
+      "label": "ČAČINCI",
+      "codetop": "10"
+    },
+    {
+      "code": "0574",
+      "label": "ČAĐAVICA",
+      "codetop": "10"
+    },
+    {
+      "code": "1368",
+      "label": "GRADINA",
+      "codetop": "10"
+    },
+    {
+      "code": "2453",
+      "label": "LUKAČ",
+      "codetop": "10"
+    },
+    {
+      "code": "2666",
+      "label": "MIKLEUŠ",
+      "codetop": "10"
+    },
+    {
+      "code": "2836",
+      "label": "NOVA BUKOVICA",
+      "codetop": "10"
+    },
+    {
+      "code": "3328",
+      "label": "PITOMAČA",
+      "codetop": "10"
+    },
+    {
+      "code": "4073",
+      "label": "SOPJE",
+      "codetop": "10"
+    },
+    {
+      "code": "4243",
+      "label": "SUHOPOLJE",
+      "codetop": "10"
+    },
+    {
+      "code": "4499",
+      "label": "ŠPIŠIĆ BUKOVICA",
+      "codetop": "10"
+    },
+    {
+      "code": "4995",
+      "label": "VOĆIN",
+      "codetop": "10"
+    },
+    {
+      "code": "5240",
+      "label": "ZDENCI",
+      "codetop": "10"
+    },
+    {
+      "code": "2216",
+      "label": "KUTJEVO",
+      "codetop": "11"
+    },
+    {
+      "code": "2313",
+      "label": "LIPIK",
+      "codetop": "11"
+    },
+    {
+      "code": "3182",
+      "label": "PAKRAC",
+      "codetop": "11"
+    },
+    {
+      "code": "3344",
+      "label": "PLETERNICA",
+      "codetop": "11"
+    },
+    {
+      "code": "3514",
+      "label": "POŽEGA",
+      "codetop": "11"
+    },
+    {
+      "code": "0353",
+      "label": "BRESTOVAC",
+      "codetop": "11"
+    },
+    {
+      "code": "0582",
+      "label": "ČAGLIN",
+      "codetop": "11"
+    },
+    {
+      "code": "1643",
+      "label": "JAKŠIĆ",
+      "codetop": "11"
+    },
+    {
+      "code": "1775",
+      "label": "KAPTOL",
+      "codetop": "11"
+    },
+    {
+      "code": "4758",
+      "label": "VELIKA",
+      "codetop": "11"
+    },
+    {
+      "code": "2844",
+      "label": "NOVA GRADIŠKA",
+      "codetop": "12"
+    },
+    {
+      "code": "3964",
+      "label": "SLAVONSKI BROD",
+      "codetop": "12"
+    },
+    {
+      "code": "0108",
+      "label": "BEBRINA",
+      "codetop": "12"
+    },
+    {
+      "code": "0396",
+      "label": "BRODSKI STUPNIK",
+      "codetop": "12"
+    },
+    {
+      "code": "5673",
+      "label": "BUKOVLJE",
+      "codetop": "12"
+    },
+    {
+      "code": "0469",
+      "label": "CERNIK",
+      "codetop": "12"
+    },
+    {
+      "code": "0680",
+      "label": "DAVOR",
+      "codetop": "12"
+    },
+    {
+      "code": "0817",
+      "label": "DONJI ANDRIJEVCI",
+      "codetop": "12"
+    },
+    {
+      "code": "5681",
+      "label": "DRAGALIĆ",
+      "codetop": "12"
+    },
+    {
+      "code": "1180",
+      "label": "GARČIN",
+      "codetop": "12"
+    },
+    {
+      "code": "5690",
+      "label": "GORNJA VRBA",
+      "codetop": "12"
+    },
+    {
+      "code": "1279",
+      "label": "GORNJI BOGIĆEVCI",
+      "codetop": "12"
+    },
+    {
+      "code": "1406",
+      "label": "GUNDINCI",
+      "codetop": "12"
+    },
+    {
+      "code": "1856",
+      "label": "KLAKAR",
+      "codetop": "12"
+    },
+    {
+      "code": "2852",
+      "label": "NOVA KAPELA",
+      "codetop": "12"
+    },
+    {
+      "code": "2992",
+      "label": "OKUČANI",
+      "codetop": "12"
+    },
+    {
+      "code": "3034",
+      "label": "OPRISAVCI",
+      "codetop": "12"
+    },
+    {
+      "code": "3093",
+      "label": "ORIOVAC",
+      "codetop": "12"
+    },
+    {
+      "code": "3387",
+      "label": "PODCRKAVLJE",
+      "codetop": "12"
+    },
+    {
+      "code": "3727",
+      "label": "REŠETARI",
+      "codetop": "12"
+    },
+    {
+      "code": "3883",
+      "label": "SIBINJ",
+      "codetop": "12"
+    },
+    {
+      "code": "5703",
+      "label": "SIKIREVCI",
+      "codetop": "12"
+    },
+    {
+      "code": "3972",
+      "label": "SLAVONSKI ŠAMAC",
+      "codetop": "12"
+    },
+    {
+      "code": "4120",
+      "label": "STARA GRADIŠKA",
+      "codetop": "12"
+    },
+    {
+      "code": "4189",
+      "label": "STARO PETROVO SELO",
+      "codetop": "12"
+    },
+    {
+      "code": "4766",
+      "label": "VELIKA KOPANICA",
+      "codetop": "12"
+    },
+    {
+      "code": "5061",
+      "label": "VRBJE",
+      "codetop": "12"
+    },
+    {
+      "code": "5142",
+      "label": "VRPOLJE",
+      "codetop": "12"
+    },
+    {
+      "code": "0175",
+      "label": "BENKOVAC",
+      "codetop": "13"
+    },
+    {
+      "code": "0221",
+      "label": "BIOGRAD NA MORU",
+      "codetop": "13"
+    },
+    {
+      "code": "2828",
+      "label": "NIN",
+      "codetop": "13"
+    },
+    {
+      "code": "2968",
+      "label": "OBROVAC",
+      "codetop": "13"
+    },
+    {
+      "code": "3166",
+      "label": "PAG",
+      "codetop": "13"
+    },
+    {
+      "code": "5207",
+      "label": "ZADAR",
+      "codetop": "13"
+    },
+    {
+      "code": "0205",
+      "label": "BIBINJE",
+      "codetop": "13"
+    },
+    {
+      "code": "5711",
+      "label": "GALOVAC",
+      "codetop": "13"
+    },
+    {
+      "code": "1317",
+      "label": "GRAČAC",
+      "codetop": "13"
+    },
+    {
+      "code": "1678",
+      "label": "JASENICE",
+      "codetop": "13"
+    },
+    {
+      "code": "1732",
+      "label": "KALI",
+      "codetop": "13"
+    },
+    {
+      "code": "6220",
+      "label": "KOLAN",
+      "codetop": "13"
+    },
+    {
+      "code": "5720",
+      "label": "KUKLJICA",
+      "codetop": "13"
+    },
+    {
+      "code": "2348",
+      "label": "LIŠANE OSTROVIČKE",
+      "codetop": "13"
+    },
+    {
+      "code": "5371",
+      "label": "NOVIGRAD",
+      "codetop": "13"
+    },
+    {
+      "code": "3174",
+      "label": "PAKOŠTANE",
+      "codetop": "13"
+    },
+    {
+      "code": "3204",
+      "label": "PAŠMAN",
+      "codetop": "13"
+    },
+    {
+      "code": "3441",
+      "label": "POLAČA",
+      "codetop": "13"
+    },
+    {
+      "code": "3450",
+      "label": "POLIČNIK",
+      "codetop": "13"
+    },
+    {
+      "code": "3492",
+      "label": "POSEDARJE",
+      "codetop": "13"
+    },
+    {
+      "code": "5738",
+      "label": "POVLJANA",
+      "codetop": "13"
+    },
+    {
+      "code": "3549",
+      "label": "PREKO",
+      "codetop": "13"
+    },
+    {
+      "code": "5746",
+      "label": "PRIVLAKA",
+      "codetop": "13"
+    },
+    {
+      "code": "3719",
+      "label": "RAŽANAC",
+      "codetop": "13"
+    },
+    {
+      "code": "3794",
+      "label": "SALI",
+      "codetop": "13"
+    },
+    {
+      "code": "4111",
+      "label": "STANKOVCI",
+      "codetop": "13"
+    },
+    {
+      "code": "4162",
+      "label": "STARIGRAD",
+      "codetop": "13"
+    },
+    {
+      "code": "4251",
+      "label": "SUKOŠAN",
+      "codetop": "13"
+    },
+    {
+      "code": "4286",
+      "label": "SVETI FILIP I JAKOV",
+      "codetop": "13"
+    },
+    {
+      "code": "4456",
+      "label": "ŠKABRNJA",
+      "codetop": "13"
+    },
+    {
+      "code": "5754",
+      "label": "TKON",
+      "codetop": "13"
+    },
+    {
+      "code": "4898",
+      "label": "VIR",
+      "codetop": "13"
+    },
+    {
+      "code": "6254",
+      "label": "VRSI",
+      "codetop": "13"
+    },
+    {
+      "code": "5258",
+      "label": "ZEMUNIK DONJI",
+      "codetop": "13"
+    },
+    {
+      "code": "0132",
+      "label": "BELI MANASTIR",
+      "codetop": "14"
+    },
+    {
+      "code": "0167",
+      "label": "BELIŠĆE",
+      "codetop": "14"
+    },
+    {
+      "code": "0868",
+      "label": "DONJI MIHOLJAC",
+      "codetop": "14"
+    },
+    {
+      "code": "1031",
+      "label": "ĐAKOVO",
+      "codetop": "14"
+    },
+    {
+      "code": "2780",
+      "label": "NAŠICE",
+      "codetop": "14"
+    },
+    {
+      "code": "3123",
+      "label": "OSIJEK",
+      "codetop": "14"
+    },
+    {
+      "code": "4715",
+      "label": "VALPOVO",
+      "codetop": "14"
+    },
+    {
+      "code": "0027",
+      "label": "ANTUNOVAC",
+      "codetop": "14"
+    },
+    {
+      "code": "0213",
+      "label": "BILJE",
+      "codetop": "14"
+    },
+    {
+      "code": "0230",
+      "label": "BIZOVAC",
+      "codetop": "14"
+    },
+    {
+      "code": "0647",
+      "label": "ČEMINAC",
+      "codetop": "14"
+    },
+    {
+      "code": "0655",
+      "label": "ČEPIN",
+      "codetop": "14"
+    },
+    {
+      "code": "0663",
+      "label": "DARDA",
+      "codetop": "14"
+    },
+    {
+      "code": "5762",
+      "label": "DONJA MOTIČINA",
+      "codetop": "14"
+    },
+    {
+      "code": "0914",
+      "label": "DRAŽ",
+      "codetop": "14"
+    },
+    {
+      "code": "0949",
+      "label": "DRENJE",
+      "codetop": "14"
+    },
+    {
+      "code": "1066",
+      "label": "ĐURĐENOVAC",
+      "codetop": "14"
+    },
+    {
+      "code": "1104",
+      "label": "ERDUT",
+      "codetop": "14"
+    },
+    {
+      "code": "1112",
+      "label": "ERNESTINOVO",
+      "codetop": "14"
+    },
+    {
+      "code": "1163",
+      "label": "FERIČANCI",
+      "codetop": "14"
+    },
+    {
+      "code": "1244",
+      "label": "GORJANI",
+      "codetop": "14"
+    },
+    {
+      "code": "6092",
+      "label": "JAGODNJAK",
+      "codetop": "14"
+    },
+    {
+      "code": "1953",
+      "label": "KNEŽEVI VINOGRADI",
+      "codetop": "14"
+    },
+    {
+      "code": "2054",
+      "label": "KOŠKA",
+      "codetop": "14"
+    },
+    {
+      "code": "2305",
+      "label": "LEVANJSKA VAROŠ",
+      "codetop": "14"
+    },
+    {
+      "code": "5789",
+      "label": "MAGADENOVAC",
+      "codetop": "14"
+    },
+    {
+      "code": "2577",
+      "label": "MARIJANCI",
+      "codetop": "14"
+    },
+    {
+      "code": "3255",
+      "label": "PETLOVAC",
+      "codetop": "14"
+    },
+    {
+      "code": "3271",
+      "label": "PETRIJEVCI",
+      "codetop": "14"
+    },
+    {
+      "code": "3409",
+      "label": "PODGORAČ",
+      "codetop": "14"
+    },
+    {
+      "code": "2712",
+      "label": "PODRAVSKA MOSLAVINA",
+      "codetop": "14"
+    },
+    {
+      "code": "3468",
+      "label": "POPOVAC",
+      "codetop": "14"
+    },
+    {
+      "code": "3611",
+      "label": "PUNITOVCI",
+      "codetop": "14"
+    },
+    {
+      "code": "3816",
+      "label": "SATNICA ĐAKOVAČKA",
+      "codetop": "14"
+    },
+    {
+      "code": "3867",
+      "label": "SEMELJCI",
+      "codetop": "14"
+    },
+    {
+      "code": "4219",
+      "label": "STRIZIVOJNA",
+      "codetop": "14"
+    },
+    {
+      "code": "6149",
+      "label": "ŠODOLOVCI",
+      "codetop": "14"
+    },
+    {
+      "code": "4618",
+      "label": "TRNAVA",
+      "codetop": "14"
+    },
+    {
+      "code": "4855",
+      "label": "VILJEVO",
+      "codetop": "14"
+    },
+    {
+      "code": "4944",
+      "label": "VIŠKOVCI",
+      "codetop": "14"
+    },
+    {
+      "code": "5797",
+      "label": "VLADISLAVCI",
+      "codetop": "14"
+    },
+    {
+      "code": "5177",
+      "label": "VUKA",
+      "codetop": "14"
+    },
+    {
+      "code": "0957",
+      "label": "DRNIŠ",
+      "codetop": "15"
+    },
+    {
+      "code": "1961",
+      "label": "KNIN",
+      "codetop": "15"
+    },
+    {
+      "code": "3948",
+      "label": "SKRADIN",
+      "codetop": "15"
+    },
+    {
+      "code": "4448",
+      "label": "ŠIBENIK",
+      "codetop": "15"
+    },
+    {
+      "code": "5002",
+      "label": "VODICE",
+      "codetop": "15"
+    },
+    {
+      "code": "6211",
+      "label": "BILICE",
+      "codetop": "15"
+    },
+    {
+      "code": "3107",
+      "label": "BISKUPIJA",
+      "codetop": "15"
+    },
+    {
+      "code": "0515",
+      "label": "CIVLJANE",
+      "codetop": "15"
+    },
+    {
+      "code": "1139",
+      "label": "ERVENIK",
+      "codetop": "15"
+    },
+    {
+      "code": "1830",
+      "label": "KIJEVO",
+      "codetop": "15"
+    },
+    {
+      "code": "1848",
+      "label": "KISTANJE",
+      "codetop": "15"
+    },
+    {
+      "code": "6173",
+      "label": "MURTER - KORNATI",
+      "codetop": "15"
+    },
+    {
+      "code": "5819",
+      "label": "PIROVAC",
+      "codetop": "15"
+    },
+    {
+      "code": "3573",
+      "label": "PRIMOŠTEN",
+      "codetop": "15"
+    },
+    {
+      "code": "2984",
+      "label": "PROMINA",
+      "codetop": "15"
+    },
+    {
+      "code": "5827",
+      "label": "ROGOZNICA",
+      "codetop": "15"
+    },
+    {
+      "code": "3778",
+      "label": "RUŽIĆ",
+      "codetop": "15"
+    },
+    {
+      "code": "4545",
+      "label": "TISNO",
+      "codetop": "15"
+    },
+    {
+      "code": "6262",
+      "label": "TRIBUNJ",
+      "codetop": "15"
+    },
+    {
+      "code": "4693",
+      "label": "UNEŠIĆ",
+      "codetop": "15"
+    },
+    {
+      "code": "1546",
+      "label": "ILOK",
+      "codetop": "16"
+    },
+    {
+      "code": "5355",
+      "label": "OTOK",
+      "codetop": "16"
+    },
+    {
+      "code": "4871",
+      "label": "VINKOVCI",
+      "codetop": "16"
+    },
+    {
+      "code": "5185",
+      "label": "VUKOVAR",
+      "codetop": "16"
+    },
+    {
+      "code": "5347",
+      "label": "ŽUPANJA",
+      "codetop": "16"
+    },
+    {
+      "code": "0019",
+      "label": "ANDRIJAŠEVCI",
+      "codetop": "16"
+    },
+    {
+      "code": "0035",
+      "label": "BABINA GREDA",
+      "codetop": "16"
+    },
+    {
+      "code": "0264",
+      "label": "BOGDANOVCI",
+      "codetop": "16"
+    },
+    {
+      "code": "0299",
+      "label": "BOROVO",
+      "codetop": "16"
+    },
+    {
+      "code": "0329",
+      "label": "BOŠNJACI",
+      "codetop": "16"
+    },
+    {
+      "code": "0442",
+      "label": "CERNA",
+      "codetop": "16"
+    },
+    {
+      "code": "0922",
+      "label": "DRENOVCI",
+      "codetop": "16"
+    },
+    {
+      "code": "1376",
+      "label": "GRADIŠTE",
+      "codetop": "16"
+    },
+    {
+      "code": "1414",
+      "label": "GUNJA",
+      "codetop": "16"
+    },
+    {
+      "code": "1597",
+      "label": "IVANKOVO",
+      "codetop": "16"
+    },
+    {
+      "code": "1660",
+      "label": "JARMINA",
+      "codetop": "16"
+    },
+    {
+      "code": "2399",
+      "label": "LOVAS",
+      "codetop": "16"
+    },
+    {
+      "code": "6106",
+      "label": "MARKUŠICA",
+      "codetop": "16"
+    },
+    {
+      "code": "6122",
+      "label": "NEGOSLAVCI",
+      "codetop": "16"
+    },
+    {
+      "code": "2950",
+      "label": "NIJEMCI",
+      "codetop": "16"
+    },
+    {
+      "code": "2941",
+      "label": "NUŠTAR",
+      "codetop": "16"
+    },
+    {
+      "code": "5835",
+      "label": "PRIVLAKA",
+      "codetop": "16"
+    },
+    {
+      "code": "4146",
+      "label": "STARI JANKOVCI",
+      "codetop": "16"
+    },
+    {
+      "code": "4154",
+      "label": "STARI MIKANOVCI",
+      "codetop": "16"
+    },
+    {
+      "code": "6289",
+      "label": "ŠTITAR",
+      "codetop": "16"
+    },
+    {
+      "code": "4561",
+      "label": "TOMPOJEVCI",
+      "codetop": "16"
+    },
+    {
+      "code": "4588",
+      "label": "TORDINCI",
+      "codetop": "16"
+    },
+    {
+      "code": "4596",
+      "label": "TOVARNIK",
+      "codetop": "16"
+    },
+    {
+      "code": "4642",
+      "label": "TRPINJA",
+      "codetop": "16"
+    },
+    {
+      "code": "5843",
+      "label": "VOĐINCI",
+      "codetop": "16"
+    },
+    {
+      "code": "5053",
+      "label": "VRBANJA",
+      "codetop": "16"
+    },
+    {
+      "code": "1538",
+      "label": "HVAR",
+      "codetop": "17"
+    },
+    {
+      "code": "1554",
+      "label": "IMOTSKI",
+      "codetop": "17"
+    },
+    {
+      "code": "1813",
+      "label": "KAŠTELA",
+      "codetop": "17"
+    },
+    {
+      "code": "1970",
+      "label": "KOMIŽA",
+      "codetop": "17"
+    },
+    {
+      "code": "2496",
+      "label": "MAKARSKA",
+      "codetop": "17"
+    },
+    {
+      "code": "3000",
+      "label": "OMIŠ",
+      "codetop": "17"
+    },
+    {
+      "code": "3891",
+      "label": "SINJ",
+      "codetop": "17"
+    },
+    {
+      "code": "4065",
+      "label": "SOLIN",
+      "codetop": "17"
+    },
+    {
+      "code": "4090",
+      "label": "SPLIT",
+      "codetop": "17"
+    },
+    {
+      "code": "4138",
+      "label": "STARI GRAD",
+      "codetop": "17"
+    },
+    {
+      "code": "4278",
+      "label": "SUPETAR",
+      "codetop": "17"
+    },
+    {
+      "code": "4600",
+      "label": "TRILJ",
+      "codetop": "17"
+    },
+    {
+      "code": "4634",
+      "label": "TROGIR",
+      "codetop": "17"
+    },
+    {
+      "code": "4928",
+      "label": "VIS",
+      "codetop": "17"
+    },
+    {
+      "code": "5118",
+      "label": "VRGORAC",
+      "codetop": "17"
+    },
+    {
+      "code": "5134",
+      "label": "VRLIKA",
+      "codetop": "17"
+    },
+    {
+      "code": "0094",
+      "label": "BAŠKA VODA",
+      "codetop": "17"
+    },
+    {
+      "code": "0272",
+      "label": "BOL",
+      "codetop": "17"
+    },
+    {
+      "code": "0779",
+      "label": "BRELA",
+      "codetop": "17"
+    },
+    {
+      "code": "0507",
+      "label": "CISTA PROVO",
+      "codetop": "17"
+    },
+    {
+      "code": "0728",
+      "label": "DICMO",
+      "codetop": "17"
+    },
+    {
+      "code": "1007",
+      "label": "DUGI RAT",
+      "codetop": "17"
+    },
+    {
+      "code": "5851",
+      "label": "DUGOPOLJE",
+      "codetop": "17"
+    },
+    {
+      "code": "1341",
+      "label": "GRADAC",
+      "codetop": "17"
+    },
+    {
+      "code": "1481",
+      "label": "HRVACE",
+      "codetop": "17"
+    },
+    {
+      "code": "1716",
+      "label": "JELSA",
+      "codetop": "17"
+    },
+    {
+      "code": "1929",
+      "label": "KLIS",
+      "codetop": "17"
+    },
+    {
+      "code": "5860",
+      "label": "LEĆEVICA",
+      "codetop": "17"
+    },
+    {
+      "code": "5878",
+      "label": "LOKVIČIĆI",
+      "codetop": "17"
+    },
+    {
+      "code": "2437",
+      "label": "LOVREĆ",
+      "codetop": "17"
+    },
+    {
+      "code": "2585",
+      "label": "MARINA",
+      "codetop": "17"
+    },
+    {
+      "code": "2674",
+      "label": "MILNA",
+      "codetop": "17"
+    },
+    {
+      "code": "0876",
+      "label": "MUĆ",
+      "codetop": "17"
+    },
+    {
+      "code": "2801",
+      "label": "NEREŽIŠĆA",
+      "codetop": "17"
+    },
+    {
+      "code": "5886",
+      "label": "OKRUG",
+      "codetop": "17"
+    },
+    {
+      "code": "3140",
+      "label": "OTOK",
+      "codetop": "17"
+    },
+    {
+      "code": "3379",
+      "label": "PODBABLJE",
+      "codetop": "17"
+    },
+    {
+      "code": "3395",
+      "label": "PODGORA",
+      "codetop": "17"
+    },
+    {
+      "code": "3417",
+      "label": "PODSTRANA",
+      "codetop": "17"
+    },
+    {
+      "code": "3506",
+      "label": "POSTIRA",
+      "codetop": "17"
+    },
+    {
+      "code": "5894",
+      "label": "PRGOMET",
+      "codetop": "17"
+    },
+    {
+      "code": "5908",
+      "label": "PRIMORSKI DOLAC",
+      "codetop": "17"
+    },
+    {
+      "code": "0884",
+      "label": "PROLOŽAC",
+      "codetop": "17"
+    },
+    {
+      "code": "3581",
+      "label": "PUČIŠĆA",
+      "codetop": "17"
+    },
+    {
+      "code": "5916",
+      "label": "RUNOVIĆI",
+      "codetop": "17"
+    },
+    {
+      "code": "3824",
+      "label": "SEGET",
+      "codetop": "17"
+    },
+    {
+      "code": "3832",
+      "label": "SELCA",
+      "codetop": "17"
+    },
+    {
+      "code": "4235",
+      "label": "SUĆURAJ",
+      "codetop": "17"
+    },
+    {
+      "code": "5924",
+      "label": "SUTIVAN",
+      "codetop": "17"
+    },
+    {
+      "code": "4430",
+      "label": "ŠESTANOVAC",
+      "codetop": "17"
+    },
+    {
+      "code": "4472",
+      "label": "ŠOLTA",
+      "codetop": "17"
+    },
+    {
+      "code": "5932",
+      "label": "TUČEPI",
+      "codetop": "17"
+    },
+    {
+      "code": "5959",
+      "label": "ZADVARJE",
+      "codetop": "17"
+    },
+    {
+      "code": "5223",
+      "label": "ZAGVOZD",
+      "codetop": "17"
+    },
+    {
+      "code": "5282",
+      "label": "ZMIJAVCI",
+      "codetop": "17"
+    },
+    {
+      "code": "0426",
+      "label": "BUJE - BUIE",
+      "codetop": "18"
+    },
+    {
+      "code": "0434",
+      "label": "BUZET",
+      "codetop": "18"
+    },
+    {
+      "code": "2224",
+      "label": "LABIN",
+      "codetop": "18"
+    },
+    {
+      "code": "2917",
+      "label": "NOVIGRAD - CITTANOVA",
+      "codetop": "18"
+    },
+    {
+      "code": "3212",
+      "label": "PAZIN",
+      "codetop": "18"
+    },
+    {
+      "code": "3484",
+      "label": "POREČ - PARENZO",
+      "codetop": "18"
+    },
+    {
+      "code": "3590",
+      "label": "PULA - POLA",
+      "codetop": "18"
+    },
+    {
+      "code": "3743",
+      "label": "ROVINJ - ROVIGNO",
+      "codetop": "18"
+    },
+    {
+      "code": "4685",
+      "label": "UMAG - UMAGO",
+      "codetop": "18"
+    },
+    {
+      "code": "5029",
+      "label": "VODNJAN - DIGNANO",
+      "codetop": "18"
+    },
+    {
+      "code": "0051",
+      "label": "BALE - VALLE",
+      "codetop": "18"
+    },
+    {
+      "code": "0060",
+      "label": "BARBAN",
+      "codetop": "18"
+    },
+    {
+      "code": "0400",
+      "label": "BRTONIGLA - VERTENEGLIO",
+      "codetop": "18"
+    },
+    {
+      "code": "0477",
+      "label": "CEROVLJE",
+      "codetop": "18"
+    },
+    {
+      "code": "6190",
+      "label": "FAŽANA - FASANA",
+      "codetop": "18"
+    },
+    {
+      "code": "6297",
+      "label": "FUNTANA - FONTANE",
+      "codetop": "18"
+    },
+    {
+      "code": "1325",
+      "label": "GRAČIŠĆE",
+      "codetop": "18"
+    },
+    {
+      "code": "1384",
+      "label": "GROŽNJAN - GRISIGNANA",
+      "codetop": "18"
+    },
+    {
+      "code": "1759",
+      "label": "KANFANAR",
+      "codetop": "18"
+    },
+    {
+      "code": "5967",
+      "label": "KAROJBA",
+      "codetop": "18"
+    },
+    {
+      "code": "5975",
+      "label": "KAŠTELIR-LABINCI - CASTELLIERE-S. DOMENICA",
+      "codetop": "18"
+    },
+    {
+      "code": "2178",
+      "label": "KRŠAN",
+      "codetop": "18"
+    },
+    {
+      "code": "2232",
+      "label": "LANIŠĆE",
+      "codetop": "18"
+    },
+    {
+      "code": "2356",
+      "label": "LIŽNJAN - LISIGNANO",
+      "codetop": "18"
+    },
+    {
+      "code": "2461",
+      "label": "LUPOGLAV",
+      "codetop": "18"
+    },
+    {
+      "code": "2542",
+      "label": "MARČANA",
+      "codetop": "18"
+    },
+    {
+      "code": "2631",
+      "label": "MEDULIN",
+      "codetop": "18"
+    },
+    {
+      "code": "2747",
+      "label": "MOTOVUN - MONTONA",
+      "codetop": "18"
+    },
+    {
+      "code": "3042",
+      "label": "OPRTALJ - PORTOLE",
+      "codetop": "18"
+    },
+    {
+      "code": "3301",
+      "label": "PIĆAN",
+      "codetop": "18"
+    },
+    {
+      "code": "3689",
+      "label": "RAŠA",
+      "codetop": "18"
+    },
+    {
+      "code": "4324",
+      "label": "SVETA NEDELJA",
+      "codetop": "18"
+    },
+    {
+      "code": "4316",
+      "label": "SVETI LOVREČ",
+      "codetop": "18"
+    },
+    {
+      "code": "4332",
+      "label": "SVETI PETAR U ŠUMI",
+      "codetop": "18"
+    },
+    {
+      "code": "4359",
+      "label": "SVETVINČENAT",
+      "codetop": "18"
+    },
+    {
+      "code": "6319",
+      "label": "TAR-VABRIGA - TORRE-ABREGA",
+      "codetop": "18"
+    },
+    {
+      "code": "4537",
+      "label": "TINJAN",
+      "codetop": "18"
+    },
+    {
+      "code": "4979",
+      "label": "VIŠNJAN - VISIGNANO",
+      "codetop": "18"
+    },
+    {
+      "code": "4987",
+      "label": "VIŽINADA - VISINADA",
+      "codetop": "18"
+    },
+    {
+      "code": "5169",
+      "label": "VRSAR - ORSERA",
+      "codetop": "18"
+    },
+    {
+      "code": "5312",
+      "label": "ŽMINJ",
+      "codetop": "18"
+    },
+    {
+      "code": "0981",
+      "label": "DUBROVNIK",
+      "codetop": "19"
+    },
+    {
+      "code": "2046",
+      "label": "KORČULA",
+      "codetop": "19"
+    },
+    {
+      "code": "2640",
+      "label": "METKOVIĆ",
+      "codetop": "19"
+    },
+    {
+      "code": "3069",
+      "label": "OPUZEN",
+      "codetop": "19"
+    },
+    {
+      "code": "3352",
+      "label": "PLOČE",
+      "codetop": "19"
+    },
+    {
+      "code": "0256",
+      "label": "BLATO",
+      "codetop": "19"
+    },
+    {
+      "code": "5983",
+      "label": "DUBROVAČKO PRIMORJE",
+      "codetop": "19"
+    },
+    {
+      "code": "5991",
+      "label": "JANJINA",
+      "codetop": "19"
+    },
+    {
+      "code": "1988",
+      "label": "KONAVLE",
+      "codetop": "19"
+    },
+    {
+      "code": "2194",
+      "label": "KULA NORINSKA",
+      "codetop": "19"
+    },
+    {
+      "code": "2267",
+      "label": "LASTOVO",
+      "codetop": "19"
+    },
+    {
+      "code": "6009",
+      "label": "LUMBARDA",
+      "codetop": "19"
+    },
+    {
+      "code": "2682",
+      "label": "MLJET",
+      "codetop": "19"
+    },
+    {
+      "code": "3085",
+      "label": "OREBIĆ",
+      "codetop": "19"
+    },
+    {
+      "code": "3433",
+      "label": "POJEZERJE",
+      "codetop": "19"
+    },
+    {
+      "code": "3999",
+      "label": "SLIVNO",
+      "codetop": "19"
+    },
+    {
+      "code": "4022",
+      "label": "SMOKVICA",
+      "codetop": "19"
+    },
+    {
+      "code": "4197",
+      "label": "STON",
+      "codetop": "19"
+    },
+    {
+      "code": "6017",
+      "label": "TRPANJ",
+      "codetop": "19"
+    },
+    {
+      "code": "4740",
+      "label": "VELA LUKA",
+      "codetop": "19"
+    },
+    {
+      "code": "5231",
+      "label": "ZAŽABLJE",
+      "codetop": "19"
+    },
+    {
+      "code": "6025",
+      "label": "ŽUPA DUBROVAČKA",
+      "codetop": "19"
+    },
+    {
+      "code": "0604",
+      "label": "ČAKOVEC",
+      "codetop": "20"
+    },
+    {
+      "code": "2763",
+      "label": "MURSKO SREDIŠĆE",
+      "codetop": "20"
+    },
+    {
+      "code": "3557",
+      "label": "PRELOG",
+      "codetop": "20"
+    },
+    {
+      "code": "0159",
+      "label": "BELICA",
+      "codetop": "20"
+    },
+    {
+      "code": "6033",
+      "label": "DEKANOVEC",
+      "codetop": "20"
+    },
+    {
+      "code": "0752",
+      "label": "DOMAŠINEC",
+      "codetop": "20"
+    },
+    {
+      "code": "0787",
+      "label": "DONJA DUBRAVA",
+      "codetop": "20"
+    },
+    {
+      "code": "0825",
+      "label": "DONJI KRALJEVEC",
+      "codetop": "20"
+    },
+    {
+      "code": "0892",
+      "label": "DONJI VIDOVEC",
+      "codetop": "20"
+    },
+    {
+      "code": "1236",
+      "label": "GORIČAN",
+      "codetop": "20"
+    },
+    {
+      "code": "6041",
+      "label": "GORNJI MIHALJEVEC",
+      "codetop": "20"
+    },
+    {
+      "code": "2062",
+      "label": "KOTORIBA",
+      "codetop": "20"
+    },
+    {
+      "code": "2500",
+      "label": "MALA SUBOTICA",
+      "codetop": "20"
+    },
+    {
+      "code": "2798",
+      "label": "NEDELIŠĆE",
+      "codetop": "20"
+    },
+    {
+      "code": "6050",
+      "label": "OREHOVICA",
+      "codetop": "20"
+    },
+    {
+      "code": "3425",
+      "label": "PODTUREN",
+      "codetop": "20"
+    },
+    {
+      "code": "6203",
+      "label": "PRIBISLAVEC",
+      "codetop": "20"
+    },
+    {
+      "code": "3859",
+      "label": "SELNICA",
+      "codetop": "20"
+    },
+    {
+      "code": "6068",
+      "label": "STRAHONINEC",
+      "codetop": "20"
+    },
+    {
+      "code": "6076",
+      "label": "SVETA MARIJA",
+      "codetop": "20"
+    },
+    {
+      "code": "4405",
+      "label": "SVETI JURAJ NA BREGU",
+      "codetop": "20"
+    },
+    {
+      "code": "4413",
+      "label": "SVETI MARTIN NA MURI",
+      "codetop": "20"
+    },
+    {
+      "code": "6084",
+      "label": "ŠENKOVEC",
+      "codetop": "20"
+    },
+    {
+      "code": "4529",
+      "label": "ŠTRIGOVA",
+      "codetop": "20"
+    },
+    {
+      "code": "5045",
+      "label": "VRATIŠINEC",
+      "codetop": "20"
+    },
+    {
+      "code": "1333",
+      "label": "GRAD ZAGREB",
+      "codetop": "21"
+    }
+  ],
+  "vrsta": [
+    {
+      "code": "06",
+      "label": "ŽUPANIJSKA SKUPŠTINA",
+      "codetop": "01"
+    },
+    {
+      "code": "06",
+      "label": "ŽUPANIJSKA SKUPŠTINA",
+      "codetop": "02"
+    },
+    {
+      "code": "06",
+      "label": "ŽUPANIJSKA SKUPŠTINA",
+      "codetop": "03"
+    },
+    {
+      "code": "06",
+      "label": "ŽUPANIJSKA SKUPŠTINA",
+      "codetop": "04"
+    },
+    {
+      "code": "06",
+      "label": "ŽUPANIJSKA SKUPŠTINA",
+      "codetop": "05"
+    },
+    {
+      "code": "06",
+      "label": "ŽUPANIJSKA SKUPŠTINA",
+      "codetop": "06"
+    },
+    {
+      "code": "06",
+      "label": "ŽUPANIJSKA SKUPŠTINA",
+      "codetop": "07"
+    },
+    {
+      "code": "06",
+      "label": "ŽUPANIJSKA SKUPŠTINA",
+      "codetop": "08"
+    },
+    {
+      "code": "06",
+      "label": "ŽUPANIJSKA SKUPŠTINA",
+      "codetop": "09"
+    },
+    {
+      "code": "06",
+      "label": "ŽUPANIJSKA SKUPŠTINA",
+      "codetop": "10"
+    },
+    {
+      "code": "06",
+      "label": "ŽUPANIJSKA SKUPŠTINA",
+      "codetop": "11"
+    },
+    {
+      "code": "06",
+      "label": "ŽUPANIJSKA SKUPŠTINA",
+      "codetop": "12"
+    },
+    {
+      "code": "06",
+      "label": "ŽUPANIJSKA SKUPŠTINA",
+      "codetop": "13"
+    },
+    {
+      "code": "06",
+      "label": "ŽUPANIJSKA SKUPŠTINA",
+      "codetop": "14"
+    },
+    {
+      "code": "06",
+      "label": "ŽUPANIJSKA SKUPŠTINA",
+      "codetop": "15"
+    },
+    {
+      "code": "06",
+      "label": "ŽUPANIJSKA SKUPŠTINA",
+      "codetop": "16"
+    },
+    {
+      "code": "06",
+      "label": "ŽUPANIJSKA SKUPŠTINA",
+      "codetop": "17"
+    },
+    {
+      "code": "06",
+      "label": "ŽUPANIJSKA SKUPŠTINA",
+      "codetop": "18"
+    },
+    {
+      "code": "06",
+      "label": "ŽUPANIJSKA SKUPŠTINA",
+      "codetop": "19"
+    },
+    {
+      "code": "06",
+      "label": "ŽUPANIJSKA SKUPŠTINA",
+      "codetop": "20"
+    },
+    {
+      "code": "06",
+      "label": "GRADSKA SKUPŠTINA",
+      "codetop": "21"
+    },
+    {
+      "code": "15",
+      "label": "ŽUPAN",
+      "codetop": "01"
+    },
+    {
+      "code": "15",
+      "label": "ŽUPAN",
+      "codetop": "02"
+    },
+    {
+      "code": "15",
+      "label": "ŽUPAN",
+      "codetop": "03"
+    },
+    {
+      "code": "15",
+      "label": "ŽUPAN",
+      "codetop": "04"
+    },
+    {
+      "code": "15",
+      "label": "ŽUPAN",
+      "codetop": "05"
+    },
+    {
+      "code": "15",
+      "label": "ŽUPAN",
+      "codetop": "06"
+    },
+    {
+      "code": "15",
+      "label": "ŽUPAN",
+      "codetop": "07"
+    },
+    {
+      "code": "15",
+      "label": "ŽUPAN",
+      "codetop": "08"
+    },
+    {
+      "code": "15",
+      "label": "ŽUPAN",
+      "codetop": "09"
+    },
+    {
+      "code": "15",
+      "label": "ŽUPAN",
+      "codetop": "10"
+    },
+    {
+      "code": "15",
+      "label": "ŽUPAN",
+      "codetop": "11"
+    },
+    {
+      "code": "15",
+      "label": "ŽUPAN",
+      "codetop": "12"
+    },
+    {
+      "code": "15",
+      "label": "ŽUPAN",
+      "codetop": "13"
+    },
+    {
+      "code": "15",
+      "label": "ŽUPAN",
+      "codetop": "14"
+    },
+    {
+      "code": "15",
+      "label": "ŽUPAN",
+      "codetop": "15"
+    },
+    {
+      "code": "15",
+      "label": "ŽUPAN",
+      "codetop": "16"
+    },
+    {
+      "code": "15",
+      "label": "ŽUPAN",
+      "codetop": "17"
+    },
+    {
+      "code": "15",
+      "label": "ŽUPAN",
+      "codetop": "18"
+    },
+    {
+      "code": "15",
+      "label": "ŽUPAN",
+      "codetop": "19"
+    },
+    {
+      "code": "15",
+      "label": "ŽUPAN",
+      "codetop": "20"
+    },
+    {
+      "code": "15",
+      "label": "GRADONAČELNIK",
+      "codetop": "21"
+    },
+    {
+      "code": "19",
+      "label": "ZAMJENIK ŽUPANA (srpska n.m.)",
+      "codetop": "03"
+    },
+    {
+      "code": "19",
+      "label": "ZAMJENIK ŽUPANA (srpska n.m.)",
+      "codetop": "04"
+    },
+    {
+      "code": "19",
+      "label": "ZAMJENIK ŽUPANA (srpska n.m.)",
+      "codetop": "07"
+    },
+    {
+      "code": "19",
+      "label": "ZAMJENIK ŽUPANA (srpska n.m.)",
+      "codetop": "09"
+    },
+    {
+      "code": "19",
+      "label": "ZAMJENIK ŽUPANA (srpska n.m.)",
+      "codetop": "14"
+    },
+    {
+      "code": "19",
+      "label": "ZAMJENIK ŽUPANA (srpska n.m.)",
+      "codetop": "15"
+    },
+    {
+      "code": "19",
+      "label": "ZAMJENIK ŽUPANA (srpska n.m.)",
+      "codetop": "16"
+    },
+    {
+      "code": "19",
+      "label": "ZAMJENIK ŽUPANA (talijanska n.m.)",
+      "codetop": "18"
+    },
+    {
+      "code": "19",
+      "label": "ZAMJENIK ŽUPANA (romska n.m.)",
+      "codetop": "20"
+    },
+    {
+      "code": "27",
+      "label": "ZAMJENIK ŽUPANA (češka n.m.)",
+      "codetop": "07"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1015"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1589"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1694"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3808"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4294"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4367"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5088"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5410"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5436"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0337"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0345"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0973"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1147"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1350"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1635"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1902"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1937"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2135"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3310"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3565"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3620"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3760"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5339"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5363"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5398"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5401"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5428"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5444"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5452"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5479"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5487"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5495"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5509"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5517"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0795"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1872"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2119"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3115"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3522"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5193"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5266"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0116"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0418"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0701"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1082"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1252"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1465"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1520"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2003"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2089"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2127"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2364"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2488"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2569"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2658"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3298"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3646"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4227"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4308"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4669"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4812"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5215"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5274"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5525"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5533"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5541"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1210"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1503"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2208"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2933"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3280"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3476"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3913"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0833"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1023"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1490"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1686"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2283"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2321"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2593"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4260"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4570"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4774"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5100"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5550"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0990"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1791"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2976"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3158"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4006"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0078"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0302"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0493"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0906"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1201"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1724"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2160"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2259"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2810"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3336"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3654"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3786"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5037"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5304"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5568"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5576"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "6238"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1562"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2291"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2445"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2895"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4723"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4731"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0124"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0191"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0361"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0485"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0809"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0850"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1295"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1511"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1651"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1899"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2470"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2518"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2607"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3263"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4103"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4375"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4383"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4626"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4847"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4863"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4936"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5584"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1074"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2011"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2143"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0965"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1040"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1155"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1228"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1457"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1945"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2020"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2038"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2275"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2704"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2925"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3247"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3662"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4057"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4391"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4421"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4901"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5592"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5606"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5614"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "6165"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "6181"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0248"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0639"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0671"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1198"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1392"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0183"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0710"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1058"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1449"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1619"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1767"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1996"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2879"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3751"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3905"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4502"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4782"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4804"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4839"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5622"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5649"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5657"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5665"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0043"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0523"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0531"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0558"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0698"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1805"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2097"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2151"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2526"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2909"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3026"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3638"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3735"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5096"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0086"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0388"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0612"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0744"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1171"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1708"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1864"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2372"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2429"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2534"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2615"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2739"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2755"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3018"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3603"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3697"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3930"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4880"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4952"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5070"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5380"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "6246"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1309"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2887"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3131"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3875"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0370"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0841"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1783"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2402"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3239"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4553"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4677"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5126"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3077"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3956"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4910"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0540"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0566"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0574"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1368"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2453"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2666"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2836"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3328"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4073"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4243"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4499"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4995"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5240"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2216"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2313"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3182"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3344"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3514"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0353"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0582"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1643"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1775"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4758"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2844"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3964"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0108"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0396"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0469"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0680"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0817"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1180"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1279"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1406"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1856"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2852"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2992"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3034"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3093"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3387"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3727"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3883"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3972"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4120"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4189"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4766"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5061"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5142"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5673"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5681"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5690"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5703"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0175"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0221"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2828"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2968"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3166"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5207"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0205"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1317"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1678"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1732"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2348"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3174"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3204"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3441"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3450"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3492"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3549"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3719"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3794"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4111"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4162"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4251"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4286"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4456"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4898"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5258"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5371"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5711"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5720"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5738"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5746"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5754"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "6220"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "6254"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0132"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0167"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0868"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1031"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2780"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3123"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4715"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0027"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0213"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0230"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0647"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0655"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0663"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0914"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0949"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1066"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1104"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1112"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1163"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1244"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1953"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2054"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2305"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2577"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2712"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3255"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3271"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3409"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3468"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3611"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3816"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3867"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4219"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4618"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4855"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4944"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5177"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5762"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5789"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5797"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "6092"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "6149"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0957"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1961"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3948"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4448"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5002"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0515"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1139"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1830"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1848"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2984"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3107"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3573"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3778"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4545"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4693"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5819"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5827"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "6173"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "6211"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "6262"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1546"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4871"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5185"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5347"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5355"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0019"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0035"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0264"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0299"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0329"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0442"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0922"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1376"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1414"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1597"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1660"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2399"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2941"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2950"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4146"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4154"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4561"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4588"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4596"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4642"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5053"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5835"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5843"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "6106"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "6122"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "6289"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1538"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1554"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1813"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1970"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2496"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3000"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3891"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4065"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4090"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4138"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4278"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4600"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4634"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4928"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5118"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5134"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0094"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0272"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0507"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0728"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0779"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0876"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0884"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1007"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1341"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1481"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1716"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1929"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2437"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2585"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2674"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2801"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3140"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3379"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3395"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3417"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3506"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3581"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3824"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3832"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4235"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4430"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4472"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5223"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5282"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5851"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5860"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5878"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5886"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5894"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5908"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5916"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5924"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5932"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5959"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0426"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0434"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2224"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2917"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3212"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3484"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3590"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3743"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4685"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5029"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0051"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0060"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0400"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0477"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1325"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1384"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1759"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2178"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2232"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2356"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2461"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2542"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2631"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2747"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3042"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3301"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3689"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4316"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4324"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4332"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4359"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4537"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4979"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4987"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5169"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5312"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5967"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5975"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "6190"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "6297"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "6319"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0981"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2046"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2640"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3069"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3352"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0256"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1988"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2194"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2267"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2682"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3085"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3433"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3999"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4022"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4197"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4740"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5231"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5983"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5991"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "6009"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "6017"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "6025"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0604"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2763"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3557"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0159"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0752"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0787"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0825"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "0892"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "1236"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2062"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2500"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "2798"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3425"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "3859"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4405"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4413"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "4529"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "5045"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "6033"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "6041"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "6050"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "6068"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "6076"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "6084"
+    },
+    {
+      "code": "08",
+      "label": "GRADSKO / OPĆINSKO VIJEĆE",
+      "codetop": "6203"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1015"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1589"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1694"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3808"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4294"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4367"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5088"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5410"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5436"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0337"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0345"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0973"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1147"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1350"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1635"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1902"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1937"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2135"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3310"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3565"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3620"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3760"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5339"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5363"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5398"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5401"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5428"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5444"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5452"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5479"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5487"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5495"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5509"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5517"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0795"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1872"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2119"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3115"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3522"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5193"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5266"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0116"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0418"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0701"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1082"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1252"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1465"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1520"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2003"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2089"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2127"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2364"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2488"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2569"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2658"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3298"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3646"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4227"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4308"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4669"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4812"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5215"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5274"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5525"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5533"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5541"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1210"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1503"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2208"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2933"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3280"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3476"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3913"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0833"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1023"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1490"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1686"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2283"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2321"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2593"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4260"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4570"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4774"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5100"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5550"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0990"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1791"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2976"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3158"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4006"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0078"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0302"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0493"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0906"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1201"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1724"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2160"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2259"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2810"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3336"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3654"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3786"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5037"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5304"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5568"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5576"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "6238"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1562"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2291"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2445"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2895"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4723"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4731"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0124"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0191"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0361"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0485"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0809"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0850"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1295"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1511"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1651"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1899"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2470"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2518"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2607"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3263"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4103"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4375"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4383"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4626"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4847"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4863"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4936"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5584"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1074"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2011"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2143"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0965"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1040"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1155"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1228"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1457"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1945"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2020"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2038"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2275"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2704"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2925"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3247"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3662"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4057"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4391"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4421"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4901"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5592"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5606"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5614"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "6165"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "6181"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0248"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0639"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0671"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1198"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1392"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0183"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0710"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1058"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1449"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1619"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1767"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1996"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2879"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3751"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3905"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4502"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4782"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4804"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4839"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5622"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5649"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5657"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5665"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0043"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0523"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0531"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0558"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0698"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1805"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2097"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2151"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2526"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2909"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3026"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3638"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3735"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5096"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0086"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0388"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0612"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0744"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1171"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1708"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1864"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2372"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2429"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2534"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2615"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2739"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2755"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3018"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3603"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3697"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3930"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4880"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4952"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5070"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5380"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "6246"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1309"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2887"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3131"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3875"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0370"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0841"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1783"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2402"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3239"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4553"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4677"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5126"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3077"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3956"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4910"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0540"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0566"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0574"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1368"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2453"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2666"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2836"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3328"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4073"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4243"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4499"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4995"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5240"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2216"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2313"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3182"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3344"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3514"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0353"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0582"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1643"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1775"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4758"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2844"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3964"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0108"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0396"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0469"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0680"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0817"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1180"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1279"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1406"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1856"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2852"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2992"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3034"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3093"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3387"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3727"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3883"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3972"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4120"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4189"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4766"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5061"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5142"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5673"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5681"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5690"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5703"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0175"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0221"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2828"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2968"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3166"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5207"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0205"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1317"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1678"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1732"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2348"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3174"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3204"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3441"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3450"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3492"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3549"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3719"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3794"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4111"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4162"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4251"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4286"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4456"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4898"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5258"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5371"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5711"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5720"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5738"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5746"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5754"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "6220"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "6254"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0132"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0167"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0868"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1031"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2780"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3123"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4715"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0027"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0213"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0230"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0647"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0655"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0663"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0914"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0949"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1066"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1104"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1112"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1163"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1244"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1953"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2054"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2305"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2577"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2712"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3255"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3271"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3409"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3468"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3611"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3816"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3867"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4219"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4618"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4855"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4944"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5177"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5762"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5789"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5797"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "6092"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "6149"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0957"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1961"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3948"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4448"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5002"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0515"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1139"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1830"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1848"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2984"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3107"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3573"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3778"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4545"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4693"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5819"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5827"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "6173"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "6211"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "6262"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1546"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4871"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5185"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5347"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5355"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0019"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0035"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0264"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0299"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0329"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0442"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0922"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1376"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1414"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1597"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1660"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2399"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2941"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2950"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4146"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4154"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4561"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4588"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4596"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4642"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5053"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5835"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5843"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "6106"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "6122"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "6289"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1538"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1554"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1813"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1970"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2496"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3000"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3891"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4065"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4090"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4138"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4278"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4600"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4634"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4928"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5118"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5134"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0094"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0272"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0507"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0728"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0779"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0876"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0884"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1007"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1341"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1481"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1716"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1929"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2437"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2585"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2674"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2801"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3140"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3379"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3395"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3417"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3506"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3581"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3824"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3832"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4235"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4430"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4472"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5223"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5282"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5851"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5860"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5878"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5886"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5894"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5908"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5916"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5924"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5932"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5959"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0426"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0434"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2224"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2917"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3212"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3484"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3590"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3743"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4685"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5029"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0051"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0060"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0400"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0477"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1325"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1384"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1759"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2178"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2232"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2356"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2461"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2542"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2631"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2747"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3042"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3301"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3689"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4316"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4324"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4332"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4359"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4537"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4979"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4987"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5169"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5312"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5967"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5975"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "6190"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "6297"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "6319"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0981"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2046"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2640"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3069"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3352"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0256"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1988"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2194"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2267"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2682"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3085"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3433"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3999"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4022"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4197"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4740"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5231"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5983"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5991"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "6009"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "6017"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "6025"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0604"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2763"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3557"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0159"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0752"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0787"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0825"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "0892"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "1236"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2062"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2500"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "2798"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3425"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "3859"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4405"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4413"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "4529"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "5045"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "6033"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "6041"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "6050"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "6068"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "6076"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "6084"
+    },
+    {
+      "code": "17",
+      "label": "GRADONAČELNIK / OPĆINSKI NAČELNIK",
+      "codetop": "6203"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (srpska n.m.)",
+      "codetop": "1210"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (srpska n.m.)",
+      "codetop": "1503"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (srpska n.m.)",
+      "codetop": "0833"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK OPĆINSKOG NAČELNIKA IZ REDA HRVATSKOG NARODA",
+      "codetop": "1023"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (srpska n.m.)",
+      "codetop": "1490"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (srpska n.m.)",
+      "codetop": "4260"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (srpska n.m.)",
+      "codetop": "4570"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK OPĆINSKOG NAČELNIKA IZ REDA HRVATSKOG NARODA",
+      "codetop": "5100"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (srpska n.m.)",
+      "codetop": "5550"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (srpska n.m.)",
+      "codetop": "2976"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (bošnjačka n.m.)",
+      "codetop": "0493"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK OPĆINSKOG NAČELNIKA IZ REDA HRVATSKOG NARODA",
+      "codetop": "2160"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (srpska n.m.)",
+      "codetop": "3336"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (srpska n.m.)",
+      "codetop": "3786"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (srpska n.m.)",
+      "codetop": "5037"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (srpska n.m.)",
+      "codetop": "3662"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (češka n.m.)",
+      "codetop": "0671"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (češka n.m.)",
+      "codetop": "1392"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (češka n.m.)",
+      "codetop": "0710"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK OPĆINSKOG NAČELNIKA IZ REDA HRVATSKOG NARODA",
+      "codetop": "1996"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (srpska n.m.)",
+      "codetop": "5096"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK OPĆINSKOG NAČELNIKA IZ REDA HRVATSKOG NARODA",
+      "codetop": "0841"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (srpska n.m.)",
+      "codetop": "2402"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (srpska n.m.)",
+      "codetop": "4553"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (srpska n.m.)",
+      "codetop": "4677"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK OPĆINSKOG NAČELNIKA IZ REDA HRVATSKOG NARODA",
+      "codetop": "5126"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (srpska n.m.)",
+      "codetop": "2992"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (srpska n.m.)",
+      "codetop": "2968"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (srpska n.m.)",
+      "codetop": "1317"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (srpska n.m.)",
+      "codetop": "0132"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (mađarska n.m.)",
+      "codetop": "0213"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (srpska n.m.)",
+      "codetop": "0663"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (mađarska n.m.)",
+      "codetop": "0914"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK OPĆINSKOG NAČELNIKA IZ REDA HRVATSKOG NARODA",
+      "codetop": "1104"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (mađarska n.m.)",
+      "codetop": "1112"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (mađarska n.m.)",
+      "codetop": "1953"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (srpska n.m.)",
+      "codetop": "3468"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (slovačka n.m.)",
+      "codetop": "3611"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK OPĆINSKOG NAČELNIKA IZ REDA HRVATSKOG NARODA",
+      "codetop": "6092"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK OPĆINSKOG NAČELNIKA IZ REDA HRVATSKOG NARODA",
+      "codetop": "6149"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (srpska n.m.)",
+      "codetop": "1961"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (srpska n.m.)",
+      "codetop": "3948"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK OPĆINSKOG NAČELNIKA IZ REDA HRVATSKOG NARODA",
+      "codetop": "0515"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK OPĆINSKOG NAČELNIKA IZ REDA HRVATSKOG NARODA",
+      "codetop": "1848"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK OPĆINSKOG NAČELNIKA IZ REDA HRVATSKOG NARODA",
+      "codetop": "3107"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (srpska n.m.)",
+      "codetop": "5185"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (rusinska n.m.)",
+      "codetop": "0264"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (bošnjačka n.m.)",
+      "codetop": "1414"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (srpska n.m.)",
+      "codetop": "4146"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (rusinska n.m.)",
+      "codetop": "4561"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (mađarska n.m.)",
+      "codetop": "4588"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (talijanska  n.m.)",
+      "codetop": "0426"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (talijanska  n.m.)",
+      "codetop": "2917"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (talijanska  n.m.)",
+      "codetop": "3484"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (talijanska  n.m.)",
+      "codetop": "3590"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (talijanska  n.m.)",
+      "codetop": "3743"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (talijanska  n.m.)",
+      "codetop": "4685"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (talijanska  n.m.)",
+      "codetop": "5029"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (talijanska n.m.)",
+      "codetop": "0051"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (talijanska n.m.)",
+      "codetop": "0400"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (talijanska n.m.)",
+      "codetop": "1384"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (talijanska n.m.)",
+      "codetop": "3042"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (talijanska n.m.)",
+      "codetop": "4987"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (talijanska n.m.)",
+      "codetop": "6319"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (romska n.m.)",
+      "codetop": "2500"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (romska n.m.)",
+      "codetop": "6050"
+    },
+    {
+      "code": "21",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (romska n.m.)",
+      "codetop": "6203"
+    },
+    {
+      "code": "25",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (srpska n.m.)",
+      "codetop": "1953"
+    },
+    {
+      "code": "25",
+      "label": "ZAMJENIK GRADONAČELNIKA / OPĆINSKOG NAČELNIKA (romska n.m.)",
+      "codetop": "6092"
+    }
+  ]
+}

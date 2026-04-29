@@ -1,0 +1,2982 @@
+{
+  "zupanija": [
+    {
+      "code": "00",
+      "label": "Republika Hrvatska"
+    },
+    {
+      "code": "01",
+      "label": "Zagrebačka županija"
+    },
+    {
+      "code": "02",
+      "label": "Krapinsko-zagorska županija"
+    },
+    {
+      "code": "03",
+      "label": "Sisačko-moslavačka županija"
+    },
+    {
+      "code": "04",
+      "label": "Karlovačka županija"
+    },
+    {
+      "code": "05",
+      "label": "Varaždinska županija"
+    },
+    {
+      "code": "06",
+      "label": "Koprivničko-križevačka županija"
+    },
+    {
+      "code": "07",
+      "label": "Bjelovarsko-bilogorska županija"
+    },
+    {
+      "code": "08",
+      "label": "Primorsko-goranska županija"
+    },
+    {
+      "code": "09",
+      "label": "Ličko-senjska županija"
+    },
+    {
+      "code": "10",
+      "label": "Virovitičko-podravska županija"
+    },
+    {
+      "code": "11",
+      "label": "Požeško-slavonska županija"
+    },
+    {
+      "code": "12",
+      "label": "Brodsko-posavska županija"
+    },
+    {
+      "code": "13",
+      "label": "Zadarska županija"
+    },
+    {
+      "code": "14",
+      "label": "Osječko-baranjska županija"
+    },
+    {
+      "code": "15",
+      "label": "Šibensko-kninska županija"
+    },
+    {
+      "code": "16",
+      "label": "Vukovarsko-srijemska županija"
+    },
+    {
+      "code": "17",
+      "label": "Splitsko-dalmatinska županija"
+    },
+    {
+      "code": "18",
+      "label": "Istarska županija"
+    },
+    {
+      "code": "19",
+      "label": "Dubrovačko-neretvanska županija"
+    },
+    {
+      "code": "20",
+      "label": "Međimurska županija"
+    },
+    {
+      "code": "21",
+      "label": "Grad Zagreb"
+    },
+    {
+      "code": "22",
+      "label": "Inozemstvo"
+    }
+  ],
+  "gradOpcina": [
+    {
+      "code": "1015",
+      "label": "DUGO SELO",
+      "codetop": "01"
+    },
+    {
+      "code": "1589",
+      "label": "IVANIĆ-GRAD",
+      "codetop": "01"
+    },
+    {
+      "code": "1694",
+      "label": "JASTREBARSKO",
+      "codetop": "01"
+    },
+    {
+      "code": "3808",
+      "label": "SAMOBOR",
+      "codetop": "01"
+    },
+    {
+      "code": "4367",
+      "label": "SVETA NEDELJA",
+      "codetop": "01"
+    },
+    {
+      "code": "4294",
+      "label": "SVETI IVAN ZELINA",
+      "codetop": "01"
+    },
+    {
+      "code": "5410",
+      "label": "VELIKA GORICA",
+      "codetop": "01"
+    },
+    {
+      "code": "5088",
+      "label": "VRBOVEC",
+      "codetop": "01"
+    },
+    {
+      "code": "5436",
+      "label": "ZAPREŠIĆ",
+      "codetop": "01"
+    },
+    {
+      "code": "5509",
+      "label": "BEDENICA",
+      "codetop": "01"
+    },
+    {
+      "code": "5479",
+      "label": "BISTRA",
+      "codetop": "01"
+    },
+    {
+      "code": "0337",
+      "label": "BRCKOVLJANI",
+      "codetop": "01"
+    },
+    {
+      "code": "0345",
+      "label": "BRDOVEC",
+      "codetop": "01"
+    },
+    {
+      "code": "0973",
+      "label": "DUBRAVA",
+      "codetop": "01"
+    },
+    {
+      "code": "5495",
+      "label": "DUBRAVICA",
+      "codetop": "01"
+    },
+    {
+      "code": "1147",
+      "label": "FARKAŠEVAC",
+      "codetop": "01"
+    },
+    {
+      "code": "1350",
+      "label": "GRADEC",
+      "codetop": "01"
+    },
+    {
+      "code": "1635",
+      "label": "JAKOVLJE",
+      "codetop": "01"
+    },
+    {
+      "code": "1902",
+      "label": "KLINČA SELA",
+      "codetop": "01"
+    },
+    {
+      "code": "1937",
+      "label": "KLOŠTAR IVANIĆ",
+      "codetop": "01"
+    },
+    {
+      "code": "5339",
+      "label": "KRAŠIĆ",
+      "codetop": "01"
+    },
+    {
+      "code": "5452",
+      "label": "KRAVARSKO",
+      "codetop": "01"
+    },
+    {
+      "code": "2135",
+      "label": "KRIŽ",
+      "codetop": "01"
+    },
+    {
+      "code": "5487",
+      "label": "LUKA",
+      "codetop": "01"
+    },
+    {
+      "code": "5398",
+      "label": "MARIJA GORICA",
+      "codetop": "01"
+    },
+    {
+      "code": "5428",
+      "label": "ORLE",
+      "codetop": "01"
+    },
+    {
+      "code": "3310",
+      "label": "PISAROVINA",
+      "codetop": "01"
+    },
+    {
+      "code": "5444",
+      "label": "POKUPSKO",
+      "codetop": "01"
+    },
+    {
+      "code": "3565",
+      "label": "PRESEKA",
+      "codetop": "01"
+    },
+    {
+      "code": "3620",
+      "label": "PUŠĆA",
+      "codetop": "01"
+    },
+    {
+      "code": "5363",
+      "label": "RAKOVEC",
+      "codetop": "01"
+    },
+    {
+      "code": "3760",
+      "label": "RUGVICA",
+      "codetop": "01"
+    },
+    {
+      "code": "5517",
+      "label": "STUPNIK",
+      "codetop": "01"
+    },
+    {
+      "code": "5401",
+      "label": "ŽUMBERAK",
+      "codetop": "01"
+    },
+    {
+      "code": "0795",
+      "label": "DONJA STUBICA",
+      "codetop": "02"
+    },
+    {
+      "code": "1872",
+      "label": "KLANJEC",
+      "codetop": "02"
+    },
+    {
+      "code": "2119",
+      "label": "KRAPINA",
+      "codetop": "02"
+    },
+    {
+      "code": "3115",
+      "label": "OROSLAVJE",
+      "codetop": "02"
+    },
+    {
+      "code": "3522",
+      "label": "PREGRADA",
+      "codetop": "02"
+    },
+    {
+      "code": "5193",
+      "label": "ZABOK",
+      "codetop": "02"
+    },
+    {
+      "code": "5266",
+      "label": "ZLATAR",
+      "codetop": "02"
+    },
+    {
+      "code": "0116",
+      "label": "BEDEKOVČINA",
+      "codetop": "02"
+    },
+    {
+      "code": "0418",
+      "label": "BUDINŠČINA",
+      "codetop": "02"
+    },
+    {
+      "code": "0701",
+      "label": "DESINIĆ",
+      "codetop": "02"
+    },
+    {
+      "code": "1082",
+      "label": "ĐURMANEC",
+      "codetop": "02"
+    },
+    {
+      "code": "1252",
+      "label": "GORNJA STUBICA",
+      "codetop": "02"
+    },
+    {
+      "code": "1465",
+      "label": "HRAŠĆINA",
+      "codetop": "02"
+    },
+    {
+      "code": "1520",
+      "label": "HUM NA SUTLI",
+      "codetop": "02"
+    },
+    {
+      "code": "5525",
+      "label": "JESENJE",
+      "codetop": "02"
+    },
+    {
+      "code": "2003",
+      "label": "KONJŠČINA",
+      "codetop": "02"
+    },
+    {
+      "code": "2089",
+      "label": "KRALJEVEC NA SUTLI",
+      "codetop": "02"
+    },
+    {
+      "code": "2127",
+      "label": "KRAPINSKE TOPLICE",
+      "codetop": "02"
+    },
+    {
+      "code": "5533",
+      "label": "KUMROVEC",
+      "codetop": "02"
+    },
+    {
+      "code": "2364",
+      "label": "LOBOR",
+      "codetop": "02"
+    },
+    {
+      "code": "2488",
+      "label": "MAČE",
+      "codetop": "02"
+    },
+    {
+      "code": "2569",
+      "label": "MARIJA BISTRICA",
+      "codetop": "02"
+    },
+    {
+      "code": "2658",
+      "label": "MIHOVLJAN",
+      "codetop": "02"
+    },
+    {
+      "code": "5541",
+      "label": "NOVI GOLUBOVEC",
+      "codetop": "02"
+    },
+    {
+      "code": "3298",
+      "label": "PETROVSKO",
+      "codetop": "02"
+    },
+    {
+      "code": "3646",
+      "label": "RADOBOJ",
+      "codetop": "02"
+    },
+    {
+      "code": "4227",
+      "label": "STUBIČKE TOPLICE",
+      "codetop": "02"
+    },
+    {
+      "code": "4308",
+      "label": "SVETI KRIŽ ZAČRETJE",
+      "codetop": "02"
+    },
+    {
+      "code": "4669",
+      "label": "TUHELJ",
+      "codetop": "02"
+    },
+    {
+      "code": "4812",
+      "label": "VELIKO TRGOVIŠĆE",
+      "codetop": "02"
+    },
+    {
+      "code": "5215",
+      "label": "ZAGORSKA SELA",
+      "codetop": "02"
+    },
+    {
+      "code": "5274",
+      "label": "ZLATAR BISTRICA",
+      "codetop": "02"
+    },
+    {
+      "code": "1210",
+      "label": "GLINA",
+      "codetop": "03"
+    },
+    {
+      "code": "1503",
+      "label": "HRVATSKA KOSTAJNICA",
+      "codetop": "03"
+    },
+    {
+      "code": "2208",
+      "label": "KUTINA",
+      "codetop": "03"
+    },
+    {
+      "code": "2933",
+      "label": "NOVSKA",
+      "codetop": "03"
+    },
+    {
+      "code": "3280",
+      "label": "PETRINJA",
+      "codetop": "03"
+    },
+    {
+      "code": "3476",
+      "label": "POPOVAČA",
+      "codetop": "03"
+    },
+    {
+      "code": "3913",
+      "label": "SISAK",
+      "codetop": "03"
+    },
+    {
+      "code": "0833",
+      "label": "DONJI KUKURUZARI",
+      "codetop": "03"
+    },
+    {
+      "code": "1023",
+      "label": "DVOR",
+      "codetop": "03"
+    },
+    {
+      "code": "5100",
+      "label": "GVOZD",
+      "codetop": "03"
+    },
+    {
+      "code": "1490",
+      "label": "HRVATSKA DUBICA",
+      "codetop": "03"
+    },
+    {
+      "code": "1686",
+      "label": "JASENOVAC",
+      "codetop": "03"
+    },
+    {
+      "code": "2283",
+      "label": "LEKENIK",
+      "codetop": "03"
+    },
+    {
+      "code": "2321",
+      "label": "LIPOVLJANI",
+      "codetop": "03"
+    },
+    {
+      "code": "5550",
+      "label": "MAJUR",
+      "codetop": "03"
+    },
+    {
+      "code": "2593",
+      "label": "MARTINSKA VES",
+      "codetop": "03"
+    },
+    {
+      "code": "4260",
+      "label": "SUNJA",
+      "codetop": "03"
+    },
+    {
+      "code": "4570",
+      "label": "TOPUSKO",
+      "codetop": "03"
+    },
+    {
+      "code": "4774",
+      "label": "VELIKA LUDINA",
+      "codetop": "03"
+    },
+    {
+      "code": "0990",
+      "label": "DUGA RESA",
+      "codetop": "04"
+    },
+    {
+      "code": "1791",
+      "label": "KARLOVAC",
+      "codetop": "04"
+    },
+    {
+      "code": "2976",
+      "label": "OGULIN",
+      "codetop": "04"
+    },
+    {
+      "code": "3158",
+      "label": "OZALJ",
+      "codetop": "04"
+    },
+    {
+      "code": "4006",
+      "label": "SLUNJ",
+      "codetop": "04"
+    },
+    {
+      "code": "0078",
+      "label": "BARILOVIĆ",
+      "codetop": "04"
+    },
+    {
+      "code": "0302",
+      "label": "BOSILJEVO",
+      "codetop": "04"
+    },
+    {
+      "code": "0493",
+      "label": "CETINGRAD",
+      "codetop": "04"
+    },
+    {
+      "code": "0906",
+      "label": "DRAGANIĆ",
+      "codetop": "04"
+    },
+    {
+      "code": "1201",
+      "label": "GENERALSKI STOL",
+      "codetop": "04"
+    },
+    {
+      "code": "1724",
+      "label": "JOSIPDOL",
+      "codetop": "04"
+    },
+    {
+      "code": "6238",
+      "label": "KAMANJE",
+      "codetop": "04"
+    },
+    {
+      "code": "2160",
+      "label": "KRNJAK",
+      "codetop": "04"
+    },
+    {
+      "code": "2259",
+      "label": "LASINJA",
+      "codetop": "04"
+    },
+    {
+      "code": "2810",
+      "label": "NETRETIĆ",
+      "codetop": "04"
+    },
+    {
+      "code": "3336",
+      "label": "PLAŠKI",
+      "codetop": "04"
+    },
+    {
+      "code": "3654",
+      "label": "RAKOVICA",
+      "codetop": "04"
+    },
+    {
+      "code": "5568",
+      "label": "RIBNIK",
+      "codetop": "04"
+    },
+    {
+      "code": "3786",
+      "label": "SABORSKO",
+      "codetop": "04"
+    },
+    {
+      "code": "5576",
+      "label": "TOUNJ",
+      "codetop": "04"
+    },
+    {
+      "code": "5037",
+      "label": "VOJNIĆ",
+      "codetop": "04"
+    },
+    {
+      "code": "5304",
+      "label": "ŽAKANJE",
+      "codetop": "04"
+    },
+    {
+      "code": "1562",
+      "label": "IVANEC",
+      "codetop": "05"
+    },
+    {
+      "code": "2291",
+      "label": "LEPOGLAVA",
+      "codetop": "05"
+    },
+    {
+      "code": "2445",
+      "label": "LUDBREG",
+      "codetop": "05"
+    },
+    {
+      "code": "2895",
+      "label": "NOVI MAROF",
+      "codetop": "05"
+    },
+    {
+      "code": "4723",
+      "label": "VARAŽDIN",
+      "codetop": "05"
+    },
+    {
+      "code": "4731",
+      "label": "VARAŽDINSKE TOPLICE",
+      "codetop": "05"
+    },
+    {
+      "code": "0124",
+      "label": "BEDNJA",
+      "codetop": "05"
+    },
+    {
+      "code": "0191",
+      "label": "BERETINEC",
+      "codetop": "05"
+    },
+    {
+      "code": "0361",
+      "label": "BREZNICA",
+      "codetop": "05"
+    },
+    {
+      "code": "1511",
+      "label": "BREZNIČKI HUM",
+      "codetop": "05"
+    },
+    {
+      "code": "0485",
+      "label": "CESTICA",
+      "codetop": "05"
+    },
+    {
+      "code": "0809",
+      "label": "DONJA VOĆA",
+      "codetop": "05"
+    },
+    {
+      "code": "1295",
+      "label": "GORNJI KNEGINEC",
+      "codetop": "05"
+    },
+    {
+      "code": "1651",
+      "label": "JALŽABET",
+      "codetop": "05"
+    },
+    {
+      "code": "1899",
+      "label": "KLENOVNIK",
+      "codetop": "05"
+    },
+    {
+      "code": "2470",
+      "label": "LJUBEŠĆICA",
+      "codetop": "05"
+    },
+    {
+      "code": "2518",
+      "label": "MALI BUKOVEC",
+      "codetop": "05"
+    },
+    {
+      "code": "0850",
+      "label": "MARTIJANEC",
+      "codetop": "05"
+    },
+    {
+      "code": "2607",
+      "label": "MARUŠEVEC",
+      "codetop": "05"
+    },
+    {
+      "code": "3263",
+      "label": "PETRIJANEC",
+      "codetop": "05"
+    },
+    {
+      "code": "4103",
+      "label": "SRAČINEC",
+      "codetop": "05"
+    },
+    {
+      "code": "4375",
+      "label": "SVETI ĐURĐ",
+      "codetop": "05"
+    },
+    {
+      "code": "4383",
+      "label": "SVETI ILIJA",
+      "codetop": "05"
+    },
+    {
+      "code": "4626",
+      "label": "TRNOVEC BARTOLOVEČKI",
+      "codetop": "05"
+    },
+    {
+      "code": "5584",
+      "label": "VELIKI BUKOVEC",
+      "codetop": "05"
+    },
+    {
+      "code": "4847",
+      "label": "VIDOVEC",
+      "codetop": "05"
+    },
+    {
+      "code": "4863",
+      "label": "VINICA",
+      "codetop": "05"
+    },
+    {
+      "code": "4936",
+      "label": "VISOKO",
+      "codetop": "05"
+    },
+    {
+      "code": "1074",
+      "label": "ĐURĐEVAC",
+      "codetop": "06"
+    },
+    {
+      "code": "2011",
+      "label": "KOPRIVNICA",
+      "codetop": "06"
+    },
+    {
+      "code": "2143",
+      "label": "KRIŽEVCI",
+      "codetop": "06"
+    },
+    {
+      "code": "0965",
+      "label": "DRNJE",
+      "codetop": "06"
+    },
+    {
+      "code": "1040",
+      "label": "ĐELEKOVEC",
+      "codetop": "06"
+    },
+    {
+      "code": "1155",
+      "label": "FERDINANDOVAC",
+      "codetop": "06"
+    },
+    {
+      "code": "1228",
+      "label": "GOLA",
+      "codetop": "06"
+    },
+    {
+      "code": "6181",
+      "label": "GORNJA RIJEKA",
+      "codetop": "06"
+    },
+    {
+      "code": "1457",
+      "label": "HLEBINE",
+      "codetop": "06"
+    },
+    {
+      "code": "5592",
+      "label": "KALINOVAC",
+      "codetop": "06"
+    },
+    {
+      "code": "5606",
+      "label": "KALNIK",
+      "codetop": "06"
+    },
+    {
+      "code": "1945",
+      "label": "KLOŠTAR PODRAVSKI",
+      "codetop": "06"
+    },
+    {
+      "code": "2020",
+      "label": "KOPRIVNIČKI BREGI",
+      "codetop": "06"
+    },
+    {
+      "code": "2038",
+      "label": "KOPRIVNIČKI IVANEC",
+      "codetop": "06"
+    },
+    {
+      "code": "2275",
+      "label": "LEGRAD",
+      "codetop": "06"
+    },
+    {
+      "code": "2704",
+      "label": "MOLVE",
+      "codetop": "06"
+    },
+    {
+      "code": "2925",
+      "label": "NOVIGRAD PODRAVSKI",
+      "codetop": "06"
+    },
+    {
+      "code": "5614",
+      "label": "NOVO VIRJE",
+      "codetop": "06"
+    },
+    {
+      "code": "3247",
+      "label": "PETERANEC",
+      "codetop": "06"
+    },
+    {
+      "code": "6165",
+      "label": "PODRAVSKE SESVETE",
+      "codetop": "06"
+    },
+    {
+      "code": "3662",
+      "label": "RASINJA",
+      "codetop": "06"
+    },
+    {
+      "code": "4057",
+      "label": "SOKOLOVAC",
+      "codetop": "06"
+    },
+    {
+      "code": "4391",
+      "label": "SVETI IVAN ŽABNO",
+      "codetop": "06"
+    },
+    {
+      "code": "4421",
+      "label": "SVETI PETAR OREHOVEC",
+      "codetop": "06"
+    },
+    {
+      "code": "4901",
+      "label": "VIRJE",
+      "codetop": "06"
+    },
+    {
+      "code": "0248",
+      "label": "BJELOVAR",
+      "codetop": "07"
+    },
+    {
+      "code": "0639",
+      "label": "ČAZMA",
+      "codetop": "07"
+    },
+    {
+      "code": "0671",
+      "label": "DARUVAR",
+      "codetop": "07"
+    },
+    {
+      "code": "1198",
+      "label": "GAREŠNICA",
+      "codetop": "07"
+    },
+    {
+      "code": "1392",
+      "label": "GRUBIŠNO POLJE",
+      "codetop": "07"
+    },
+    {
+      "code": "0183",
+      "label": "BEREK",
+      "codetop": "07"
+    },
+    {
+      "code": "0710",
+      "label": "DEŽANOVAC",
+      "codetop": "07"
+    },
+    {
+      "code": "1058",
+      "label": "ĐULOVAC",
+      "codetop": "07"
+    },
+    {
+      "code": "1449",
+      "label": "HERCEGOVAC",
+      "codetop": "07"
+    },
+    {
+      "code": "1619",
+      "label": "IVANSKA",
+      "codetop": "07"
+    },
+    {
+      "code": "1767",
+      "label": "KAPELA",
+      "codetop": "07"
+    },
+    {
+      "code": "1996",
+      "label": "KONČANICA",
+      "codetop": "07"
+    },
+    {
+      "code": "2879",
+      "label": "NOVA RAČA",
+      "codetop": "07"
+    },
+    {
+      "code": "3751",
+      "label": "ROVIŠĆE",
+      "codetop": "07"
+    },
+    {
+      "code": "5622",
+      "label": "SEVERIN",
+      "codetop": "07"
+    },
+    {
+      "code": "3905",
+      "label": "SIRAČ",
+      "codetop": "07"
+    },
+    {
+      "code": "5649",
+      "label": "ŠANDROVAC",
+      "codetop": "07"
+    },
+    {
+      "code": "4502",
+      "label": "ŠTEFANJE",
+      "codetop": "07"
+    },
+    {
+      "code": "4782",
+      "label": "VELIKA PISANICA",
+      "codetop": "07"
+    },
+    {
+      "code": "5657",
+      "label": "VELIKA TRNOVITICA",
+      "codetop": "07"
+    },
+    {
+      "code": "4804",
+      "label": "VELIKI GRĐEVAC",
+      "codetop": "07"
+    },
+    {
+      "code": "4839",
+      "label": "VELIKO TROJSTVO",
+      "codetop": "07"
+    },
+    {
+      "code": "5665",
+      "label": "ZRINSKI TOPOLOVAC",
+      "codetop": "07"
+    },
+    {
+      "code": "0043",
+      "label": "BAKAR",
+      "codetop": "08"
+    },
+    {
+      "code": "0523",
+      "label": "CRES",
+      "codetop": "08"
+    },
+    {
+      "code": "0531",
+      "label": "CRIKVENICA",
+      "codetop": "08"
+    },
+    {
+      "code": "0558",
+      "label": "ČABAR",
+      "codetop": "08"
+    },
+    {
+      "code": "0698",
+      "label": "DELNICE",
+      "codetop": "08"
+    },
+    {
+      "code": "1805",
+      "label": "KASTAV",
+      "codetop": "08"
+    },
+    {
+      "code": "2097",
+      "label": "KRALJEVICA",
+      "codetop": "08"
+    },
+    {
+      "code": "2151",
+      "label": "KRK",
+      "codetop": "08"
+    },
+    {
+      "code": "2526",
+      "label": "MALI LOŠINJ",
+      "codetop": "08"
+    },
+    {
+      "code": "2909",
+      "label": "NOVI VINODOLSKI",
+      "codetop": "08"
+    },
+    {
+      "code": "3026",
+      "label": "OPATIJA",
+      "codetop": "08"
+    },
+    {
+      "code": "3638",
+      "label": "RAB",
+      "codetop": "08"
+    },
+    {
+      "code": "3735",
+      "label": "RIJEKA",
+      "codetop": "08"
+    },
+    {
+      "code": "5096",
+      "label": "VRBOVSKO",
+      "codetop": "08"
+    },
+    {
+      "code": "0086",
+      "label": "BAŠKA",
+      "codetop": "08"
+    },
+    {
+      "code": "0388",
+      "label": "BROD MORAVICE",
+      "codetop": "08"
+    },
+    {
+      "code": "0612",
+      "label": "ČAVLE",
+      "codetop": "08"
+    },
+    {
+      "code": "0744",
+      "label": "DOBRINJ",
+      "codetop": "08"
+    },
+    {
+      "code": "1171",
+      "label": "FUŽINE",
+      "codetop": "08"
+    },
+    {
+      "code": "1708",
+      "label": "JELENJE",
+      "codetop": "08"
+    },
+    {
+      "code": "1864",
+      "label": "KLANA",
+      "codetop": "08"
+    },
+    {
+      "code": "5380",
+      "label": "KOSTRENA",
+      "codetop": "08"
+    },
+    {
+      "code": "2372",
+      "label": "LOKVE",
+      "codetop": "08"
+    },
+    {
+      "code": "6246",
+      "label": "LOPAR",
+      "codetop": "08"
+    },
+    {
+      "code": "2429",
+      "label": "LOVRAN",
+      "codetop": "08"
+    },
+    {
+      "code": "2534",
+      "label": "MALINSKA-DUBAŠNICA",
+      "codetop": "08"
+    },
+    {
+      "code": "2615",
+      "label": "MATULJI",
+      "codetop": "08"
+    },
+    {
+      "code": "2739",
+      "label": "MOŠĆENIČKA DRAGA",
+      "codetop": "08"
+    },
+    {
+      "code": "2755",
+      "label": "MRKOPALJ",
+      "codetop": "08"
+    },
+    {
+      "code": "3018",
+      "label": "OMIŠALJ",
+      "codetop": "08"
+    },
+    {
+      "code": "3603",
+      "label": "PUNAT",
+      "codetop": "08"
+    },
+    {
+      "code": "3697",
+      "label": "RAVNA GORA",
+      "codetop": "08"
+    },
+    {
+      "code": "3930",
+      "label": "SKRAD",
+      "codetop": "08"
+    },
+    {
+      "code": "4880",
+      "label": "VINODOLSKA OPĆINA",
+      "codetop": "08"
+    },
+    {
+      "code": "4952",
+      "label": "VIŠKOVO",
+      "codetop": "08"
+    },
+    {
+      "code": "5070",
+      "label": "VRBNIK",
+      "codetop": "08"
+    },
+    {
+      "code": "1309",
+      "label": "GOSPIĆ",
+      "codetop": "09"
+    },
+    {
+      "code": "2887",
+      "label": "NOVALJA",
+      "codetop": "09"
+    },
+    {
+      "code": "3131",
+      "label": "OTOČAC",
+      "codetop": "09"
+    },
+    {
+      "code": "3875",
+      "label": "SENJ",
+      "codetop": "09"
+    },
+    {
+      "code": "0370",
+      "label": "BRINJE",
+      "codetop": "09"
+    },
+    {
+      "code": "0841",
+      "label": "DONJI LAPAC",
+      "codetop": "09"
+    },
+    {
+      "code": "1783",
+      "label": "KARLOBAG",
+      "codetop": "09"
+    },
+    {
+      "code": "2402",
+      "label": "LOVINAC",
+      "codetop": "09"
+    },
+    {
+      "code": "3239",
+      "label": "PERUŠIĆ",
+      "codetop": "09"
+    },
+    {
+      "code": "4553",
+      "label": "PLITVIČKA JEZERA",
+      "codetop": "09"
+    },
+    {
+      "code": "4677",
+      "label": "UDBINA",
+      "codetop": "09"
+    },
+    {
+      "code": "5126",
+      "label": "VRHOVINE",
+      "codetop": "09"
+    },
+    {
+      "code": "3077",
+      "label": "ORAHOVICA",
+      "codetop": "10"
+    },
+    {
+      "code": "3956",
+      "label": "SLATINA",
+      "codetop": "10"
+    },
+    {
+      "code": "4910",
+      "label": "VIROVITICA",
+      "codetop": "10"
+    },
+    {
+      "code": "0540",
+      "label": "CRNAC",
+      "codetop": "10"
+    },
+    {
+      "code": "0566",
+      "label": "ČAČINCI",
+      "codetop": "10"
+    },
+    {
+      "code": "0574",
+      "label": "ČAĐAVICA",
+      "codetop": "10"
+    },
+    {
+      "code": "1368",
+      "label": "GRADINA",
+      "codetop": "10"
+    },
+    {
+      "code": "2453",
+      "label": "LUKAČ",
+      "codetop": "10"
+    },
+    {
+      "code": "2666",
+      "label": "MIKLEUŠ",
+      "codetop": "10"
+    },
+    {
+      "code": "2836",
+      "label": "NOVA BUKOVICA",
+      "codetop": "10"
+    },
+    {
+      "code": "3328",
+      "label": "PITOMAČA",
+      "codetop": "10"
+    },
+    {
+      "code": "4073",
+      "label": "SOPJE",
+      "codetop": "10"
+    },
+    {
+      "code": "4243",
+      "label": "SUHOPOLJE",
+      "codetop": "10"
+    },
+    {
+      "code": "4499",
+      "label": "ŠPIŠIĆ BUKOVICA",
+      "codetop": "10"
+    },
+    {
+      "code": "4995",
+      "label": "VOĆIN",
+      "codetop": "10"
+    },
+    {
+      "code": "5240",
+      "label": "ZDENCI",
+      "codetop": "10"
+    },
+    {
+      "code": "2216",
+      "label": "KUTJEVO",
+      "codetop": "11"
+    },
+    {
+      "code": "3964",
+      "label": "SLAVONSKI BROD",
+      "codetop": "12"
+    },
+    {
+      "code": "0108",
+      "label": "BEBRINA",
+      "codetop": "12"
+    },
+    {
+      "code": "0396",
+      "label": "BRODSKI STUPNIK",
+      "codetop": "12"
+    },
+    {
+      "code": "5673",
+      "label": "BUKOVLJE",
+      "codetop": "12"
+    },
+    {
+      "code": "0469",
+      "label": "CERNIK",
+      "codetop": "12"
+    },
+    {
+      "code": "0680",
+      "label": "DAVOR",
+      "codetop": "12"
+    },
+    {
+      "code": "0817",
+      "label": "DONJI ANDRIJEVCI",
+      "codetop": "12"
+    },
+    {
+      "code": "5681",
+      "label": "DRAGALIĆ",
+      "codetop": "12"
+    },
+    {
+      "code": "1180",
+      "label": "GARČIN",
+      "codetop": "12"
+    },
+    {
+      "code": "5690",
+      "label": "GORNJA VRBA",
+      "codetop": "12"
+    },
+    {
+      "code": "1279",
+      "label": "GORNJI BOGIĆEVCI",
+      "codetop": "12"
+    },
+    {
+      "code": "1406",
+      "label": "GUNDINCI",
+      "codetop": "12"
+    },
+    {
+      "code": "1856",
+      "label": "KLAKAR",
+      "codetop": "12"
+    },
+    {
+      "code": "2852",
+      "label": "NOVA KAPELA",
+      "codetop": "12"
+    },
+    {
+      "code": "2992",
+      "label": "OKUČANI",
+      "codetop": "12"
+    },
+    {
+      "code": "3034",
+      "label": "OPRISAVCI",
+      "codetop": "12"
+    },
+    {
+      "code": "3093",
+      "label": "ORIOVAC",
+      "codetop": "12"
+    },
+    {
+      "code": "3387",
+      "label": "PODCRKAVLJE",
+      "codetop": "12"
+    },
+    {
+      "code": "3727",
+      "label": "REŠETARI",
+      "codetop": "12"
+    },
+    {
+      "code": "3883",
+      "label": "SIBINJ",
+      "codetop": "12"
+    },
+    {
+      "code": "5703",
+      "label": "SIKIREVCI",
+      "codetop": "12"
+    },
+    {
+      "code": "3972",
+      "label": "SLAVONSKI ŠAMAC",
+      "codetop": "12"
+    },
+    {
+      "code": "4120",
+      "label": "STARA GRADIŠKA",
+      "codetop": "12"
+    },
+    {
+      "code": "4189",
+      "label": "STARO PETROVO SELO",
+      "codetop": "12"
+    },
+    {
+      "code": "4766",
+      "label": "VELIKA KOPANICA",
+      "codetop": "12"
+    },
+    {
+      "code": "5061",
+      "label": "VRBJE",
+      "codetop": "12"
+    },
+    {
+      "code": "5142",
+      "label": "VRPOLJE",
+      "codetop": "12"
+    },
+    {
+      "code": "0175",
+      "label": "BENKOVAC",
+      "codetop": "13"
+    },
+    {
+      "code": "0221",
+      "label": "BIOGRAD NA MORU",
+      "codetop": "13"
+    },
+    {
+      "code": "2828",
+      "label": "NIN",
+      "codetop": "13"
+    },
+    {
+      "code": "2968",
+      "label": "OBROVAC",
+      "codetop": "13"
+    },
+    {
+      "code": "3166",
+      "label": "PAG",
+      "codetop": "13"
+    },
+    {
+      "code": "5207",
+      "label": "ZADAR",
+      "codetop": "13"
+    },
+    {
+      "code": "0205",
+      "label": "BIBINJE",
+      "codetop": "13"
+    },
+    {
+      "code": "5711",
+      "label": "GALOVAC",
+      "codetop": "13"
+    },
+    {
+      "code": "1317",
+      "label": "GRAČAC",
+      "codetop": "13"
+    },
+    {
+      "code": "1678",
+      "label": "JASENICE",
+      "codetop": "13"
+    },
+    {
+      "code": "1732",
+      "label": "KALI",
+      "codetop": "13"
+    },
+    {
+      "code": "6220",
+      "label": "KOLAN",
+      "codetop": "13"
+    },
+    {
+      "code": "5720",
+      "label": "KUKLJICA",
+      "codetop": "13"
+    },
+    {
+      "code": "2348",
+      "label": "LIŠANE OSTROVIČKE",
+      "codetop": "13"
+    },
+    {
+      "code": "5371",
+      "label": "NOVIGRAD",
+      "codetop": "13"
+    },
+    {
+      "code": "3174",
+      "label": "PAKOŠTANE",
+      "codetop": "13"
+    },
+    {
+      "code": "3204",
+      "label": "PAŠMAN",
+      "codetop": "13"
+    },
+    {
+      "code": "3441",
+      "label": "POLAČA",
+      "codetop": "13"
+    },
+    {
+      "code": "3450",
+      "label": "POLIČNIK",
+      "codetop": "13"
+    },
+    {
+      "code": "3492",
+      "label": "POSEDARJE",
+      "codetop": "13"
+    },
+    {
+      "code": "5738",
+      "label": "POVLJANA",
+      "codetop": "13"
+    },
+    {
+      "code": "3549",
+      "label": "PREKO",
+      "codetop": "13"
+    },
+    {
+      "code": "5746",
+      "label": "PRIVLAKA",
+      "codetop": "13"
+    },
+    {
+      "code": "3719",
+      "label": "RAŽANAC",
+      "codetop": "13"
+    },
+    {
+      "code": "3794",
+      "label": "SALI",
+      "codetop": "13"
+    },
+    {
+      "code": "4111",
+      "label": "STANKOVCI",
+      "codetop": "13"
+    },
+    {
+      "code": "4162",
+      "label": "STARIGRAD",
+      "codetop": "13"
+    },
+    {
+      "code": "4251",
+      "label": "SUKOŠAN",
+      "codetop": "13"
+    },
+    {
+      "code": "4286",
+      "label": "SVETI FILIP I JAKOV",
+      "codetop": "13"
+    },
+    {
+      "code": "4456",
+      "label": "ŠKABRNJA",
+      "codetop": "13"
+    },
+    {
+      "code": "5754",
+      "label": "TKON",
+      "codetop": "13"
+    },
+    {
+      "code": "4898",
+      "label": "VIR",
+      "codetop": "13"
+    },
+    {
+      "code": "6254",
+      "label": "VRSI",
+      "codetop": "13"
+    },
+    {
+      "code": "5258",
+      "label": "ZEMUNIK DONJI",
+      "codetop": "13"
+    },
+    {
+      "code": "0132",
+      "label": "BELI MANASTIR",
+      "codetop": "14"
+    },
+    {
+      "code": "0167",
+      "label": "BELIŠĆE",
+      "codetop": "14"
+    },
+    {
+      "code": "0868",
+      "label": "DONJI MIHOLJAC",
+      "codetop": "14"
+    },
+    {
+      "code": "1031",
+      "label": "ĐAKOVO",
+      "codetop": "14"
+    },
+    {
+      "code": "2780",
+      "label": "NAŠICE",
+      "codetop": "14"
+    },
+    {
+      "code": "3123",
+      "label": "OSIJEK",
+      "codetop": "14"
+    },
+    {
+      "code": "4715",
+      "label": "VALPOVO",
+      "codetop": "14"
+    },
+    {
+      "code": "0027",
+      "label": "ANTUNOVAC",
+      "codetop": "14"
+    },
+    {
+      "code": "0213",
+      "label": "BILJE",
+      "codetop": "14"
+    },
+    {
+      "code": "0230",
+      "label": "BIZOVAC",
+      "codetop": "14"
+    },
+    {
+      "code": "0647",
+      "label": "ČEMINAC",
+      "codetop": "14"
+    },
+    {
+      "code": "0655",
+      "label": "ČEPIN",
+      "codetop": "14"
+    },
+    {
+      "code": "0663",
+      "label": "DARDA",
+      "codetop": "14"
+    },
+    {
+      "code": "5762",
+      "label": "DONJA MOTIČINA",
+      "codetop": "14"
+    },
+    {
+      "code": "0914",
+      "label": "DRAŽ",
+      "codetop": "14"
+    },
+    {
+      "code": "0949",
+      "label": "DRENJE",
+      "codetop": "14"
+    },
+    {
+      "code": "1066",
+      "label": "ĐURĐENOVAC",
+      "codetop": "14"
+    },
+    {
+      "code": "1104",
+      "label": "ERDUT",
+      "codetop": "14"
+    },
+    {
+      "code": "1112",
+      "label": "ERNESTINOVO",
+      "codetop": "14"
+    },
+    {
+      "code": "1163",
+      "label": "FERIČANCI",
+      "codetop": "14"
+    },
+    {
+      "code": "1244",
+      "label": "GORJANI",
+      "codetop": "14"
+    },
+    {
+      "code": "6092",
+      "label": "JAGODNJAK",
+      "codetop": "14"
+    },
+    {
+      "code": "1953",
+      "label": "KNEŽEVI VINOGRADI",
+      "codetop": "14"
+    },
+    {
+      "code": "2054",
+      "label": "KOŠKA",
+      "codetop": "14"
+    },
+    {
+      "code": "2305",
+      "label": "LEVANJSKA VAROŠ",
+      "codetop": "14"
+    },
+    {
+      "code": "5789",
+      "label": "MAGADENOVAC",
+      "codetop": "14"
+    },
+    {
+      "code": "2577",
+      "label": "MARIJANCI",
+      "codetop": "14"
+    },
+    {
+      "code": "3255",
+      "label": "PETLOVAC",
+      "codetop": "14"
+    },
+    {
+      "code": "3271",
+      "label": "PETRIJEVCI",
+      "codetop": "14"
+    },
+    {
+      "code": "3409",
+      "label": "PODGORAČ",
+      "codetop": "14"
+    },
+    {
+      "code": "2712",
+      "label": "PODRAVSKA MOSLAVINA",
+      "codetop": "14"
+    },
+    {
+      "code": "3468",
+      "label": "POPOVAC",
+      "codetop": "14"
+    },
+    {
+      "code": "3611",
+      "label": "PUNITOVCI",
+      "codetop": "14"
+    },
+    {
+      "code": "3816",
+      "label": "SATNICA ĐAKOVAČKA",
+      "codetop": "14"
+    },
+    {
+      "code": "3867",
+      "label": "SEMELJCI",
+      "codetop": "14"
+    },
+    {
+      "code": "4219",
+      "label": "STRIZIVOJNA",
+      "codetop": "14"
+    },
+    {
+      "code": "6149",
+      "label": "ŠODOLOVCI",
+      "codetop": "14"
+    },
+    {
+      "code": "4618",
+      "label": "TRNAVA",
+      "codetop": "14"
+    },
+    {
+      "code": "4855",
+      "label": "VILJEVO",
+      "codetop": "14"
+    },
+    {
+      "code": "4944",
+      "label": "VIŠKOVCI",
+      "codetop": "14"
+    },
+    {
+      "code": "5797",
+      "label": "VLADISLAVCI",
+      "codetop": "14"
+    },
+    {
+      "code": "5177",
+      "label": "VUKA",
+      "codetop": "14"
+    },
+    {
+      "code": "0957",
+      "label": "DRNIŠ",
+      "codetop": "15"
+    },
+    {
+      "code": "1961",
+      "label": "KNIN",
+      "codetop": "15"
+    },
+    {
+      "code": "3948",
+      "label": "SKRADIN",
+      "codetop": "15"
+    },
+    {
+      "code": "4448",
+      "label": "ŠIBENIK",
+      "codetop": "15"
+    },
+    {
+      "code": "5002",
+      "label": "VODICE",
+      "codetop": "15"
+    },
+    {
+      "code": "6211",
+      "label": "BILICE",
+      "codetop": "15"
+    },
+    {
+      "code": "3107",
+      "label": "BISKUPIJA",
+      "codetop": "15"
+    },
+    {
+      "code": "0515",
+      "label": "CIVLJANE",
+      "codetop": "15"
+    },
+    {
+      "code": "1139",
+      "label": "ERVENIK",
+      "codetop": "15"
+    },
+    {
+      "code": "1830",
+      "label": "KIJEVO",
+      "codetop": "15"
+    },
+    {
+      "code": "1848",
+      "label": "KISTANJE",
+      "codetop": "15"
+    },
+    {
+      "code": "6173",
+      "label": "MURTER - KORNATI",
+      "codetop": "15"
+    },
+    {
+      "code": "5819",
+      "label": "PIROVAC",
+      "codetop": "15"
+    },
+    {
+      "code": "3573",
+      "label": "PRIMOŠTEN",
+      "codetop": "15"
+    },
+    {
+      "code": "2984",
+      "label": "PROMINA",
+      "codetop": "15"
+    },
+    {
+      "code": "5827",
+      "label": "ROGOZNICA",
+      "codetop": "15"
+    },
+    {
+      "code": "3778",
+      "label": "RUŽIĆ",
+      "codetop": "15"
+    },
+    {
+      "code": "4545",
+      "label": "TISNO",
+      "codetop": "15"
+    },
+    {
+      "code": "6262",
+      "label": "TRIBUNJ",
+      "codetop": "15"
+    },
+    {
+      "code": "4693",
+      "label": "UNEŠIĆ",
+      "codetop": "15"
+    },
+    {
+      "code": "1546",
+      "label": "ILOK",
+      "codetop": "16"
+    },
+    {
+      "code": "5355",
+      "label": "OTOK",
+      "codetop": "16"
+    },
+    {
+      "code": "4871",
+      "label": "VINKOVCI",
+      "codetop": "16"
+    },
+    {
+      "code": "5185",
+      "label": "VUKOVAR",
+      "codetop": "16"
+    },
+    {
+      "code": "5347",
+      "label": "ŽUPANJA",
+      "codetop": "16"
+    },
+    {
+      "code": "0019",
+      "label": "ANDRIJAŠEVCI",
+      "codetop": "16"
+    },
+    {
+      "code": "0035",
+      "label": "BABINA GREDA",
+      "codetop": "16"
+    },
+    {
+      "code": "0264",
+      "label": "BOGDANOVCI",
+      "codetop": "16"
+    },
+    {
+      "code": "0299",
+      "label": "BOROVO",
+      "codetop": "16"
+    },
+    {
+      "code": "0329",
+      "label": "BOŠNJACI",
+      "codetop": "16"
+    },
+    {
+      "code": "0442",
+      "label": "CERNA",
+      "codetop": "16"
+    },
+    {
+      "code": "0922",
+      "label": "DRENOVCI",
+      "codetop": "16"
+    },
+    {
+      "code": "1376",
+      "label": "GRADIŠTE",
+      "codetop": "16"
+    },
+    {
+      "code": "1414",
+      "label": "GUNJA",
+      "codetop": "16"
+    },
+    {
+      "code": "1597",
+      "label": "IVANKOVO",
+      "codetop": "16"
+    },
+    {
+      "code": "1660",
+      "label": "JARMINA",
+      "codetop": "16"
+    },
+    {
+      "code": "2399",
+      "label": "LOVAS",
+      "codetop": "16"
+    },
+    {
+      "code": "6106",
+      "label": "MARKUŠICA",
+      "codetop": "16"
+    },
+    {
+      "code": "6122",
+      "label": "NEGOSLAVCI",
+      "codetop": "16"
+    },
+    {
+      "code": "2950",
+      "label": "NIJEMCI",
+      "codetop": "16"
+    },
+    {
+      "code": "2941",
+      "label": "NUŠTAR",
+      "codetop": "16"
+    },
+    {
+      "code": "5835",
+      "label": "PRIVLAKA",
+      "codetop": "16"
+    },
+    {
+      "code": "4146",
+      "label": "STARI JANKOVCI",
+      "codetop": "16"
+    },
+    {
+      "code": "4154",
+      "label": "STARI MIKANOVCI",
+      "codetop": "16"
+    },
+    {
+      "code": "6289",
+      "label": "ŠTITAR",
+      "codetop": "16"
+    },
+    {
+      "code": "4561",
+      "label": "TOMPOJEVCI",
+      "codetop": "16"
+    },
+    {
+      "code": "4588",
+      "label": "TORDINCI",
+      "codetop": "16"
+    },
+    {
+      "code": "4596",
+      "label": "TOVARNIK",
+      "codetop": "16"
+    },
+    {
+      "code": "4642",
+      "label": "TRPINJA",
+      "codetop": "16"
+    },
+    {
+      "code": "5843",
+      "label": "VOĐINCI",
+      "codetop": "16"
+    },
+    {
+      "code": "5053",
+      "label": "VRBANJA",
+      "codetop": "16"
+    },
+    {
+      "code": "1538",
+      "label": "HVAR",
+      "codetop": "17"
+    },
+    {
+      "code": "1554",
+      "label": "IMOTSKI",
+      "codetop": "17"
+    },
+    {
+      "code": "1813",
+      "label": "KAŠTELA",
+      "codetop": "17"
+    },
+    {
+      "code": "1970",
+      "label": "KOMIŽA",
+      "codetop": "17"
+    },
+    {
+      "code": "2496",
+      "label": "MAKARSKA",
+      "codetop": "17"
+    },
+    {
+      "code": "3000",
+      "label": "OMIŠ",
+      "codetop": "17"
+    },
+    {
+      "code": "3891",
+      "label": "SINJ",
+      "codetop": "17"
+    },
+    {
+      "code": "4065",
+      "label": "SOLIN",
+      "codetop": "17"
+    },
+    {
+      "code": "4090",
+      "label": "SPLIT",
+      "codetop": "17"
+    },
+    {
+      "code": "4138",
+      "label": "STARI GRAD",
+      "codetop": "17"
+    },
+    {
+      "code": "4278",
+      "label": "SUPETAR",
+      "codetop": "17"
+    },
+    {
+      "code": "4600",
+      "label": "TRILJ",
+      "codetop": "17"
+    },
+    {
+      "code": "4634",
+      "label": "TROGIR",
+      "codetop": "17"
+    },
+    {
+      "code": "4928",
+      "label": "VIS",
+      "codetop": "17"
+    },
+    {
+      "code": "5118",
+      "label": "VRGORAC",
+      "codetop": "17"
+    },
+    {
+      "code": "5134",
+      "label": "VRLIKA",
+      "codetop": "17"
+    },
+    {
+      "code": "0094",
+      "label": "BAŠKA VODA",
+      "codetop": "17"
+    },
+    {
+      "code": "0272",
+      "label": "BOL",
+      "codetop": "17"
+    },
+    {
+      "code": "0779",
+      "label": "BRELA",
+      "codetop": "17"
+    },
+    {
+      "code": "0507",
+      "label": "CISTA PROVO",
+      "codetop": "17"
+    },
+    {
+      "code": "0728",
+      "label": "DICMO",
+      "codetop": "17"
+    },
+    {
+      "code": "1007",
+      "label": "DUGI RAT",
+      "codetop": "17"
+    },
+    {
+      "code": "5851",
+      "label": "DUGOPOLJE",
+      "codetop": "17"
+    },
+    {
+      "code": "1341",
+      "label": "GRADAC",
+      "codetop": "17"
+    },
+    {
+      "code": "1481",
+      "label": "HRVACE",
+      "codetop": "17"
+    },
+    {
+      "code": "1716",
+      "label": "JELSA",
+      "codetop": "17"
+    },
+    {
+      "code": "1929",
+      "label": "KLIS",
+      "codetop": "17"
+    },
+    {
+      "code": "5860",
+      "label": "LEĆEVICA",
+      "codetop": "17"
+    },
+    {
+      "code": "5878",
+      "label": "LOKVIČIĆI",
+      "codetop": "17"
+    },
+    {
+      "code": "2437",
+      "label": "LOVREĆ",
+      "codetop": "17"
+    },
+    {
+      "code": "2585",
+      "label": "MARINA",
+      "codetop": "17"
+    },
+    {
+      "code": "2674",
+      "label": "MILNA",
+      "codetop": "17"
+    },
+    {
+      "code": "0876",
+      "label": "MUĆ",
+      "codetop": "17"
+    },
+    {
+      "code": "2801",
+      "label": "NEREŽIŠĆA",
+      "codetop": "17"
+    },
+    {
+      "code": "5886",
+      "label": "OKRUG",
+      "codetop": "17"
+    },
+    {
+      "code": "3140",
+      "label": "OTOK",
+      "codetop": "17"
+    },
+    {
+      "code": "3379",
+      "label": "PODBABLJE",
+      "codetop": "17"
+    },
+    {
+      "code": "3395",
+      "label": "PODGORA",
+      "codetop": "17"
+    },
+    {
+      "code": "3417",
+      "label": "PODSTRANA",
+      "codetop": "17"
+    },
+    {
+      "code": "3506",
+      "label": "POSTIRA",
+      "codetop": "17"
+    },
+    {
+      "code": "5894",
+      "label": "PRGOMET",
+      "codetop": "17"
+    },
+    {
+      "code": "5908",
+      "label": "PRIMORSKI DOLAC",
+      "codetop": "17"
+    },
+    {
+      "code": "0884",
+      "label": "PROLOŽAC",
+      "codetop": "17"
+    },
+    {
+      "code": "3581",
+      "label": "PUČIŠĆA",
+      "codetop": "17"
+    },
+    {
+      "code": "5916",
+      "label": "RUNOVIĆI",
+      "codetop": "17"
+    },
+    {
+      "code": "3824",
+      "label": "SEGET",
+      "codetop": "17"
+    },
+    {
+      "code": "3832",
+      "label": "SELCA",
+      "codetop": "17"
+    },
+    {
+      "code": "4235",
+      "label": "SUĆURAJ",
+      "codetop": "17"
+    },
+    {
+      "code": "5924",
+      "label": "SUTIVAN",
+      "codetop": "17"
+    },
+    {
+      "code": "4430",
+      "label": "ŠESTANOVAC",
+      "codetop": "17"
+    },
+    {
+      "code": "4472",
+      "label": "ŠOLTA",
+      "codetop": "17"
+    },
+    {
+      "code": "5932",
+      "label": "TUČEPI",
+      "codetop": "17"
+    },
+    {
+      "code": "5959",
+      "label": "ZADVARJE",
+      "codetop": "17"
+    },
+    {
+      "code": "5223",
+      "label": "ZAGVOZD",
+      "codetop": "17"
+    },
+    {
+      "code": "5282",
+      "label": "ZMIJAVCI",
+      "codetop": "17"
+    },
+    {
+      "code": "0426",
+      "label": "BUJE - BUIE",
+      "codetop": "18"
+    },
+    {
+      "code": "0434",
+      "label": "BUZET",
+      "codetop": "18"
+    },
+    {
+      "code": "2224",
+      "label": "LABIN",
+      "codetop": "18"
+    },
+    {
+      "code": "2917",
+      "label": "NOVIGRAD - CITTANOVA",
+      "codetop": "18"
+    },
+    {
+      "code": "3212",
+      "label": "PAZIN",
+      "codetop": "18"
+    },
+    {
+      "code": "3484",
+      "label": "POREČ - PARENZO",
+      "codetop": "18"
+    },
+    {
+      "code": "3590",
+      "label": "PULA - POLA",
+      "codetop": "18"
+    },
+    {
+      "code": "3743",
+      "label": "ROVINJ - ROVIGNO",
+      "codetop": "18"
+    },
+    {
+      "code": "4685",
+      "label": "UMAG - UMAGO",
+      "codetop": "18"
+    },
+    {
+      "code": "5029",
+      "label": "VODNJAN - DIGNANO",
+      "codetop": "18"
+    },
+    {
+      "code": "0051",
+      "label": "BALE - VALLE",
+      "codetop": "18"
+    },
+    {
+      "code": "0060",
+      "label": "BARBAN",
+      "codetop": "18"
+    },
+    {
+      "code": "0400",
+      "label": "BRTONIGLA - VERTENEGLIO",
+      "codetop": "18"
+    },
+    {
+      "code": "0477",
+      "label": "CEROVLJE",
+      "codetop": "18"
+    },
+    {
+      "code": "6190",
+      "label": "FAŽANA - FASANA",
+      "codetop": "18"
+    },
+    {
+      "code": "6297",
+      "label": "FUNTANA - FONTANE",
+      "codetop": "18"
+    },
+    {
+      "code": "1325",
+      "label": "GRAČIŠĆE",
+      "codetop": "18"
+    },
+    {
+      "code": "1384",
+      "label": "GROŽNJAN - GRISIGNANA",
+      "codetop": "18"
+    },
+    {
+      "code": "1759",
+      "label": "KANFANAR",
+      "codetop": "18"
+    },
+    {
+      "code": "5967",
+      "label": "KAROJBA",
+      "codetop": "18"
+    },
+    {
+      "code": "5975",
+      "label": "KAŠTELIR-LABINCI - CASTELLIERE-S. DOMENICA",
+      "codetop": "18"
+    },
+    {
+      "code": "2178",
+      "label": "KRŠAN",
+      "codetop": "18"
+    },
+    {
+      "code": "2232",
+      "label": "LANIŠĆE",
+      "codetop": "18"
+    },
+    {
+      "code": "2356",
+      "label": "LIŽNJAN - LISIGNANO",
+      "codetop": "18"
+    },
+    {
+      "code": "2461",
+      "label": "LUPOGLAV",
+      "codetop": "18"
+    },
+    {
+      "code": "2542",
+      "label": "MARČANA",
+      "codetop": "18"
+    },
+    {
+      "code": "2631",
+      "label": "MEDULIN",
+      "codetop": "18"
+    },
+    {
+      "code": "2747",
+      "label": "MOTOVUN - MONTONA",
+      "codetop": "18"
+    },
+    {
+      "code": "3042",
+      "label": "OPRTALJ - PORTOLE",
+      "codetop": "18"
+    },
+    {
+      "code": "3301",
+      "label": "PIĆAN",
+      "codetop": "18"
+    },
+    {
+      "code": "3689",
+      "label": "RAŠA",
+      "codetop": "18"
+    },
+    {
+      "code": "4324",
+      "label": "SVETA NEDELJA",
+      "codetop": "18"
+    },
+    {
+      "code": "4316",
+      "label": "SVETI LOVREČ",
+      "codetop": "18"
+    },
+    {
+      "code": "4332",
+      "label": "SVETI PETAR U ŠUMI",
+      "codetop": "18"
+    },
+    {
+      "code": "4359",
+      "label": "SVETVINČENAT",
+      "codetop": "18"
+    },
+    {
+      "code": "6319",
+      "label": "TAR-VABRIGA - TORRE-ABREGA",
+      "codetop": "18"
+    },
+    {
+      "code": "4537",
+      "label": "TINJAN",
+      "codetop": "18"
+    },
+    {
+      "code": "4979",
+      "label": "VIŠNJAN - VISIGNANO",
+      "codetop": "18"
+    },
+    {
+      "code": "4987",
+      "label": "VIŽINADA - VISINADA",
+      "codetop": "18"
+    },
+    {
+      "code": "5169",
+      "label": "VRSAR - ORSERA",
+      "codetop": "18"
+    },
+    {
+      "code": "5312",
+      "label": "ŽMINJ",
+      "codetop": "18"
+    },
+    {
+      "code": "0981",
+      "label": "DUBROVNIK",
+      "codetop": "19"
+    },
+    {
+      "code": "2046",
+      "label": "KORČULA",
+      "codetop": "19"
+    },
+    {
+      "code": "2640",
+      "label": "METKOVIĆ",
+      "codetop": "19"
+    },
+    {
+      "code": "3069",
+      "label": "OPUZEN",
+      "codetop": "19"
+    },
+    {
+      "code": "3352",
+      "label": "PLOČE",
+      "codetop": "19"
+    },
+    {
+      "code": "0256",
+      "label": "BLATO",
+      "codetop": "19"
+    },
+    {
+      "code": "5983",
+      "label": "DUBROVAČKO PRIMORJE",
+      "codetop": "19"
+    },
+    {
+      "code": "5991",
+      "label": "JANJINA",
+      "codetop": "19"
+    },
+    {
+      "code": "1988",
+      "label": "KONAVLE",
+      "codetop": "19"
+    },
+    {
+      "code": "2194",
+      "label": "KULA NORINSKA",
+      "codetop": "19"
+    },
+    {
+      "code": "2267",
+      "label": "LASTOVO",
+      "codetop": "19"
+    },
+    {
+      "code": "6009",
+      "label": "LUMBARDA",
+      "codetop": "19"
+    },
+    {
+      "code": "2682",
+      "label": "MLJET",
+      "codetop": "19"
+    },
+    {
+      "code": "3085",
+      "label": "OREBIĆ",
+      "codetop": "19"
+    },
+    {
+      "code": "3433",
+      "label": "POJEZERJE",
+      "codetop": "19"
+    },
+    {
+      "code": "3999",
+      "label": "SLIVNO",
+      "codetop": "19"
+    },
+    {
+      "code": "4022",
+      "label": "SMOKVICA",
+      "codetop": "19"
+    },
+    {
+      "code": "4197",
+      "label": "STON",
+      "codetop": "19"
+    },
+    {
+      "code": "6017",
+      "label": "TRPANJ",
+      "codetop": "19"
+    },
+    {
+      "code": "4740",
+      "label": "VELA LUKA",
+      "codetop": "19"
+    },
+    {
+      "code": "5231",
+      "label": "ZAŽABLJE",
+      "codetop": "19"
+    },
+    {
+      "code": "6025",
+      "label": "ŽUPA DUBROVAČKA",
+      "codetop": "19"
+    },
+    {
+      "code": "0604",
+      "label": "ČAKOVEC",
+      "codetop": "20"
+    },
+    {
+      "code": "2763",
+      "label": "MURSKO SREDIŠĆE",
+      "codetop": "20"
+    },
+    {
+      "code": "3557",
+      "label": "PRELOG",
+      "codetop": "20"
+    },
+    {
+      "code": "0159",
+      "label": "BELICA",
+      "codetop": "20"
+    },
+    {
+      "code": "6033",
+      "label": "DEKANOVEC",
+      "codetop": "20"
+    },
+    {
+      "code": "0752",
+      "label": "DOMAŠINEC",
+      "codetop": "20"
+    },
+    {
+      "code": "0787",
+      "label": "DONJA DUBRAVA",
+      "codetop": "20"
+    },
+    {
+      "code": "0825",
+      "label": "DONJI KRALJEVEC",
+      "codetop": "20"
+    },
+    {
+      "code": "0892",
+      "label": "DONJI VIDOVEC",
+      "codetop": "20"
+    },
+    {
+      "code": "1236",
+      "label": "GORIČAN",
+      "codetop": "20"
+    },
+    {
+      "code": "6041",
+      "label": "GORNJI MIHALJEVEC",
+      "codetop": "20"
+    },
+    {
+      "code": "2062",
+      "label": "KOTORIBA",
+      "codetop": "20"
+    },
+    {
+      "code": "2500",
+      "label": "MALA SUBOTICA",
+      "codetop": "20"
+    },
+    {
+      "code": "2798",
+      "label": "NEDELIŠĆE",
+      "codetop": "20"
+    },
+    {
+      "code": "6050",
+      "label": "OREHOVICA",
+      "codetop": "20"
+    },
+    {
+      "code": "3425",
+      "label": "PODTUREN",
+      "codetop": "20"
+    },
+    {
+      "code": "6203",
+      "label": "PRIBISLAVEC",
+      "codetop": "20"
+    },
+    {
+      "code": "3859",
+      "label": "SELNICA",
+      "codetop": "20"
+    },
+    {
+      "code": "6068",
+      "label": "STRAHONINEC",
+      "codetop": "20"
+    },
+    {
+      "code": "6076",
+      "label": "SVETA MARIJA",
+      "codetop": "20"
+    },
+    {
+      "code": "4405",
+      "label": "SVETI JURAJ NA BREGU",
+      "codetop": "20"
+    },
+    {
+      "code": "4413",
+      "label": "SVETI MARTIN NA MURI",
+      "codetop": "20"
+    },
+    {
+      "code": "6084",
+      "label": "ŠENKOVEC",
+      "codetop": "20"
+    },
+    {
+      "code": "4529",
+      "label": "ŠTRIGOVA",
+      "codetop": "20"
+    },
+    {
+      "code": "5045",
+      "label": "VRATIŠINEC",
+      "codetop": "20"
+    },
+    {
+      "code": "1333",
+      "label": "GRAD ZAGREB",
+      "codetop": "21"
+    }
+  ],
+  "inozemstvo": [
+    {
+      "code": "9620",
+      "label": "ARGENTINA"
+    },
+    {
+      "code": "9350",
+      "label": "AUSTRALIJA"
+    },
+    {
+      "code": "9202",
+      "label": "AUSTRIJA"
+    },
+    {
+      "code": "9203",
+      "label": "BELGIJA"
+    },
+    {
+      "code": "9901",
+      "label": "BOSNA I HERCEGOVINA"
+    },
+    {
+      "code": "9102",
+      "label": "BUGARSKA"
+    },
+    {
+      "code": "9902",
+      "label": "CRNA GORA"
+    },
+    {
+      "code": "9118",
+      "label": "ČEŠKA REPUBLIKA"
+    },
+    {
+      "code": "9623",
+      "label": "ČILE"
+    },
+    {
+      "code": "9204",
+      "label": "DANSKA"
+    },
+    {
+      "code": "9438",
+      "label": "EGIPAT"
+    },
+    {
+      "code": "9206",
+      "label": "FRANCUSKA"
+    },
+    {
+      "code": "9207",
+      "label": "GRČKA"
+    },
+    {
+      "code": "9209",
+      "label": "IRSKA"
+    },
+    {
+      "code": "9211",
+      "label": "ITALIJA"
+    },
+    {
+      "code": "9501",
+      "label": "KANADA"
+    },
+    {
+      "code": "9341",
+      "label": "KATAR"
+    },
+    {
+      "code": "9319",
+      "label": "KINA"
+    },
+    {
+      "code": "9909",
+      "label": "KOSOVO"
+    },
+    {
+      "code": "9104",
+      "label": "MAĐARSKA"
+    },
+    {
+      "code": "9208",
+      "label": "NIZOZEMSKA"
+    },
+    {
+      "code": "9216",
+      "label": "NORVEŠKA"
+    },
+    {
+      "code": "9105",
+      "label": "NJEMAČKA"
+    },
+    {
+      "code": "9106",
+      "label": "POLJSKA"
+    },
+    {
+      "code": "9217",
+      "label": "PORTUGAL"
+    },
+    {
+      "code": "9904",
+      "label": "REPUBLIKA SJEVERNA MAKEDONIJA"
+    },
+    {
+      "code": "9107",
+      "label": "RUMUNJSKA"
+    },
+    {
+      "code": "9117",
+      "label": "RUSIJA"
+    },
+    {
+      "code": "9502",
+      "label": "SAD"
+    },
+    {
+      "code": "9119",
+      "label": "SLOVAČKA REPUBLIKA"
+    },
+    {
+      "code": "9905",
+      "label": "SLOVENIJA"
+    },
+    {
+      "code": "9906",
+      "label": "SRBIJA"
+    },
+    {
+      "code": "9219",
+      "label": "ŠPANJOLSKA"
+    },
+    {
+      "code": "9221",
+      "label": "ŠVEDSKA"
+    },
+    {
+      "code": "9220",
+      "label": "ŠVICARSKA"
+    },
+    {
+      "code": "9336",
+      "label": "TURSKA"
+    },
+    {
+      "code": "9317",
+      "label": "UJEDINJENI ARAPSKI EMIRATI"
+    },
+    {
+      "code": "9223",
+      "label": "UJEDINJENA KRALJEVINA VELIKE BRITANIJE I SJEVERNE IRSKE"
+    }
+  ]
+}
