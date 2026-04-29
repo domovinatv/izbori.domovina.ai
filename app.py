@@ -569,7 +569,8 @@ def render_parlament_fairness(rezultat: pd.Series, lista: pd.DataFrame, p1: str)
         "na listi. Ovo je jedini izravni signal individualne popularnosti koji baza nudi."
     )
 
-    top_n = st.slider("Koliko kandidata prikazati", 50, 1000, 400, step=50)
+    # Slider goes up to all candidates (~2300) so even the bottom of the list is browsable.
+    top_n = st.slider("Koliko kandidata prikazati", 50, 2300, 400, step=50)
     mandate_ranks = parlament_candidate_mandate_ranks(krug)
     seated_ids = set(mandate_ranks.keys())
 
@@ -578,6 +579,7 @@ def render_parlament_fairness(rezultat: pd.Series, lista: pd.DataFrame, p1: str)
                   k.naziv AS Kandidat,
                   k.glasova AS Pref_glasova,
                   k.posto AS Pref_posto_unutar_liste,
+                  COALESCE(k.u_saboru, 0) AS U_Saboru_int,
                   l.naziv AS Lista, l.mandata AS Lista_mandata,
                   r.p1 AS IJ
            FROM rezultat_kandidat k
@@ -590,6 +592,7 @@ def render_parlament_fairness(rezultat: pd.Series, lista: pd.DataFrame, p1: str)
     all_cands_df.insert(0, "Rang", range(1, len(all_cands_df) + 1))
     all_cands_df["Mandat"] = all_cands_df["id"].isin(seated_ids).map({True: "✅", False: ""})
     all_cands_df["Redni_br_mandata"] = all_cands_df["id"].map(mandate_ranks)
+    all_cands_df["U_Saboru"] = all_cands_df["U_Saboru_int"].map({1: "✅", 0: ""})
     all_cands_df["Vodeća stranka"] = all_cands_df["Lista"].map(leading_party)
     all_cands_df["IJ_lbl"] = all_cands_df["IJ"].map(lambda i: PARLAMENT_IJ_LABELS.get(i, i))
 
@@ -598,24 +601,34 @@ def render_parlament_fairness(rezultat: pd.Series, lista: pd.DataFrame, p1: str)
             return "—"
         return str(int(v))
 
+    base = all_cands_df.copy()
+    base["Redni_br_mandata_str"] = base["Redni_br_mandata"].map(_format_mandate_rank)
+
     cols_render = {
         "Rang": "Rang",
         "Kandidat": "Kandidat",
         "Rbr_na_listi": "Rbr na listi",
-        "Mandat": "Mandat",
-        "Redni_br_mandata_str": "Redni broj mandata",
+        "Mandat": "D'Hondt mandat",
+        "Redni_br_mandata_str": "Redni br. mandata",
+        "U_Saboru": "U Saboru",
         "Vodeća stranka": "Vodeća stranka",
         "IJ_lbl": "IJ",
         "Pref_glasova": "Pref. glasovi",
         "Pref_posto_unutar_liste": "% unutar liste",
         "Lista": "Lista",
     }
-
-    base = all_cands_df.copy()
-    base["Redni_br_mandata_str"] = base["Redni_br_mandata"].map(_format_mandate_rank)
-
     show = base.head(top_n)[list(cols_render.keys())].rename(columns=cols_render)
     st.dataframe(show, use_container_width=True, hide_index=True)
+
+    st.caption(
+        "**D'Hondt mandat** — kandidat je dobio mandat po izračunu (D'Hondt + pravilo 10 % "
+        "preferencijalnih unutar liste). **U Saboru** — kandidat se imenom pojavljuje u "
+        "trenutnom rasporedu sjedenja Hrvatskoga sabora "
+        "([sabor.hr seating plan](https://www.sabor.hr/export/new-seating-plan/hr), "
+        "snimka u `sifarnici/sabor_2024_seating.json`). Razlika otkriva ljude koji su "
+        "**odbili mandat** (premier, ministri, gradonačelnici, županijski načelnici, "
+        "MEP-ovi…) — njih zamjenjuje sljedeći s liste (zamjenici)."
+    )
 
     # ── Extremes: biggest losers (popular but no seat) ─────────────────────
     st.markdown("---")
@@ -623,13 +636,11 @@ def render_parlament_fairness(rezultat: pd.Series, lista: pd.DataFrame, p1: str)
         "### 📉 Najveći gubitnici — popularni kandidati bez mandata\n"
         "Kandidati koji su privukli najviše preferencijalnih glasova **a ipak nisu ušli u "
         "Sabor**. Najčešći razlog: njihova lista nije prošla 5 % unutar IJ, ili je prošla "
-        "ali je dobila premalo mandata. Ovo su ljudi koji su imali grassroot podršku ali "
-        "nisu pretvoreni u zastupnike."
+        "ali je dobila premalo mandata."
     )
-    lose_n = st.slider("Koliko gubitnika prikazati", 10, 100, 25, step=5,
+    lose_n = st.slider("Koliko gubitnika prikazati", 10, 200, 25, step=5,
                        key="lose_slider")
-    losers = base[base["Mandat"] == ""].head(lose_n).copy()
-    losers["Glasova_liste"] = losers["Lista_mandata"].astype(int).map(str) + " mand."
+    losers = base[(base["Mandat"] == "") & (base["U_Saboru"] == "")].head(lose_n).copy()
     show_lose = losers[[
         "Rang", "Kandidat", "Rbr_na_listi", "Vodeća stranka", "IJ_lbl",
         "Pref_glasova", "Pref_posto_unutar_liste", "Lista",
@@ -639,26 +650,52 @@ def render_parlament_fairness(rezultat: pd.Series, lista: pd.DataFrame, p1: str)
     })
     st.dataframe(show_lose, use_container_width=True, hide_index=True)
 
-    # ── Extremes: biggest winners by structure (low support, got seat) ──────
+    # ── Declined mandate (cabinet ministers, MEPs, mayors) ─────────────────
     st.markdown("---")
     st.markdown(
-        "### 📈 Politički namještenici — mandat unatoč niskoj potpori\n"
-        "Saborski zastupnici s **najmanje preferencijalnih glasova**. Ušli su u Sabor jer "
-        "su bili visoko pozicionirani na listi koja je osvojila dovoljno mandata — birači "
-        "nisu posebno označili njihovo ime. Default redoslijed na listi sastavljaju "
-        "stranački/koalicijski organi, ne birači."
+        "### 🚪 Odbili mandat — D'Hondt-pobjednici koji nisu sjeli u Sabor\n"
+        "Kandidati koji su po izračunu osvojili mandat **ali se ne pojavljuju u trenutnom "
+        "rasporedu sjedenja sabora** (snimka 29. 4. 2026.). Odbili su mandat i prihvatili "
+        "izvršnu/lokalnu/europsku dužnost: predsjednik Vlade i ministri ne mogu biti "
+        "zastupnici, gradonačelnici/župani i MEP-ovi se odriču saborskog mandata. "
+        "Njih zamjenjuju sljedeći s liste — zamjenici, koji obično imaju i niže "
+        "preferencijalne glasove."
     )
-    win_n = st.slider("Koliko prikazati", 10, 100, 25, step=5, key="win_slider")
-    namjestenici = base[base["Mandat"] == "✅"].sort_values(
-        "Pref_glasova", ascending=True,
-    ).head(win_n).copy()
-    show_win = namjestenici[[
+    declined = base[(base["Mandat"] == "✅") & (base["U_Saboru"] == "")].copy()
+    declined = declined.sort_values("Pref_glasova", ascending=False)
+    show_dec = declined[[
         "Kandidat", "Rbr_na_listi", "Redni_br_mandata_str",
         "Vodeća stranka", "IJ_lbl",
         "Pref_glasova", "Pref_posto_unutar_liste", "Lista",
     ]].rename(columns={
         "Rbr_na_listi": "Rbr na listi", "IJ_lbl": "IJ",
-        "Redni_br_mandata_str": "Redni broj mandata",
+        "Redni_br_mandata_str": "Redni br. mandata",
+        "Pref_glasova": "Pref. glasovi", "Pref_posto_unutar_liste": "% unutar liste",
+    })
+    st.metric("Ukupno koji su odbili mandat", f"{len(declined)} / 143 geografskih")
+    st.dataframe(show_dec, use_container_width=True, hide_index=True)
+
+    # ── Extremes: biggest winners by structure (in Sabor, low pref) ─────────
+    st.markdown("---")
+    st.markdown(
+        "### 📈 Politički namještenici — mandat u Saboru unatoč niskoj potpori\n"
+        "Zastupnici **koji stvarno sjede u Saboru** s **najmanje preferencijalnih "
+        "glasova**. Ušli su jer su bili dovoljno visoko na listi koja je osvojila "
+        "mandata — birači nisu posebno označili njihovo ime. Lista uključuje i "
+        "**zamjenike** (kandidati koji nisu osvojili mandat po D'Hondtu, ali su sjeli "
+        "umjesto premiera/ministara/MEP-ova/županja koji su odbili mandat)."
+    )
+    win_n = st.slider("Koliko prikazati", 10, 200, 25, step=5, key="win_slider")
+    namjestenici = base[base["U_Saboru"] == "✅"].sort_values(
+        "Pref_glasova", ascending=True,
+    ).head(win_n).copy()
+    show_win = namjestenici[[
+        "Kandidat", "Rbr_na_listi", "Mandat", "Redni_br_mandata_str",
+        "Vodeća stranka", "IJ_lbl",
+        "Pref_glasova", "Pref_posto_unutar_liste", "Lista",
+    ]].rename(columns={
+        "Rbr_na_listi": "Rbr na listi", "IJ_lbl": "IJ",
+        "Mandat": "D'Hondt mandat", "Redni_br_mandata_str": "Redni br. mandata",
         "Pref_glasova": "Pref. glasovi", "Pref_posto_unutar_liste": "% unutar liste",
     })
     st.dataframe(show_win, use_container_width=True, hide_index=True)

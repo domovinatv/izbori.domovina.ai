@@ -1,0 +1,1451 @@
+{
+  "fetched_at": "2026-04-29T21:40:25+00:00",
+  "source_url": "https://www.sabor.hr/export/new-seating-plan/hr",
+  "snapshot_date": "29/4/2026",
+  "name_token_sets": [
+    [
+      "ACKAR",
+      "KRESIMIR"
+    ],
+    [
+      "ANA",
+      "KUKULJAN"
+    ],
+    [
+      "ANA",
+      "PUZ"
+    ],
+    [
+      "ANAMARIJA",
+      "BLAZEVIC"
+    ],
+    [
+      "ANDELKA",
+      "SALOPEK"
+    ],
+    [
+      "ANDRO",
+      "HERMAN"
+    ],
+    [
+      "ANITA",
+      "CURIS"
+    ],
+    [
+      "ANITA",
+      "KROK"
+    ],
+    [
+      "ANJA",
+      "SIMPRAGA"
+    ],
+    [
+      "ANKA",
+      "MRAK",
+      "TARITAS"
+    ],
+    [
+      "ANTE",
+      "BABIC"
+    ],
+    [
+      "ANTE",
+      "DEUR"
+    ],
+    [
+      "ANTE",
+      "KUJUNDZIC"
+    ],
+    [
+      "ANTE",
+      "SANADER"
+    ],
+    [
+      "ANTEO",
+      "MILOS"
+    ],
+    [
+      "ANTOLIC",
+      "BARBARA"
+    ],
+    [
+      "ANTON",
+      "KLIMAN"
+    ],
+    [
+      "ARMIN",
+      "HODZIC"
+    ],
+    [
+      "AUGUSTAN",
+      "JASENKA",
+      "PENTEK"
+    ],
+    [
+      "AUGUSTAN",
+      "PENTEK"
+    ],
+    [
+      "BAKIC",
+      "DAMIR"
+    ],
+    [
+      "BAKSA",
+      "IVICA"
+    ],
+    [
+      "BAN",
+      "BOSKA"
+    ],
+    [
+      "BANICEK",
+      "JASENKA"
+    ],
+    [
+      "BARADIC",
+      "NIKOLINA"
+    ],
+    [
+      "BARBARA",
+      "VUPORA"
+    ],
+    [
+      "BARBARIC",
+      "NEVENKO"
+    ],
+    [
+      "BARBIR",
+      "DAMIR"
+    ],
+    [
+      "BARICEVIC",
+      "DANICA"
+    ],
+    [
+      "BEDEKOVIC",
+      "VESNA"
+    ],
+    [
+      "BENCIC",
+      "SANDRA"
+    ],
+    [
+      "BILEK",
+      "VLADIMIR"
+    ],
+    [
+      "BILIC",
+      "DUBRAVKO"
+    ],
+    [
+      "BILOGLAV",
+      "DAMIR"
+    ],
+    [
+      "BJEZANCEVIC",
+      "SANJA"
+    ],
+    [
+      "BLAZANOVIC",
+      "DANIJELA"
+    ],
+    [
+      "BLAZINA",
+      "MARIA"
+    ],
+    [
+      "BORIC",
+      "RADA"
+    ],
+    [
+      "BORIS",
+      "PILIZOTA"
+    ],
+    [
+      "BOZO",
+      "PETROV"
+    ],
+    [
+      "BRANKA",
+      "JURICEV",
+      "MARTINCEV"
+    ],
+    [
+      "BRANKA",
+      "MARTINCEV"
+    ],
+    [
+      "BRANKO",
+      "KOLARIC"
+    ],
+    [
+      "BUDALIC",
+      "IVAN"
+    ],
+    [
+      "BUGARIN",
+      "IVAN"
+    ],
+    [
+      "BULJ",
+      "MIRO"
+    ],
+    [
+      "BURIC",
+      "MAJDA"
+    ],
+    [
+      "BUSIC",
+      "ZDRAVKA"
+    ],
+    [
+      "CABAJ",
+      "KRESIMIR"
+    ],
+    [
+      "DABO",
+      "IVAN"
+    ],
+    [
+      "DABRO",
+      "JOSIP"
+    ],
+    [
+      "DAKIC",
+      "JOSIP"
+    ],
+    [
+      "DALIBOR",
+      "DOMITROVIC"
+    ],
+    [
+      "DALIBOR",
+      "MILAN"
+    ],
+    [
+      "DALIBOR",
+      "PAUS"
+    ],
+    [
+      "DALIJA",
+      "ORESKOVIC"
+    ],
+    [
+      "DAMIR",
+      "MANDIC"
+    ],
+    [
+      "DARIO",
+      "HREBAK"
+    ],
+    [
+      "DARIO",
+      "PUSIC"
+    ],
+    [
+      "DARIO",
+      "ZUROVEC"
+    ],
+    [
+      "DARKO",
+      "KLASIC"
+    ],
+    [
+      "DARKO",
+      "VULETIC"
+    ],
+    [
+      "DENIS",
+      "KRALJ"
+    ],
+    [
+      "DONCIC",
+      "SINISA"
+    ],
+    [
+      "DRAGANA",
+      "JECKOV"
+    ],
+    [
+      "DRAGIC",
+      "IRENA"
+    ],
+    [
+      "DRAZENKA",
+      "POLOVIC"
+    ],
+    [
+      "DUBRAVKA",
+      "LIPOVAC"
+    ],
+    [
+      "DUBRAVKA",
+      "NOVAK"
+    ],
+    [
+      "DUBRAVKA",
+      "PEHAR"
+    ],
+    [
+      "DUSICA",
+      "RADOJCIC"
+    ],
+    [
+      "FRANKOVIC",
+      "MATO"
+    ],
+    [
+      "FURIO",
+      "RADIN"
+    ],
+    [
+      "GABRICEVIC",
+      "VESELKO"
+    ],
+    [
+      "GAMULIN",
+      "RAUKAR"
+    ],
+    [
+      "GAMULIN",
+      "RAUKAR",
+      "URSA"
+    ],
+    [
+      "GLASOVAC",
+      "SABINA"
+    ],
+    [
+      "GLAVIC",
+      "ZELJKO"
+    ],
+    [
+      "GORAN",
+      "KANISKI"
+    ],
+    [
+      "GORDAN",
+      "JANDROKOVIC"
+    ],
+    [
+      "GREGUROVIC",
+      "ZORAN"
+    ],
+    [
+      "GRMOJA",
+      "NIKOLA"
+    ],
+    [
+      "HAJDAS",
+      "SINISA"
+    ],
+    [
+      "HRVOJE",
+      "ZEKANOVIC"
+    ],
+    [
+      "IGOR",
+      "PETERNEL"
+    ],
+    [
+      "ILJKIC",
+      "MARTINA"
+    ],
+    [
+      "IVAN",
+      "MALENICA"
+    ],
+    [
+      "IVAN",
+      "PENAVA"
+    ],
+    [
+      "IVAN",
+      "RACAN"
+    ],
+    [
+      "IVAN",
+      "RADIC"
+    ],
+    [
+      "IVANA",
+      "KEKIN"
+    ],
+    [
+      "IVANA",
+      "MARKOVIC"
+    ],
+    [
+      "IVICA",
+      "LEDENKO"
+    ],
+    [
+      "IVICA",
+      "MESIC"
+    ],
+    [
+      "IVO",
+      "ZELIC"
+    ],
+    [
+      "JANKOVICS",
+      "ROBERT"
+    ],
+    [
+      "JASNA",
+      "VOJNIC"
+    ],
+    [
+      "JELENA",
+      "MILOS"
+    ],
+    [
+      "JEMBRIH",
+      "LJUBICA"
+    ],
+    [
+      "JOSIC",
+      "TOMISLAV"
+    ],
+    [
+      "JOSIP",
+      "JURCEVIC"
+    ],
+    [
+      "JOSIP",
+      "OSTROGOVIC"
+    ],
+    [
+      "KAJTAZI",
+      "VELJKO"
+    ],
+    [
+      "KLARIC",
+      "TOMISLAV"
+    ],
+    [
+      "KOMES",
+      "MAGDALENA"
+    ],
+    [
+      "KORDIC",
+      "MARTIN"
+    ],
+    [
+      "KRPAN",
+      "SANDRA"
+    ],
+    [
+      "KRSTULOVIC",
+      "OPARA"
+    ],
+    [
+      "LACKOVIC",
+      "ZELJKO"
+    ],
+    [
+      "LJUBICA",
+      "LUKACIC"
+    ],
+    [
+      "LUGARIC",
+      "MARIJA"
+    ],
+    [
+      "MADUNA",
+      "SANDA"
+    ],
+    [
+      "MAJANOVIC",
+      "RIBARIC"
+    ],
+    [
+      "MAKSIMILIJAN",
+      "SIMRAK"
+    ],
+    [
+      "MANDARIC",
+      "MARIN"
+    ],
+    [
+      "MARIJA",
+      "RASPUDIC",
+      "SELAK"
+    ],
+    [
+      "MARIJANA",
+      "PULJAK"
+    ],
+    [
+      "MARIN",
+      "MILETIC"
+    ],
+    [
+      "MARIN",
+      "PILETIC"
+    ],
+    [
+      "MARIN",
+      "ZIVKOVIC"
+    ],
+    [
+      "MARIO",
+      "MARKOVIC"
+    ],
+    [
+      "MARIO",
+      "MILINKOVIC"
+    ],
+    [
+      "MARKO",
+      "PAVIC"
+    ],
+    [
+      "MARKOVIC",
+      "MIROSLAV"
+    ],
+    [
+      "MARTINA",
+      "VLASIC"
+    ],
+    [
+      "MATE",
+      "VUKUSIC"
+    ],
+    [
+      "MATEJ",
+      "MOSTARAC"
+    ],
+    [
+      "MAZAR",
+      "NIKOLA"
+    ],
+    [
+      "MIHAEL",
+      "ZMAJLOVIC"
+    ],
+    [
+      "MILORAD",
+      "PUPOVAC"
+    ],
+    [
+      "MISIC",
+      "PREDRAG"
+    ],
+    [
+      "NINO",
+      "RASPUDIC"
+    ],
+    [
+      "OSTOJIC",
+      "RANKO"
+    ],
+    [
+      "PREDRAG",
+      "STROMAR"
+    ],
+    [
+      "RADOLOVIC",
+      "SANJA"
+    ],
+    [
+      "RASPUDIC",
+      "SELAK"
+    ],
+    [
+      "REINER",
+      "ZELJKO"
+    ],
+    [
+      "RESTOVIC",
+      "TONCI"
+    ],
+    [
+      "SASLIN",
+      "STIPAN"
+    ],
+    [
+      "SOKOLIC",
+      "TANJA"
+    ],
+    [
+      "SUTA",
+      "TOMISLAV"
+    ],
+    [
+      "TOMISLAV",
+      "ZADRO"
+    ],
+    [
+      "TROSKOT",
+      "ZVONIMIR"
+    ],
+    [
+      "TURK",
+      "ZELJKO"
+    ],
+    [
+      "VESNA",
+      "VUCEMILOVIC"
+    ]
+  ],
+  "pairs": [
+    "ACKAR|KRESIMIR",
+    "ANDRO|HERMAN",
+    "ANTOLIC|BARBARA",
+    "AUGUSTAN-PENTEK|JASENKA",
+    "AUGUSTAN|PENTEK",
+    "BABIC|ANTE",
+    "BAKIC|DAMIR",
+    "BAKSA|IVICA",
+    "BAN|BOSKA",
+    "BARADIC|NIKOLINA",
+    "BARBARIC|NEVENKO",
+    "BARBIR|DAMIR",
+    "BARICEVIC|DANICA",
+    "BEDEKOVIC|VESNA",
+    "BENCIC|SANDRA",
+    "BILEK|VLADIMIR",
+    "BILIC|DUBRAVKO",
+    "BILOGLAV|DAMIR",
+    "BJEZANCEVIC|SANJA",
+    "BLAZANOVIC|DANIJELA",
+    "BLAZEVIC|ANAMARIJA",
+    "BLAZINA|MARIA",
+    "BORIC|RADA",
+    "BUDALIC|IVAN",
+    "BUGARIN|IVAN",
+    "BULJ|MIRO",
+    "BURIC|MAJDA",
+    "BUSIC|ZDRAVKA",
+    "CABAJ|KRESIMIR",
+    "CURIS|ANITA",
+    "DABO|IVAN",
+    "DABRO|JOSIP",
+    "DAKIC|JOSIP",
+    "DEUR|ANTE",
+    "DOMITROVIC|DALIBOR",
+    "DONCIC|SINISA",
+    "DRAGIC|IRENA",
+    "FRANKOVIC|MATO",
+    "GABRICEVIC|VESELKO",
+    "GLASOVAC|SABINA",
+    "GLAVIC|ZELJKO",
+    "GREGUROVIC|ZORAN",
+    "GRMOJA|NIKOLA",
+    "HAJDAS|SINISA",
+    "HODZIC|ARMIN",
+    "HREBAK|DARIO",
+    "ILJKIC|MARTINA",
+    "JANDROKOVIC|GORDAN",
+    "JANKOVICS|ROBERT",
+    "JASENKA|BANICEK",
+    "JECKOV|DRAGANA",
+    "JEMBRIH|LJUBICA",
+    "JOSIC|TOMISLAV",
+    "JURCEVIC|JOSIP",
+    "JURICEV-MARTINCEV|BRANKA",
+    "KAJTAZI|VELJKO",
+    "KANISKI|GORAN",
+    "KEKIN|IVANA",
+    "KLARIC|TOMISLAV",
+    "KLASIC|DARKO",
+    "KLIMAN|ANTON",
+    "KOLARIC|BRANKO",
+    "KOMES|MAGDALENA",
+    "KORDIC|MARTIN",
+    "KRALJ|DENIS",
+    "KROK|ANITA",
+    "KRPAN|SANDRA",
+    "KRSTULOVIC|OPARA",
+    "KUJUNDZIC|ANTE",
+    "KUKULJAN|ANA",
+    "LACKOVIC|ZELJKO",
+    "LEDENKO|IVICA",
+    "LIPOVAC|DUBRAVKA",
+    "LUGARIC|MARIJA",
+    "LUKACIC|LJUBICA",
+    "MADUNA|SANDA",
+    "MALENICA|IVAN",
+    "MANDARIC|MARIN",
+    "MANDIC|DAMIR",
+    "MARKOVIC|IVANA",
+    "MARKOVIC|MARIO",
+    "MARKOVIC|MIROSLAV",
+    "MARTINCEV|BRANKA",
+    "MAZAR|NIKOLA",
+    "MESIC|IVICA",
+    "MILAN|DALIBOR",
+    "MILETIC|MARIN",
+    "MILINKOVIC|MARIO",
+    "MILOS|ANTEO",
+    "MILOS|JELENA",
+    "MISIC|PREDRAG",
+    "MOSTARAC|MATEJ",
+    "MRAK-TARITAS|ANKA",
+    "NOVAK|DUBRAVKA",
+    "ORESKOVIC|DALIJA",
+    "OSTOJIC|RANKO",
+    "OSTROGOVIC|JOSIP",
+    "PAUS|DALIBOR",
+    "PAVIC|MARKO",
+    "PEHAR|DUBRAVKA",
+    "PENAVA|IVAN",
+    "PETERNEL|IGOR",
+    "PETROV|BOZO",
+    "PILETIC|MARIN",
+    "PILIZOTA|BORIS",
+    "POLOVIC|DRAZENKA",
+    "PULJAK|MARIJANA",
+    "PUPOVAC|MILORAD",
+    "PUSIC|DARIO",
+    "PUZ|ANA",
+    "RACAN|IVAN",
+    "RADIC|IVAN",
+    "RADIN|FURIO",
+    "RADOJCIC|DUSICA",
+    "RADOLOVIC|SANJA",
+    "RASPUDIC|NINO",
+    "RAUKAR-GAMULIN|URSA",
+    "RAUKAR|GAMULIN",
+    "REINER|ZELJKO",
+    "RESTOVIC|TONCI",
+    "RIBARIC|MAJANOVIC",
+    "SALOPEK|ANDELKA",
+    "SANADER|ANTE",
+    "SASLIN|STIPAN",
+    "SELAK RASPUDIC|MARIJA",
+    "SELAK|RASPUDIC",
+    "SIMPRAGA|ANJA",
+    "SIMRAK|MAKSIMILIJAN",
+    "SOKOLIC|TANJA",
+    "STROMAR|PREDRAG",
+    "SUTA|TOMISLAV",
+    "TROSKOT|ZVONIMIR",
+    "TURK|ZELJKO",
+    "VLASIC|MARTINA",
+    "VOJNIC|JASNA",
+    "VUCEMILOVIC|VESNA",
+    "VUKUSIC|MATE",
+    "VULETIC|DARKO",
+    "VUPORA|BARBARA",
+    "ZADRO|TOMISLAV",
+    "ZEKANOVIC|HRVOJE",
+    "ZELIC|IVO",
+    "ZIVKOVIC|MARIN",
+    "ZMAJLOVIC|MIHAEL",
+    "ZUROVEC|DARIO"
+  ],
+  "pair_set": [
+    "ACKAR KRESIMIR",
+    "ANA KUKULJAN",
+    "ANA PUZ",
+    "ANAMARIJA BLAZEVIC",
+    "ANDELKA SALOPEK",
+    "ANDRO HERMAN",
+    "ANITA CURIS",
+    "ANITA KROK",
+    "ANJA SIMPRAGA",
+    "ANKA MRAK-TARITAS",
+    "ANTE BABIC",
+    "ANTE DEUR",
+    "ANTE KUJUNDZIC",
+    "ANTE SANADER",
+    "ANTEO MILOS",
+    "ANTOLIC BARBARA",
+    "ANTON KLIMAN",
+    "ARMIN HODZIC",
+    "AUGUSTAN PENTEK",
+    "AUGUSTAN-PENTEK JASENKA",
+    "BABIC ANTE",
+    "BAKIC DAMIR",
+    "BAKSA IVICA",
+    "BAN BOSKA",
+    "BANICEK JASENKA",
+    "BARADIC NIKOLINA",
+    "BARBARA ANTOLIC",
+    "BARBARA VUPORA",
+    "BARBARIC NEVENKO",
+    "BARBIR DAMIR",
+    "BARICEVIC DANICA",
+    "BEDEKOVIC VESNA",
+    "BENCIC SANDRA",
+    "BILEK VLADIMIR",
+    "BILIC DUBRAVKO",
+    "BILOGLAV DAMIR",
+    "BJEZANCEVIC SANJA",
+    "BLAZANOVIC DANIJELA",
+    "BLAZEVIC ANAMARIJA",
+    "BLAZINA MARIA",
+    "BORIC RADA",
+    "BORIS PILIZOTA",
+    "BOSKA BAN",
+    "BOZO PETROV",
+    "BRANKA JURICEV-MARTINCEV",
+    "BRANKA MARTINCEV",
+    "BRANKO KOLARIC",
+    "BUDALIC IVAN",
+    "BUGARIN IVAN",
+    "BULJ MIRO",
+    "BURIC MAJDA",
+    "BUSIC ZDRAVKA",
+    "CABAJ KRESIMIR",
+    "CURIS ANITA",
+    "DABO IVAN",
+    "DABRO JOSIP",
+    "DAKIC JOSIP",
+    "DALIBOR DOMITROVIC",
+    "DALIBOR MILAN",
+    "DALIBOR PAUS",
+    "DALIJA ORESKOVIC",
+    "DAMIR BAKIC",
+    "DAMIR BARBIR",
+    "DAMIR BILOGLAV",
+    "DAMIR MANDIC",
+    "DANICA BARICEVIC",
+    "DANIJELA BLAZANOVIC",
+    "DARIO HREBAK",
+    "DARIO PUSIC",
+    "DARIO ZUROVEC",
+    "DARKO KLASIC",
+    "DARKO VULETIC",
+    "DENIS KRALJ",
+    "DEUR ANTE",
+    "DOMITROVIC DALIBOR",
+    "DONCIC SINISA",
+    "DRAGANA JECKOV",
+    "DRAGIC IRENA",
+    "DRAZENKA POLOVIC",
+    "DUBRAVKA LIPOVAC",
+    "DUBRAVKA NOVAK",
+    "DUBRAVKA PEHAR",
+    "DUBRAVKO BILIC",
+    "DUSICA RADOJCIC",
+    "FRANKOVIC MATO",
+    "FURIO RADIN",
+    "GABRICEVIC VESELKO",
+    "GAMULIN RAUKAR",
+    "GLASOVAC SABINA",
+    "GLAVIC ZELJKO",
+    "GORAN KANISKI",
+    "GORDAN JANDROKOVIC",
+    "GREGUROVIC ZORAN",
+    "GRMOJA NIKOLA",
+    "HAJDAS SINISA",
+    "HERMAN ANDRO",
+    "HODZIC ARMIN",
+    "HREBAK DARIO",
+    "HRVOJE ZEKANOVIC",
+    "IGOR PETERNEL",
+    "ILJKIC MARTINA",
+    "IRENA DRAGIC",
+    "IVAN BUDALIC",
+    "IVAN BUGARIN",
+    "IVAN DABO",
+    "IVAN MALENICA",
+    "IVAN PENAVA",
+    "IVAN RACAN",
+    "IVAN RADIC",
+    "IVANA KEKIN",
+    "IVANA MARKOVIC",
+    "IVICA BAKSA",
+    "IVICA LEDENKO",
+    "IVICA MESIC",
+    "IVO ZELIC",
+    "JANDROKOVIC GORDAN",
+    "JANKOVICS ROBERT",
+    "JASENKA AUGUSTAN-PENTEK",
+    "JASENKA BANICEK",
+    "JASNA VOJNIC",
+    "JECKOV DRAGANA",
+    "JELENA MILOS",
+    "JEMBRIH LJUBICA",
+    "JOSIC TOMISLAV",
+    "JOSIP DABRO",
+    "JOSIP DAKIC",
+    "JOSIP JURCEVIC",
+    "JOSIP OSTROGOVIC",
+    "JURCEVIC JOSIP",
+    "JURICEV-MARTINCEV BRANKA",
+    "KAJTAZI VELJKO",
+    "KANISKI GORAN",
+    "KEKIN IVANA",
+    "KLARIC TOMISLAV",
+    "KLASIC DARKO",
+    "KLIMAN ANTON",
+    "KOLARIC BRANKO",
+    "KOMES MAGDALENA",
+    "KORDIC MARTIN",
+    "KRALJ DENIS",
+    "KRESIMIR ACKAR",
+    "KRESIMIR CABAJ",
+    "KROK ANITA",
+    "KRPAN SANDRA",
+    "KRSTULOVIC OPARA",
+    "KUJUNDZIC ANTE",
+    "KUKULJAN ANA",
+    "LACKOVIC ZELJKO",
+    "LEDENKO IVICA",
+    "LIPOVAC DUBRAVKA",
+    "LJUBICA JEMBRIH",
+    "LJUBICA LUKACIC",
+    "LUGARIC MARIJA",
+    "LUKACIC LJUBICA",
+    "MADUNA SANDA",
+    "MAGDALENA KOMES",
+    "MAJANOVIC RIBARIC",
+    "MAJDA BURIC",
+    "MAKSIMILIJAN SIMRAK",
+    "MALENICA IVAN",
+    "MANDARIC MARIN",
+    "MANDIC DAMIR",
+    "MARIA BLAZINA",
+    "MARIJA LUGARIC",
+    "MARIJA SELAK RASPUDIC",
+    "MARIJANA PULJAK",
+    "MARIN MANDARIC",
+    "MARIN MILETIC",
+    "MARIN PILETIC",
+    "MARIN ZIVKOVIC",
+    "MARIO MARKOVIC",
+    "MARIO MILINKOVIC",
+    "MARKO PAVIC",
+    "MARKOVIC IVANA",
+    "MARKOVIC MARIO",
+    "MARKOVIC MIROSLAV",
+    "MARTIN KORDIC",
+    "MARTINA ILJKIC",
+    "MARTINA VLASIC",
+    "MARTINCEV BRANKA",
+    "MATE VUKUSIC",
+    "MATEJ MOSTARAC",
+    "MATO FRANKOVIC",
+    "MAZAR NIKOLA",
+    "MESIC IVICA",
+    "MIHAEL ZMAJLOVIC",
+    "MILAN DALIBOR",
+    "MILETIC MARIN",
+    "MILINKOVIC MARIO",
+    "MILORAD PUPOVAC",
+    "MILOS ANTEO",
+    "MILOS JELENA",
+    "MIRO BULJ",
+    "MIROSLAV MARKOVIC",
+    "MISIC PREDRAG",
+    "MOSTARAC MATEJ",
+    "MRAK-TARITAS ANKA",
+    "NEVENKO BARBARIC",
+    "NIKOLA GRMOJA",
+    "NIKOLA MAZAR",
+    "NIKOLINA BARADIC",
+    "NINO RASPUDIC",
+    "NOVAK DUBRAVKA",
+    "OPARA KRSTULOVIC",
+    "ORESKOVIC DALIJA",
+    "OSTOJIC RANKO",
+    "OSTROGOVIC JOSIP",
+    "PAUS DALIBOR",
+    "PAVIC MARKO",
+    "PEHAR DUBRAVKA",
+    "PENAVA IVAN",
+    "PENTEK AUGUSTAN",
+    "PETERNEL IGOR",
+    "PETROV BOZO",
+    "PILETIC MARIN",
+    "PILIZOTA BORIS",
+    "POLOVIC DRAZENKA",
+    "PREDRAG MISIC",
+    "PREDRAG STROMAR",
+    "PULJAK MARIJANA",
+    "PUPOVAC MILORAD",
+    "PUSIC DARIO",
+    "PUZ ANA",
+    "RACAN IVAN",
+    "RADA BORIC",
+    "RADIC IVAN",
+    "RADIN FURIO",
+    "RADOJCIC DUSICA",
+    "RADOLOVIC SANJA",
+    "RANKO OSTOJIC",
+    "RASPUDIC NINO",
+    "RASPUDIC SELAK",
+    "RAUKAR GAMULIN",
+    "RAUKAR-GAMULIN URSA",
+    "REINER ZELJKO",
+    "RESTOVIC TONCI",
+    "RIBARIC MAJANOVIC",
+    "ROBERT JANKOVICS",
+    "SABINA GLASOVAC",
+    "SALOPEK ANDELKA",
+    "SANADER ANTE",
+    "SANDA MADUNA",
+    "SANDRA BENCIC",
+    "SANDRA KRPAN",
+    "SANJA BJEZANCEVIC",
+    "SANJA RADOLOVIC",
+    "SASLIN STIPAN",
+    "SELAK RASPUDIC",
+    "SELAK RASPUDIC MARIJA",
+    "SIMPRAGA ANJA",
+    "SIMRAK MAKSIMILIJAN",
+    "SINISA DONCIC",
+    "SINISA HAJDAS",
+    "SOKOLIC TANJA",
+    "STIPAN SASLIN",
+    "STROMAR PREDRAG",
+    "SUTA TOMISLAV",
+    "TANJA SOKOLIC",
+    "TOMISLAV JOSIC",
+    "TOMISLAV KLARIC",
+    "TOMISLAV SUTA",
+    "TOMISLAV ZADRO",
+    "TONCI RESTOVIC",
+    "TROSKOT ZVONIMIR",
+    "TURK ZELJKO",
+    "URSA RAUKAR-GAMULIN",
+    "VELJKO KAJTAZI",
+    "VESELKO GABRICEVIC",
+    "VESNA BEDEKOVIC",
+    "VESNA VUCEMILOVIC",
+    "VLADIMIR BILEK",
+    "VLASIC MARTINA",
+    "VOJNIC JASNA",
+    "VUCEMILOVIC VESNA",
+    "VUKUSIC MATE",
+    "VULETIC DARKO",
+    "VUPORA BARBARA",
+    "ZADRO TOMISLAV",
+    "ZDRAVKA BUSIC",
+    "ZEKANOVIC HRVOJE",
+    "ZELIC IVO",
+    "ZELJKO GLAVIC",
+    "ZELJKO LACKOVIC",
+    "ZELJKO REINER",
+    "ZELJKO TURK",
+    "ZIVKOVIC MARIN",
+    "ZMAJLOVIC MIHAEL",
+    "ZORAN GREGUROVIC",
+    "ZUROVEC DARIO",
+    "ZVONIMIR TROSKOT"
+  ],
+  "surname_set": [
+    "ACKAR",
+    "ANDRO",
+    "ANTOLIC",
+    "AUGUSTAN",
+    "AUGUSTAN-PENTEK",
+    "BABIC",
+    "BAKIC",
+    "BAKSA",
+    "BAN",
+    "BARADIC",
+    "BARBARIC",
+    "BARBIR",
+    "BARICEVIC",
+    "BEDEKOVIC",
+    "BENCIC",
+    "BILEK",
+    "BILIC",
+    "BILOGLAV",
+    "BJEZANCEVIC",
+    "BLAZANOVIC",
+    "BLAZEVIC",
+    "BLAZINA",
+    "BORIC",
+    "BUDALIC",
+    "BUGARIN",
+    "BULJ",
+    "BURIC",
+    "BUSIC",
+    "CABAJ",
+    "CURIS",
+    "DABO",
+    "DABRO",
+    "DAKIC",
+    "DEUR",
+    "DOMITROVIC",
+    "DONCIC",
+    "DRAGIC",
+    "FRANKOVIC",
+    "GABRICEVIC",
+    "GLASOVAC",
+    "GLAVIC",
+    "GREGUROVIC",
+    "GRMOJA",
+    "HAJDAS",
+    "HODZIC",
+    "HREBAK",
+    "ILJKIC",
+    "JANDROKOVIC",
+    "JANKOVICS",
+    "JASENKA",
+    "JECKOV",
+    "JEMBRIH",
+    "JOSIC",
+    "JURCEVIC",
+    "JURICEV-MARTINCEV",
+    "KAJTAZI",
+    "KANISKI",
+    "KEKIN",
+    "KLARIC",
+    "KLASIC",
+    "KLIMAN",
+    "KOLARIC",
+    "KOMES",
+    "KORDIC",
+    "KRALJ",
+    "KROK",
+    "KRPAN",
+    "KRSTULOVIC",
+    "KUJUNDZIC",
+    "KUKULJAN",
+    "LACKOVIC",
+    "LEDENKO",
+    "LIPOVAC",
+    "LUGARIC",
+    "LUKACIC",
+    "MADUNA",
+    "MALENICA",
+    "MANDARIC",
+    "MANDIC",
+    "MARKOVIC",
+    "MARTINCEV",
+    "MAZAR",
+    "MESIC",
+    "MILAN",
+    "MILETIC",
+    "MILINKOVIC",
+    "MILOS",
+    "MISIC",
+    "MOSTARAC",
+    "MRAK-TARITAS",
+    "NOVAK",
+    "ORESKOVIC",
+    "OSTOJIC",
+    "OSTROGOVIC",
+    "PAUS",
+    "PAVIC",
+    "PEHAR",
+    "PENAVA",
+    "PETERNEL",
+    "PETROV",
+    "PILETIC",
+    "PILIZOTA",
+    "POLOVIC",
+    "PULJAK",
+    "PUPOVAC",
+    "PUSIC",
+    "PUZ",
+    "RACAN",
+    "RADIC",
+    "RADIN",
+    "RADOJCIC",
+    "RADOLOVIC",
+    "RASPUDIC",
+    "RAUKAR",
+    "RAUKAR-GAMULIN",
+    "REINER",
+    "RESTOVIC",
+    "RIBARIC",
+    "SALOPEK",
+    "SANADER",
+    "SASLIN",
+    "SELAK",
+    "SELAK RASPUDIC",
+    "SIMPRAGA",
+    "SIMRAK",
+    "SOKOLIC",
+    "STROMAR",
+    "SUTA",
+    "TROSKOT",
+    "TURK",
+    "VLASIC",
+    "VOJNIC",
+    "VUCEMILOVIC",
+    "VUKUSIC",
+    "VULETIC",
+    "VUPORA",
+    "ZADRO",
+    "ZEKANOVIC",
+    "ZELIC",
+    "ZIVKOVIC",
+    "ZMAJLOVIC",
+    "ZUROVEC"
+  ],
+  "tokens": [
+    "ACKAR",
+    "AHMETOVIC",
+    "ANA",
+    "ANAMARIJA",
+    "ANDELKA",
+    "ANDRO",
+    "ANITA",
+    "ANJA",
+    "ANKA",
+    "ANTE",
+    "ANTEO",
+    "ANTOLIC",
+    "ANTON",
+    "ARMIN",
+    "ARSEN",
+    "AUGUSTAN",
+    "BABIC",
+    "BAKIC",
+    "BAKSA",
+    "BAN",
+    "BANICEK",
+    "BARADIC",
+    "BARBARA",
+    "BARBARIC",
+    "BARBIR",
+    "BARICEVIC",
+    "BAUK",
+    "BEDEKOVIC",
+    "BENCIC",
+    "BILEK",
+    "BILIC",
+    "BILOGLAV",
+    "BJEZANCEVIC",
+    "BLAZANOVIC",
+    "BLAZEVIC",
+    "BLAZINA",
+    "BORIC",
+    "BORIS",
+    "BOSKA",
+    "BOZO",
+    "BRANKA",
+    "BRANKO",
+    "BUDALIC",
+    "BUGARIN",
+    "BULJ",
+    "BURIC",
+    "BUSIC",
+    "CABAJ",
+    "COSIC",
+    "CURIS",
+    "DABO",
+    "DABRO",
+    "DAKIC",
+    "DALIBOR",
+    "DALIJA",
+    "DAMIR",
+    "DANICA",
+    "DANIJELA",
+    "DARIO",
+    "DARKO",
+    "DEMOKRATSKOG",
+    "DENIS",
+    "DEUR",
+    "DOMITROVIC",
+    "DONCIC",
+    "DRAGANA",
+    "DRAGIC",
+    "DRAZENKA",
+    "DUBRAVKA",
+    "DUBRAVKO",
+    "DUJIC",
+    "DUSICA",
+    "FRANKOVIC",
+    "FURIO",
+    "GABRICEVIC",
+    "GAMULIN",
+    "GLASOVAC",
+    "GLAVIC",
+    "GORAN",
+    "GORDAN",
+    "GRADANSKO-LIBERALNOG",
+    "GREGUROVIC",
+    "GRMOJA",
+    "HAJDAS",
+    "HERMAN",
+    "HODZIC",
+    "HREBAK",
+    "HRVOJE",
+    "IDS",
+    "IGOR",
+    "IKIC",
+    "ILJKIC",
+    "IRENA",
+    "ISTARSKE",
+    "ISU",
+    "IVAN",
+    "IVANA",
+    "IVICA",
+    "IVO",
+    "JAKSIC",
+    "JANDROKOVIC",
+    "JANKOVICS",
+    "JASENKA",
+    "JASNA",
+    "JECKOV",
+    "JELENA",
+    "JEMBRIH",
+    "JOSIC",
+    "JOSIP",
+    "JURCEVIC",
+    "JURICEV",
+    "KAJTAZI",
+    "KANISKI",
+    "KATICIC",
+    "KEKIN",
+    "KLARIC",
+    "KLASIC",
+    "KLIMAN",
+    "KOLAREK",
+    "KOLARIC",
+    "KOMADINA",
+    "KOMES",
+    "KORDIC",
+    "KRALJ",
+    "KRESIMIR",
+    "KRISTINA",
+    "KROK",
+    "KRPAN",
+    "KRSTICEVIC",
+    "KRSTULOVIC",
+    "KRUNOSLAV",
+    "KUJUNDZIC",
+    "KUKAVICA",
+    "KUKULJAN",
+    "LACKOVIC",
+    "LALOVAC",
+    "LEDENKO",
+    "LIPOVAC",
+    "LIVIA",
+    "LJUBICA",
+    "LJUBOMIR",
+    "LUGARIC",
+    "LUKACIC",
+    "MADUNA",
+    "MAGDALENA",
+    "MAJANOVIC",
+    "MAJDA",
+    "MAKSIMILIJAN",
+    "MALENICA",
+    "MANDARIC",
+    "MANDIC",
+    "MARIA",
+    "MARIJA",
+    "MARIJANA",
+    "MARIN",
+    "MARIO",
+    "MARKO",
+    "MARKOVIC",
+    "MARTIN",
+    "MARTINA",
+    "MARTINCEV",
+    "MATE",
+    "MATEJ",
+    "MATO",
+    "MAZAR",
+    "MESIC",
+    "MIHAEL",
+    "MILAN",
+    "MILETIC",
+    "MILINKOVIC",
+    "MILORAD",
+    "MILOS",
+    "MIRELA",
+    "MIRO",
+    "MIROSLAV",
+    "MISEL",
+    "MISIC",
+    "MISLAV",
+    "MISO",
+    "MLINARIC",
+    "MOSTARAC",
+    "MRAK-TARITAS",
+    "NEVENKO",
+    "NEZAVISNIH",
+    "NIKOLA",
+    "NIKOLINA",
+    "NINO",
+    "NOVAK",
+    "OPARA",
+    "ORESKOVIC",
+    "OSTOJIC",
+    "OSTROGOVIC",
+    "PAUS",
+    "PAVIC",
+    "PEHAR",
+    "PENAVA",
+    "PENTEK",
+    "PERO",
+    "PETERNEL",
+    "PETIR",
+    "PETROV",
+    "PGS",
+    "PILETIC",
+    "PILIZOTA",
+    "PIP",
+    "POLOVIC",
+    "PREDRAG",
+    "PRIMORSKO-GORANSKOG",
+    "PULJAK",
+    "PUPOVAC",
+    "PUSIC",
+    "PUZ",
+    "RACAN",
+    "RADA",
+    "RADIC",
+    "RADIN",
+    "RADOJCIC",
+    "RADOLOVIC",
+    "RANKO",
+    "RASPUDIC",
+    "RAUKAR",
+    "REINER",
+    "RESTOVIC",
+    "RIBARIC",
+    "ROBERT",
+    "SABINA",
+    "SALOPEK",
+    "SANADER",
+    "SANDA",
+    "SANDRA",
+    "SANJA",
+    "SASA",
+    "SASLIN",
+    "SELAK",
+    "SIMPRAGA",
+    "SIMRAK",
+    "SINISA",
+    "SOBOTA",
+    "SOCIJALNO-LIBERALNE",
+    "SOKOLIC",
+    "STIPAN",
+    "STIPO",
+    "STROMAR",
+    "SUTA",
+    "TANJA",
+    "TOMISLAV",
+    "TONCI",
+    "TOTGERGELI",
+    "TROSKOT",
+    "TURK",
+    "UNIJA",
+    "URSA",
+    "VELJKO",
+    "VESELKO",
+    "VESNA",
+    "VLADIMIR",
+    "VLASIC",
+    "VOJNIC",
+    "VUCEMILOVIC",
+    "VUKUSIC",
+    "VULETIC",
+    "VUPORA",
+    "ZADRO",
+    "ZDRAVKA",
+    "ZEKANOVIC",
+    "ZELIC",
+    "ZELJKO",
+    "ZIVKOVIC",
+    "ZLATKO",
+    "ZMAJLOVIC",
+    "ZORAN",
+    "ZUROVEC",
+    "ZVONIMIR"
+  ],
+  "raw_text": "Klub zastupnika Hrvatske demokratske zajednice (58) Zastupnici izvan klubova političkih stranaka (3)\nKlub zastupnika Socijaldemokratske partije Hrvatske (36) Klub zastupnika Istarskog demokratskog sabora (IDS), Primorsko-goranskog saveza (PGS), Unije Kvarnera\nHRVATSKI SABOR Klub zastupnika Možemo! (10) (UNIJA) i Istarske stranke umirovljenika - Partito Istriano dei pensionati (ISU - PIP) (3)\nKlub zastupnika Domovinskog pokreta (8) Klub zastupnika Hrvatske socijalno-liberalne stranke i nezavisnog zastupnika Vladimira Bileka (3)\nKlub zastupnika Mosta i nezavisnog zastupnika Josipa Jurčevića (8) Klub zastupnika Samostalne demokratske srpske stranke (3)\nKlub zastupnika Centra, Nezavisne platforme Sjevera i Građansko-liberalnog saveza (5) Klub zastupnika Hrvatske narodne stranke i nezavisnih zastupnika (3)\nPrikazano je stanje na dan: 29/4/2026\nKlub zastupnika Dom i nacionalno okupljanje i Hrvatski suverenisti (4) Klub nezavisnih zastupnika (3)\nKlub zastupnika Nezavisni i HSU (3)\nZastupnici nacionalnih manjina (8)\nJurčević Kordić Peternel Biloglav Čabaj\nJosip Martin Igor Damir Krešimir\nZurovec Selak Raspudić Baksa Puljak Barbir Bilić Šimpraga Pupovac Jeckov Vuletić Mandarić Mandić Milan Salopek Dabo Pušić Barbarić Kaniški\nDario Raspudić Nino Ivica Marijana Damir Dubravko Anja Milorad Dragana Darko Marin Damir Dalibor Anđelka Ivan Dario Nevenko Goran\nMarija\nSokolić Ribarić Antolić Vupora Mrak-Taritaš Orešković Milos Paus Miletić Troskot Grmoja Ledenko Gabričević Vučemilović Lacković Komes Glavić Blažević Jembrih Budalić\nTanja Majanović Barbara Anka Dalija Anteo Dalibor Marin Zvonimir Nikola Ivica Veselko Vesna Željko Magdalena Željko Anamarija Ljubica Ivan\nIvana\nPiližota Vukušić Blažina Kralj Novak Polović Miloš Živković Petrov Kujundžić Bulj Franković Radin Hodžić Bilek Jankovics Baradić Maduna Šimrak Babić\nBoris Mate Maria Denis Dubravka Draženka Jelena Marin Božo Ante Miro Mato Furio Armin Vladimir Robert Nikolina Sanda Livia Maksimilijan Ante\nDragić Domitrović Curiš Krok Bježančević Radojčić Kekin Bakić Benčić Hrebak Klasić Štromar Ban Kajtazi Piletić Pavić Blažanović Klarić Šuta Bugarin Ostrogović\nIrena Dalibor Anita Sanja Dušica Ivana Damir Sandra Dario Darko Predrag Boška Veljko Marin Marko Danijela Tomislav Tomislav Ivan Josip\nVlašić Iljkić Račan Puž Kukuljan Mostarac Krpan Kolarić Borić Raukar- Mesić Mišić Vojnić Bušić Deur Burić Mažar Zelić Baričević Šašlin Ačkar Radić\nMartina Ivan Ana Matej Sandra Branko Rada Gamulin Ivica Predrag Jasna Zdravka Ante Majda Nikola Ivo Danica Stipan Krešimir Ivan\nUrša\nMilinković Marković Auguštan- Marković Zmajlović Restović Radolović Lugarić Dabro Lipovac Pehar Josić Zekanović Turk Gregurović Zadro Đakić Krstulović Bedeković Malenica Kliman\nMario Ivana Pentek Miroslav Mihael Tonči Sanja Marija Josip Dubravka Tomislav Hrvoje Željko Zoran Tomislav Josip Opara Vesna Ivan Anton\nJasenka Andro\nLalovac Krstičević Ikić Baniček Komadina Bauk Đujić Ahmetović Jakšić Mlinarić Penava Kukavica Petir Borić Juričev- Totgergeli Katičić Herman Kolarek Ćosić Sobota\nBoris Mišo Kristina Zlatko Arsen Saša Mirela Mišel Stipo Ivan Ivica Marijana Josip Martinčev Miro Krunoslav Mislav Ljubomir Pero Darko\nBranka\nOstojić Glasovac Hajdaš Dončić Reiner Sanader Lukačić\nRanko Sabina Siniša Željko Ante Ljubica\nJandroković\nGordan\nPREDSJEDNIK\nHRVATSKOGA\nSABORA\n"
+}

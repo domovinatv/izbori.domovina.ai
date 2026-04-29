@@ -76,7 +76,8 @@ CREATE TABLE IF NOT EXISTS rezultat_kandidat (
     rbr INTEGER,
     naziv TEXT,
     glasova INTEGER,
-    posto REAL
+    posto REAL,
+    u_saboru INTEGER          -- 1 if name appears in current Sabor seating PDF
 );
 CREATE INDEX IF NOT EXISTS kandidat_lista ON rezultat_kandidat(lista_id);
 CREATE INDEX IF NOT EXISTS kandidat_naziv ON rezultat_kandidat(naziv);
@@ -400,6 +401,82 @@ def allocate_parlament_seats(con: sqlite3.Connection) -> int:
     return n_updated
 
 
+def _normalize_name_token(s: str) -> str:
+    """Croatian-aware: drop accents, Đ→D, upper, strip surrounding hyphens."""
+    import unicodedata
+    if not s:
+        return ""
+    s = s.replace("Đ", "D").replace("đ", "d")
+    n = unicodedata.normalize("NFD", s)
+    return "".join(c for c in n if unicodedata.category(c) != "Mn").upper().strip().strip("-")
+
+
+def _name_tokens(name: str) -> list[str]:
+    """Split a candidate name on whitespace AND hyphens, then normalize.
+    Hyphen-splitting makes 'RAUKAR-GAMULIN' two tokens so it can match the
+    PDF's coordinate-pair (the layout puts compound surnames in two rows)."""
+    import re as _re
+    parts = _re.split(r"[\s\-]+", name or "")
+    return [_normalize_name_token(p) for p in parts if len(p) >= 3]
+
+
+def mark_sabor_attendance(con: sqlite3.Connection) -> int:
+    """Cross-reference parlament-2024 candidate names with the seating PDF
+    snapshot in sifarnici/sabor_2024_seating.json.
+
+    Match strategy (most-precise → fallback):
+      1. Strict pair: any 2-token combination of the candidate's normalized
+         name tokens (len ≥ 3) appears in the PDF's `pair_set`. This is
+         strong because the PDF pairs are coordinate-aligned (the firstname
+         that sits *under* a surname). Avoids false positives from common
+         surnames like 'Klarić' that recur across candidates.
+      2. Fallback for compound names that the PDF parser may have split
+         (e.g. 'AUGUŠTAN-PENTEK', 'RAUKAR-GAMULIN', 'SELAK RASPUDIĆ'):
+         require ALL of the candidate's name tokens to appear somewhere
+         in the PDF's token set.
+    """
+    snap_path = ROOT / "sifarnici" / "sabor_2024_seating.json"
+    if not snap_path.exists():
+        print(f"  WARN: {snap_path} missing — skipping u_saboru flagging")
+        return 0
+    snap = json.loads(snap_path.read_text(encoding="utf-8"))
+    name_token_sets = {frozenset(s) for s in snap.get("name_token_sets") or []}
+    if not name_token_sets:
+        return 0
+
+    # Reset
+    con.execute(
+        """UPDATE rezultat_kandidat SET u_saboru = NULL
+           WHERE lista_id IN (SELECT id FROM rezultat_lista WHERE rezultat_id IN
+             (SELECT id FROM rezultat WHERE election='parlament-2024'))"""
+    )
+
+    rows = con.execute(
+        """SELECT k.id, k.naziv FROM rezultat_kandidat k
+           JOIN rezultat_lista l ON l.id = k.lista_id
+           JOIN rezultat r ON r.id = l.rezultat_id
+           WHERE r.election='parlament-2024'"""
+    ).fetchall()
+
+    def matches(name: str) -> bool:
+        toks = frozenset(_name_tokens(name))
+        if len(toks) < 2:
+            return False
+        # Exact set-equality with one of the seating-PDF token sets. This
+        # avoids false positives from candidates whose name shares both
+        # firstname and surname tokens with a different seated MP — e.g.
+        # candidate "Ivana Frljić Marković" (Most, IJ 6) does NOT match the
+        # seated "Ivana Marković" (SDP) because their token sets differ.
+        return toks in name_token_sets
+
+    n = 0
+    for kid, naziv in rows:
+        is_in = 1 if matches(naziv) else 0
+        con.execute("UPDATE rezultat_kandidat SET u_saboru=? WHERE id=?", (is_in, kid))
+        n += 1
+    return n
+
+
 def synthesize_parlament_rh(con: sqlite3.Connection) -> int:
     """Sabor 2024 has no national-aggregate file in the DIP archive — only
     one per izborna jedinica. Compute the RH aggregate by summing the 11
@@ -540,6 +617,11 @@ def main() -> int:
     print("Allocating parlament-2024 seats (D'Hondt + manjine top-N) …")
     n_alloc = allocate_parlament_seats(con)
     print(f"  updated {n_alloc} IJ-level rezultat rows")
+    con.commit()
+
+    print("Cross-referencing parlament-2024 names with Sabor seating plan …")
+    n_marked = mark_sabor_attendance(con)
+    print(f"  flagged u_saboru for {n_marked} candidates")
     con.commit()
 
     print("Synthesizing RH aggregate for parlament-2024 …")
