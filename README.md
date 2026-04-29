@@ -50,7 +50,23 @@ python3 scripts/mirror.py referendum-2013
 
 # 3) Indeks
 python3 scripts/build_index.py     # gradi data/izbori.sqlite
+
+# 4) Aplikacija za vizualizaciju
+pip install -r requirements.txt
+streamlit run app.py
+# otvori http://localhost:8501
 ```
+
+## Aplikacija (`app.py`)
+
+Streamlit aplikacija s tri kartice:
+
+- **Pregled rezultata** — odaberi izbore + krug + (za lokalne) vrstu izbora,
+  pa kaskadno županiju → grad/općinu → biračko mjesto. Prikaz top 15 lista
+  kao horizontalni stupčasti graf, tablica svih lista, kartice s odazivom.
+- **Pretraga kandidata** — FTS5 upit po imenu kandidata (unutar listi) i po
+  imenu liste/stranke; podržava `"more words"` kao fraza i `term1 OR term2`.
+- **O bazi** — broj redaka po izboru i razini.
 
 `mirror.py` prvo skida `RH/zup/grop` razinu, iz svakog odgovora čita
 `bmUkupno`, i u drugoj fazi pokupi sva biračka mjesta. Tipičan `predsjednik-2024`
