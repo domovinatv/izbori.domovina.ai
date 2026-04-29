@@ -41,6 +41,43 @@ LOKALNI_VRSTE = {
 
 LEVEL_ORDER = {"rh": 0, "zup": 1, "grop": 2, "bm": 3, "ino_zup": 1, "ino_zup_bm": 3}
 
+# Sabor 2024 — geographic IJs (D'Hondt counterfactual treats these as one pool).
+PARLAMENT_GEO_IJ = ("001", "002", "003", "004", "005", "006", "007", "008",
+                    "009", "010", "011")
+PARLAMENT_IJ_SEATS = {f"{i:03d}": 14 for i in range(1, 11)}
+PARLAMENT_IJ_SEATS["011"] = 3
+PARLAMENT_IJ_LABELS = {
+    "001": "I. (Zagreb sjever)",
+    "002": "II. (Zagreb istok / Slavonija)",
+    "003": "III. (Zagorje / Međimurje / Bjelovar)",
+    "004": "IV. (Slavonija)",
+    "005": "V. (Slavonski Brod / Posavina)",
+    "006": "VI. (Zagreb zapad)",
+    "007": "VII. (Karlovac / Sisak)",
+    "008": "VIII. (Istra / Primorje)",
+    "009": "IX. (Šibenik / Zadar / Lika)",
+    "010": "X. (Split / Dalmacija)",
+    "011": "XI. (inozemstvo)",
+}
+
+
+def dhondt(votes: dict[str, int], seats: int, threshold_pct: float) -> dict[str, int]:
+    """Allocate `seats` to entries in `votes` using D'Hondt with a percent
+    threshold computed against the total of `votes`. Below-threshold entries
+    are excluded from allocation but still appear in the result with 0."""
+    total = sum(v for v in votes.values() if v)
+    awards = {n: 0 for n in votes}
+    if total == 0 or seats == 0:
+        return awards
+    cutoff = total * threshold_pct / 100.0
+    eligible = {n: v for n, v in votes.items() if (v or 0) >= cutoff}
+    if not eligible:
+        return awards
+    for _ in range(seats):
+        winner = max(eligible, key=lambda n: eligible[n] / (awards[n] + 1))
+        awards[winner] += 1
+    return awards
+
 
 # ────────────────────────────────────────────────────────────────────────────
 # Cached helpers
@@ -146,6 +183,204 @@ def fetch_rezultat(election: str, krug: int, vrsta: str | None,
         get_conn(), params=(rid,),
     )
     return rezultat.iloc[0], lista
+
+
+# ────────────────────────────────────────────────────────────────────────────
+# Parlament fairness analysis
+# ────────────────────────────────────────────────────────────────────────────
+
+def render_parlament_fairness(rezultat: pd.Series, lista: pd.DataFrame, p1: str) -> None:
+    """Show wasted-vote breakdown, per-IJ disparity, and a unified-RH
+    counterfactual D'Hondt allocation. Renders only for parlament-2024 at
+    RH or IJ level."""
+    is_rh = rezultat["level"] == "rh"
+
+    st.divider()
+    st.subheader("⚖️ Analiza pravednosti")
+
+    # ── Effective vs. wasted votes (within current view) ────────────────────
+    glasova_total = int((lista["glasova"].fillna(0)).sum())
+    glasova_uspjesni = int(lista.loc[lista["mandata"] > 0, "glasova"].fillna(0).sum())
+    glasova_propali = glasova_total - glasova_uspjesni
+    pct_uspjesni = 100 * glasova_uspjesni / glasova_total if glasova_total else 0
+    pct_propali = 100 - pct_uspjesni
+
+    if is_rh:
+        st.markdown(
+            "**Glasovi koji su sudjelovali u raspodjeli mandata** — sve liste koje su negdje "
+            "prešle 5 % unutar svoje izborne jedinice. **Propali glasovi** su one koje "
+            "se nigdje nisu kvalificirale i tako nisu pretvorene u mandat."
+        )
+    else:
+        ij = PARLAMENT_IJ_LABELS.get(p1, p1)
+        st.markdown(
+            f"**Glasovi za izbornu jedinicu {ij}** — koji su prešli 5 % praga i ušli u "
+            f"raspodjelu, te koji su propali (lista <5 % unutar IJ)."
+        )
+
+    c1, c2, c3 = st.columns(3)
+    c1.metric("Iskorišteni glasovi", f"{glasova_uspjesni:,}".replace(",", "."),
+              delta=f"{pct_uspjesni:.2f} %")
+    c2.metric("Propali glasovi (<5 %)", f"{glasova_propali:,}".replace(",", "."),
+              delta=f"{pct_propali:.2f} %", delta_color="inverse")
+    c3.metric("Ukupno glasova", f"{glasova_total:,}".replace(",", "."))
+
+    # Compact pie of effective vs wasted
+    pie = px.pie(
+        names=["Iskorišteni", "Propali"],
+        values=[glasova_uspjesni, glasova_propali],
+        hole=0.55,
+        color_discrete_sequence=["#1f77b4", "#d62728"],
+    )
+    pie.update_layout(height=260, margin=dict(l=10, r=10, t=10, b=10),
+                      showlegend=True, legend=dict(orientation="h"))
+    st.plotly_chart(pie, use_container_width=True)
+
+    if not is_rh:
+        return
+
+    # ── Per-IJ disparity: votes per seat ────────────────────────────────────
+    st.markdown("---")
+    st.markdown(
+        "### 📐 Disparitet izbornih jedinica\n"
+        "Svaka geografska IJ dobiva fiksan broj mandata bez obzira na broj birača "
+        "(IJ 1–10 = 14, IJ 11 = 3). Zato glas u manjoj/manje izlaznoj IJ ima veću "
+        "težinu — manje listića po dobivenom mandatu."
+    )
+
+    krug = int(rezultat["krug"])
+    ij_df = pd.read_sql_query(
+        """SELECT r.p1 AS ij, r.biraci_ukupno, r.biraci_glasovalo,
+                  r.biraci_glasovalo_posto, r.listici_vazeci,
+                  COALESCE(SUM(CASE WHEN l.mandata > 0 THEN l.glasova ELSE 0 END), 0) AS glasova_uspjesni
+           FROM rezultat r LEFT JOIN rezultat_lista l ON l.rezultat_id = r.id
+           WHERE r.election='parlament-2024' AND r.krug=? AND r.vrsta='02'
+             AND r.level='zup' AND r.p1 IN ('001','002','003','004','005',
+                                            '006','007','008','009','010','011')
+           GROUP BY r.id ORDER BY r.p1""",
+        get_conn(), params=(krug,),
+    )
+    ij_df["mandata"] = ij_df["ij"].map(PARLAMENT_IJ_SEATS)
+    ij_df["IJ"] = ij_df["ij"].map(lambda i: f"{i} · {PARLAMENT_IJ_LABELS.get(i, '')}")
+    ij_df["glasova_po_mandatu"] = (ij_df["glasova_uspjesni"] / ij_df["mandata"]).round(0).astype(int)
+    ij_df["birača_po_mandatu"] = (ij_df["biraci_ukupno"] / ij_df["mandata"]).round(0).astype(int)
+
+    show = ij_df[["IJ", "biraci_ukupno", "biraci_glasovalo",
+                  "biraci_glasovalo_posto", "listici_vazeci",
+                  "mandata", "birača_po_mandatu", "glasova_po_mandatu"]].rename(columns={
+        "biraci_ukupno": "Birači",
+        "biraci_glasovalo": "Glasovalo",
+        "biraci_glasovalo_posto": "Izlaznost %",
+        "listici_vazeci": "Važeći listići",
+        "mandata": "Mandata",
+        "birača_po_mandatu": "Birača/mandat",
+        "glasova_po_mandatu": "Iskoristivi glasovi/mandat",
+    })
+    st.dataframe(show, use_container_width=True, hide_index=True)
+
+    fig = px.bar(
+        ij_df,
+        x="IJ",
+        y="glasova_po_mandatu",
+        text="glasova_po_mandatu",
+        labels={"glasova_po_mandatu": "Iskoristivi glasovi / mandat", "IJ": ""},
+        color="biraci_glasovalo_posto",
+        color_continuous_scale="Viridis",
+    )
+    fig.update_traces(texttemplate="%{text:,d}".replace(",", "."), textposition="outside")
+    fig.update_layout(
+        height=400, margin=dict(l=10, r=10, t=10, b=10),
+        coloraxis_colorbar=dict(title="Izlaznost %"),
+        xaxis=dict(tickangle=-30),
+    )
+    st.plotly_chart(fig, use_container_width=True)
+
+    min_ij = ij_df.loc[ij_df["glasova_po_mandatu"].idxmin()]
+    max_ij = ij_df.loc[ij_df["glasova_po_mandatu"].idxmax()]
+    ratio = max_ij["glasova_po_mandatu"] / max(min_ij["glasova_po_mandatu"], 1)
+    st.info(
+        f"Najmanji broj glasova po mandatu — **{min_ij['IJ']}** "
+        f"({int(min_ij['glasova_po_mandatu']):,} glasova/mandat). "
+        f"Najveći — **{max_ij['IJ']}** ({int(max_ij['glasova_po_mandatu']):,} glasova/mandat). "
+        f"Omjer: glas u najpovoljnijoj IJ vrijedi **{ratio:.2f}×** više od glasa u najnepovoljnijoj.".replace(",", ".")
+    )
+
+    # ── Counterfactual: RH as a single constituency ─────────────────────────
+    st.markdown("---")
+    st.markdown(
+        "### 🇭🇷 Kontrafaktual: RH kao jedna izborna jedinica\n"
+        "Što bi se dogodilo da se 143 geografska mandata (IJ 1–11) raspodijele "
+        "**D'Hondtovom metodom nad cijelim RH** s **5 % nacionalnim pragom**, "
+        "kao što je organiziran izbor za Europski parlament. Manjinske mandate "
+        "(8 mjesta iz IJ 12) ovaj scenarij ostavlja netaknute."
+    )
+
+    nat_df = pd.read_sql_query(
+        """SELECT l.naziv,
+                  SUM(COALESCE(l.glasova, 0)) AS glasova,
+                  SUM(COALESCE(l.mandata, 0)) AS mandata_stvarno
+           FROM rezultat_lista l JOIN rezultat r ON r.id = l.rezultat_id
+           WHERE r.election='parlament-2024' AND r.krug=? AND r.vrsta='02'
+             AND r.level='zup' AND r.p1 IN ('001','002','003','004','005',
+                                            '006','007','008','009','010','011')
+           GROUP BY l.naziv""",
+        get_conn(), params=(krug,),
+    )
+    total_glasova = int(nat_df["glasova"].sum())
+    nat_df["posto"] = (100 * nat_df["glasova"] / total_glasova).round(2)
+    awards = dhondt(dict(zip(nat_df["naziv"], nat_df["glasova"])), seats=143, threshold_pct=5.0)
+    nat_df["mandata_jedinstvena_IJ"] = nat_df["naziv"].map(awards).fillna(0).astype(int)
+    nat_df["razlika"] = nat_df["mandata_jedinstvena_IJ"] - nat_df["mandata_stvarno"]
+    nat_df = nat_df.sort_values(
+        ["mandata_jedinstvena_IJ", "mandata_stvarno", "glasova"],
+        ascending=[False, False, False],
+    )
+
+    show = nat_df.rename(columns={
+        "naziv": "Lista",
+        "glasova": "Glasova",
+        "posto": "%",
+        "mandata_stvarno": "Mandata (stvarno, po IJ)",
+        "mandata_jedinstvena_IJ": "Mandata (jedinstvena IJ, 5 %)",
+        "razlika": "Δ",
+    })
+    show = show[show["Glasova"] > 0]
+    st.dataframe(show, use_container_width=True, hide_index=True)
+
+    delta_loosers = nat_df[nat_df["razlika"] < 0].copy()
+    delta_winners = nat_df[nat_df["razlika"] > 0].copy()
+    if not delta_loosers.empty or not delta_winners.empty:
+        c1, c2 = st.columns(2)
+        with c1:
+            st.markdown("**Liste koje bi izgubile mandate**")
+            if not delta_loosers.empty:
+                st.dataframe(
+                    delta_loosers[["naziv", "razlika"]]
+                    .rename(columns={"naziv": "Lista", "razlika": "Δ"}),
+                    use_container_width=True, hide_index=True,
+                )
+            else:
+                st.write("—")
+        with c2:
+            st.markdown("**Liste koje bi dobile mandate**")
+            if not delta_winners.empty:
+                st.dataframe(
+                    delta_winners[["naziv", "razlika"]]
+                    .rename(columns={"naziv": "Lista", "razlika": "Δ"}),
+                    use_container_width=True, hide_index=True,
+                )
+            else:
+                st.write("—")
+
+    # National wasted votes count under unified-IJ rule
+    nat_eligible_total = int(nat_df.loc[nat_df["mandata_jedinstvena_IJ"] > 0, "glasova"].sum())
+    nat_wasted = total_glasova - nat_eligible_total
+    pct_wasted_nat = 100 * nat_wasted / total_glasova if total_glasova else 0
+    st.caption(
+        f"Pri jedinstvenoj IJ s 5 % nacionalnog praga propalo bi "
+        f"**{nat_wasted:,}** glasova (**{pct_wasted_nat:.2f} %**). "
+        f"U trenutnom sustavu propalo je **{glasova_propali:,}** ({pct_propali:.2f} %).".replace(",", ".")
+    )
 
 
 # ────────────────────────────────────────────────────────────────────────────
@@ -307,6 +542,10 @@ with tab_browse:
         if has_seats:
             show = show.sort_values(["mandata", "glasova"], ascending=[False, False])
         st.dataframe(show, use_container_width=True, hide_index=True)
+
+    # ── Parlament-only fairness analysis ────────────────────────────────────
+    if election == "parlament-2024" and rezultat["level"] in ("rh", "zup", "ino_zup"):
+        render_parlament_fairness(rezultat, lista, p1)
 
     with st.expander("🛠 Tehnički detalji"):
         st.code(
