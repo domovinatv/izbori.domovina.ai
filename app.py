@@ -338,13 +338,20 @@ def render_parlament_fairness(rezultat: pd.Series, lista: pd.DataFrame, p1: str)
         "### 📐 Disparitet izbornih jedinica\n"
         "Svaka geografska IJ dobiva fiksan broj mandata bez obzira na broj birača "
         "(IJ 1–10 = 14, IJ 11 = 3). Zato glas u manjoj/manje izlaznoj IJ ima veću "
-        "težinu — manje listića po dobivenom mandatu."
+        "težinu — manje listića po dobivenom mandatu.\n\n"
+        "Stupci **% iskorišteni** i **% propali** mjere koliko je važećih listića "
+        "u IJ pretvoreno u mandat (lista je dobila ≥1 mandat) odnosno propalo "
+        "(lista <5 % ili 5 %+ ali bez mandata zbog D'Hondtova zaokruživanja). "
+        "**% zastupljenih birača** izračunat je na **ukupan broj birača u IJ** "
+        "(uključujući one koji nisu glasali) — to je udio biračkog tijela koji "
+        "u sljedeće 4 godine *ima* svog izabranog zastupnika u Saboru."
     )
 
     krug = int(rezultat["krug"])
     ij_df = pd.read_sql_query(
         """SELECT r.p1 AS ij, r.biraci_ukupno, r.biraci_glasovalo,
                   r.biraci_glasovalo_posto, r.listici_vazeci,
+                  COALESCE(SUM(COALESCE(l.glasova, 0)), 0) AS glasova_lista_total,
                   COALESCE(SUM(CASE WHEN l.mandata > 0 THEN l.glasova ELSE 0 END), 0) AS glasova_uspjesni
            FROM rezultat r LEFT JOIN rezultat_lista l ON l.rezultat_id = r.id
            WHERE r.election='parlament-2024' AND r.krug=? AND r.vrsta='02'
@@ -357,10 +364,21 @@ def render_parlament_fairness(rezultat: pd.Series, lista: pd.DataFrame, p1: str)
     ij_df["IJ"] = ij_df["ij"].map(lambda i: f"{i} · {PARLAMENT_IJ_LABELS.get(i, '')}")
     ij_df["glasova_po_mandatu"] = (ij_df["glasova_uspjesni"] / ij_df["mandata"]).round(0).astype(int)
     ij_df["birača_po_mandatu"] = (ij_df["biraci_ukupno"] / ij_df["mandata"]).round(0).astype(int)
+    # Wasted/effective vote denominator: total list votes within IJ (==valid ballots).
+    ij_df["glasova_propali"] = (ij_df["glasova_lista_total"] - ij_df["glasova_uspjesni"]).clip(lower=0)
+    denom_vazeci = ij_df["glasova_lista_total"].replace(0, pd.NA)
+    ij_df["pct_iskorišteni"] = (100 * ij_df["glasova_uspjesni"] / denom_vazeci).round(2)
+    ij_df["pct_propali"] = (100 * ij_df["glasova_propali"] / denom_vazeci).round(2)
+    # Of *all* eligible voters in the IJ (incl. non-voters), what share has
+    # representation in Sabor over the 4-year mandate.
+    denom_biraci = ij_df["biraci_ukupno"].replace(0, pd.NA)
+    ij_df["pct_zastupljenih"] = (100 * ij_df["glasova_uspjesni"] / denom_biraci).round(2)
 
     show = ij_df[["IJ", "biraci_ukupno", "biraci_glasovalo",
                   "biraci_glasovalo_posto", "listici_vazeci",
-                  "mandata", "birača_po_mandatu", "glasova_po_mandatu"]].rename(columns={
+                  "mandata", "birača_po_mandatu", "glasova_po_mandatu",
+                  "pct_iskorišteni", "pct_propali",
+                  "pct_zastupljenih"]].rename(columns={
         "biraci_ukupno": "Birači",
         "biraci_glasovalo": "Glasovalo",
         "biraci_glasovalo_posto": "Izlaznost %",
@@ -368,6 +386,9 @@ def render_parlament_fairness(rezultat: pd.Series, lista: pd.DataFrame, p1: str)
         "mandata": "Mandata",
         "birača_po_mandatu": "Birača/mandat",
         "glasova_po_mandatu": "Iskoristivi glasovi/mandat",
+        "pct_iskorišteni": "% iskorišteni",
+        "pct_propali": "% propali",
+        "pct_zastupljenih": "% zastupljenih birača",
     })
     st.dataframe(show, use_container_width=True, hide_index=True)
 
@@ -396,6 +417,31 @@ def render_parlament_fairness(rezultat: pd.Series, lista: pd.DataFrame, p1: str)
         f"({int(min_ij['glasova_po_mandatu']):,} glasova/mandat). "
         f"Najveći — **{max_ij['IJ']}** ({int(max_ij['glasova_po_mandatu']):,} glasova/mandat). "
         f"Omjer: glas u najpovoljnijoj IJ vrijedi **{ratio:.2f}×** više od glasa u najnepovoljnijoj.".replace(",", ".")
+    )
+
+    # ── National aggregates over IJ 1–11 ────────────────────────────────────
+    nat_biraci = int(ij_df["biraci_ukupno"].sum())
+    nat_vazeci = int(ij_df["glasova_lista_total"].sum())
+    nat_uspjesni = int(ij_df["glasova_uspjesni"].sum())
+    nat_propali = int(ij_df["glasova_propali"].sum())
+    nat_pct_repr = 100 * nat_uspjesni / nat_biraci if nat_biraci else 0
+    nat_pct_propali = 100 * nat_propali / nat_vazeci if nat_vazeci else 0
+    st.warning(
+        f"Na razini IJ 1–11 ukupno je **{nat_biraci:,}** birača, od kojih je "
+        f"**{nat_uspjesni:,}** ({nat_pct_repr:.2f} %) glasalo za listu koja je "
+        f"u svojoj IJ osvojila barem 1 mandat — to je udio biračkog tijela koji "
+        f"u sljedeće 4 godine ima izabranog zastupnika. **{nat_propali:,}** "
+        f"važećih glasova ({nat_pct_propali:.2f} % važećih listića) propalo je "
+        f"unutar svojih IJ (lista <5 % ili bez mandata po D'Hondtu); preostali "
+        f"birači ili nisu izašli ili su glasovali nevažeće.".replace(",", ".")
+    )
+    st.caption(
+        "📐 *Matematička granica neproporcionalnosti:* u IJ s 14 mandata, ako "
+        "20 lista podijeli glasove gotovo jednako (npr. 19 lista po 999 glasova "
+        "i jedna lista 1000), lista s tek **+1** glasom uzima **svih 14 mandata** "
+        "(100 % zastupljenosti za ~5 % glasača, 0 % za preostalih ~95 %). "
+        "U praksi 5 %-tni prag i raspodjela glasova ublažuju ovaj scenarij, "
+        "ali principijelno sustav može proizvesti ekstremnu disproporciju."
     )
 
     # ── Counterfactual: RH as a single constituency ─────────────────────────
