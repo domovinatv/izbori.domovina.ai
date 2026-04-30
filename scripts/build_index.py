@@ -452,27 +452,54 @@ def mark_sabor_attendance(con: sqlite3.Connection) -> int:
     )
 
     rows = con.execute(
-        """SELECT k.id, k.naziv FROM rezultat_kandidat k
+        """SELECT k.id, k.naziv,
+                  COALESCE(l.mandata, 0) AS list_mand,
+                  COALESCE(k.glasova, 0) AS pref,
+                  COALESCE(k.rbr, 9999) AS rbr
+           FROM rezultat_kandidat k
            JOIN rezultat_lista l ON l.id = k.lista_id
            JOIN rezultat r ON r.id = l.rezultat_id
-           WHERE r.election='parlament-2024'"""
+           WHERE r.election='parlament-2024'
+             AND r.level IN ('zup', 'ino_zup')"""
     ).fetchall()
 
-    def matches(name: str) -> bool:
-        toks = frozenset(_name_tokens(name))
-        if len(toks) < 2:
-            return False
-        # Exact set-equality with one of the seating-PDF token sets. This
-        # avoids false positives from candidates whose name shares both
-        # firstname and surname tokens with a different seated MP — e.g.
-        # candidate "Ivana Frljić Marković" (Most, IJ 6) does NOT match the
-        # seated "Ivana Marković" (SDP) because their token sets differ.
-        return toks in name_token_sets
+    # Group candidates by exact token-set match with the PDF. A token set is
+    # the strongest name signature pdfplumber gives us, but it does NOT
+    # uniquely identify a person — two distinct politicians can share the
+    # same name (e.g. SDP's Miroslav Marković with 744 pref votes vs. HSP's
+    # Miroslav Marković with 12 pref votes; only the SDP one sits in Sabor).
+    # The seating PDF lists the name once, so we have to pick which.
+    #
+    # Disambiguation rule (in priority order):
+    #   1. Their list won mandates (list_mandata > 0). A candidate from a
+    #      list that won zero seats *cannot* be the seated MP.
+    #   2. Highest preferential vote count — the seated namesake almost
+    #      always has more individual support than the unseated one.
+    #   3. Lowest rbr-on-list, then kid, for stable ordering.
+    by_tokens: dict[frozenset[str], list[tuple]] = {}
+    other_kids: list[int] = []
+    for kid, naziv, list_mand, pref, rbr in rows:
+        toks = frozenset(_name_tokens(naziv))
+        if len(toks) >= 2 and toks in name_token_sets:
+            by_tokens.setdefault(toks, []).append((kid, list_mand, pref, rbr))
+        else:
+            other_kids.append(kid)
 
     n = 0
-    for kid, naziv in rows:
-        is_in = 1 if matches(naziv) else 0
-        con.execute("UPDATE rezultat_kandidat SET u_saboru=? WHERE id=?", (is_in, kid))
+    for _token_set, candidates in by_tokens.items():
+        ranked = sorted(
+            candidates,
+            key=lambda c: (-c[1], -c[2], c[3], c[0]),
+        )
+        seated_kid = ranked[0][0]
+        for kid, _lm, _pref, _rbr in candidates:
+            con.execute(
+                "UPDATE rezultat_kandidat SET u_saboru=? WHERE id=?",
+                (1 if kid == seated_kid else 0, kid),
+            )
+            n += 1
+    for kid in other_kids:
+        con.execute("UPDATE rezultat_kandidat SET u_saboru=0 WHERE id=?", (kid,))
         n += 1
     return n
 
