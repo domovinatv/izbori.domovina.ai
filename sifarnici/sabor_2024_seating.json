@@ -1,18 +1,1986 @@
 {
-  "fetched_at": "2026-04-29T21:40:25+00:00",
-  "source_url": "https://www.sabor.hr/export/new-seating-plan/hr",
-  "snapshot_date": "29/4/2026",
+  "fetched_at": "2026-04-30T07:35:08+00:00",
+  "source_url": "https://www.sabor.hr/api/interaktivna-sabornica-new?_format=json",
+  "mps": [
+    {
+      "seat": "32",
+      "surname": "Ahmetović",
+      "firstname": "Mirela",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/ahmetovic-mirela-11-saziv",
+      "tokens": [
+        "AHMETOVIC",
+        "MIRELA"
+      ]
+    },
+    {
+      "seat": "136",
+      "surname": "Antolić Vupora",
+      "firstname": "Barbara",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/antolic-vupora-barbara-11-saziv",
+      "tokens": [
+        "ANTOLIC",
+        "BARBARA",
+        "VUPORA"
+      ]
+    },
+    {
+      "seat": "56",
+      "surname": "Auguštan-Pentek",
+      "firstname": "Jasenka",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/augustan-pentek-jasenka-11-saziv",
+      "tokens": [
+        "AUGUSTAN",
+        "JASENKA",
+        "PENTEK"
+      ]
+    },
+    {
+      "seat": "60",
+      "surname": "Ačkar",
+      "firstname": "Krešimir",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/ackar-kresimir-11-saziv",
+      "tokens": [
+        "ACKAR",
+        "KRESIMIR"
+      ]
+    },
+    {
+      "seat": "99",
+      "surname": "Babić",
+      "firstname": "Ante",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/babic-ante-11-saziv-0",
+      "tokens": [
+        "ANTE",
+        "BABIC"
+      ]
+    },
+    {
+      "seat": "92",
+      "surname": "Bakić",
+      "firstname": "Damir",
+      "party": "Možemo!",
+      "klub": "Klub zastupnika Možemo!",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/bakic-damir-11-saziv",
+      "tokens": [
+        "BAKIC",
+        "DAMIR"
+      ]
+    },
+    {
+      "seat": "154",
+      "surname": "Baksa",
+      "firstname": "Ivica",
+      "party": "NPS",
+      "klub": "Klub zastupnika Centra, Nezavisne platforme Sjevera i Građansko-liberalnog saveza",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/baksa-ivica-11-saziv",
+      "tokens": [
+        "BAKSA",
+        "IVICA"
+      ]
+    },
+    {
+      "seat": "87",
+      "surname": "Ban",
+      "firstname": "Boška",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/ban-vlahek-boska-11-saziv",
+      "tokens": [
+        "BAN",
+        "BOSKA",
+        "VLAHEK"
+      ]
+    },
+    {
+      "seat": "102",
+      "surname": "Baradić",
+      "firstname": "Nikolina",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/baradic-nikolina-11-saziv",
+      "tokens": [
+        "BARADIC",
+        "NIKOLINA"
+      ]
+    },
+    {
+      "seat": "140",
+      "surname": "Barbarić",
+      "firstname": "Nevenko",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/barbaric-nevenko-11-saziv",
+      "tokens": [
+        "BARBARIC",
+        "NEVENKO"
+      ]
+    },
+    {
+      "seat": "152",
+      "surname": "Barbir",
+      "firstname": "Damir",
+      "party": "Centar",
+      "klub": "Klub zastupnika Centra, Nezavisne platforme Sjevera i Građansko-liberalnog saveza",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/barbir-damir-11-saziv",
+      "tokens": [
+        "BARBIR",
+        "DAMIR"
+      ]
+    },
+    {
+      "seat": "62",
+      "surname": "Baričević",
+      "firstname": "Danica",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/baricevic-danica-11-saziv",
+      "tokens": [
+        "BARICEVIC",
+        "DANICA"
+      ]
+    },
+    {
+      "seat": "34",
+      "surname": "Bauk",
+      "firstname": "Arsen",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/bauk-arsen-11-saziv",
+      "tokens": [
+        "ARSEN",
+        "BAUK"
+      ]
+    },
+    {
+      "seat": "41",
+      "surname": "Bedeković",
+      "firstname": "Vesna",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/bedekovic-vesna-11-saziv",
+      "tokens": [
+        "BEDEKOVIC",
+        "VESNA"
+      ]
+    },
+    {
+      "seat": "91",
+      "surname": "Benčić",
+      "firstname": "Sandra",
+      "party": "Možemo!",
+      "klub": "Klub zastupnika Možemo!",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/bencic-sandra-11-saziv",
+      "tokens": [
+        "BENCIC",
+        "SANDRA"
+      ]
+    },
+    {
+      "seat": "104",
+      "surname": "Bilek",
+      "firstname": "Vladimir",
+      "party": "NZ",
+      "klub": "Klub zastupnika Hrvatske socijalno-liberalne stranke i nezavisnog zastupnika Vladimira Bileka",
+      "manjine": true,
+      "profile": "http://www.sabor.hr/hr/zastupnici/bilek-vladimir-11-saziv",
+      "tokens": [
+        "BILEK",
+        "VLADIMIR"
+      ]
+    },
+    {
+      "seat": "151",
+      "surname": "Bilić",
+      "firstname": "Dubravko",
+      "party": "NPS",
+      "klub": "Klub zastupnika Centra, Nezavisne platforme Sjevera i Građansko-liberalnog saveza",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/bilic-dubravko-11-saziv",
+      "tokens": [
+        "BILIC",
+        "DUBRAVKO"
+      ]
+    },
+    {
+      "seat": "161",
+      "surname": "Biloglav",
+      "firstname": "Damir",
+      "party": "DOMINO",
+      "klub": "Klub zastupnika Dom i nacionalno okupljanje i Hrvatski suverenisti",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/biloglav-damir-11-saziv",
+      "tokens": [
+        "BILOGLAV",
+        "DAMIR"
+      ]
+    },
+    {
+      "seat": "95",
+      "surname": "Bježančević",
+      "firstname": "Sanja",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/bjezancevic-sanja-11-saziv",
+      "tokens": [
+        "BJEZANCEVIC",
+        "SANJA"
+      ]
+    },
+    {
+      "seat": "83",
+      "surname": "Blažanović",
+      "firstname": "Danijela",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/blazanovic-danijela-11-saziv",
+      "tokens": [
+        "BLAZANOVIC",
+        "DANIJELA"
+      ]
+    },
+    {
+      "seat": "121",
+      "surname": "Blažević",
+      "firstname": "Anamarija",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/blazevic-anamarija-11-saziv",
+      "tokens": [
+        "ANAMARIJA",
+        "BLAZEVIC"
+      ]
+    },
+    {
+      "seat": "116",
+      "surname": "Blažina",
+      "firstname": "Maria",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/blazina-maria-11-saziv",
+      "tokens": [
+        "BLAZINA",
+        "MARIA"
+      ]
+    },
+    {
+      "seat": "26",
+      "surname": "Borić",
+      "firstname": "Josip",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/boric-josip-11-saziv",
+      "tokens": [
+        "BORIC",
+        "JOSIP"
+      ]
+    },
+    {
+      "seat": "72",
+      "surname": "Borić",
+      "firstname": "Rada",
+      "party": "Možemo!",
+      "klub": "Klub zastupnika Možemo!",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/boric-rada-11-saziv",
+      "tokens": [
+        "BORIC",
+        "RADA"
+      ]
+    },
+    {
+      "seat": "119",
+      "surname": "Budalić",
+      "firstname": "Ivan",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/budalic-ivan-11-saziv",
+      "tokens": [
+        "BUDALIC",
+        "IVAN"
+      ]
+    },
+    {
+      "seat": "80",
+      "surname": "Bugarin",
+      "firstname": "Ivan",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/bugarin-ivan-11-saziv",
+      "tokens": [
+        "BUGARIN",
+        "IVAN"
+      ]
+    },
+    {
+      "seat": "108",
+      "surname": "Bulj",
+      "firstname": "Miro",
+      "party": "Most",
+      "klub": "Klub zastupnika Mosta i nezavisnog zastupnika Josipa Jurčevića",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/bulj-miro-11-saziv",
+      "tokens": [
+        "BULJ",
+        "MIRO"
+      ]
+    },
+    {
+      "seat": "65",
+      "surname": "Burić",
+      "firstname": "Majda",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/buric-majda-11-saziv",
+      "tokens": [
+        "BURIC",
+        "MAJDA"
+      ]
+    },
+    {
+      "seat": "67",
+      "surname": "Bušić",
+      "firstname": "Zdravka",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/busic-zdravka-11-saziv",
+      "tokens": [
+        "BUSIC",
+        "ZDRAVKA"
+      ]
+    },
+    {
+      "seat": "96",
+      "surname": "Curiš Krok",
+      "firstname": "Anita",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/curis-krok-anita-11-saziv",
+      "tokens": [
+        "ANITA",
+        "CURIS",
+        "KROK"
+      ]
+    },
+    {
+      "seat": "142",
+      "surname": "Dabo",
+      "firstname": "Ivan",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/dabo-ivan-11-saziv",
+      "tokens": [
+        "DABO",
+        "IVAN"
+      ]
+    },
+    {
+      "seat": "50",
+      "surname": "Dabro",
+      "firstname": "Josip",
+      "party": "DP",
+      "klub": "Klub zastupnika Domovinskog pokreta",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/dabro-josip-11-saziv",
+      "tokens": [
+        "DABRO",
+        "JOSIP"
+      ]
+    },
+    {
+      "seat": "66",
+      "surname": "Deur",
+      "firstname": "Ante",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/deur-ante-11-saziv",
+      "tokens": [
+        "ANTE",
+        "DEUR"
+      ]
+    },
+    {
+      "seat": "97",
+      "surname": "Domitrović",
+      "firstname": "Dalibor",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/domitrovic-dalibor-11-saziv",
+      "tokens": [
+        "DALIBOR",
+        "DOMITROVIC"
+      ]
+    },
+    {
+      "seat": "98",
+      "surname": "Dragić",
+      "firstname": "Irena",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/dragic-irena-11-saziv",
+      "tokens": [
+        "DRAGIC",
+        "IRENA"
+      ]
+    },
+    {
+      "seat": "107",
+      "surname": "Franković",
+      "firstname": "Mato",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/frankovic-mato-11-saziv",
+      "tokens": [
+        "FRANKOVIC",
+        "MATO"
+      ]
+    },
+    {
+      "seat": "126",
+      "surname": "Gabričević",
+      "firstname": "Veselko",
+      "party": "HSU",
+      "klub": "Klub zastupnika Nezavisni i HSU",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/gabricevic-veselko-11-saziv",
+      "tokens": [
+        "GABRICEVIC",
+        "VESELKO"
+      ]
+    },
+    {
+      "seat": "17",
+      "surname": "Glasovac",
+      "firstname": "Sabina",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/glasovac-sabina-11-saziv",
+      "tokens": [
+        "GLASOVAC",
+        "SABINA"
+      ]
+    },
+    {
+      "seat": "122",
+      "surname": "Glavić",
+      "firstname": "Željko",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/glavic-zeljko-11-saziv",
+      "tokens": [
+        "GLAVIC",
+        "ZELJKO"
+      ]
+    },
+    {
+      "seat": "45",
+      "surname": "Gregurović",
+      "firstname": "Zoran",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/gregurovic-zoran-11-saziv",
+      "tokens": [
+        "GREGUROVIC",
+        "ZORAN"
+      ]
+    },
+    {
+      "seat": "128",
+      "surname": "Grmoja",
+      "firstname": "Nikola",
+      "party": "Most",
+      "klub": "Klub zastupnika Mosta i nezavisnog zastupnika Josipa Jurčevića",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/grmoja-nikola-11-saziv",
+      "tokens": [
+        "GRMOJA",
+        "NIKOLA"
+      ]
+    },
+    {
+      "seat": "16",
+      "surname": "Hajdaš Dončić",
+      "firstname": "Siniša",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/hajdas-doncic-sinisa-11-saziv",
+      "tokens": [
+        "DONCIC",
+        "HAJDAS",
+        "SINISA"
+      ]
+    },
+    {
+      "seat": "22",
+      "surname": "Herman",
+      "firstname": "Mislav",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/herman-mislav-11-saziv",
+      "tokens": [
+        "HERMAN",
+        "MISLAV"
+      ]
+    },
+    {
+      "seat": "105",
+      "surname": "Hodžić",
+      "firstname": "Armin",
+      "party": "NZ",
+      "klub": "Klub zastupnika Hrvatske narodne stranke i nezavisnih zastupnika",
+      "manjine": true,
+      "profile": "http://www.sabor.hr/hr/zastupnici/hodzic-armin-11-saziv",
+      "tokens": [
+        "ARMIN",
+        "HODZIC"
+      ]
+    },
+    {
+      "seat": "90",
+      "surname": "Hrebak",
+      "firstname": "Dario",
+      "party": "HSLS",
+      "klub": "Klub zastupnika Hrvatske socijalno-liberalne stranke i nezavisnog zastupnika Vladimira Bileka",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/hrebak-dario-11-saziv",
+      "tokens": [
+        "DARIO",
+        "HREBAK"
+      ]
+    },
+    {
+      "seat": "36",
+      "surname": "Ikić Baniček",
+      "firstname": "Kristina",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/ikic-banicek-kristina-11-saziv",
+      "tokens": [
+        "BANICEK",
+        "IKIC",
+        "KRISTINA"
+      ]
+    },
+    {
+      "seat": "31",
+      "surname": "Jakšić",
+      "firstname": "Mišel",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/jaksic-misel-11-saziv",
+      "tokens": [
+        "JAKSIC",
+        "MISEL"
+      ]
+    },
+    {
+      "seat": "1",
+      "surname": "Jandroković",
+      "firstname": "Gordan",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/jandrokovic-gordan-11-saziv",
+      "tokens": [
+        "GORDAN",
+        "JANDROKOVIC"
+      ]
+    },
+    {
+      "seat": "103",
+      "surname": "Jankovics",
+      "firstname": "Robert",
+      "party": "NZ",
+      "klub": "Zastupnici izvan klubova političkih stranaka",
+      "manjine": true,
+      "profile": "http://www.sabor.hr/hr/zastupnici/jankovics-robert-11-saziv",
+      "tokens": [
+        "JANKOVICS",
+        "ROBERT"
+      ]
+    },
+    {
+      "seat": "148",
+      "surname": "Jeckov",
+      "firstname": "Dragana",
+      "party": "SDSS",
+      "klub": "Klub zastupnika Samostalne demokratske srpske stranke",
+      "manjine": true,
+      "profile": "http://www.sabor.hr/hr/zastupnici/jeckov-dragana-11-saziv",
+      "tokens": [
+        "DRAGANA",
+        "JECKOV"
+      ]
+    },
+    {
+      "seat": "120",
+      "surname": "Jembrih",
+      "firstname": "Ljubica",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/jembrih-ljubica-11-saziv",
+      "tokens": [
+        "JEMBRIH",
+        "LJUBICA"
+      ]
+    },
+    {
+      "seat": "48",
+      "surname": "Josić",
+      "firstname": "Tomislav",
+      "party": "DP",
+      "klub": "Klub zastupnika Domovinskog pokreta",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/josic-tomislav-11-saziv",
+      "tokens": [
+        "JOSIC",
+        "TOMISLAV"
+      ]
+    },
+    {
+      "seat": "25",
+      "surname": "Juričev-Martinčev",
+      "firstname": "Branka",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/juricev-martincev-branka-11-saziv",
+      "tokens": [
+        "BRANKA",
+        "JURICEV",
+        "MARTINCEV"
+      ]
+    },
+    {
+      "seat": "164",
+      "surname": "Jurčević",
+      "firstname": "Josip",
+      "party": "NZ",
+      "klub": "Klub zastupnika Mosta i nezavisnog zastupnika Josipa Jurčevića",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/jurcevic-josip-11-saziv",
+      "tokens": [
+        "JOSIP",
+        "JURCEVIC"
+      ]
+    },
+    {
+      "seat": "86",
+      "surname": "Kajtazi",
+      "firstname": "Veljko",
+      "party": "NZ",
+      "klub": "Klub zastupnika Hrvatske narodne stranke i nezavisnih zastupnika",
+      "manjine": true,
+      "profile": "http://www.sabor.hr/hr/zastupnici/kajtazi-veljko-11-saziv",
+      "tokens": [
+        "KAJTAZI",
+        "VELJKO"
+      ]
+    },
+    {
+      "seat": "139",
+      "surname": "Kaniški",
+      "firstname": "Goran",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/kaniski-goran-11-saziv",
+      "tokens": [
+        "GORAN",
+        "KANISKI"
+      ]
+    },
+    {
+      "seat": "23",
+      "surname": "Katičić",
+      "firstname": "Krunoslav",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/katicic-krunoslav-11-saziv",
+      "tokens": [
+        "KATICIC",
+        "KRUNOSLAV"
+      ]
+    },
+    {
+      "seat": "93",
+      "surname": "Kekin",
+      "firstname": "Ivana",
+      "party": "Možemo!",
+      "klub": "Klub zastupnika Možemo!",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/kekin-ivana-11-saziv",
+      "tokens": [
+        "IVANA",
+        "KEKIN"
+      ]
+    },
+    {
+      "seat": "82",
+      "surname": "Klarić",
+      "firstname": "Tomislav",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/klaric-tomislav-11-saziv",
+      "tokens": [
+        "KLARIC",
+        "TOMISLAV"
+      ]
+    },
+    {
+      "seat": "89",
+      "surname": "Klasić",
+      "firstname": "Darko",
+      "party": "HSLS",
+      "klub": "Klub zastupnika Hrvatske socijalno-liberalne stranke i nezavisnog zastupnika Vladimira Bileka",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/klasic-darko-11-saziv",
+      "tokens": [
+        "DARKO",
+        "KLASIC"
+      ]
+    },
+    {
+      "seat": "39",
+      "surname": "Kliman",
+      "firstname": "Anton",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/kliman-anton-11-saziv",
+      "tokens": [
+        "ANTON",
+        "KLIMAN"
+      ]
+    },
+    {
+      "seat": "21",
+      "surname": "Kolarek",
+      "firstname": "Ljubomir",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/kolarek-ljubomir-11-saziv",
+      "tokens": [
+        "KOLAREK",
+        "LJUBOMIR"
+      ]
+    },
+    {
+      "seat": "73",
+      "surname": "Kolarić",
+      "firstname": "Branko",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/kolaric-branko-11-saziv",
+      "tokens": [
+        "BRANKO",
+        "KOLARIC"
+      ]
+    },
+    {
+      "seat": "35",
+      "surname": "Komadina",
+      "firstname": "Zlatko",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/komadina-zlatko-11-saziv",
+      "tokens": [
+        "KOMADINA",
+        "ZLATKO"
+      ]
+    },
+    {
+      "seat": "123",
+      "surname": "Komes",
+      "firstname": "Magdalena",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/komes-magdalena-11-saziv",
+      "tokens": [
+        "KOMES",
+        "MAGDALENA"
+      ]
+    },
+    {
+      "seat": "163",
+      "surname": "Kordić",
+      "firstname": "Martin",
+      "party": "Hrvatski suverenisti",
+      "klub": "Klub zastupnika Dom i nacionalno okupljanje i Hrvatski suverenisti",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/kordic-martin-11-saziv",
+      "tokens": [
+        "KORDIC",
+        "MARTIN"
+      ]
+    },
+    {
+      "seat": "115",
+      "surname": "Kralj",
+      "firstname": "Denis",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/kralj-denis-11-saziv",
+      "tokens": [
+        "DENIS",
+        "KRALJ"
+      ]
+    },
+    {
+      "seat": "74",
+      "surname": "Krpan",
+      "firstname": "Sandra",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/krpan-sandra-11-saziv",
+      "tokens": [
+        "KRPAN",
+        "SANDRA"
+      ]
+    },
+    {
+      "seat": "37",
+      "surname": "Krstičević",
+      "firstname": "Mišo",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/krsticevic-miso-11-saziv",
+      "tokens": [
+        "KRSTICEVIC",
+        "MISO"
+      ]
+    },
+    {
+      "seat": "42",
+      "surname": "Krstulović Opara",
+      "firstname": "Andro",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/krstulovic-opara-andro-11-saziv",
+      "tokens": [
+        "ANDRO",
+        "KRSTULOVIC",
+        "OPARA"
+      ]
+    },
+    {
+      "seat": "109",
+      "surname": "Kujundžić",
+      "firstname": "Ante",
+      "party": "Most",
+      "klub": "Klub zastupnika Mosta i nezavisnog zastupnika Josipa Jurčevića",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/kujundzic-ante-11-saziv",
+      "tokens": [
+        "ANTE",
+        "KUJUNDZIC"
+      ]
+    },
+    {
+      "seat": "28",
+      "surname": "Kukavica",
+      "firstname": "Ivica",
+      "party": "DP",
+      "klub": "Klub zastupnika Domovinskog pokreta",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/kukavica-ivica-11-saziv",
+      "tokens": [
+        "IVICA",
+        "KUKAVICA"
+      ]
+    },
+    {
+      "seat": "124",
+      "surname": "Lacković",
+      "firstname": "Željko",
+      "party": "stranka Nezavisni",
+      "klub": "Klub zastupnika Nezavisni i HSU",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/lackovic-zeljko-11-saziv",
+      "tokens": [
+        "LACKOVIC",
+        "ZELJKO"
+      ]
+    },
+    {
+      "seat": "38",
+      "surname": "Lalovac",
+      "firstname": "Boris",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/lalovac-boris-11-saziv",
+      "tokens": [
+        "BORIS",
+        "LALOVAC"
+      ]
+    },
+    {
+      "seat": "127",
+      "surname": "Ledenko",
+      "firstname": "Ivica",
+      "party": "Most",
+      "klub": "Klub zastupnika Mosta i nezavisnog zastupnika Josipa Jurčevića",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/ledenko-ivica-11-saziv",
+      "tokens": [
+        "IVICA",
+        "LEDENKO"
+      ]
+    },
+    {
+      "seat": "49",
+      "surname": "Lipovac Pehar",
+      "firstname": "Dubravka",
+      "party": "DP",
+      "klub": "Klub zastupnika Domovinskog pokreta",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/lipovac-pehar-dubravka-11-saziv",
+      "tokens": [
+        "DUBRAVKA",
+        "LIPOVAC",
+        "PEHAR"
+      ]
+    },
+    {
+      "seat": "51",
+      "surname": "Lugarić",
+      "firstname": "Marija",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/lugaric-marija-11-saziv",
+      "tokens": [
+        "LUGARIC",
+        "MARIJA"
+      ]
+    },
+    {
+      "seat": "13",
+      "surname": "Lukačić",
+      "firstname": "Ljubica",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/lukacic-ljubica-11-saziv",
+      "tokens": [
+        "LJUBICA",
+        "LUKACIC"
+      ]
+    },
+    {
+      "seat": "101",
+      "surname": "Maduna",
+      "firstname": "Sanda Livia",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/maduna-sanda-livia-11-saziv",
+      "tokens": [
+        "LIVIA",
+        "MADUNA",
+        "SANDA"
+      ]
+    },
+    {
+      "seat": "40",
+      "surname": "Malenica",
+      "firstname": "Ivan",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/malenica-ivan-11-saziv",
+      "tokens": [
+        "IVAN",
+        "MALENICA"
+      ]
+    },
+    {
+      "seat": "146",
+      "surname": "Mandarić",
+      "firstname": "Marin",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/mandaric-marin-11-saziv",
+      "tokens": [
+        "MANDARIC",
+        "MARIN"
+      ]
+    },
+    {
+      "seat": "145",
+      "surname": "Mandić",
+      "firstname": "Damir",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/mandic-damir-11-saziv",
+      "tokens": [
+        "DAMIR",
+        "MANDIC"
+      ]
+    },
+    {
+      "seat": "57",
+      "surname": "Marković",
+      "firstname": "Ivana",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/markovic-ivana-11-saziv",
+      "tokens": [
+        "IVANA",
+        "MARKOVIC"
+      ]
+    },
+    {
+      "seat": "55",
+      "surname": "Marković",
+      "firstname": "Miroslav",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/markovic-miroslav-11-saziv",
+      "tokens": [
+        "MARKOVIC",
+        "MIROSLAV"
+      ]
+    },
+    {
+      "seat": "64",
+      "surname": "Mažar",
+      "firstname": "Nikola",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/mazar-nikola-11-saziv",
+      "tokens": [
+        "MAZAR",
+        "NIKOLA"
+      ]
+    },
+    {
+      "seat": "70",
+      "surname": "Mesić",
+      "firstname": "Ivica",
+      "party": "DP",
+      "klub": "Klub zastupnika Domovinskog pokreta",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/mesic-ivica-11-saziv",
+      "tokens": [
+        "IVICA",
+        "MESIC"
+      ]
+    },
+    {
+      "seat": "144",
+      "surname": "Milan",
+      "firstname": "Dalibor",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/milan-dalibor-11-saziv",
+      "tokens": [
+        "DALIBOR",
+        "MILAN"
+      ]
+    },
+    {
+      "seat": "130",
+      "surname": "Miletić",
+      "firstname": "Marin",
+      "party": "Most",
+      "klub": "Klub zastupnika Mosta i nezavisnog zastupnika Josipa Jurčevića",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/miletic-marin-11-saziv",
+      "tokens": [
+        "MARIN",
+        "MILETIC"
+      ]
+    },
+    {
+      "seat": "58",
+      "surname": "Milinković",
+      "firstname": "Mario",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/milinkovic-mario-11-saziv",
+      "tokens": [
+        "MARIO",
+        "MILINKOVIC"
+      ]
+    },
+    {
+      "seat": "132",
+      "surname": "Milos",
+      "firstname": "Anteo",
+      "party": "IDS",
+      "klub": "Klub zastupnika Istarskog demokratskog sabora (IDS), Primorsko-goranskog saveza (PGS), Unije Kvarnera (UNIJA) i Istarske stranke umirovljenika - Partito Istriano dei pensionati (ISU - PIP)",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/milos-anteo-11-saziv",
+      "tokens": [
+        "ANTEO",
+        "MILOS"
+      ]
+    },
+    {
+      "seat": "112",
+      "surname": "Miloš",
+      "firstname": "Jelena",
+      "party": "Možemo!",
+      "klub": "Klub zastupnika Možemo!",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/milos-jelena-11-saziv",
+      "tokens": [
+        "JELENA",
+        "MILOS"
+      ]
+    },
+    {
+      "seat": "69",
+      "surname": "Mišić",
+      "firstname": "Predrag",
+      "party": "NZ",
+      "klub": "Klub zastupnika Domovinskog pokreta",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/misic-predrag-11-saziv",
+      "tokens": [
+        "MISIC",
+        "PREDRAG"
+      ]
+    },
+    {
+      "seat": "30",
+      "surname": "Mlinarić",
+      "firstname": "Stipo",
+      "party": "DP",
+      "klub": "Klub zastupnika Domovinskog pokreta",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/mlinaric-stipo-11-saziv",
+      "tokens": [
+        "MLINARIC",
+        "STIPO"
+      ]
+    },
+    {
+      "seat": "75",
+      "surname": "Mostarac",
+      "firstname": "Matej",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/mostarac-matej-11-saziv",
+      "tokens": [
+        "MATEJ",
+        "MOSTARAC"
+      ]
+    },
+    {
+      "seat": "134",
+      "surname": "Mrak-Taritaš",
+      "firstname": "Anka",
+      "party": "GLAS",
+      "klub": "Klub zastupnika Centra, Nezavisne platforme Sjevera i Građansko-liberalnog saveza",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/mrak-taritas-anka-11-saziv",
+      "tokens": [
+        "ANKA",
+        "MRAK",
+        "TARITAS"
+      ]
+    },
+    {
+      "seat": "114",
+      "surname": "Novak",
+      "firstname": "Dubravka",
+      "party": "Možemo!",
+      "klub": "Klub zastupnika Možemo!",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/novak-dubravka-11-saziv",
+      "tokens": [
+        "DUBRAVKA",
+        "NOVAK"
+      ]
+    },
+    {
+      "seat": "133",
+      "surname": "Orešković",
+      "firstname": "Dalija",
+      "party": "DO i SIP",
+      "klub": "Zastupnici izvan klubova političkih stranaka",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/oreskovic-dalija-11-saziv",
+      "tokens": [
+        "DALIJA",
+        "ORESKOVIC"
+      ]
+    },
+    {
+      "seat": "18",
+      "surname": "Ostojić",
+      "firstname": "Ranko",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/ostojic-ranko-11-saziv",
+      "tokens": [
+        "OSTOJIC",
+        "RANKO"
+      ]
+    },
+    {
+      "seat": "79",
+      "surname": "Ostrogović",
+      "firstname": "Josip",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/ostrogovic-josip-11-saziv",
+      "tokens": [
+        "JOSIP",
+        "OSTROGOVIC"
+      ]
+    },
+    {
+      "seat": "131",
+      "surname": "Paus",
+      "firstname": "Dalibor",
+      "party": "IDS",
+      "klub": "Klub zastupnika Istarskog demokratskog sabora (IDS), Primorsko-goranskog saveza (PGS), Unije Kvarnera (UNIJA) i Istarske stranke umirovljenika - Partito Istriano dei pensionati (ISU - PIP)",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/paus-dalibor-11-saziv",
+      "tokens": [
+        "DALIBOR",
+        "PAUS"
+      ]
+    },
+    {
+      "seat": "84",
+      "surname": "Pavić",
+      "firstname": "Marko",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/pavic-marko-11-saziv",
+      "tokens": [
+        "MARKO",
+        "PAVIC"
+      ]
+    },
+    {
+      "seat": "29",
+      "surname": "Penava",
+      "firstname": "Ivan",
+      "party": "DP",
+      "klub": "Klub zastupnika Domovinskog pokreta",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/penava-ivan-11-saziv",
+      "tokens": [
+        "IVAN",
+        "PENAVA"
+      ]
+    },
+    {
+      "seat": "162",
+      "surname": "Peternel",
+      "firstname": "Igor",
+      "party": "DOMINO",
+      "klub": "Klub zastupnika Dom i nacionalno okupljanje i Hrvatski suverenisti",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/peternel-igor-11-saziv",
+      "tokens": [
+        "IGOR",
+        "PETERNEL"
+      ]
+    },
+    {
+      "seat": "27",
+      "surname": "Petir",
+      "firstname": "Marijana",
+      "party": "NZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/petir-marijana-11-saziv",
+      "tokens": [
+        "MARIJANA",
+        "PETIR"
+      ]
+    },
+    {
+      "seat": "110",
+      "surname": "Petrov",
+      "firstname": "Božo",
+      "party": "Most",
+      "klub": "Klub zastupnika Mosta i nezavisnog zastupnika Josipa Jurčevića",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/petrov-bozo-11-saziv",
+      "tokens": [
+        "BOZO",
+        "PETROV"
+      ]
+    },
+    {
+      "seat": "85",
+      "surname": "Piletić",
+      "firstname": "Marin",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/piletic-marin-11-saziv",
+      "tokens": [
+        "MARIN",
+        "PILETIC"
+      ]
+    },
+    {
+      "seat": "118",
+      "surname": "Piližota",
+      "firstname": "Boris",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/pilizota-boris-11-saziv",
+      "tokens": [
+        "BORIS",
+        "PILIZOTA"
+      ]
+    },
+    {
+      "seat": "113",
+      "surname": "Polović",
+      "firstname": "Draženka",
+      "party": "Možemo!",
+      "klub": "Klub zastupnika Možemo!",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/polovic-drazenka-11-saziv",
+      "tokens": [
+        "DRAZENKA",
+        "POLOVIC"
+      ]
+    },
+    {
+      "seat": "153",
+      "surname": "Puljak",
+      "firstname": "Marijana",
+      "party": "Centar",
+      "klub": "Klub zastupnika Centra, Nezavisne platforme Sjevera i Građansko-liberalnog saveza",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/puljak-marijana-11-saziv",
+      "tokens": [
+        "MARIJANA",
+        "PULJAK"
+      ]
+    },
+    {
+      "seat": "149",
+      "surname": "Pupovac",
+      "firstname": "Milorad",
+      "party": "SDSS",
+      "klub": "Klub zastupnika Samostalne demokratske srpske stranke",
+      "manjine": true,
+      "profile": "http://www.sabor.hr/hr/zastupnici/pupovac-milorad-11-saziv",
+      "tokens": [
+        "MILORAD",
+        "PUPOVAC"
+      ]
+    },
+    {
+      "seat": "141",
+      "surname": "Pušić",
+      "firstname": "Dario",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/pusic-dario-11-saziv",
+      "tokens": [
+        "DARIO",
+        "PUSIC"
+      ]
+    },
+    {
+      "seat": "76",
+      "surname": "Puž Kukuljan",
+      "firstname": "Ana",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/puz-kukuljan-ana-11-saziv",
+      "tokens": [
+        "ANA",
+        "KUKULJAN",
+        "PUZ"
+      ]
+    },
+    {
+      "seat": "106",
+      "surname": "Radin",
+      "firstname": "Furio",
+      "party": "NZ",
+      "klub": "Klub zastupnika Istarskog demokratskog sabora (IDS), Primorsko-goranskog saveza (PGS), Unije Kvarnera (UNIJA) i Istarske stranke umirovljenika - Partito Istriano dei pensionati (ISU - PIP)",
+      "manjine": true,
+      "profile": "http://www.sabor.hr/hr/zastupnici/radin-furio-11-saziv",
+      "tokens": [
+        "FURIO",
+        "RADIN"
+      ]
+    },
+    {
+      "seat": "59",
+      "surname": "Radić",
+      "firstname": "Ivan",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/radic-ivan-11-saziv",
+      "tokens": [
+        "IVAN",
+        "RADIC"
+      ]
+    },
+    {
+      "seat": "94",
+      "surname": "Radojčić",
+      "firstname": "Dušica",
+      "party": "Možemo!",
+      "klub": "Klub zastupnika Možemo!",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/radojcic-dusica-11-saziv",
+      "tokens": [
+        "DUSICA",
+        "RADOJCIC"
+      ]
+    },
+    {
+      "seat": "52",
+      "surname": "Radolović",
+      "firstname": "Sanja",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/radolovic-sanja-11-saziv",
+      "tokens": [
+        "RADOLOVIC",
+        "SANJA"
+      ]
+    },
+    {
+      "seat": "156",
+      "surname": "Raspudić",
+      "firstname": "Nino",
+      "party": "NZ",
+      "klub": "Klub nezavisnih zastupnika",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/raspudic-nino-11-saziv",
+      "tokens": [
+        "NINO",
+        "RASPUDIC"
+      ]
+    },
+    {
+      "seat": "71",
+      "surname": "Raukar-Gamulin",
+      "firstname": "Urša",
+      "party": "Možemo!",
+      "klub": "Klub zastupnika Možemo!",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/raukar-gamulin-ursa-11-saziv",
+      "tokens": [
+        "GAMULIN",
+        "RAUKAR",
+        "URSA"
+      ]
+    },
+    {
+      "seat": "77",
+      "surname": "Račan",
+      "firstname": "Ivan",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/racan-ivan-11-saziv",
+      "tokens": [
+        "IVAN",
+        "RACAN"
+      ]
+    },
+    {
+      "seat": "15",
+      "surname": "Reiner",
+      "firstname": "Željko",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/reiner-zeljko-11-saziv",
+      "tokens": [
+        "REINER",
+        "ZELJKO"
+      ]
+    },
+    {
+      "seat": "53",
+      "surname": "Restović",
+      "firstname": "Tonči",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/restovic-tonci-11-saziv",
+      "tokens": [
+        "RESTOVIC",
+        "TONCI"
+      ]
+    },
+    {
+      "seat": "137",
+      "surname": "Ribarić Majanović",
+      "firstname": "Ivana",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/ribaric-majanovic-ivana-11-saziv",
+      "tokens": [
+        "IVANA",
+        "MAJANOVIC",
+        "RIBARIC"
+      ]
+    },
+    {
+      "seat": "143",
+      "surname": "Salopek",
+      "firstname": "Anđelka",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/salopek-andelka-11-saziv",
+      "tokens": [
+        "ANDELKA",
+        "SALOPEK"
+      ]
+    },
+    {
+      "seat": "14",
+      "surname": "Sanader",
+      "firstname": "Ante",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/sanader-ante-11-saziv",
+      "tokens": [
+        "ANTE",
+        "SANADER"
+      ]
+    },
+    {
+      "seat": "157",
+      "surname": "Selak Raspudić",
+      "firstname": "Marija",
+      "party": "NZ",
+      "klub": "Klub nezavisnih zastupnika",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/selak-raspudic-marija-11-saziv",
+      "tokens": [
+        "MARIJA",
+        "RASPUDIC",
+        "SELAK"
+      ]
+    },
+    {
+      "seat": "19",
+      "surname": "Sobota",
+      "firstname": "Darko",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/sobota-darko-11-saziv",
+      "tokens": [
+        "DARKO",
+        "SOBOTA"
+      ]
+    },
+    {
+      "seat": "138",
+      "surname": "Sokolić",
+      "firstname": "Tanja",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/sokolic-tanja-11-saziv",
+      "tokens": [
+        "SOKOLIC",
+        "TANJA"
+      ]
+    },
+    {
+      "seat": "24",
+      "surname": "Totgergeli",
+      "firstname": "Miro",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/totgergeli-miro-11-saziv",
+      "tokens": [
+        "MIRO",
+        "TOTGERGELI"
+      ]
+    },
+    {
+      "seat": "129",
+      "surname": "Troskot",
+      "firstname": "Zvonimir",
+      "party": "Most",
+      "klub": "Klub zastupnika Mosta i nezavisnog zastupnika Josipa Jurčevića",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/troskot-zvonimir-11-saziv",
+      "tokens": [
+        "TROSKOT",
+        "ZVONIMIR"
+      ]
+    },
+    {
+      "seat": "46",
+      "surname": "Turk",
+      "firstname": "Željko",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/turk-zeljko-11-saziv",
+      "tokens": [
+        "TURK",
+        "ZELJKO"
+      ]
+    },
+    {
+      "seat": "78",
+      "surname": "Vlašić Iljkić",
+      "firstname": "Martina",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/vlasic-iljkic-martina-11-saziv",
+      "tokens": [
+        "ILJKIC",
+        "MARTINA",
+        "VLASIC"
+      ]
+    },
+    {
+      "seat": "68",
+      "surname": "Vojnić",
+      "firstname": "Jasna",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/vojnic-jasna-11-saziv",
+      "tokens": [
+        "JASNA",
+        "VOJNIC"
+      ]
+    },
+    {
+      "seat": "117",
+      "surname": "Vukušić",
+      "firstname": "Mate",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/vukusic-mate-11-saziv",
+      "tokens": [
+        "MATE",
+        "VUKUSIC"
+      ]
+    },
+    {
+      "seat": "147",
+      "surname": "Vuletić",
+      "firstname": "Darko",
+      "party": "HSS",
+      "klub": "Zastupnici izvan klubova političkih stranaka",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/vuletic-darko-11-saziv",
+      "tokens": [
+        "DARKO",
+        "VULETIC"
+      ]
+    },
+    {
+      "seat": "125",
+      "surname": "Vučemilović",
+      "firstname": "Vesna",
+      "party": "NZ",
+      "klub": "Klub zastupnika Nezavisni i HSU",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/vucemilovic-vesna-11-saziv",
+      "tokens": [
+        "VESNA",
+        "VUCEMILOVIC"
+      ]
+    },
+    {
+      "seat": "44",
+      "surname": "Zadro",
+      "firstname": "Tomislav",
+      "party": "NZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/zadro-tomislav-11-saziv",
+      "tokens": [
+        "TOMISLAV",
+        "ZADRO"
+      ]
+    },
+    {
+      "seat": "47",
+      "surname": "Zekanović",
+      "firstname": "Hrvoje",
+      "party": "HDS",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/zekanovic-hrvoje-11-saziv",
+      "tokens": [
+        "HRVOJE",
+        "ZEKANOVIC"
+      ]
+    },
+    {
+      "seat": "63",
+      "surname": "Zelić",
+      "firstname": "Ivo",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/zelic-ivo-11-saziv",
+      "tokens": [
+        "IVO",
+        "ZELIC"
+      ]
+    },
+    {
+      "seat": "54",
+      "surname": "Zmajlović",
+      "firstname": "Mihael",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/zmajlovic-mihael-11-saziv",
+      "tokens": [
+        "MIHAEL",
+        "ZMAJLOVIC"
+      ]
+    },
+    {
+      "seat": "158",
+      "surname": "Zurovec",
+      "firstname": "Dario",
+      "party": "Dario Zurovec - NL",
+      "klub": "Klub nezavisnih zastupnika",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/zurovec-dario-11-saziv",
+      "tokens": [
+        "DARIO",
+        "ZUROVEC"
+      ]
+    },
+    {
+      "seat": "20",
+      "surname": "Ćosić",
+      "firstname": "Pero",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/cosic-pero-11-saziv",
+      "tokens": [
+        "COSIC",
+        "PERO"
+      ]
+    },
+    {
+      "seat": "160",
+      "surname": "Čabaj",
+      "firstname": "Krešimir",
+      "party": "DOMINO",
+      "klub": "Klub zastupnika Dom i nacionalno okupljanje i Hrvatski suverenisti",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/cabaj-kresimir-11-saziv",
+      "tokens": [
+        "CABAJ",
+        "KRESIMIR"
+      ]
+    },
+    {
+      "seat": "43",
+      "surname": "Đakić",
+      "firstname": "Josip",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/dakic-josip-11-saziv",
+      "tokens": [
+        "DAKIC",
+        "JOSIP"
+      ]
+    },
+    {
+      "seat": "33",
+      "surname": "Đujić",
+      "firstname": "Saša",
+      "party": "SDP",
+      "klub": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/dujic-sasa-11-saziv",
+      "tokens": [
+        "DUJIC",
+        "SASA"
+      ]
+    },
+    {
+      "seat": "61",
+      "surname": "Šašlin",
+      "firstname": "Stipan",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/saslin-stipan-11-saziv",
+      "tokens": [
+        "SASLIN",
+        "STIPAN"
+      ]
+    },
+    {
+      "seat": "150",
+      "surname": "Šimpraga",
+      "firstname": "Anja",
+      "party": "SDSS",
+      "klub": "Klub zastupnika Samostalne demokratske srpske stranke",
+      "manjine": true,
+      "profile": "http://www.sabor.hr/hr/zastupnici/simpraga-anja-11-saziv",
+      "tokens": [
+        "ANJA",
+        "SIMPRAGA"
+      ]
+    },
+    {
+      "seat": "100",
+      "surname": "Šimrak",
+      "firstname": "Maksimilijan",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/simrak-maksimilijan-11-saziv",
+      "tokens": [
+        "MAKSIMILIJAN",
+        "SIMRAK"
+      ]
+    },
+    {
+      "seat": "88",
+      "surname": "Štromar",
+      "firstname": "Predrag",
+      "party": "HNS",
+      "klub": "Klub zastupnika Hrvatske narodne stranke i nezavisnih zastupnika",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/stromar-predrag-11-saziv",
+      "tokens": [
+        "PREDRAG",
+        "STROMAR"
+      ]
+    },
+    {
+      "seat": "81",
+      "surname": "Šuta",
+      "firstname": "Tomislav",
+      "party": "HDZ",
+      "klub": "Klub zastupnika Hrvatske demokratske zajednice",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/suta-tomislav-11-saziv",
+      "tokens": [
+        "SUTA",
+        "TOMISLAV"
+      ]
+    },
+    {
+      "seat": "111",
+      "surname": "Živković",
+      "firstname": "Marin",
+      "party": "Možemo!",
+      "klub": "Klub zastupnika Možemo!",
+      "manjine": false,
+      "profile": "http://www.sabor.hr/hr/zastupnici/zivkovic-marin-11-saziv",
+      "tokens": [
+        "MARIN",
+        "ZIVKOVIC"
+      ]
+    }
+  ],
   "name_token_sets": [
     [
       "ACKAR",
       "KRESIMIR"
     ],
     [
-      "ANA",
-      "KUKULJAN"
+      "AHMETOVIC",
+      "MIRELA"
     ],
     [
       "ANA",
+      "KUKULJAN",
       "PUZ"
     ],
     [
@@ -25,14 +1993,12 @@
     ],
     [
       "ANDRO",
-      "HERMAN"
+      "KRSTULOVIC",
+      "OPARA"
     ],
     [
       "ANITA",
-      "CURIS"
-    ],
-    [
-      "ANITA",
+      "CURIS",
       "KROK"
     ],
     [
@@ -66,7 +2032,8 @@
     ],
     [
       "ANTOLIC",
-      "BARBARA"
+      "BARBARA",
+      "VUPORA"
     ],
     [
       "ANTON",
@@ -77,12 +2044,12 @@
       "HODZIC"
     ],
     [
-      "AUGUSTAN",
-      "JASENKA",
-      "PENTEK"
+      "ARSEN",
+      "BAUK"
     ],
     [
       "AUGUSTAN",
+      "JASENKA",
       "PENTEK"
     ],
     [
@@ -95,19 +2062,17 @@
     ],
     [
       "BAN",
-      "BOSKA"
+      "BOSKA",
+      "VLAHEK"
     ],
     [
       "BANICEK",
-      "JASENKA"
+      "IKIC",
+      "KRISTINA"
     ],
     [
       "BARADIC",
       "NIKOLINA"
-    ],
-    [
-      "BARBARA",
-      "VUPORA"
     ],
     [
       "BARBARIC",
@@ -155,7 +2120,15 @@
     ],
     [
       "BORIC",
+      "JOSIP"
+    ],
+    [
+      "BORIC",
       "RADA"
+    ],
+    [
+      "BORIS",
+      "LALOVAC"
     ],
     [
       "BORIS",
@@ -168,10 +2141,6 @@
     [
       "BRANKA",
       "JURICEV",
-      "MARTINCEV"
-    ],
-    [
-      "BRANKA",
       "MARTINCEV"
     ],
     [
@@ -201,6 +2170,10 @@
     [
       "CABAJ",
       "KRESIMIR"
+    ],
+    [
+      "COSIC",
+      "PERO"
     ],
     [
       "DABO",
@@ -252,6 +2225,10 @@
     ],
     [
       "DARKO",
+      "SOBOTA"
+    ],
+    [
+      "DARKO",
       "VULETIC"
     ],
     [
@@ -260,6 +2237,7 @@
     ],
     [
       "DONCIC",
+      "HAJDAS",
       "SINISA"
     ],
     [
@@ -276,15 +2254,16 @@
     ],
     [
       "DUBRAVKA",
-      "LIPOVAC"
+      "LIPOVAC",
+      "PEHAR"
     ],
     [
       "DUBRAVKA",
       "NOVAK"
     ],
     [
-      "DUBRAVKA",
-      "PEHAR"
+      "DUJIC",
+      "SASA"
     ],
     [
       "DUSICA",
@@ -301,10 +2280,6 @@
     [
       "GABRICEVIC",
       "VESELKO"
-    ],
-    [
-      "GAMULIN",
-      "RAUKAR"
     ],
     [
       "GAMULIN",
@@ -336,8 +2311,8 @@
       "NIKOLA"
     ],
     [
-      "HAJDAS",
-      "SINISA"
+      "HERMAN",
+      "MISLAV"
     ],
     [
       "HRVOJE",
@@ -349,7 +2324,8 @@
     ],
     [
       "ILJKIC",
-      "MARTINA"
+      "MARTINA",
+      "VLASIC"
     ],
     [
       "IVAN",
@@ -373,7 +2349,16 @@
     ],
     [
       "IVANA",
+      "MAJANOVIC",
+      "RIBARIC"
+    ],
+    [
+      "IVANA",
       "MARKOVIC"
+    ],
+    [
+      "IVICA",
+      "KUKAVICA"
     ],
     [
       "IVICA",
@@ -386,6 +2371,10 @@
     [
       "IVO",
       "ZELIC"
+    ],
+    [
+      "JAKSIC",
+      "MISEL"
     ],
     [
       "JANKOVICS",
@@ -420,8 +2409,20 @@
       "VELJKO"
     ],
     [
+      "KATICIC",
+      "KRUNOSLAV"
+    ],
+    [
       "KLARIC",
       "TOMISLAV"
+    ],
+    [
+      "KOLAREK",
+      "LJUBOMIR"
+    ],
+    [
+      "KOMADINA",
+      "ZLATKO"
     ],
     [
       "KOMES",
@@ -436,12 +2437,17 @@
       "SANDRA"
     ],
     [
-      "KRSTULOVIC",
-      "OPARA"
+      "KRSTICEVIC",
+      "MISO"
     ],
     [
       "LACKOVIC",
       "ZELJKO"
+    ],
+    [
+      "LIVIA",
+      "MADUNA",
+      "SANDA"
     ],
     [
       "LJUBICA",
@@ -450,14 +2456,6 @@
     [
       "LUGARIC",
       "MARIJA"
-    ],
-    [
-      "MADUNA",
-      "SANDA"
-    ],
-    [
-      "MAJANOVIC",
-      "RIBARIC"
     ],
     [
       "MAKSIMILIJAN",
@@ -471,6 +2469,10 @@
       "MARIJA",
       "RASPUDIC",
       "SELAK"
+    ],
+    [
+      "MARIJANA",
+      "PETIR"
     ],
     [
       "MARIJANA",
@@ -490,10 +2492,6 @@
     ],
     [
       "MARIO",
-      "MARKOVIC"
-    ],
-    [
-      "MARIO",
       "MILINKOVIC"
     ],
     [
@@ -503,10 +2501,6 @@
     [
       "MARKOVIC",
       "MIROSLAV"
-    ],
-    [
-      "MARTINA",
-      "VLASIC"
     ],
     [
       "MATE",
@@ -529,8 +2523,16 @@
       "PUPOVAC"
     ],
     [
+      "MIRO",
+      "TOTGERGELI"
+    ],
+    [
       "MISIC",
       "PREDRAG"
+    ],
+    [
+      "MLINARIC",
+      "STIPO"
     ],
     [
       "NINO",
@@ -547,10 +2549,6 @@
     [
       "RADOLOVIC",
       "SANJA"
-    ],
-    [
-      "RASPUDIC",
-      "SELAK"
     ],
     [
       "REINER",
@@ -588,864 +2586,5 @@
       "VESNA",
       "VUCEMILOVIC"
     ]
-  ],
-  "pairs": [
-    "ACKAR|KRESIMIR",
-    "ANDRO|HERMAN",
-    "ANTOLIC|BARBARA",
-    "AUGUSTAN-PENTEK|JASENKA",
-    "AUGUSTAN|PENTEK",
-    "BABIC|ANTE",
-    "BAKIC|DAMIR",
-    "BAKSA|IVICA",
-    "BAN|BOSKA",
-    "BARADIC|NIKOLINA",
-    "BARBARIC|NEVENKO",
-    "BARBIR|DAMIR",
-    "BARICEVIC|DANICA",
-    "BEDEKOVIC|VESNA",
-    "BENCIC|SANDRA",
-    "BILEK|VLADIMIR",
-    "BILIC|DUBRAVKO",
-    "BILOGLAV|DAMIR",
-    "BJEZANCEVIC|SANJA",
-    "BLAZANOVIC|DANIJELA",
-    "BLAZEVIC|ANAMARIJA",
-    "BLAZINA|MARIA",
-    "BORIC|RADA",
-    "BUDALIC|IVAN",
-    "BUGARIN|IVAN",
-    "BULJ|MIRO",
-    "BURIC|MAJDA",
-    "BUSIC|ZDRAVKA",
-    "CABAJ|KRESIMIR",
-    "CURIS|ANITA",
-    "DABO|IVAN",
-    "DABRO|JOSIP",
-    "DAKIC|JOSIP",
-    "DEUR|ANTE",
-    "DOMITROVIC|DALIBOR",
-    "DONCIC|SINISA",
-    "DRAGIC|IRENA",
-    "FRANKOVIC|MATO",
-    "GABRICEVIC|VESELKO",
-    "GLASOVAC|SABINA",
-    "GLAVIC|ZELJKO",
-    "GREGUROVIC|ZORAN",
-    "GRMOJA|NIKOLA",
-    "HAJDAS|SINISA",
-    "HODZIC|ARMIN",
-    "HREBAK|DARIO",
-    "ILJKIC|MARTINA",
-    "JANDROKOVIC|GORDAN",
-    "JANKOVICS|ROBERT",
-    "JASENKA|BANICEK",
-    "JECKOV|DRAGANA",
-    "JEMBRIH|LJUBICA",
-    "JOSIC|TOMISLAV",
-    "JURCEVIC|JOSIP",
-    "JURICEV-MARTINCEV|BRANKA",
-    "KAJTAZI|VELJKO",
-    "KANISKI|GORAN",
-    "KEKIN|IVANA",
-    "KLARIC|TOMISLAV",
-    "KLASIC|DARKO",
-    "KLIMAN|ANTON",
-    "KOLARIC|BRANKO",
-    "KOMES|MAGDALENA",
-    "KORDIC|MARTIN",
-    "KRALJ|DENIS",
-    "KROK|ANITA",
-    "KRPAN|SANDRA",
-    "KRSTULOVIC|OPARA",
-    "KUJUNDZIC|ANTE",
-    "KUKULJAN|ANA",
-    "LACKOVIC|ZELJKO",
-    "LEDENKO|IVICA",
-    "LIPOVAC|DUBRAVKA",
-    "LUGARIC|MARIJA",
-    "LUKACIC|LJUBICA",
-    "MADUNA|SANDA",
-    "MALENICA|IVAN",
-    "MANDARIC|MARIN",
-    "MANDIC|DAMIR",
-    "MARKOVIC|IVANA",
-    "MARKOVIC|MARIO",
-    "MARKOVIC|MIROSLAV",
-    "MARTINCEV|BRANKA",
-    "MAZAR|NIKOLA",
-    "MESIC|IVICA",
-    "MILAN|DALIBOR",
-    "MILETIC|MARIN",
-    "MILINKOVIC|MARIO",
-    "MILOS|ANTEO",
-    "MILOS|JELENA",
-    "MISIC|PREDRAG",
-    "MOSTARAC|MATEJ",
-    "MRAK-TARITAS|ANKA",
-    "NOVAK|DUBRAVKA",
-    "ORESKOVIC|DALIJA",
-    "OSTOJIC|RANKO",
-    "OSTROGOVIC|JOSIP",
-    "PAUS|DALIBOR",
-    "PAVIC|MARKO",
-    "PEHAR|DUBRAVKA",
-    "PENAVA|IVAN",
-    "PETERNEL|IGOR",
-    "PETROV|BOZO",
-    "PILETIC|MARIN",
-    "PILIZOTA|BORIS",
-    "POLOVIC|DRAZENKA",
-    "PULJAK|MARIJANA",
-    "PUPOVAC|MILORAD",
-    "PUSIC|DARIO",
-    "PUZ|ANA",
-    "RACAN|IVAN",
-    "RADIC|IVAN",
-    "RADIN|FURIO",
-    "RADOJCIC|DUSICA",
-    "RADOLOVIC|SANJA",
-    "RASPUDIC|NINO",
-    "RAUKAR-GAMULIN|URSA",
-    "RAUKAR|GAMULIN",
-    "REINER|ZELJKO",
-    "RESTOVIC|TONCI",
-    "RIBARIC|MAJANOVIC",
-    "SALOPEK|ANDELKA",
-    "SANADER|ANTE",
-    "SASLIN|STIPAN",
-    "SELAK RASPUDIC|MARIJA",
-    "SELAK|RASPUDIC",
-    "SIMPRAGA|ANJA",
-    "SIMRAK|MAKSIMILIJAN",
-    "SOKOLIC|TANJA",
-    "STROMAR|PREDRAG",
-    "SUTA|TOMISLAV",
-    "TROSKOT|ZVONIMIR",
-    "TURK|ZELJKO",
-    "VLASIC|MARTINA",
-    "VOJNIC|JASNA",
-    "VUCEMILOVIC|VESNA",
-    "VUKUSIC|MATE",
-    "VULETIC|DARKO",
-    "VUPORA|BARBARA",
-    "ZADRO|TOMISLAV",
-    "ZEKANOVIC|HRVOJE",
-    "ZELIC|IVO",
-    "ZIVKOVIC|MARIN",
-    "ZMAJLOVIC|MIHAEL",
-    "ZUROVEC|DARIO"
-  ],
-  "pair_set": [
-    "ACKAR KRESIMIR",
-    "ANA KUKULJAN",
-    "ANA PUZ",
-    "ANAMARIJA BLAZEVIC",
-    "ANDELKA SALOPEK",
-    "ANDRO HERMAN",
-    "ANITA CURIS",
-    "ANITA KROK",
-    "ANJA SIMPRAGA",
-    "ANKA MRAK-TARITAS",
-    "ANTE BABIC",
-    "ANTE DEUR",
-    "ANTE KUJUNDZIC",
-    "ANTE SANADER",
-    "ANTEO MILOS",
-    "ANTOLIC BARBARA",
-    "ANTON KLIMAN",
-    "ARMIN HODZIC",
-    "AUGUSTAN PENTEK",
-    "AUGUSTAN-PENTEK JASENKA",
-    "BABIC ANTE",
-    "BAKIC DAMIR",
-    "BAKSA IVICA",
-    "BAN BOSKA",
-    "BANICEK JASENKA",
-    "BARADIC NIKOLINA",
-    "BARBARA ANTOLIC",
-    "BARBARA VUPORA",
-    "BARBARIC NEVENKO",
-    "BARBIR DAMIR",
-    "BARICEVIC DANICA",
-    "BEDEKOVIC VESNA",
-    "BENCIC SANDRA",
-    "BILEK VLADIMIR",
-    "BILIC DUBRAVKO",
-    "BILOGLAV DAMIR",
-    "BJEZANCEVIC SANJA",
-    "BLAZANOVIC DANIJELA",
-    "BLAZEVIC ANAMARIJA",
-    "BLAZINA MARIA",
-    "BORIC RADA",
-    "BORIS PILIZOTA",
-    "BOSKA BAN",
-    "BOZO PETROV",
-    "BRANKA JURICEV-MARTINCEV",
-    "BRANKA MARTINCEV",
-    "BRANKO KOLARIC",
-    "BUDALIC IVAN",
-    "BUGARIN IVAN",
-    "BULJ MIRO",
-    "BURIC MAJDA",
-    "BUSIC ZDRAVKA",
-    "CABAJ KRESIMIR",
-    "CURIS ANITA",
-    "DABO IVAN",
-    "DABRO JOSIP",
-    "DAKIC JOSIP",
-    "DALIBOR DOMITROVIC",
-    "DALIBOR MILAN",
-    "DALIBOR PAUS",
-    "DALIJA ORESKOVIC",
-    "DAMIR BAKIC",
-    "DAMIR BARBIR",
-    "DAMIR BILOGLAV",
-    "DAMIR MANDIC",
-    "DANICA BARICEVIC",
-    "DANIJELA BLAZANOVIC",
-    "DARIO HREBAK",
-    "DARIO PUSIC",
-    "DARIO ZUROVEC",
-    "DARKO KLASIC",
-    "DARKO VULETIC",
-    "DENIS KRALJ",
-    "DEUR ANTE",
-    "DOMITROVIC DALIBOR",
-    "DONCIC SINISA",
-    "DRAGANA JECKOV",
-    "DRAGIC IRENA",
-    "DRAZENKA POLOVIC",
-    "DUBRAVKA LIPOVAC",
-    "DUBRAVKA NOVAK",
-    "DUBRAVKA PEHAR",
-    "DUBRAVKO BILIC",
-    "DUSICA RADOJCIC",
-    "FRANKOVIC MATO",
-    "FURIO RADIN",
-    "GABRICEVIC VESELKO",
-    "GAMULIN RAUKAR",
-    "GLASOVAC SABINA",
-    "GLAVIC ZELJKO",
-    "GORAN KANISKI",
-    "GORDAN JANDROKOVIC",
-    "GREGUROVIC ZORAN",
-    "GRMOJA NIKOLA",
-    "HAJDAS SINISA",
-    "HERMAN ANDRO",
-    "HODZIC ARMIN",
-    "HREBAK DARIO",
-    "HRVOJE ZEKANOVIC",
-    "IGOR PETERNEL",
-    "ILJKIC MARTINA",
-    "IRENA DRAGIC",
-    "IVAN BUDALIC",
-    "IVAN BUGARIN",
-    "IVAN DABO",
-    "IVAN MALENICA",
-    "IVAN PENAVA",
-    "IVAN RACAN",
-    "IVAN RADIC",
-    "IVANA KEKIN",
-    "IVANA MARKOVIC",
-    "IVICA BAKSA",
-    "IVICA LEDENKO",
-    "IVICA MESIC",
-    "IVO ZELIC",
-    "JANDROKOVIC GORDAN",
-    "JANKOVICS ROBERT",
-    "JASENKA AUGUSTAN-PENTEK",
-    "JASENKA BANICEK",
-    "JASNA VOJNIC",
-    "JECKOV DRAGANA",
-    "JELENA MILOS",
-    "JEMBRIH LJUBICA",
-    "JOSIC TOMISLAV",
-    "JOSIP DABRO",
-    "JOSIP DAKIC",
-    "JOSIP JURCEVIC",
-    "JOSIP OSTROGOVIC",
-    "JURCEVIC JOSIP",
-    "JURICEV-MARTINCEV BRANKA",
-    "KAJTAZI VELJKO",
-    "KANISKI GORAN",
-    "KEKIN IVANA",
-    "KLARIC TOMISLAV",
-    "KLASIC DARKO",
-    "KLIMAN ANTON",
-    "KOLARIC BRANKO",
-    "KOMES MAGDALENA",
-    "KORDIC MARTIN",
-    "KRALJ DENIS",
-    "KRESIMIR ACKAR",
-    "KRESIMIR CABAJ",
-    "KROK ANITA",
-    "KRPAN SANDRA",
-    "KRSTULOVIC OPARA",
-    "KUJUNDZIC ANTE",
-    "KUKULJAN ANA",
-    "LACKOVIC ZELJKO",
-    "LEDENKO IVICA",
-    "LIPOVAC DUBRAVKA",
-    "LJUBICA JEMBRIH",
-    "LJUBICA LUKACIC",
-    "LUGARIC MARIJA",
-    "LUKACIC LJUBICA",
-    "MADUNA SANDA",
-    "MAGDALENA KOMES",
-    "MAJANOVIC RIBARIC",
-    "MAJDA BURIC",
-    "MAKSIMILIJAN SIMRAK",
-    "MALENICA IVAN",
-    "MANDARIC MARIN",
-    "MANDIC DAMIR",
-    "MARIA BLAZINA",
-    "MARIJA LUGARIC",
-    "MARIJA SELAK RASPUDIC",
-    "MARIJANA PULJAK",
-    "MARIN MANDARIC",
-    "MARIN MILETIC",
-    "MARIN PILETIC",
-    "MARIN ZIVKOVIC",
-    "MARIO MARKOVIC",
-    "MARIO MILINKOVIC",
-    "MARKO PAVIC",
-    "MARKOVIC IVANA",
-    "MARKOVIC MARIO",
-    "MARKOVIC MIROSLAV",
-    "MARTIN KORDIC",
-    "MARTINA ILJKIC",
-    "MARTINA VLASIC",
-    "MARTINCEV BRANKA",
-    "MATE VUKUSIC",
-    "MATEJ MOSTARAC",
-    "MATO FRANKOVIC",
-    "MAZAR NIKOLA",
-    "MESIC IVICA",
-    "MIHAEL ZMAJLOVIC",
-    "MILAN DALIBOR",
-    "MILETIC MARIN",
-    "MILINKOVIC MARIO",
-    "MILORAD PUPOVAC",
-    "MILOS ANTEO",
-    "MILOS JELENA",
-    "MIRO BULJ",
-    "MIROSLAV MARKOVIC",
-    "MISIC PREDRAG",
-    "MOSTARAC MATEJ",
-    "MRAK-TARITAS ANKA",
-    "NEVENKO BARBARIC",
-    "NIKOLA GRMOJA",
-    "NIKOLA MAZAR",
-    "NIKOLINA BARADIC",
-    "NINO RASPUDIC",
-    "NOVAK DUBRAVKA",
-    "OPARA KRSTULOVIC",
-    "ORESKOVIC DALIJA",
-    "OSTOJIC RANKO",
-    "OSTROGOVIC JOSIP",
-    "PAUS DALIBOR",
-    "PAVIC MARKO",
-    "PEHAR DUBRAVKA",
-    "PENAVA IVAN",
-    "PENTEK AUGUSTAN",
-    "PETERNEL IGOR",
-    "PETROV BOZO",
-    "PILETIC MARIN",
-    "PILIZOTA BORIS",
-    "POLOVIC DRAZENKA",
-    "PREDRAG MISIC",
-    "PREDRAG STROMAR",
-    "PULJAK MARIJANA",
-    "PUPOVAC MILORAD",
-    "PUSIC DARIO",
-    "PUZ ANA",
-    "RACAN IVAN",
-    "RADA BORIC",
-    "RADIC IVAN",
-    "RADIN FURIO",
-    "RADOJCIC DUSICA",
-    "RADOLOVIC SANJA",
-    "RANKO OSTOJIC",
-    "RASPUDIC NINO",
-    "RASPUDIC SELAK",
-    "RAUKAR GAMULIN",
-    "RAUKAR-GAMULIN URSA",
-    "REINER ZELJKO",
-    "RESTOVIC TONCI",
-    "RIBARIC MAJANOVIC",
-    "ROBERT JANKOVICS",
-    "SABINA GLASOVAC",
-    "SALOPEK ANDELKA",
-    "SANADER ANTE",
-    "SANDA MADUNA",
-    "SANDRA BENCIC",
-    "SANDRA KRPAN",
-    "SANJA BJEZANCEVIC",
-    "SANJA RADOLOVIC",
-    "SASLIN STIPAN",
-    "SELAK RASPUDIC",
-    "SELAK RASPUDIC MARIJA",
-    "SIMPRAGA ANJA",
-    "SIMRAK MAKSIMILIJAN",
-    "SINISA DONCIC",
-    "SINISA HAJDAS",
-    "SOKOLIC TANJA",
-    "STIPAN SASLIN",
-    "STROMAR PREDRAG",
-    "SUTA TOMISLAV",
-    "TANJA SOKOLIC",
-    "TOMISLAV JOSIC",
-    "TOMISLAV KLARIC",
-    "TOMISLAV SUTA",
-    "TOMISLAV ZADRO",
-    "TONCI RESTOVIC",
-    "TROSKOT ZVONIMIR",
-    "TURK ZELJKO",
-    "URSA RAUKAR-GAMULIN",
-    "VELJKO KAJTAZI",
-    "VESELKO GABRICEVIC",
-    "VESNA BEDEKOVIC",
-    "VESNA VUCEMILOVIC",
-    "VLADIMIR BILEK",
-    "VLASIC MARTINA",
-    "VOJNIC JASNA",
-    "VUCEMILOVIC VESNA",
-    "VUKUSIC MATE",
-    "VULETIC DARKO",
-    "VUPORA BARBARA",
-    "ZADRO TOMISLAV",
-    "ZDRAVKA BUSIC",
-    "ZEKANOVIC HRVOJE",
-    "ZELIC IVO",
-    "ZELJKO GLAVIC",
-    "ZELJKO LACKOVIC",
-    "ZELJKO REINER",
-    "ZELJKO TURK",
-    "ZIVKOVIC MARIN",
-    "ZMAJLOVIC MIHAEL",
-    "ZORAN GREGUROVIC",
-    "ZUROVEC DARIO",
-    "ZVONIMIR TROSKOT"
-  ],
-  "surname_set": [
-    "ACKAR",
-    "ANDRO",
-    "ANTOLIC",
-    "AUGUSTAN",
-    "AUGUSTAN-PENTEK",
-    "BABIC",
-    "BAKIC",
-    "BAKSA",
-    "BAN",
-    "BARADIC",
-    "BARBARIC",
-    "BARBIR",
-    "BARICEVIC",
-    "BEDEKOVIC",
-    "BENCIC",
-    "BILEK",
-    "BILIC",
-    "BILOGLAV",
-    "BJEZANCEVIC",
-    "BLAZANOVIC",
-    "BLAZEVIC",
-    "BLAZINA",
-    "BORIC",
-    "BUDALIC",
-    "BUGARIN",
-    "BULJ",
-    "BURIC",
-    "BUSIC",
-    "CABAJ",
-    "CURIS",
-    "DABO",
-    "DABRO",
-    "DAKIC",
-    "DEUR",
-    "DOMITROVIC",
-    "DONCIC",
-    "DRAGIC",
-    "FRANKOVIC",
-    "GABRICEVIC",
-    "GLASOVAC",
-    "GLAVIC",
-    "GREGUROVIC",
-    "GRMOJA",
-    "HAJDAS",
-    "HODZIC",
-    "HREBAK",
-    "ILJKIC",
-    "JANDROKOVIC",
-    "JANKOVICS",
-    "JASENKA",
-    "JECKOV",
-    "JEMBRIH",
-    "JOSIC",
-    "JURCEVIC",
-    "JURICEV-MARTINCEV",
-    "KAJTAZI",
-    "KANISKI",
-    "KEKIN",
-    "KLARIC",
-    "KLASIC",
-    "KLIMAN",
-    "KOLARIC",
-    "KOMES",
-    "KORDIC",
-    "KRALJ",
-    "KROK",
-    "KRPAN",
-    "KRSTULOVIC",
-    "KUJUNDZIC",
-    "KUKULJAN",
-    "LACKOVIC",
-    "LEDENKO",
-    "LIPOVAC",
-    "LUGARIC",
-    "LUKACIC",
-    "MADUNA",
-    "MALENICA",
-    "MANDARIC",
-    "MANDIC",
-    "MARKOVIC",
-    "MARTINCEV",
-    "MAZAR",
-    "MESIC",
-    "MILAN",
-    "MILETIC",
-    "MILINKOVIC",
-    "MILOS",
-    "MISIC",
-    "MOSTARAC",
-    "MRAK-TARITAS",
-    "NOVAK",
-    "ORESKOVIC",
-    "OSTOJIC",
-    "OSTROGOVIC",
-    "PAUS",
-    "PAVIC",
-    "PEHAR",
-    "PENAVA",
-    "PETERNEL",
-    "PETROV",
-    "PILETIC",
-    "PILIZOTA",
-    "POLOVIC",
-    "PULJAK",
-    "PUPOVAC",
-    "PUSIC",
-    "PUZ",
-    "RACAN",
-    "RADIC",
-    "RADIN",
-    "RADOJCIC",
-    "RADOLOVIC",
-    "RASPUDIC",
-    "RAUKAR",
-    "RAUKAR-GAMULIN",
-    "REINER",
-    "RESTOVIC",
-    "RIBARIC",
-    "SALOPEK",
-    "SANADER",
-    "SASLIN",
-    "SELAK",
-    "SELAK RASPUDIC",
-    "SIMPRAGA",
-    "SIMRAK",
-    "SOKOLIC",
-    "STROMAR",
-    "SUTA",
-    "TROSKOT",
-    "TURK",
-    "VLASIC",
-    "VOJNIC",
-    "VUCEMILOVIC",
-    "VUKUSIC",
-    "VULETIC",
-    "VUPORA",
-    "ZADRO",
-    "ZEKANOVIC",
-    "ZELIC",
-    "ZIVKOVIC",
-    "ZMAJLOVIC",
-    "ZUROVEC"
-  ],
-  "tokens": [
-    "ACKAR",
-    "AHMETOVIC",
-    "ANA",
-    "ANAMARIJA",
-    "ANDELKA",
-    "ANDRO",
-    "ANITA",
-    "ANJA",
-    "ANKA",
-    "ANTE",
-    "ANTEO",
-    "ANTOLIC",
-    "ANTON",
-    "ARMIN",
-    "ARSEN",
-    "AUGUSTAN",
-    "BABIC",
-    "BAKIC",
-    "BAKSA",
-    "BAN",
-    "BANICEK",
-    "BARADIC",
-    "BARBARA",
-    "BARBARIC",
-    "BARBIR",
-    "BARICEVIC",
-    "BAUK",
-    "BEDEKOVIC",
-    "BENCIC",
-    "BILEK",
-    "BILIC",
-    "BILOGLAV",
-    "BJEZANCEVIC",
-    "BLAZANOVIC",
-    "BLAZEVIC",
-    "BLAZINA",
-    "BORIC",
-    "BORIS",
-    "BOSKA",
-    "BOZO",
-    "BRANKA",
-    "BRANKO",
-    "BUDALIC",
-    "BUGARIN",
-    "BULJ",
-    "BURIC",
-    "BUSIC",
-    "CABAJ",
-    "COSIC",
-    "CURIS",
-    "DABO",
-    "DABRO",
-    "DAKIC",
-    "DALIBOR",
-    "DALIJA",
-    "DAMIR",
-    "DANICA",
-    "DANIJELA",
-    "DARIO",
-    "DARKO",
-    "DEMOKRATSKOG",
-    "DENIS",
-    "DEUR",
-    "DOMITROVIC",
-    "DONCIC",
-    "DRAGANA",
-    "DRAGIC",
-    "DRAZENKA",
-    "DUBRAVKA",
-    "DUBRAVKO",
-    "DUJIC",
-    "DUSICA",
-    "FRANKOVIC",
-    "FURIO",
-    "GABRICEVIC",
-    "GAMULIN",
-    "GLASOVAC",
-    "GLAVIC",
-    "GORAN",
-    "GORDAN",
-    "GRADANSKO-LIBERALNOG",
-    "GREGUROVIC",
-    "GRMOJA",
-    "HAJDAS",
-    "HERMAN",
-    "HODZIC",
-    "HREBAK",
-    "HRVOJE",
-    "IDS",
-    "IGOR",
-    "IKIC",
-    "ILJKIC",
-    "IRENA",
-    "ISTARSKE",
-    "ISU",
-    "IVAN",
-    "IVANA",
-    "IVICA",
-    "IVO",
-    "JAKSIC",
-    "JANDROKOVIC",
-    "JANKOVICS",
-    "JASENKA",
-    "JASNA",
-    "JECKOV",
-    "JELENA",
-    "JEMBRIH",
-    "JOSIC",
-    "JOSIP",
-    "JURCEVIC",
-    "JURICEV",
-    "KAJTAZI",
-    "KANISKI",
-    "KATICIC",
-    "KEKIN",
-    "KLARIC",
-    "KLASIC",
-    "KLIMAN",
-    "KOLAREK",
-    "KOLARIC",
-    "KOMADINA",
-    "KOMES",
-    "KORDIC",
-    "KRALJ",
-    "KRESIMIR",
-    "KRISTINA",
-    "KROK",
-    "KRPAN",
-    "KRSTICEVIC",
-    "KRSTULOVIC",
-    "KRUNOSLAV",
-    "KUJUNDZIC",
-    "KUKAVICA",
-    "KUKULJAN",
-    "LACKOVIC",
-    "LALOVAC",
-    "LEDENKO",
-    "LIPOVAC",
-    "LIVIA",
-    "LJUBICA",
-    "LJUBOMIR",
-    "LUGARIC",
-    "LUKACIC",
-    "MADUNA",
-    "MAGDALENA",
-    "MAJANOVIC",
-    "MAJDA",
-    "MAKSIMILIJAN",
-    "MALENICA",
-    "MANDARIC",
-    "MANDIC",
-    "MARIA",
-    "MARIJA",
-    "MARIJANA",
-    "MARIN",
-    "MARIO",
-    "MARKO",
-    "MARKOVIC",
-    "MARTIN",
-    "MARTINA",
-    "MARTINCEV",
-    "MATE",
-    "MATEJ",
-    "MATO",
-    "MAZAR",
-    "MESIC",
-    "MIHAEL",
-    "MILAN",
-    "MILETIC",
-    "MILINKOVIC",
-    "MILORAD",
-    "MILOS",
-    "MIRELA",
-    "MIRO",
-    "MIROSLAV",
-    "MISEL",
-    "MISIC",
-    "MISLAV",
-    "MISO",
-    "MLINARIC",
-    "MOSTARAC",
-    "MRAK-TARITAS",
-    "NEVENKO",
-    "NEZAVISNIH",
-    "NIKOLA",
-    "NIKOLINA",
-    "NINO",
-    "NOVAK",
-    "OPARA",
-    "ORESKOVIC",
-    "OSTOJIC",
-    "OSTROGOVIC",
-    "PAUS",
-    "PAVIC",
-    "PEHAR",
-    "PENAVA",
-    "PENTEK",
-    "PERO",
-    "PETERNEL",
-    "PETIR",
-    "PETROV",
-    "PGS",
-    "PILETIC",
-    "PILIZOTA",
-    "PIP",
-    "POLOVIC",
-    "PREDRAG",
-    "PRIMORSKO-GORANSKOG",
-    "PULJAK",
-    "PUPOVAC",
-    "PUSIC",
-    "PUZ",
-    "RACAN",
-    "RADA",
-    "RADIC",
-    "RADIN",
-    "RADOJCIC",
-    "RADOLOVIC",
-    "RANKO",
-    "RASPUDIC",
-    "RAUKAR",
-    "REINER",
-    "RESTOVIC",
-    "RIBARIC",
-    "ROBERT",
-    "SABINA",
-    "SALOPEK",
-    "SANADER",
-    "SANDA",
-    "SANDRA",
-    "SANJA",
-    "SASA",
-    "SASLIN",
-    "SELAK",
-    "SIMPRAGA",
-    "SIMRAK",
-    "SINISA",
-    "SOBOTA",
-    "SOCIJALNO-LIBERALNE",
-    "SOKOLIC",
-    "STIPAN",
-    "STIPO",
-    "STROMAR",
-    "SUTA",
-    "TANJA",
-    "TOMISLAV",
-    "TONCI",
-    "TOTGERGELI",
-    "TROSKOT",
-    "TURK",
-    "UNIJA",
-    "URSA",
-    "VELJKO",
-    "VESELKO",
-    "VESNA",
-    "VLADIMIR",
-    "VLASIC",
-    "VOJNIC",
-    "VUCEMILOVIC",
-    "VUKUSIC",
-    "VULETIC",
-    "VUPORA",
-    "ZADRO",
-    "ZDRAVKA",
-    "ZEKANOVIC",
-    "ZELIC",
-    "ZELJKO",
-    "ZIVKOVIC",
-    "ZLATKO",
-    "ZMAJLOVIC",
-    "ZORAN",
-    "ZUROVEC",
-    "ZVONIMIR"
-  ],
-  "raw_text": "Klub zastupnika Hrvatske demokratske zajednice (58) Zastupnici izvan klubova političkih stranaka (3)\nKlub zastupnika Socijaldemokratske partije Hrvatske (36) Klub zastupnika Istarskog demokratskog sabora (IDS), Primorsko-goranskog saveza (PGS), Unije Kvarnera\nHRVATSKI SABOR Klub zastupnika Možemo! (10) (UNIJA) i Istarske stranke umirovljenika - Partito Istriano dei pensionati (ISU - PIP) (3)\nKlub zastupnika Domovinskog pokreta (8) Klub zastupnika Hrvatske socijalno-liberalne stranke i nezavisnog zastupnika Vladimira Bileka (3)\nKlub zastupnika Mosta i nezavisnog zastupnika Josipa Jurčevića (8) Klub zastupnika Samostalne demokratske srpske stranke (3)\nKlub zastupnika Centra, Nezavisne platforme Sjevera i Građansko-liberalnog saveza (5) Klub zastupnika Hrvatske narodne stranke i nezavisnih zastupnika (3)\nPrikazano je stanje na dan: 29/4/2026\nKlub zastupnika Dom i nacionalno okupljanje i Hrvatski suverenisti (4) Klub nezavisnih zastupnika (3)\nKlub zastupnika Nezavisni i HSU (3)\nZastupnici nacionalnih manjina (8)\nJurčević Kordić Peternel Biloglav Čabaj\nJosip Martin Igor Damir Krešimir\nZurovec Selak Raspudić Baksa Puljak Barbir Bilić Šimpraga Pupovac Jeckov Vuletić Mandarić Mandić Milan Salopek Dabo Pušić Barbarić Kaniški\nDario Raspudić Nino Ivica Marijana Damir Dubravko Anja Milorad Dragana Darko Marin Damir Dalibor Anđelka Ivan Dario Nevenko Goran\nMarija\nSokolić Ribarić Antolić Vupora Mrak-Taritaš Orešković Milos Paus Miletić Troskot Grmoja Ledenko Gabričević Vučemilović Lacković Komes Glavić Blažević Jembrih Budalić\nTanja Majanović Barbara Anka Dalija Anteo Dalibor Marin Zvonimir Nikola Ivica Veselko Vesna Željko Magdalena Željko Anamarija Ljubica Ivan\nIvana\nPiližota Vukušić Blažina Kralj Novak Polović Miloš Živković Petrov Kujundžić Bulj Franković Radin Hodžić Bilek Jankovics Baradić Maduna Šimrak Babić\nBoris Mate Maria Denis Dubravka Draženka Jelena Marin Božo Ante Miro Mato Furio Armin Vladimir Robert Nikolina Sanda Livia Maksimilijan Ante\nDragić Domitrović Curiš Krok Bježančević Radojčić Kekin Bakić Benčić Hrebak Klasić Štromar Ban Kajtazi Piletić Pavić Blažanović Klarić Šuta Bugarin Ostrogović\nIrena Dalibor Anita Sanja Dušica Ivana Damir Sandra Dario Darko Predrag Boška Veljko Marin Marko Danijela Tomislav Tomislav Ivan Josip\nVlašić Iljkić Račan Puž Kukuljan Mostarac Krpan Kolarić Borić Raukar- Mesić Mišić Vojnić Bušić Deur Burić Mažar Zelić Baričević Šašlin Ačkar Radić\nMartina Ivan Ana Matej Sandra Branko Rada Gamulin Ivica Predrag Jasna Zdravka Ante Majda Nikola Ivo Danica Stipan Krešimir Ivan\nUrša\nMilinković Marković Auguštan- Marković Zmajlović Restović Radolović Lugarić Dabro Lipovac Pehar Josić Zekanović Turk Gregurović Zadro Đakić Krstulović Bedeković Malenica Kliman\nMario Ivana Pentek Miroslav Mihael Tonči Sanja Marija Josip Dubravka Tomislav Hrvoje Željko Zoran Tomislav Josip Opara Vesna Ivan Anton\nJasenka Andro\nLalovac Krstičević Ikić Baniček Komadina Bauk Đujić Ahmetović Jakšić Mlinarić Penava Kukavica Petir Borić Juričev- Totgergeli Katičić Herman Kolarek Ćosić Sobota\nBoris Mišo Kristina Zlatko Arsen Saša Mirela Mišel Stipo Ivan Ivica Marijana Josip Martinčev Miro Krunoslav Mislav Ljubomir Pero Darko\nBranka\nOstojić Glasovac Hajdaš Dončić Reiner Sanader Lukačić\nRanko Sabina Siniša Željko Ante Ljubica\nJandroković\nGordan\nPREDSJEDNIK\nHRVATSKOGA\nSABORA\n"
+  ]
 }

@@ -420,29 +420,60 @@ def _name_tokens(name: str) -> list[str]:
     return [_normalize_name_token(p) for p in parts if len(p) >= 3]
 
 
-def mark_sabor_attendance(con: sqlite3.Connection) -> int:
-    """Cross-reference parlament-2024 candidate names with the seating PDF
-    snapshot in sifarnici/sabor_2024_seating.json.
+def _norm_party_haystack(s: str) -> str:
+    """Drop accents, '!', uppercase — for word-boundary search of a party
+    short-code inside the comma/semicolon-joined `stranke` field."""
+    import unicodedata
+    if not s:
+        return ""
+    s = s.replace("Đ", "D").replace("đ", "d").replace("!", "")
+    n = unicodedata.normalize("NFD", s)
+    return "".join(c for c in n if unicodedata.category(c) != "Mn").upper()
 
-    Match strategy (most-precise → fallback):
-      1. Strict pair: any 2-token combination of the candidate's normalized
-         name tokens (len ≥ 3) appears in the PDF's `pair_set`. This is
-         strong because the PDF pairs are coordinate-aligned (the firstname
-         that sits *under* a surname). Avoids false positives from common
-         surnames like 'Klarić' that recur across candidates.
-      2. Fallback for compound names that the PDF parser may have split
-         (e.g. 'AUGUŠTAN-PENTEK', 'RAUKAR-GAMULIN', 'SELAK RASPUDIĆ'):
-         require ALL of the candidate's name tokens to appear somewhere
-         in the PDF's token set.
+
+def _party_in_lista(sabor_party: str, lista_stranke: str, lista_naziv: str) -> bool:
+    """True iff `sabor_party` appears as a whole word in the DB list's
+    `stranke` field. Handles e.g. SDP party against
+    'SOCIJALDEMOKRATSKA PARTIJA HRVATSKE - SDP; CENTAR; …'."""
+    import re as _re
+    p = _norm_party_haystack(sabor_party).strip()
+    if len(p) < 2:
+        return False
+    haystack = _norm_party_haystack(lista_stranke) + " ;; " + _norm_party_haystack(lista_naziv)
+    # `(?<!\w)…(?!\w)` is a Unicode-friendly word-boundary so 'DP' does not
+    # match inside 'SDP', and 'MOST' does not match inside 'MOSTAR'.
+    return bool(_re.search(rf"(?<!\w){_re.escape(p)}(?!\w)", haystack))
+
+
+def mark_sabor_attendance(con: sqlite3.Connection) -> int:
+    """Cross-reference parlament-2024 candidates with the Sabor JSON snapshot
+    in sifarnici/sabor_2024_seating.json (each MP has name + party).
+
+    Two-stage matching:
+      1. Group by *normalized name token set* — the only signature we can
+         reconstruct from a candidate's `naziv`. Most token sets correspond
+         to exactly one DB candidate; flag them as seated.
+      2. When several candidates share a token set (same first + last name —
+         e.g. SDP's Miroslav Marković with 744 pref votes vs. HSP's
+         Miroslav Marković with 12), pick the one whose list's `stranke`
+         contains the Sabor MP's `party`. Fall back to (mandates won, pref
+         votes, rbr) when no list mentions the party (rare; happens for
+         independent MPs on minority/coalition lists).
     """
     snap_path = ROOT / "sifarnici" / "sabor_2024_seating.json"
     if not snap_path.exists():
         print(f"  WARN: {snap_path} missing — skipping u_saboru flagging")
         return 0
     snap = json.loads(snap_path.read_text(encoding="utf-8"))
-    name_token_sets = {frozenset(s) for s in snap.get("name_token_sets") or []}
-    if not name_token_sets:
+    mps = snap.get("mps") or []
+    if not mps:
         return 0
+
+    mp_by_tokens: dict[frozenset[str], list[dict]] = {}
+    for mp in mps:
+        toks = frozenset(mp.get("tokens") or [])
+        if len(toks) >= 2:
+            mp_by_tokens.setdefault(toks, []).append(mp)
 
     # Reset
     con.execute(
@@ -455,7 +486,9 @@ def mark_sabor_attendance(con: sqlite3.Connection) -> int:
         """SELECT k.id, k.naziv,
                   COALESCE(l.mandata, 0) AS list_mand,
                   COALESCE(k.glasova, 0) AS pref,
-                  COALESCE(k.rbr, 9999) AS rbr
+                  COALESCE(k.rbr, 9999) AS rbr,
+                  COALESCE(l.stranke, '') AS stranke,
+                  COALESCE(l.naziv, '') AS lista_naziv
            FROM rezultat_kandidat k
            JOIN rezultat_lista l ON l.id = k.lista_id
            JOIN rezultat r ON r.id = l.rezultat_id
@@ -463,39 +496,49 @@ def mark_sabor_attendance(con: sqlite3.Connection) -> int:
              AND r.level IN ('zup', 'ino_zup')"""
     ).fetchall()
 
-    # Group candidates by exact token-set match with the PDF. A token set is
-    # the strongest name signature pdfplumber gives us, but it does NOT
-    # uniquely identify a person — two distinct politicians can share the
-    # same name (e.g. SDP's Miroslav Marković with 744 pref votes vs. HSP's
-    # Miroslav Marković with 12 pref votes; only the SDP one sits in Sabor).
-    # The seating PDF lists the name once, so we have to pick which.
-    #
-    # Disambiguation rule (in priority order):
-    #   1. Their list won mandates (list_mandata > 0). A candidate from a
-    #      list that won zero seats *cannot* be the seated MP.
-    #   2. Highest preferential vote count — the seated namesake almost
-    #      always has more individual support than the unseated one.
-    #   3. Lowest rbr-on-list, then kid, for stable ordering.
-    by_tokens: dict[frozenset[str], list[tuple]] = {}
+    by_tokens: dict[frozenset[str], list[dict]] = {}
     other_kids: list[int] = []
-    for kid, naziv, list_mand, pref, rbr in rows:
+    for kid, naziv, list_mand, pref, rbr, stranke, lista_naziv in rows:
         toks = frozenset(_name_tokens(naziv))
-        if len(toks) >= 2 and toks in name_token_sets:
-            by_tokens.setdefault(toks, []).append((kid, list_mand, pref, rbr))
+        if len(toks) >= 2 and toks in mp_by_tokens:
+            by_tokens.setdefault(toks, []).append({
+                "kid": kid, "list_mand": list_mand, "pref": pref, "rbr": rbr,
+                "stranke": stranke, "lista_naziv": lista_naziv,
+            })
         else:
             other_kids.append(kid)
 
     n = 0
-    for _token_set, candidates in by_tokens.items():
-        ranked = sorted(
-            candidates,
-            key=lambda c: (-c[1], -c[2], c[3], c[0]),
-        )
-        seated_kid = ranked[0][0]
-        for kid, _lm, _pref, _rbr in candidates:
+    seated_ids: set[int] = set()
+    for token_set, candidates in by_tokens.items():
+        # Normally one MP per token set. If two MPs happen to share a name
+        # (extremely rare in Croatian parliament), assign each to the best
+        # remaining candidate.
+        for mp in mp_by_tokens[token_set]:
+            available = [c for c in candidates if c["kid"] not in seated_ids]
+            if not available:
+                break
+            ranked = sorted(
+                available,
+                key=lambda c: (
+                    1 if _party_in_lista(mp.get("party", ""),
+                                         c["stranke"], c["lista_naziv"]) else 0,
+                    c["list_mand"],
+                    c["pref"],
+                    -c["rbr"],
+                    -c["kid"],
+                ),
+                reverse=True,
+            )
+            seated_ids.add(ranked[0]["kid"])
+
+    # Apply: 1 for seated, 0 for everyone else (including ambiguous siblings
+    # we did not pick).
+    for c_list in by_tokens.values():
+        for c in c_list:
             con.execute(
                 "UPDATE rezultat_kandidat SET u_saboru=? WHERE id=?",
-                (1 if kid == seated_kid else 0, kid),
+                (1 if c["kid"] in seated_ids else 0, c["kid"]),
             )
             n += 1
     for kid in other_kids:
