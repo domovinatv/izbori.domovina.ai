@@ -531,6 +531,110 @@ Drugim riječima:
 
 ---
 
+## Indeksi pravednosti (objektivne mjere)
+
+Dvije sintetičke mjere koje sažimaju ono što je pojedinačno vidljivo u
+optikama i break-even tablicama. Svi brojevi se odnose isključivo na
+opće liste izbornih jedinica 1–11 (vrsta 02); manjinske liste su
+izostavljene jer ne dodjeljuju mandat preferencijalom unutar liste.
+
+### A. Indeks zamjene (bait-and-switch)
+
+Mjera u kojoj su birači glasovali za određena imena (često jaka, prepoznatljiva,
+visok preferencijal), a u Saboru ih zastupa netko drugi jer su izvorno izabrani
+preuzeli izvršnu funkciju (premijer, ministri, gradonačelnici).
+
+| Mjera | Vrijednost |
+|---|---:|
+| Mandata u mirovanju (🟡) | 48 od 143 = **33.6 %** mandata |
+| Σ preferencijala koji su otišli na 🟡 (bait) | 391.677 |
+| Σ svih preferencijala na općim listama | 1.356.787 |
+| **Udio preferencijalne podrške koja je "preusmjerena"** | **28.9 %** |
+| Σ preferencijala 🟡 (izvorno izabranih) | 391.677 |
+| Σ preferencijala 🔵 (zamjenika koji su sjeli umjesto njih) | 56.687 |
+| **Omjer "obećana" : "isporučena" preferencijalna snaga** | **6.9 : 1** |
+| Prosjek pref. po 🟡 | 8.159 |
+| Prosjek pref. po 🔵 | 1.206 |
+
+Interpretacija (deskriptivna):
+
+- **33.6 %** mandata u trenutnom Saboru izvorno je
+  osvojila osoba koja sada **ne sjedi** — mandat drži u mirovanju zbog
+  izvršne funkcije. U te 48 situacije birači su za prepoznato ime
+  dali ukupno 391.677 preferencijalnih glasova, a u Sabor su
+  na njihova mjesta sjeli zamjenici koji su, zbrojeno, dobili
+  56.687 preferencijala — **6.9×** manje.
+- Drugim riječima, preferencijalna podrška na ovih 48 mandata
+  realizirana je u Saboru na razini **61.6 %** od one
+  koja je iskazana na izborima.
+
+### B. Indeks reprezentativnog deficita
+
+Mjera u kojoj zastupnici u trenutnom Saboru imaju (ili nemaju) preferencijalnu
+podršku birača iza sebe.
+
+| Skupina | Broj | Σ preferencijala | Prosjek | Medijan |
+|---|---:|---:|---:|---:|
+| 🟢 Izabran i sjedi | 95 | 480.762 | 5.060 | 3.250 |
+| 🔵 Zamjenik (sjedi bez izvornog mandata) | 47 | 56.687 | 1.206 | 928 |
+| 🟡 Mandat u mirovanju | 48 | 391.677 | 8.159 | 6.222 |
+| 🔴 Bez mandata | 2087 | 427.661 | 204 | 40 |
+
+| Mjera | Vrijednost |
+|---|---:|
+| Prosječni preferencijal 🔵 zamjenika | 1.206 |
+| Prosječni preferencijal 🟢 (legitimno izabranih i sjede) | 5.060 |
+| **Omjer "podrška 🟢 : podrška 🔵"** | **4.2 : 1** |
+| Najmanje preferencijala kod 🟢 (donja granica izborne legitimnosti) | 183 |
+| Broj 🔵 zamjenika **ispod** te granice | **1 od 47** (2.1 %) |
+| Broj 🔵 s manje od 1.000 preferencijala | 25 od 47 (53.2 %) |
+| Broj 🔵 s manje od 500 preferencijala | 10 od 47 (21.3 %) |
+| **Udio sjedećih zastupnika koji nisu izvorno osvojili mandat** | **33.1 %** |
+
+Interpretacija (deskriptivna):
+
+- **33.1 %** trenutnog Sabora (47 od 142
+  zastupnika) čine osobe koje **nisu** osvojile mandat odlukom birača na
+  izborima — sjede kao zamjenici izvorno izabranih.
+- Prosječni 🔵 zamjenik ima **4.2×** manje preferencijalnih
+  glasova od prosječnog 🟢 izabranog koji sjedi.
+- **1 od 47** (2.1 %)
+  zamjenika sjedi u Saboru s **manje** preferencijala od najslabijeg 🟢 izvornog
+  zastupnika (183). Drugim riječima, postoji skupina sjedećih
+  zastupnika koji individualno nisu prešli "donji prag" izborne potvrde.
+
+### C. Voter-fate svake preferencijalne ruke
+
+Svaki preferencijalni glas birača na općim listama može se pratiti do
+ishoda. Distribucija 1.356.787 preferencijalnih glasova
+ukupno:
+
+| Ishod glasa za kandidata | Σ glasova | Udio |
+|---|---:|---:|
+| 🟢 Kandidat sjedi u Saboru (izabran direktno) | 480.762 | **35.4 %** |
+| 🔵 Kandidat sjedi kao zamjenik | 56.687 | 4.2 % |
+| 🟡 Kandidat osvojio mandat ali ne sjedi (izvršna f.) | 391.677 | 28.9 % |
+| 🔴 Kandidat nije osvojio mandat i ne sjedi | 427.661 | 31.5 % |
+| **Glas birača "došao" do osobe u Saboru (🟢 + 🔵)** | 537.449 | **39.6 %** |
+| **Glas birača nije rezultirao zastupljenošću (🟡 + 🔴)** | 819.338 | **60.4 %** |
+
+Drugim riječima: od svakih 100 preferencijalnih glasova na općim listama,
+**35** je pogodilo osobu koja danas sjedi
+u Saboru kao izvorni izabranik, **4**
+osobu koja sjedi kao zamjenik, **29**
+osobu koja je izabrana ali drži mandat u mirovanju, a
+**32** preferencijala dano je osobama koje
+nisu prošle.
+
+> **Napomena o čitanju:** ovi indeksi su deskriptivni. "Pravednost" /
+> "nepravednost" nije matematički definirana — model se može različito
+> tumačiti (D'Hondt + redoslijed na listi je ustavna i zakonita procedura;
+> mirovanje mandata uz zamjenika je predviđeno zakonom). Brojevi pokazuju
+> samo razliku između preferencijalne volje birača i krajnjeg sastava
+> Sabora — ne i je li ta razlika "pogrešna" u normativnom smislu.
+
+---
+
 ## Metodološke napomene
 
 - **Manjinske liste izostavljene.** Manjinski mandati dodjeljuju se listi
