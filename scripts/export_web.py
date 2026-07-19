@@ -20,6 +20,7 @@ import re
 import sqlite3
 import subprocess
 import sys
+import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -470,6 +471,38 @@ def _seat_order_within_list(cands: list[dict], num_seats: int) -> list[int]:
     return order
 
 
+def _fold_name(s: str) -> str:
+    s = s.replace("Đ", "D").replace("đ", "d")
+    n = unicodedata.normalize("NFD", s)
+    return "".join(c for c in n if unicodedata.category(c) != "Mn").upper()
+
+
+def load_sabor_parties() -> list[tuple[set, dict]]:
+    """(token_set, {stranka, klub}) per seated MP from the sabor.hr snapshot.
+    This is the only per-person party source we have — the DIP archive carries
+    list membership, never individual party membership."""
+    path = SIFARNICI / "sabor_2024_seating.json"
+    if not path.exists():
+        return []
+    with open(path) as f:
+        seating = json.load(f)
+    return [
+        (set(m["tokens"]), {"stranka": m["party"], "klub": m["klub"]})
+        for m in seating.get("mps", [])
+    ]
+
+
+def sabor_party_for(name: str, mps: list[tuple[set, dict]]) -> dict | None:
+    """Match a DIP ballot name to a seated MP; None unless the match is
+    unambiguous (exact token set, else unique subset either way)."""
+    toks = set(_fold_name(name).split())
+    exact = [m for tset, m in mps if tset == toks]
+    if len(exact) == 1:
+        return exact[0]
+    fuzzy = [m for tset, m in mps if tset.issubset(toks) or toks.issubset(tset)]
+    return fuzzy[0] if len(fuzzy) == 1 else None
+
+
 def export_fairness(con: sqlite3.Connection, slug: str = "parlament-2024") -> dict:
     """Port of app.py render_parlament_fairness(): wasted votes, per-IJ
     disparity, unified-RH counterfactual, coalition families, candidate
@@ -575,6 +608,59 @@ def export_fairness(con: sqlite3.Connection, slug: str = "parlament-2024") -> di
     kontra_usp = sum(x["glasova"] for x in kontra_liste if x["jedinstvena"] > 0)
     kontra_prop = total_glasova - kontra_usp
 
+    # ── Electorate share vs Sabor share ("Pravednost u brojkama") ──────────
+    # Partition of all registered voters (biraci_ukupno, IJ 001-011): each
+    # seat-winning list's votes roll up to its coalition family (leading
+    # party); votes for lists with zero seats anywhere form the wasted row
+    # (same definition as propali_rh, so the two figures agree on-page).
+    # Minority seats (p1='012', list IS candidate) get one aggregate row so
+    # the Sabor denominator is the full 151.
+    manjine_row = rows(
+        con,
+        """SELECT COALESCE(SUM(l.glasova),0) AS glasova,
+                  COALESCE(SUM(CASE WHEN l.mandata>0 THEN l.mandata ELSE 0 END),0) AS mandata
+           FROM rezultat r JOIN rezultat_lista l ON l.rezultat_id=r.id
+           WHERE r.election=? AND r.p1='012'""",
+        (slug,),
+    )[0]
+    seat_families: dict[str, dict] = {}
+    brojke_propali = 0
+    for r in nat_lists:
+        if (r["mandata"] or 0) > 0:
+            f = seat_families.setdefault(
+                leading_party(r["naziv"]), {"glasova": 0, "mandata": 0}
+            )
+            f["glasova"] += r["glasova"] or 0
+            f["mandata"] += r["mandata"] or 0
+        else:
+            brojke_propali += r["glasova"] or 0
+    sabor_ukupno = 143 + (manjine_row["mandata"] or 0)
+
+    def brojke_row(tip: str, label: str, glasova: int, mandata: int) -> dict:
+        return {
+            "tip": tip,
+            "label": label,
+            "glasova": glasova,
+            "mandata": mandata,
+            "pct_biraci": round(100 * glasova / nat_biraci, 2) if nat_biraci else None,
+            "pct_sabor": round(100 * mandata / sabor_ukupno, 2) if sabor_ukupno else None,
+        }
+
+    brojke_redovi = [
+        brojke_row("obitelj", p, f["glasova"], f["mandata"])
+        for p, f in sorted(seat_families.items(), key=lambda x: -x[1]["mandata"])
+    ]
+    brojke_redovi.append(
+        brojke_row("manjine", "Nacionalne manjine", manjine_row["glasova"], manjine_row["mandata"])
+    )
+    brojke_redovi.append(brojke_row("propali", "Propali glasovi", brojke_propali, 0))
+    # Residual: registered voters who did not cast a valid geographic/minority
+    # list vote (abstained or invalid ballot) — completes the partition to 100%.
+    brojke_ostatak = nat_biraci - sum(r["glasova"] for r in brojke_redovi)
+    brojke_ostatak_pct = (
+        round(100 * brojke_ostatak / nat_biraci, 2) if nat_biraci else None
+    )
+
     # ── Coalition families (roll-up by leading party) ───────────────────────
     families: dict[str, dict] = {}
     for x in kontra_liste:
@@ -647,6 +733,13 @@ def export_fairness(con: sqlite3.Connection, slug: str = "parlament-2024") -> di
         (cand_row(c, i) for i, c in indexed if c["u_saboru"]),
         key=lambda x: (x["glasova"] or 0),
     )[:25]
+    # Actual party of seated MPs from the sabor.hr snapshot (the DIP archive
+    # has no per-person membership; leading_party() is only the list's brand).
+    sabor_mps = load_sabor_parties()
+    for k in namjestenici:
+        mp = sabor_party_for(k["naziv"], sabor_mps)
+        k["sabor_stranka"] = mp["stranka"] if mp else None
+        k["sabor_klub"] = mp["klub"] if mp else None
 
     # ── 'Sabor elected like a president': top 143 by preferential votes ────
     top143 = [c for _, c in indexed[:143]]
@@ -702,6 +795,16 @@ def export_fairness(con: sqlite3.Connection, slug: str = "parlament-2024") -> di
             "pct_propalo_jedinstvena": round(100 * kontra_prop / total_glasova, 2) if total_glasova else None,
         },
         "obitelji": obitelji,
+        "brojke": {
+            "denominatori": {
+                "biraci": nat_biraci,
+                "sabor": sabor_ukupno,
+                "geo_mandata": 143,
+                "manjinski_mandata": manjine_row["mandata"],
+            },
+            "redovi": brojke_redovi,
+            "ostatak": {"glasova": brojke_ostatak, "pct_biraci": brojke_ostatak_pct},
+        },
         "gubitnici": gubitnici,
         "odbili": {"ukupno": len(odbili), "od": 143, "kandidati": odbili},
         "namjestenici": namjestenici,
@@ -1042,6 +1145,80 @@ def spot_check(con: sqlite3.Connection) -> bool:
         "fairness: kontrafaktual raspodjeljuje tocno 143 mandata",
         sum(x["jedinstvena"] for x in fair["kontrafaktual"]["liste"]),
         143,
+    )
+    add(
+        "fairness brojke: mandati svih redova zbroje se na 151",
+        sum(r["mandata"] for r in fair["brojke"]["redovi"]),
+        one(
+            """SELECT (SELECT sum(l.mandata) FROM rezultat r JOIN rezultat_lista l ON l.rezultat_id=r.id
+                       WHERE r.election='parlament-2024' AND r.level='rh')
+                    + (SELECT sum(l.mandata) FROM rezultat r JOIN rezultat_lista l ON l.rezultat_id=r.id
+                       WHERE r.election='parlament-2024' AND r.p1='012' AND l.mandata>0)"""
+        ),
+    )
+    add(
+        "fairness brojke: denominator biraci == SUM(biraci_ukupno) IJ 1-11",
+        fair["brojke"]["denominatori"]["biraci"],
+        one(
+            """SELECT sum(biraci_ukupno) FROM rezultat
+               WHERE election='parlament-2024' AND vrsta='02' AND level='zup'
+                 AND CAST(p1 AS INT) BETWEEN 1 AND 11"""
+        ),
+    )
+    add(
+        "fairness brojke: propali red == glasovi lista bez mandata (RH)",
+        next(r["glasova"] for r in fair["brojke"]["redovi"] if r["tip"] == "propali"),
+        one(
+            """SELECT sum(l.glasova) FROM rezultat r JOIN rezultat_lista l ON l.rezultat_id=r.id
+               WHERE r.election='parlament-2024' AND r.level='rh' AND COALESCE(l.mandata,0)=0"""
+        ),
+    )
+    add(
+        "fairness brojke: HDZ obitelj glasova (liste s mandatima)",
+        next(r["glasova"] for r in fair["brojke"]["redovi"] if r["label"] == "HDZ"),
+        one(
+            """SELECT sum(l.glasova) FROM rezultat r JOIN rezultat_lista l ON l.rezultat_id=r.id
+               WHERE r.election='parlament-2024' AND r.level='rh' AND l.mandata>0
+                 AND l.naziv LIKE 'HDZ%'"""
+        ),
+    )
+    add(
+        "fairness brojke: manjine glasova (p1='012')",
+        next(r["glasova"] for r in fair["brojke"]["redovi"] if r["tip"] == "manjine"),
+        one(
+            """SELECT sum(l.glasova) FROM rezultat r JOIN rezultat_lista l ON l.rezultat_id=r.id
+               WHERE r.election='parlament-2024' AND r.p1='012'"""
+        ),
+    )
+    # Every listed gubitnik/namjestenik must match the DB row exactly
+    # (name+IJ -> votes, u_saboru flag). Ranking logic (10 % pref rule) is
+    # Python-only, so verify the underlying facts, not the ordering.
+    def cand_facts(k: dict):
+        r = rows(
+            con,
+            """SELECT k.glasova, COALESCE(k.u_saboru,0) AS u_saboru
+               FROM rezultat_kandidat k
+               JOIN rezultat_lista l ON l.id=k.lista_id JOIN rezultat r ON r.id=l.rezultat_id
+               WHERE r.election='parlament-2024' AND r.level='zup' AND r.vrsta='02'
+                 AND k.naziv=? AND CAST(r.p1 AS INT)=?""",
+            (k["naziv"], k["ij"]),
+        )
+        return (r[0]["glasova"], r[0]["u_saboru"]) if r else None
+
+    add(
+        "fairness gubitnici: svih 25 potvrdjeno u bazi (glasovi, u_saboru=0)",
+        sum(1 for k in fair["gubitnici"] if cand_facts(k) == (k["glasova"], 0)),
+        len(fair["gubitnici"]),
+    )
+    add(
+        "fairness namjestenici: svih 25 potvrdjeno u bazi (glasovi, u_saboru=1)",
+        sum(1 for k in fair["namjestenici"] if cand_facts(k) == (k["glasova"], 1)),
+        len(fair["namjestenici"]),
+    )
+    add(
+        "fairness namjestenici: sabor.hr stranka razrijesena za svih 25",
+        sum(1 for k in fair["namjestenici"] if k.get("sabor_stranka")),
+        len(fair["namjestenici"]),
     )
     grop01 = json.load(open(OUT_DIR / "grop" / "predsjednik-2024" / "01.json"))
     add(
