@@ -31,6 +31,24 @@ ZUP_GEOJSON_SRC = Path(
     "~/git/domovinatv/karta-hrvatske/apps/data-pipeline/data/hr_canonical_zupanije.geojson"
 ).expanduser()
 
+# Sabor 2024 — geographic IJs and their fixed seat counts (mirrors app.py).
+PARLAMENT_GEO_IJ = tuple(f"{i:03d}" for i in range(1, 12))
+PARLAMENT_IJ_SEATS = {f"{i:03d}": 14 for i in range(1, 11)}
+PARLAMENT_IJ_SEATS["011"] = 3
+PARLAMENT_IJ_LABELS = {
+    "001": "I. (Zagreb sjever)",
+    "002": "II. (Zagreb istok / Slavonija)",
+    "003": "III. (Zagorje / Međimurje / Bjelovar)",
+    "004": "IV. (Slavonija)",
+    "005": "V. (Slavonski Brod / Posavina)",
+    "006": "VI. (Zagreb zapad)",
+    "007": "VII. (Karlovac / Sisak)",
+    "008": "VIII. (Istra / Primorje)",
+    "009": "IX. (Šibenik / Zadar / Lika)",
+    "010": "X. (Split / Dalmacija)",
+    "011": "XI. (inozemstvo)",
+}
+
 # slug prefix -> cycle type (drives which sections the frontend shows)
 TYPE_BY_PREFIX = {
     "parlament": "parlament",
@@ -411,6 +429,394 @@ def export_preferencijali(con: sqlite3.Connection, slug: str) -> dict:
     }
 
 
+def dhondt(votes: dict[str, int], seats: int, threshold_pct: float) -> dict[str, int]:
+    """D'Hondt with a percent threshold over the total (mirrors app.py)."""
+    total = sum(v for v in votes.values() if v)
+    awards = {n: 0 for n in votes}
+    if total == 0 or seats == 0:
+        return awards
+    cutoff = total * threshold_pct / 100.0
+    eligible = {n: v for n, v in votes.items() if (v or 0) >= cutoff}
+    if not eligible:
+        return awards
+    for _ in range(seats):
+        winner = max(eligible, key=lambda n: eligible[n] / (awards[n] + 1))
+        awards[winner] += 1
+    return awards
+
+
+def _seat_order_within_list(cands: list[dict], num_seats: int) -> list[int]:
+    """IDs of seated candidates in seat-taking order: ≥10 % preferential
+    candidates by votes desc first, then default rbr order (mirrors app.py)."""
+    if num_seats <= 0 or not cands:
+        return []
+    pref_first = sorted(
+        [c for c in cands if (c.get("posto") or 0) >= 10.0],
+        key=lambda c: -(c.get("glasova") or 0),
+    )
+    order: list[int] = []
+    for c in pref_first:
+        if len(order) >= num_seats:
+            break
+        order.append(c["id"])
+    if len(order) < num_seats:
+        already = set(order)
+        for c in sorted(cands, key=lambda c: c.get("rbr") or 9999):
+            if c["id"] in already:
+                continue
+            order.append(c["id"])
+            if len(order) >= num_seats:
+                break
+    return order
+
+
+def export_fairness(con: sqlite3.Connection, slug: str = "parlament-2024") -> dict:
+    """Port of app.py render_parlament_fairness(): wasted votes, per-IJ
+    disparity, unified-RH counterfactual, coalition families, candidate
+    extremes and the 'Sabor by preferential votes' thought experiment.
+    Only meaningful for parlament-2024 (u_saboru flag covers that saziv)."""
+    krug = 1
+    ij_ph = ",".join("?" for _ in PARLAMENT_GEO_IJ)
+
+    # ── RH effective vs wasted votes (synthetic RH row = IJ 001-011) ────────
+    rh = rows(
+        con,
+        """SELECT l.naziv, l.glasova, l.mandata FROM rezultat r
+           JOIN rezultat_lista l ON l.rezultat_id=r.id
+           WHERE r.election=? AND r.level='rh' AND r.vrsta='02'""",
+        (slug,),
+    )
+    if not rh:
+        return {}
+    total = sum(r["glasova"] or 0 for r in rh)
+    uspjesni = sum(r["glasova"] or 0 for r in rh if (r["mandata"] or 0) > 0)
+    propali = total - uspjesni
+
+    # ── Per-IJ disparity ────────────────────────────────────────────────────
+    ij_rows = rows(
+        con,
+        f"""SELECT r.p1 AS ij, r.biraci_ukupno, r.biraci_glasovalo,
+                   r.biraci_glasovalo_posto, r.listici_vazeci,
+                   COALESCE(SUM(COALESCE(l.glasova,0)),0) AS glasova_total,
+                   COALESCE(SUM(CASE WHEN l.mandata>0 THEN l.glasova ELSE 0 END),0) AS glasova_uspjesni
+            FROM rezultat r LEFT JOIN rezultat_lista l ON l.rezultat_id=r.id
+            WHERE r.election=? AND r.krug=? AND r.vrsta='02' AND r.level='zup'
+              AND r.p1 IN ({ij_ph})
+            GROUP BY r.id ORDER BY r.p1""",
+        (slug, krug, *PARLAMENT_GEO_IJ),
+    )
+    jedinice = []
+    for r in ij_rows:
+        mand = PARLAMENT_IJ_SEATS[r["ij"]]
+        vazeci = r["glasova_total"] or 0
+        usp = r["glasova_uspjesni"] or 0
+        prop = max(0, vazeci - usp)
+        biraci = r["biraci_ukupno"] or 0
+        jedinice.append(
+            {
+                "code": r["ij"],
+                "label": PARLAMENT_IJ_LABELS.get(r["ij"], r["ij"]),
+                "biraci": biraci,
+                "glasovalo": r["biraci_glasovalo"],
+                "izlaznost": r["biraci_glasovalo_posto"],
+                "vazeci": vazeci,
+                "mandata": mand,
+                "biraca_po_mandatu": round(biraci / mand) if mand else None,
+                "glasova_po_mandatu": round(usp / mand) if mand else None,
+                "pct_iskoristeni": round(100 * usp / vazeci, 2) if vazeci else None,
+                "pct_propali": round(100 * prop / vazeci, 2) if vazeci else None,
+                "pct_zastupljenih": round(100 * usp / biraci, 2) if biraci else None,
+            }
+        )
+    gm = [j for j in jedinice if j["glasova_po_mandatu"]]
+    min_ij = min(gm, key=lambda j: j["glasova_po_mandatu"])
+    max_ij = max(gm, key=lambda j: j["glasova_po_mandatu"])
+    nat_biraci = sum(j["biraci"] for j in jedinice)
+    nat_vazeci = sum(j["vazeci"] for j in jedinice)
+    nat_usp = sum(round(j["glasova_po_mandatu"] * j["mandata"]) for j in gm)
+    # Recompute exactly (rounding above): effective votes summed directly.
+    nat_usp = sum(
+        r["glasova_uspjesni"] or 0 for r in ij_rows
+    )
+    nat_prop = nat_vazeci - nat_usp
+
+    # ── Counterfactual: single national constituency, 143 seats, 5 % ───────
+    nat_lists = rows(
+        con,
+        f"""SELECT l.naziv, SUM(COALESCE(l.glasova,0)) AS glasova,
+                   SUM(COALESCE(l.mandata,0)) AS mandata
+            FROM rezultat_lista l JOIN rezultat r ON r.id=l.rezultat_id
+            WHERE r.election=? AND r.krug=? AND r.vrsta='02' AND r.level='zup'
+              AND r.p1 IN ({ij_ph})
+            GROUP BY l.naziv""",
+        (slug, krug, *PARLAMENT_GEO_IJ),
+    )
+    total_glasova = sum(r["glasova"] or 0 for r in nat_lists)
+    awards = dhondt(
+        {r["naziv"]: r["glasova"] or 0 for r in nat_lists}, seats=143, threshold_pct=5.0
+    )
+    kontra_liste = sorted(
+        (
+            {
+                "naziv": r["naziv"],
+                "kratki": short_list_name(r["naziv"]),
+                "stranka": leading_party(r["naziv"]),
+                "glasova": r["glasova"],
+                "posto": round(100 * (r["glasova"] or 0) / total_glasova, 2),
+                "stvarno": r["mandata"],
+                "jedinstvena": awards.get(r["naziv"], 0),
+                "delta": awards.get(r["naziv"], 0) - (r["mandata"] or 0),
+            }
+            for r in nat_lists
+            if (r["glasova"] or 0) > 0
+        ),
+        key=lambda x: (-x["jedinstvena"], -x["stvarno"], -x["glasova"]),
+    )
+    kontra_usp = sum(x["glasova"] for x in kontra_liste if x["jedinstvena"] > 0)
+    kontra_prop = total_glasova - kontra_usp
+
+    # ── Coalition families (roll-up by leading party) ───────────────────────
+    families: dict[str, dict] = {}
+    for x in kontra_liste:
+        fam = families.setdefault(
+            x["stranka"],
+            {"stranka": x["stranka"], "partneri": [], "broj_lista": 0, "glasova": 0,
+             "stvarno": 0, "jedinstvena": 0},
+        )
+        fam["broj_lista"] += 1
+        fam["glasova"] += x["glasova"]
+        fam["stvarno"] += x["stvarno"] or 0
+        fam["jedinstvena"] += x["jedinstvena"]
+        for t in [t.strip().strip('"') for t in x["naziv"].split(",")][1:]:
+            if t and t not in fam["partneri"]:
+                fam["partneri"].append(t)
+    obitelji = sorted(families.values(), key=lambda f: -f["glasova"])
+    for f in obitelji:
+        f["pct"] = round(100 * f["glasova"] / total_glasova, 2)
+        f["partneri"] = ", ".join(f["partneri"]) if f["partneri"] else "—"
+
+    # ── Candidate-level: D'Hondt seat assignment incl. 10 % pref rule ──────
+    cands = rows(
+        con,
+        """SELECT k.id, k.rbr, k.naziv, k.glasova, k.posto,
+                  COALESCE(k.u_saboru,0) AS u_saboru,
+                  l.id AS lista_id, l.naziv AS lista, l.mandata, r.p1 AS ij
+           FROM rezultat_kandidat k
+           JOIN rezultat_lista l ON l.id=k.lista_id
+           JOIN rezultat r ON r.id=l.rezultat_id
+           WHERE r.election=? AND r.krug=? AND r.vrsta='02' AND r.level='zup'
+           ORDER BY k.glasova DESC""",
+        (slug, krug),
+    )
+    by_lista: dict[int, list[dict]] = {}
+    for c in cands:
+        by_lista.setdefault(c["lista_id"], []).append(dict(c))
+    mandate_ranks: dict[int, int] = {}
+    for lst in by_lista.values():
+        seats = lst[0]["mandata"] or 0
+        if seats > 0:
+            for rank, kid in enumerate(_seat_order_within_list(lst, seats), start=1):
+                mandate_ranks[kid] = rank
+
+    def cand_row(c: sqlite3.Row, rang: int) -> dict:
+        return {
+            "rang": rang,
+            "naziv": c["naziv"],
+            "rbr": c["rbr"],
+            "dhondt": c["id"] in mandate_ranks,
+            "redni_br": mandate_ranks.get(c["id"]),
+            "u_saboru": c["u_saboru"],
+            "stranka": leading_party(c["lista"]),
+            "ij": int(c["ij"]),
+            "glasova": c["glasova"],
+            "posto_liste": c["posto"],
+            "lista": short_list_name(c["lista"]),
+        }
+
+    indexed = [(i + 1, c) for i, c in enumerate(cands)]
+    gubitnici = [
+        cand_row(c, i) for i, c in indexed
+        if c["id"] not in mandate_ranks and not c["u_saboru"]
+    ][:25]
+    odbili = sorted(
+        (cand_row(c, i) for i, c in indexed
+         if c["id"] in mandate_ranks and not c["u_saboru"]),
+        key=lambda x: -(x["glasova"] or 0),
+    )
+    namjestenici = sorted(
+        (cand_row(c, i) for i, c in indexed if c["u_saboru"]),
+        key=lambda x: (x["glasova"] or 0),
+    )[:25]
+
+    # ── 'Sabor elected like a president': top 143 by preferential votes ────
+    top143 = [c for _, c in indexed[:143]]
+    top143_ids = {c["id"] for c in top143}
+    actual_ids = set(mandate_ranks.keys())
+    rollup_pref: dict[str, int] = {}
+    for c in top143:
+        p = leading_party(c["lista"])
+        rollup_pref[p] = rollup_pref.get(p, 0) + 1
+    stvarno_by_party = {f["stranka"]: f["stvarno"] for f in obitelji}
+    sabor_rollup = sorted(
+        (
+            {
+                "stranka": p,
+                "po_pref": n,
+                "stvarno": stvarno_by_party.get(p, 0),
+                "delta": n - stvarno_by_party.get(p, 0),
+            }
+            for p, n in {**{p: 0 for p in stvarno_by_party if stvarno_by_party[p] > 0}, **rollup_pref}.items()
+            if n > 0 or stvarno_by_party.get(p, 0) > 0
+        ),
+        key=lambda x: -x["po_pref"],
+    )
+
+    return {
+        "election": slug,
+        "propali_rh": {
+            "ukupno": total,
+            "iskoristeni": uspjesni,
+            "propali": propali,
+            "pct_iskoristeni": round(100 * uspjesni / total, 2) if total else None,
+            "pct_propali": round(100 * propali / total, 2) if total else None,
+        },
+        "disparitet": {
+            "jedinice": jedinice,
+            "min": {"label": min_ij["label"], "glasova_po_mandatu": min_ij["glasova_po_mandatu"]},
+            "max": {"label": max_ij["label"], "glasova_po_mandatu": max_ij["glasova_po_mandatu"]},
+            "omjer": round(max_ij["glasova_po_mandatu"] / max(min_ij["glasova_po_mandatu"], 1), 2),
+            "nacionalno": {
+                "biraci": nat_biraci,
+                "vazeci": nat_vazeci,
+                "iskoristeni": nat_usp,
+                "propali": nat_prop,
+                "pct_zastupljenih": round(100 * nat_usp / nat_biraci, 2) if nat_biraci else None,
+                "pct_propali": round(100 * nat_prop / nat_vazeci, 2) if nat_vazeci else None,
+            },
+        },
+        "kontrafaktual": {
+            "liste": kontra_liste,
+            "gubitnici": [x for x in kontra_liste if x["delta"] < 0],
+            "dobitnici": [x for x in kontra_liste if x["delta"] > 0],
+            "propalo_jedinstvena": kontra_prop,
+            "pct_propalo_jedinstvena": round(100 * kontra_prop / total_glasova, 2) if total_glasova else None,
+        },
+        "obitelji": obitelji,
+        "gubitnici": gubitnici,
+        "odbili": {"ukupno": len(odbili), "od": 143, "kandidati": odbili},
+        "namjestenici": namjestenici,
+        "sabor_po_pref": {
+            "preklapanje": len(top143_ids & actual_ids),
+            "novi": len(top143_ids - actual_ids),
+            "gube": len(actual_ids - top143_ids),
+            "rollup": sabor_rollup,
+        },
+    }
+
+
+def export_grops(con: sqlite3.Connection, cycles: list[dict]) -> dict[str, int]:
+    """Per-county (or per-IJ for parlament) town/municipality drill-down files:
+    web/public/data/grop/{slug}/{p1}.json + an index.json with the unit list.
+    For lokalni cycles each grop carries the mayor race (vrsta 17, final round)
+    and the council race (vrsta 08)."""
+    written: dict[str, int] = {}
+    for c in cycles:
+        slug, tip = c["slug"], c["type"]
+        out_dir = OUT_DIR / "grop" / slug
+        units: list[dict] = []
+
+        if tip == "parlament":
+            unit_rows = rows(
+                con,
+                """SELECT DISTINCT p1 FROM rezultat
+                   WHERE election=? AND level='grop' AND vrsta='02' ORDER BY p1""",
+                (slug,),
+            )
+            unit_list = [
+                {"code": u["p1"], "naziv": PARLAMENT_IJ_LABELS.get(u["p1"], u["p1"])}
+                for u in unit_rows
+            ]
+        elif tip in ("predsjednik", "euparlament", "referendum", "lokalni"):
+            unit_rows = rows(
+                con,
+                """SELECT DISTINCT r.p1, z.zup_naziv FROM rezultat r
+                   LEFT JOIN rezultat z ON z.election=r.election AND z.level='zup'
+                        AND z.p1=r.p1 AND z.krug=1
+                   WHERE r.election=? AND r.level='grop'
+                     AND CAST(r.p1 AS INTEGER) BETWEEN 1 AND 21
+                   ORDER BY r.p1""",
+                (slug,),
+            )
+            seen = set()
+            unit_list = []
+            for u in unit_rows:
+                if u["p1"] in seen:
+                    continue
+                seen.add(u["p1"])
+                unit_list.append({"code": u["p1"], "naziv": u["zup_naziv"] or u["p1"]})
+        else:
+            continue
+
+        if not unit_list:
+            continue
+        out_dir.mkdir(parents=True, exist_ok=True)
+
+        for unit in unit_list:
+            p1 = unit["code"]
+            if tip == "lokalni":
+                vrsta_filter = "AND vrsta IN ('08','17')"
+            elif tip == "parlament":
+                vrsta_filter = "AND vrsta='02'"
+            else:
+                vrsta_filter = ""
+            grop_rows = rows(
+                con,
+                f"""SELECT * FROM rezultat
+                    WHERE election=? AND level='grop' AND p1=? {vrsta_filter}
+                    ORDER BY grop_naziv, vrsta, krug""",
+                (slug, p1),
+            )
+            # For lokalni mayor races keep only the final round per grop+vrsta.
+            if tip == "lokalni":
+                final: dict[tuple, sqlite3.Row] = {}
+                for g in grop_rows:
+                    key = (g["p2"], g["vrsta"])
+                    if key not in final or g["krug"] > final[key]["krug"]:
+                        final[key] = g
+                grop_rows = sorted(final.values(), key=lambda g: (g["grop_naziv"] or "", g["vrsta"]))
+
+            grops: dict[str, dict] = {}
+            for g in grop_rows:
+                entry = grops.setdefault(
+                    g["p2"],
+                    {"code": g["p2"], "naziv": g["grop_naziv"], "utrke": []},
+                )
+                entry["utrke"].append(
+                    {
+                        "vrsta": g["vrsta"],
+                        "krug": g["krug"],
+                        "biraci": g["biraci_ukupno"],
+                        "glasovalo": g["biraci_glasovalo"],
+                        "odaziv_posto": g["biraci_glasovalo_posto"],
+                        "nevazeci": g["listici_nevazeci"],
+                        "liste": lists_for(con, g["id"]),
+                    }
+                )
+            payload = {
+                "slug": slug,
+                "p1": p1,
+                "naziv": unit["naziv"],
+                "gropovi": sorted(grops.values(), key=lambda x: x["naziv"] or ""),
+            }
+            with open(out_dir / f"{p1}.json", "w") as f:
+                json.dump(payload, f, ensure_ascii=False, separators=(",", ":"))
+
+        with open(out_dir / "index.json", "w") as f:
+            json.dump({"slug": slug, "jedinice": unit_list}, f, ensure_ascii=False, separators=(",", ":"))
+        written[slug] = len(unit_list)
+    return written
+
+
 def export_trends(con: sqlite3.Connection, cycles: list[dict]) -> dict:
     """Turnout across all cycles + party share across same-type cycles (>=2)."""
     turnout = []
@@ -621,6 +1027,43 @@ def spot_check(con: sqlite3.Connection) -> bool:
         ),
     )
 
+    fair = load("fairness.json")
+    add(
+        "fairness: najmanji preferencijal u Saboru (Vuletic)",
+        fair["namjestenici"][0]["glasova"],
+        one(
+            """SELECT min(k.glasova) FROM rezultat_kandidat k
+               JOIN rezultat_lista l ON l.id=k.lista_id JOIN rezultat r ON r.id=l.rezultat_id
+               WHERE r.election='parlament-2024' AND r.level='zup' AND r.vrsta='02'
+                 AND CAST(r.p1 AS INT) BETWEEN 1 AND 10 AND k.u_saboru=1"""
+        ),
+    )
+    add(
+        "fairness: kontrafaktual raspodjeljuje tocno 143 mandata",
+        sum(x["jedinstvena"] for x in fair["kontrafaktual"]["liste"]),
+        143,
+    )
+    grop01 = json.load(open(OUT_DIR / "grop" / "predsjednik-2024" / "01.json"))
+    add(
+        "grop predsjednik-2024 zup01: broj gradova/opcina",
+        len(grop01["gropovi"]),
+        one(
+            """SELECT count(DISTINCT p2) FROM rezultat
+               WHERE election='predsjednik-2024' AND level='grop' AND p1='01'"""
+        ),
+    )
+    samobor = next(g for g in grop01["gropovi"] if g["naziv"] == "SAMOBOR")
+    k2 = next(u for u in samobor["utrke"] if u["krug"] == 2)
+    add(
+        "grop predsjednik-2024 Samobor k2 pobjednik glasova",
+        k2["liste"][0]["glasova"],
+        one(
+            """SELECT max(l.glasova) FROM rezultat r JOIN rezultat_lista l ON l.rezultat_id=r.id
+               WHERE r.election='predsjednik-2024' AND r.level='grop' AND r.krug=2
+                 AND r.p1='01' AND r.grop_naziv='SAMOBOR'"""
+        ),
+    )
+
     ok = True
     print("spot-check export vs SQL:")
     for label, exp, sql_v, match in checks:
@@ -686,6 +1129,20 @@ def main() -> None:
             json.dump(pref, f, ensure_ascii=False, separators=(",", ":"))
         print("  preferencijali.json: parlament-2024")
 
+    fairness = export_fairness(con, "parlament-2024")
+    if fairness:
+        with open(OUT_DIR / "fairness.json", "w") as f:
+            json.dump(fairness, f, ensure_ascii=False, separators=(",", ":"))
+        print(f"  fairness.json: {(OUT_DIR / 'fairness.json').stat().st_size / 1024:.0f} KiB")
+
+    grops = export_grops(con, exported)
+    for c in exported:
+        if c["slug"] in grops:
+            c["sections"].append("grops")
+    if grops:
+        total_files = sum(grops.values())
+        print(f"  grop drill-down: {len(grops)} cycles, {total_files} unit files")
+
     trends = export_trends(con, exported)
     with open(OUT_DIR / "trends.json", "w") as f:
         json.dump(trends, f, ensure_ascii=False, separators=(",", ":"))
@@ -694,6 +1151,7 @@ def main() -> None:
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "cycles": sorted(exported, key=lambda c: (-c["godina"], c["slug"])),
         "has_preferencijali": bool(pref),
+        "has_fairness": bool(fairness),
         "has_trends": bool(trends["odaziv"]) or bool(trends["stranke"]),
     }
     with open(OUT_DIR / "manifest.json", "w") as f:

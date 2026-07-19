@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-19T22:30:24+00:00",
+  "generated_at": "2026-07-19T22:56:33+00:00",
   "cycles": [
     {
       "slug": "lokalni-2025",
@@ -7,7 +7,8 @@
       "godina": 2025,
       "label": "Lokalni izbori 2025",
       "sections": [
-        "zupani"
+        "zupani",
+        "grops"
       ],
       "file": "lokalni-2025.json"
     },
@@ -17,7 +18,8 @@
       "godina": 2024,
       "label": "EUParlament 2024",
       "sections": [
-        "krugovi"
+        "krugovi",
+        "grops"
       ],
       "file": "euparlament-2024.json"
     },
@@ -29,7 +31,8 @@
       "sections": [
         "krugovi",
         "sabor",
-        "jedinice"
+        "jedinice",
+        "grops"
       ],
       "file": "parlament-2024.json"
     },
@@ -39,7 +42,8 @@
       "godina": 2024,
       "label": "Predsjednički izbori 2024",
       "sections": [
-        "krugovi"
+        "krugovi",
+        "grops"
       ],
       "file": "predsjednik-2024.json"
     },
@@ -49,7 +53,8 @@
       "godina": 2021,
       "label": "Lokalni izbori 2021",
       "sections": [
-        "zupani"
+        "zupani",
+        "grops"
       ],
       "file": "lokalni-2021.json"
     },
@@ -61,7 +66,8 @@
       "sections": [
         "krugovi",
         "sabor",
-        "jedinice"
+        "jedinice",
+        "grops"
       ],
       "file": "parlament-2020.json"
     },
@@ -71,7 +77,8 @@
       "godina": 2019,
       "label": "EUParlament 2019",
       "sections": [
-        "krugovi"
+        "krugovi",
+        "grops"
       ],
       "file": "euparlament-2019.json"
     },
@@ -81,7 +88,8 @@
       "godina": 2019,
       "label": "Predsjednički izbori 2019",
       "sections": [
-        "krugovi"
+        "krugovi",
+        "grops"
       ],
       "file": "predsjednik-2019.json"
     },
@@ -91,11 +99,13 @@
       "godina": 2013,
       "label": "Referendum",
       "sections": [
-        "krugovi"
+        "krugovi",
+        "grops"
       ],
       "file": "referendum-2013.json"
     }
   ],
   "has_preferencijali": true,
+  "has_fairness": true,
   "has_trends": true
 }
