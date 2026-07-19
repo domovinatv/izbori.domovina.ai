@@ -1,6 +1,6 @@
 import { promises as fs } from "fs";
 import path from "path";
-import type { CycleData, Manifest, Preferencijali, Trends } from "./types";
+import type { CycleData, Fairness, Manifest, Preferencijali, Trends } from "./types";
 
 const DATA_DIR = path.join(process.cwd(), "public", "data");
 
@@ -30,6 +30,10 @@ export async function getPreferencijali(): Promise<Preferencijali | null> {
 
 export async function getTrends(): Promise<Trends | null> {
   return readJson<Trends>("trends.json");
+}
+
+export async function getFairness(): Promise<Fairness | null> {
+  return readJson<Fairness>("fairness.json");
 }
 
 /** Default cycle shown on the landing page: newest parlament, else newest. */

@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import {
   getCycle,
+  getFairness,
   getPreferencijali,
   getTrends,
 } from "@/lib/data";
@@ -16,6 +17,8 @@ import { TurnoutTrend } from "./charts/TurnoutTrend";
 import { PartyTrends } from "./charts/PartyTrends";
 import { Preferencijali } from "./Preferencijali";
 import { Jedinice } from "./Jedinice";
+import { Fairness } from "./Fairness";
+import { GropExplorer } from "./GropExplorer";
 
 function heroStats(c: CycleData): HeroStat[] {
   const stats: HeroStat[] = [];
@@ -109,7 +112,13 @@ export async function CyclePage({
 }) {
   const cycle = await getCycle(slug);
   if (!cycle) notFound();
-  const [pref, trends] = await Promise.all([getPreferencijali(), getTrends()]);
+  const [pref, trends, fairness] = await Promise.all([
+    getPreferencijali(),
+    getTrends(),
+    getFairness(),
+  ]);
+  const meta = manifest.cycles.find((c) => c.slug === slug);
+  const hasGrops = meta?.sections.includes("grops") ?? false;
 
   const tipLabel = TYPE_LABELS[cycle.tip] ?? cycle.tip;
   const k1 = cycle.krugovi?.["1"];
@@ -212,6 +221,34 @@ export async function CyclePage({
               metodom izračunata je iz službenih rezultata pri izgradnji lokalnog
               indeksa.
             </p>
+          </Section>
+        ) : null}
+
+        {hasGrops ? (
+          <Section
+            id="gradovi"
+            kicker="Drill-down"
+            title="Rezultati po gradovima i općinama"
+          >
+            <div className="rounded-lg border border-line bg-white p-5 md:p-6">
+              <GropExplorer slug={cycle.slug} tip={cycle.tip} />
+            </div>
+            {cycle.tip === "predsjednik" || cycle.tip === "referendum" ? (
+              <p className="mt-3 text-xs text-muted">
+                Grad Zagreb nema zasebnu razinu grada — njegov rezultat je agregat
+                županije Grad Zagreb na karti iznad.
+              </p>
+            ) : null}
+          </Section>
+        ) : null}
+
+        {fairness && cycle.tip === "parlament" && fairness.election === cycle.slug ? (
+          <Section
+            id="pravednost"
+            kicker="Analiza pravednosti"
+            title="Koliko je sustav pravedan prema glasu"
+          >
+            <Fairness data={fairness} />
           </Section>
         ) : null}
 

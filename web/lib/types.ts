@@ -109,6 +109,124 @@ export interface Preferencijali {
   min_pref_u_saboru: { naziv: string; glasova: number; ij: number; lista: string } | null;
 }
 
+export interface FairnessJedinica {
+  code: string;
+  label: string;
+  biraci: number;
+  glasovalo: number | null;
+  izlaznost: number | null;
+  vazeci: number;
+  mandata: number;
+  biraca_po_mandatu: number | null;
+  glasova_po_mandatu: number | null;
+  pct_iskoristeni: number | null;
+  pct_propali: number | null;
+  pct_zastupljenih: number | null;
+}
+
+export interface KontraLista {
+  naziv: string;
+  kratki: string;
+  stranka: string;
+  glasova: number;
+  posto: number;
+  stvarno: number;
+  jedinstvena: number;
+  delta: number;
+}
+
+export interface FairnessKandidat {
+  rang: number;
+  naziv: string;
+  rbr: number | null;
+  dhondt: boolean;
+  redni_br: number | null;
+  u_saboru: number;
+  stranka: string;
+  ij: number;
+  glasova: number | null;
+  posto_liste: number | null;
+  lista: string;
+}
+
+export interface Fairness {
+  election: string;
+  propali_rh: {
+    ukupno: number;
+    iskoristeni: number;
+    propali: number;
+    pct_iskoristeni: number | null;
+    pct_propali: number | null;
+  };
+  disparitet: {
+    jedinice: FairnessJedinica[];
+    min: { label: string; glasova_po_mandatu: number };
+    max: { label: string; glasova_po_mandatu: number };
+    omjer: number;
+    nacionalno: {
+      biraci: number;
+      vazeci: number;
+      iskoristeni: number;
+      propali: number;
+      pct_zastupljenih: number | null;
+      pct_propali: number | null;
+    };
+  };
+  kontrafaktual: {
+    liste: KontraLista[];
+    gubitnici: KontraLista[];
+    dobitnici: KontraLista[];
+    propalo_jedinstvena: number;
+    pct_propalo_jedinstvena: number | null;
+  };
+  obitelji: {
+    stranka: string;
+    partneri: string;
+    broj_lista: number;
+    glasova: number;
+    pct: number;
+    stvarno: number;
+    jedinstvena: number;
+  }[];
+  gubitnici: FairnessKandidat[];
+  odbili: { ukupno: number; od: number; kandidati: FairnessKandidat[] };
+  namjestenici: FairnessKandidat[];
+  sabor_po_pref: {
+    preklapanje: number;
+    novi: number;
+    gube: number;
+    rollup: { stranka: string; po_pref: number; stvarno: number; delta: number }[];
+  };
+}
+
+export interface GropUtrka {
+  vrsta: string;
+  krug: number;
+  biraci: number | null;
+  glasovalo: number | null;
+  odaziv_posto: number | null;
+  nevazeci: number | null;
+  liste: Lista[];
+}
+
+export interface GropEntry {
+  code: string;
+  naziv: string | null;
+  utrke: GropUtrka[];
+}
+
+export interface GropFile {
+  slug: string;
+  p1: string;
+  naziv: string;
+  gropovi: GropEntry[];
+}
+
+export interface GropIndex {
+  slug: string;
+  jedinice: { code: string; naziv: string }[];
+}
+
 export interface Trends {
   odaziv: {
     slug: string;
