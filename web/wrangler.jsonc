@@ -1,0 +1,18 @@
+// Cloudflare Workers (static assets) config for izbori.domovina.ai.
+// The site is fully static (`next build` with output:"export" → out/),
+// so no server code runs — assets only. Deploys to the D.O.M. account
+// (same as gis.domovina.ai / karta-web).
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "izbori-domovina-ai",
+  "account_id": "7dc7167b7e2e00923bfa7cd697df14e4",
+  "compatibility_date": "2026-07-15",
+  "routes": [
+    { "pattern": "izbori.domovina.ai", "custom_domain": true }
+  ],
+  "assets": {
+    "directory": "./out",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
