@@ -122,6 +122,30 @@ Razine (`level`):
 | `ino_zup`    | `22` | šifra zemlje | `000`| inozemstvo, država |
 | `ino_zup_bm` | `22` | šifra zemlje | `001..N` | inozemstvo, BM |
 
+## Web dashboard (izbori.domovina.ai)
+
+Javni dashboard živi na **https://izbori.domovina.ai** (Cloudflare Workers,
+static assets). Kod je u `web/` (Next.js App Router + TypeScript + Tailwind);
+podatke čita isključivo iz statičnih JSON eksporta u `web/public/data/`.
+
+```bash
+# 1) Eksport agregata iz SQLite baze (read-only; --geo i za kartu županija)
+python3 scripts/export_web.py --geo
+
+# 2) Spot-check eksporta protiv baze
+python3 scripts/export_web.py --check
+
+# 3) Lokalni razvoj / deploy
+cd web
+npm install
+npm run dev      # http://localhost:3000
+npm run deploy   # next build (output: export) + wrangler deploy
+```
+
+Svi izračuni (D'Hondt, agregati, trendovi, preferencijali) rade se u
+`scripts/export_web.py`; frontend samo prikazuje. Detalji i dnevnik
+deploya: `PLAN_UI.md`.
+
 ## Struktura repozitorija
 
 ```
