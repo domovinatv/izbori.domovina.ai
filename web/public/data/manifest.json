@@ -1,0 +1,59 @@
+{
+  "generated_at": "2026-07-19T22:16:15+00:00",
+  "cycles": [
+    {
+      "slug": "lokalni-2025",
+      "type": "lokalni",
+      "godina": 2025,
+      "label": "Lokalni izbori 2025",
+      "sections": [
+        "zupani"
+      ],
+      "file": "lokalni-2025.json"
+    },
+    {
+      "slug": "euparlament-2024",
+      "type": "euparlament",
+      "godina": 2024,
+      "label": "EUParlament 2024",
+      "sections": [
+        "krugovi"
+      ],
+      "file": "euparlament-2024.json"
+    },
+    {
+      "slug": "parlament-2024",
+      "type": "parlament",
+      "godina": 2024,
+      "label": "Zastupnički izbori 2024",
+      "sections": [
+        "krugovi",
+        "sabor",
+        "jedinice"
+      ],
+      "file": "parlament-2024.json"
+    },
+    {
+      "slug": "predsjednik-2024",
+      "type": "predsjednik",
+      "godina": 2024,
+      "label": "Predsjednički izbori 2024",
+      "sections": [
+        "krugovi"
+      ],
+      "file": "predsjednik-2024.json"
+    },
+    {
+      "slug": "referendum-2013",
+      "type": "referendum",
+      "godina": 2013,
+      "label": "Referendum",
+      "sections": [
+        "krugovi"
+      ],
+      "file": "referendum-2013.json"
+    }
+  ],
+  "has_preferencijali": true,
+  "has_trends": true
+}

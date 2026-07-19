@@ -1,0 +1,2 @@
+# re-include exported dashboard data (root .gitignore ignores any data/)
+!data/
