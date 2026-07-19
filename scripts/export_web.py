@@ -115,13 +115,20 @@ def lists_for(con: sqlite3.Connection, rezultat_id: int, limit: int | None = Non
            WHERE rezultat_id = ? ORDER BY glasova DESC""",
         (rezultat_id,),
     )
+    total = sum(r["glasova"] or 0 for r in lst)
     out = [
         {
             "naziv": r["naziv"],
             "kratki": short_list_name(r["naziv"]),
             "stranka": leading_party(r["naziv"]),
             "glasova": r["glasova"],
-            "posto": r["posto"],
+            # Some cycles (e.g. predsjednik-2019 round 2) lack posto in the
+            # source files — derive it from the vote totals.
+            "posto": (
+                r["posto"]
+                if r["posto"] is not None
+                else (round(100.0 * (r["glasova"] or 0) / total, 2) if total else None)
+            ),
             "mandata": r["mandata"],
         }
         for r in lst
@@ -455,8 +462,13 @@ def export_trends(con: sqlite3.Connection, cycles: list[dict]) -> dict:
                 series.setdefault(p, {})
                 # Keep the larger share if a party leads several lists.
                 series[p][c["slug"]] = max(series[p].get(c["slug"], 0.0), l["posto"])
-        # Only parties present in >=2 cycles are a trend.
-        kept = {p: v for p, v in series.items() if len(v) >= 2}
+        # Only parties present in >=2 cycles and with a meaningful share
+        # (>=3% at least once) are a trend — the rest is name-collision noise.
+        kept = {
+            p: v
+            for p, v in series.items()
+            if len(v) >= 2 and max(v.values()) >= 3.0
+        }
         if kept:
             top_parties = sorted(kept, key=lambda p: -max(kept[p].values()))[:8]
             party[t] = [
@@ -479,12 +491,36 @@ def build_zupanije_geojson() -> None:
         "-o", "precision=0.0001", "format=geojson", str(out),
     ]
     subprocess.run(cmd, check=True)
-    # Normalize codes to 2-digit DIP strings ("7" -> "07").
+    # Normalize codes to 2-digit DIP strings ("7" -> "07") and rewind rings
+    # for d3-geo (outer rings clockwise, holes counter-clockwise — opposite
+    # of RFC 7946; otherwise d3 renders the complement of each polygon).
+    def signed_area(ring: list) -> float:
+        s = 0.0
+        for i in range(len(ring) - 1):
+            (x1, y1), (x2, y2) = ring[i], ring[i + 1]
+            s += (x2 - x1) * (y2 + y1)
+        return s  # > 0 for clockwise with this formulation
+
+    def rewind_polygon(rings: list) -> list:
+        fixed = []
+        for idx, ring in enumerate(rings):
+            cw = signed_area(ring) > 0
+            outer = idx == 0
+            if (outer and not cw) or (not outer and cw):
+                ring = ring[::-1]
+            fixed.append(ring)
+        return fixed
+
     with open(out) as f:
         gj = json.load(f)
     for feat in gj["features"]:
         props = feat["properties"]
         props["code"] = f"{int(props['code']):02d}"
+        geom = feat["geometry"]
+        if geom["type"] == "Polygon":
+            geom["coordinates"] = rewind_polygon(geom["coordinates"])
+        elif geom["type"] == "MultiPolygon":
+            geom["coordinates"] = [rewind_polygon(p) for p in geom["coordinates"]]
     with open(out, "w") as f:
         json.dump(gj, f, ensure_ascii=False, separators=(",", ":"))
     print(f"  zupanije.geojson: {out.stat().st_size / 1024:.0f} KiB")

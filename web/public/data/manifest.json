@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-19T22:16:15+00:00",
+  "generated_at": "2026-07-19T22:30:24+00:00",
   "cycles": [
     {
       "slug": "lokalni-2025",
@@ -42,6 +42,48 @@
         "krugovi"
       ],
       "file": "predsjednik-2024.json"
+    },
+    {
+      "slug": "lokalni-2021",
+      "type": "lokalni",
+      "godina": 2021,
+      "label": "Lokalni izbori 2021",
+      "sections": [
+        "zupani"
+      ],
+      "file": "lokalni-2021.json"
+    },
+    {
+      "slug": "parlament-2020",
+      "type": "parlament",
+      "godina": 2020,
+      "label": "Zastupnički izbori 2020",
+      "sections": [
+        "krugovi",
+        "sabor",
+        "jedinice"
+      ],
+      "file": "parlament-2020.json"
+    },
+    {
+      "slug": "euparlament-2019",
+      "type": "euparlament",
+      "godina": 2019,
+      "label": "EUParlament 2019",
+      "sections": [
+        "krugovi"
+      ],
+      "file": "euparlament-2019.json"
+    },
+    {
+      "slug": "predsjednik-2019",
+      "type": "predsjednik",
+      "godina": 2019,
+      "label": "Predsjednički izbori 2019",
+      "sections": [
+        "krugovi"
+      ],
+      "file": "predsjednik-2019.json"
     },
     {
       "slug": "referendum-2013",

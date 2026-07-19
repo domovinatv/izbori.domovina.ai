@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+/* DOMOVINA brand tokens — canonical source: sms.domovina.ai/webhook/src/views.ts */
+@theme {
+  --color-navy: #002f6c;
+  --color-navy-dark: #001d4a;
+  --color-navy-deep: #001a3d;
+  --color-accent: #ff0000;
+  --color-muted: #5a6570;
+  --color-line: #e1e5ea;
+  --color-surface: #f5f7f9;
+  --color-hero-ink: #cdd6e6;
+  --color-ink: #0f2136;
+  --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: var(--font-playfair), Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Thin tricolor rule — the subtle brand accent (never kitsch). */
+.tricolor-rule {
+  display: block;
+  height: 3px;
+  width: 64px;
+  background: linear-gradient(
+    to right,
+    #ff0000 0 33.3%,
+    #ffffff 33.3% 66.6%,
+    #002f6c 66.6% 100%
+  );
+  outline: 1px solid #e1e5ea;
+  border-radius: 2px;
+}
+
+.tricolor-rule--dark {
+  outline: 1px solid rgba(205, 214, 230, 0.25);
+}
+
+/* Reveal-on-scroll (restrained). Respect reduced motion. */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
