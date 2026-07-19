@@ -239,6 +239,30 @@ graf). GeoJSON županija iz karta-hrvatske, mapshaper 12 % + rewind za d3-geo,
   `leading_party()` u app.py); prava normalizacija čeka S3.
 - OG social card je logo (SVG); generator pravih 1200×630 kartica je u §9.
 
+### 2026-07-20 (nastavak) — port analize pravednosti + grop drill-down
+
+Na temelju usporedbe sa starim Streamlit UI-jem portano u premium dashboard:
+
+- **Analiza pravednosti** (parlament-2024, sekcija `#pravednost`): iskorišteni
+  vs. propali glasovi + % zastupljenih birača, disparitet IJ (glasova/mandatu,
+  omjer 1,46× XI. vs VI.), kontrafaktual RH kao jedna IJ (D'Hondt 143, 5 %
+  nac. prag), kandidati u ekstremima (gubitnici / odbili mandat 48/143 /
+  najmanje preferencijala u Saboru) i „Sabor po preferencijalima"
+  (preklapanje 98/143). Sve izračunato u `export_web.py::export_fairness()`
+  (port `app.py::render_parlament_fairness`), frontend samo prikazuje.
+- **Drill-down po gradovima/općinama** (sve stranice, sekcija `#gradovi`):
+  `grop/{slug}/{p1}.json` (174 datoteka, 10,2 MiB, lazy-load po jedinici);
+  lokalni ciklusi nose vijeće (08) + načelničku utrku (17, finalni krug).
+  Grad Zagreb nema grop razinu za državne cikluse (DIP kvirk — grad =
+  županija), pa ga index ispravno izostavlja.
+- Spot-check proširen na 12 provjera (svih 12 OK); dodatni produkcijski
+  spot-check nakon deploya: Vuletić 176, odbili 48, kontrafaktual Σ=143,
+  Samobor 2. krug 13.166 — sve odgovara SQL-u na bazi.
+- Commitovi: `7ac9dd2` (export), `e45e128` (UI). Deploy verzija `3948854b`.
+- Nije portano (i dalje): FTS pretraga (v2, D1), razina biračkih mjesta
+  (v2, D1 — ~35k datoteka je previše za static export), statistika baze
+  („O bazi" tab je interni), tehnički detalji p1/p2/p3.
+
 ## 9. Backlog v2+
 
 - **D1 pretraga kandidata** — verificirati aktualne D1 limite i FTS podršku
