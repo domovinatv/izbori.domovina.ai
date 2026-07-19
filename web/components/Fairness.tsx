@@ -73,7 +73,7 @@ function KandidatTable({ rows, showDhondt }: { rows: FairnessKandidat[]; showDho
         <thead>
           <tr className="border-b border-line text-xs text-muted uppercase">
             <th className="py-1.5 pr-2 font-semibold">Kandidat</th>
-            <th className="py-1.5 pr-2 font-semibold">Stranka</th>
+            <th className="py-1.5 pr-2 font-semibold">Vodeća stranka liste</th>
             <th className="py-1.5 pr-2 font-semibold">IJ</th>
             <th className="py-1.5 pr-2 text-right font-semibold">Pref. glasova</th>
             <th className="py-1.5 pr-2 text-right font-semibold">% liste</th>

@@ -142,11 +142,35 @@ export interface FairnessKandidat {
   dhondt: boolean;
   redni_br: number | null;
   u_saboru: number;
+  /** Leading party of the LIST (heuristic) — NOT the person's membership. */
   stranka: string;
   ij: number;
   glasova: number | null;
   posto_liste: number | null;
   lista: string;
+  /** Actual party of a seated MP per sabor.hr snapshot (namjestenici only). */
+  sabor_stranka?: string | null;
+  sabor_klub?: string | null;
+}
+
+export interface FairnessBrojkeRow {
+  tip: "obitelj" | "manjine" | "propali";
+  label: string;
+  glasova: number;
+  mandata: number;
+  pct_biraci: number | null;
+  pct_sabor: number | null;
+}
+
+export interface FairnessBrojke {
+  denominatori: {
+    biraci: number;
+    sabor: number;
+    geo_mandata: number;
+    manjinski_mandata: number;
+  };
+  redovi: FairnessBrojkeRow[];
+  ostatak: { glasova: number; pct_biraci: number | null };
 }
 
 export interface Fairness {
@@ -188,6 +212,7 @@ export interface Fairness {
     stvarno: number;
     jedinstvena: number;
   }[];
+  brojke: FairnessBrojke;
   gubitnici: FairnessKandidat[];
   odbili: { ukupno: number; od: number; kandidati: FairnessKandidat[] };
   namjestenici: FairnessKandidat[];

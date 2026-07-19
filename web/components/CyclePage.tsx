@@ -18,6 +18,8 @@ import { PartyTrends } from "./charts/PartyTrends";
 import { Preferencijali } from "./Preferencijali";
 import { Jedinice } from "./Jedinice";
 import { Fairness } from "./Fairness";
+import { PravednostBrojke } from "./PravednostBrojke";
+import { GubitniciDobitnici } from "./GubitniciDobitnici";
 import { GropExplorer } from "./GropExplorer";
 
 function heroStats(c: CycleData): HeroStat[] {
@@ -146,6 +148,33 @@ export async function CyclePage({
         stats={heroStats(cycle)}
       />
       <main>
+        {fairness && cycle.tip === "parlament" && fairness.election === cycle.slug ? (
+          <>
+            <Section
+              id="pravednost-brojke"
+              kicker="Analiza pravednosti"
+              title="Pravednost u brojkama"
+            >
+              <p className="mb-4 max-w-3xl text-sm text-muted">
+                Koliki dio svih upisanih birača stoji iza svake koalicijske
+                obitelji u Saboru — i koliki dio Sabora ta obitelj drži.
+                Nesrazmjer dviju pruga je nesrazmjer sustava.
+              </p>
+              <PravednostBrojke brojke={fairness.brojke} />
+            </Section>
+            <Section
+              id="gubitnici-dobitnici"
+              kicker="Preferencijalni glasovi"
+              title="Najveći gubitnici ↔ najveći dobitnici"
+            >
+              <GubitniciDobitnici
+                gubitnici={fairness.gubitnici}
+                namjestenici={fairness.namjestenici}
+              />
+            </Section>
+          </>
+        ) : null}
+
         {k1 ? (
           <Section
             id="rezultati"
