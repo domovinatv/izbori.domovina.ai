@@ -263,6 +263,121 @@ Na temelju usporedbe sa starim Streamlit UI-jem portano u premium dashboard:
   (v2, D1 — ~35k datoteka je previše za static export), statistika baze
   („O bazi" tab je interni), tehnički detalji p1/p2/p3.
 
+### 2026-07-20 (nastavak 2) — „Pravednost u brojkama" + gubitnici↔dobitnici + verifikacija osoba
+
+Dvije nove sekcije na `/parlament-2024`, obje **iznad** „Rezultati na razini
+Hrvatske" (odmah nakon hero headera):
+
+- **`#pravednost-brojke` „Pravednost u brojkama"** — za svaku koalicijsku
+  obitelj s mandatima par horizontalnih pruga: **udio biračkog tijela**
+  (glasovi kao % svih 3.523.270 upisanih birača, `biraci_ukupno` IJ 001–011)
+  naspram **udjela u Saboru** (% svih 151 mandata — geografski 143 + 8
+  manjinskih; denominator naveden u legendi). Redovi: 8 obitelji + red
+  **Nacionalne manjine** (55.505 glasova = 1,6 % biračkog tijela → 8 mandata
+  = 5,3 % Sabora, zastupljenost ×3,4 — najveći ekstrem) + red **Propali
+  glasovi** (194.147 = 5,5 % biračkog tijela → 0 mandata). Particija čista:
+  obitelj = glasovi lista s mandatima grupirani po vodećoj stranci; propali =
+  glasovi lista bez ijednog mandata (ista definicija kao `propali_rh`, pa se
+  brojke na stranici slažu). Ostatak (38,2 %, 1.346.986) = nije glasovalo /
+  nevažeći — u fusnoti, izračunat u exportu. Sve u
+  `export_web.py::export_fairness()` pod ključem `brojke`.
+- **`#gubitnici-dobitnici` „Najveći gubitnici ↔ najveći dobitnici"** — 
+  side-by-side, top 10 sa svake strane na **zajedničkoj skali glasova**
+  (asimetrija 6.163 : 176 je poanta): lijevo najviše preferencijala bez
+  D'Hondtova mandata i bez mjesta u sazivu, desno najmanje preferencijala
+  među zastupnicima koji sjede (badge **D'Hondt mandat / Zamjenik** iz
+  `dhondt` polja). Podaci iz postojećih `gubitnici`/`namjestenici` +
+  novo polje `sabor_stranka`/`sabor_klub` (sabor.hr snimka).
+
+**Stranačka pripadnost — sanacija rizika halucinacije:** polje `stranka` je
+heuristika `leading_party()` (prva stranka koalicijske liste), NE članstvo.
+U UI-ju se sada nigdje ne prikazuje kao članstvo: nove sekcije pišu
+„lista: …", obojena točka je označena kao vodeća stranka liste, a header
+„Stranka" u starim tablicama pravednosti preimenovan u „Vodeća stranka
+liste". Za zastupnike koji sjede prikazuje se stvarna stranka iz
+interaktivne sabornice sabor.hr (`sifarnici/sabor_2024_seating.json`,
+snimka 2026-04-30) — upravo je ona pokazala da bi heuristika krivo
+etiketirala npr. Vuletića (lista SDP → stvarno **HSS**), Gabričevića
+(lista HDZ → **HSU**), Čabaja (lista DP → **DOMINO**), Kordića (lista
+MOST → **Hrvatski suverenisti**), Klasića (lista HDZ → **HSLS**).
+
+**Spot-check proširen 12 → 19 provjera** (svih 19 OK): zbroj mandata svih
+redova = 151, denominator birača = SQL, propali red = SQL, HDZ obitelj =
+SQL, manjine = SQL, svih 25 gubitnika (glasovi + u_saboru=0) i svih 25
+namještenika (glasovi + u_saboru=1) potvrđeni u bazi, sabor.hr stranka
+razriješena za svih 25.
+
+**Verifikacija svake osobe (50/50 OK, 0 ispravaka)** — skripta u
+scratchpadu usporedila svaku osobu s (a) mirroranim DIP JSON-om
+(`source_file` iz baze: ime, glasovi, rbr, naziv liste), (b) službenim DIP
+PDF izvješćem (`scripts/grep_pdf.py` asset; ime nađeno + broj glasova
+neposredno uz ime na stranici) i (c) sabornicom sabor.hr (sjedi/ne sjedi +
+stranka). Nijedna vrijednost nije trebala ispravak.
+
+**Gubitnici (top 25 preferencijala bez mandata i bez Sabora):**
+
+| Osoba | Lista (kako je prijavljena DIP-u) | IJ | Pref. glasova | Izvor (mirror DIP JSON · službeni PDF) | Stranka (sabor.hr) | Status |
+|---|---|---:|---:|---|---|---|
+| Zlatko Hasanbegović | DP, PRAVO I PRAVDA, BLOK … | 1 | 6.163 | `r_02_001_0000_000.json` · PDF str. 5 | — | OK |
+| Ante Šošić | HDZ, HSLS, HDS, HNS, HSU | 10 | 5.604 | `r_02_010_0000_000.json` · PDF str. 91 | — | OK |
+| Radimir Čačić | SDP, CENTAR, HSS, "DO i SIP" … | 3 | 4.960 | `r_02_003_0000_000.json` · PDF str. 23 | — | OK |
+| Siniša Jenkač | HDZ, HSLS, HDS, HNS, HSU | 3 | 4.935 | `r_02_003_0000_000.json` · PDF str. 24 | — | OK |
+| Davor Dretar | DP, PRAVO I PRAVDA, DHSS, ZELENA LISTA | 3 | 4.703 | `r_02_003_0000_000.json` · PDF str. 25 | — | OK |
+| Lovro Lukavečki | SDP, CENTAR, HSS, "DO i SIP" … | 3 | 4.657 | `r_02_003_0000_000.json` · PDF str. 23 | — | OK |
+| Željko Posavec | SDP, CENTAR, HSS, "DO i SIP" … | 3 | 4.561 | `r_02_003_0000_000.json` · PDF str. 23 | — | OK |
+| Marko Marušić | HDZ, HSLS, HDS, HNS, HSU | 2 | 4.336 | `r_02_002_0000_000.json` · PDF str. 14 | — | OK |
+| Enio Meštrović | RIČARD NEZAVISNI | 10 | 4.326 | `r_02_010_0000_000.json` · PDF str. 93 | — | OK |
+| Darijo Vasilić | IDS, PGS, UNIJA, ISU - PIP … | 8 | 4.033 | `r_02_008_0000_000.json` · PDF str. 72 | — | OK |
+| Karolina Vidović Krišto | OIP | 1 | 3.785 | `r_02_001_0000_000.json` · PDF str. 6 | — | OK |
+| Samir Haj Barakat | SDP, CENTAR, HSS, "DO i SIP" … | 4 | 3.751 | `r_02_004_0000_000.json` · PDF str. 34 | — | OK |
+| Damir Vanđelić | FOKUS, REPUBLIKA | 1 | 3.731 | `r_02_001_0000_000.json` · PDF str. 6 | — | OK |
+| Katarina Peović | RF | 8 | 3.545 | `r_02_008_0000_000.json` · PDF str. 73 | — | OK |
+| Željko Burić | HDZ, HSLS, HDS, HNS, HSU | 9 | 3.473 | `r_02_009_0000_000.json` · PDF str. 80 | — | OK |
+| Vojko Obersnel | SDP, CENTAR, HSS, "DO i SIP", GLAS | 7 | 3.455 | `r_02_007_0000_000.json` · PDF str. 62 | — | OK |
+| Davor Nađi | FOKUS, REPUBLIKA | 6 | 3.387 | `r_02_006_0000_000.json` · PDF str. 53 | — | OK |
+| Josip Samardžić | HDZ, HSLS, HDS, HNS, HSU | 5 | 3.359 | `r_02_005_0000_000.json` · PDF str. 42 | — | OK |
+| Žarko Tušek | HDZ, HSLS, HDS, HNS, HSU | 3 | 3.325 | `r_02_003_0000_000.json` · PDF str. 24 | — | OK |
+| Andreja Marić | SDP, CENTAR, HSS, "DO i SIP" … | 3 | 3.272 | `r_02_003_0000_000.json` · PDF str. 23 | — | OK |
+| Bojan Glavašević | SDP, CENTAR, HSS, "DO i SIP" … | 2 | 3.264 | `r_02_002_0000_000.json` · PDF str. 15 | — | OK |
+| Branko Grčić | SDP, CENTAR, HSS, "DO i SIP" … | 9 | 3.166 | `r_02_009_0000_000.json` · PDF str. 80 | — | OK |
+| Branka Bakšić-Mitić | SDP, CENTAR, HSS, "DO i SIP", GLAS | 7 | 3.099 | `r_02_007_0000_000.json` · PDF str. 62 | — | OK |
+| Ivan Vilibor Sinčić | DP, PRAVO I PRAVDA | 8 | 3.085 | `r_02_008_0000_000.json` · PDF str. 73 | — | OK |
+| Alka Vuica | SDP, CENTAR, HSS, "DO i SIP" … | 6 | 3.029 | `r_02_006_0000_000.json` · PDF str. 52 | — | OK |
+
+**Namještenici (25 najmanjih preferencijala među zastupnicima koji sjede):**
+
+| Osoba | Lista (kako je prijavljena DIP-u) | IJ | Pref. glasova | Izvor (mirror DIP JSON · službeni PDF) | Stranka (sabor.hr) | Status |
+|---|---|---:|---:|---|---|---|
+| Darko Vuletić | SDP, CENTAR, HSS, "DO i SIP" … | 6 | 176 | `r_02_006_0000_000.json` · PDF str. 52 | HSS | OK |
+| Veselko Gabričević | HDZ, HSLS, HDS, HNS, HSU | 7 | 183 | `r_02_007_0000_000.json` · PDF str. 61, 69 | HSU | OK |
+| Marin Živković | MOŽEMO! - POLITIČKA PLATFORMA | 6 | 185 | `r_02_006_0000_000.json` · PDF str. 52 | Možemo! | OK |
+| Ljubica Lukačić | HDZ, HSLS, HDS, HNS, HSU | 1 | 191 | `r_02_001_0000_000.json` · PDF str. 4 | HDZ | OK |
+| Ivica Baksa | NPS | 3 | 242 | `r_02_003_0000_000.json` · PDF str. 24 | NPS | OK |
+| Krešimir Čabaj | DP, PRAVO I PRAVDA, NEZAVISNI, DHSS … | 4 | 331 | `r_02_004_0000_000.json` · PDF str. 34 | DOMINO | OK |
+| Martin Kordić | MOST, HRVATSKI SUVERENISTI, HKS, NLM | 5 | 343 | `r_02_005_0000_000.json` · PDF str. 43 | Hrvatski suverenisti | OK |
+| Darko Klasić | HDZ, HSLS, HDS, HNS, HSU | 1 | 360 | `r_02_001_0000_000.json` · PDF str. 4, 12 | HSLS | OK |
+| Jelena Miloš | MOŽEMO! - POLITIČKA PLATFORMA … | 2 | 380 | `r_02_002_0000_000.json` · PDF str. 16 | Možemo! | OK |
+| Maksimilijan Šimrak | HDZ, HSLS, HDS, HNS, HSU | 1 | 406 | `r_02_001_0000_000.json` · PDF str. 4 | HDZ | OK |
+| Maria Blažina | SDP, CENTAR, HSS, "DO i SIP", GLAS | 8 | 430 | `r_02_008_0000_000.json` · PDF str. 71 | SDP | OK |
+| Marko Pavić | HDZ, HSLS, HDS, HNS, HSU | 6 | 475 | `r_02_006_0000_000.json` · PDF str. 51 | HDZ | OK |
+| Ivana Ribarić Majanović | SDP, CENTAR, HSS, "DO i SIP" … | 5 | 538 | `r_02_005_0000_000.json` · PDF str. 43 | SDP | OK |
+| Ana Puž Kukuljan | SDP, CENTAR, HSS, "DO i SIP", GLAS | 8 | 545 | `r_02_008_0000_000.json` · PDF str. 71, 78 | SDP | OK |
+| Krunoslav Katičić | HDZ, HSLS, HDS, HNS, HSU | 2 | 547 | `r_02_002_0000_000.json` · PDF str. 14, 21 | HDZ | OK |
+| Irena Dragić | SDP, CENTAR, HSS, "DO i SIP" … | 9 | 566 | `r_02_009_0000_000.json` · PDF str. 80, 89 | SDP | OK |
+| Ivo Zelić | HDZ, HSLS, HDS, HNS, HSU | 4 | 604 | `r_02_004_0000_000.json` · PDF str. 33 | HDZ | OK |
+| Miro Totgergeli | HDZ, HSLS, HDS, HNS, HSU | 2 | 605 | `r_02_002_0000_000.json` · PDF str. 14, 21 | HDZ | OK |
+| Stipan Šašlin | HDZ, HSLS, HDS, HNS, HSU | 4 | 624 | `r_02_004_0000_000.json` · PDF str. 33 | HDZ | OK |
+| Josip Borić | HDZ, HSLS, HDS, HNS, HSU | 8 | 629 | `r_02_008_0000_000.json` · PDF str. 72 | HDZ | OK |
+| Željko Reiner | HDZ, HSLS, HDS, HNS, HSU | 1 | 638 | `r_02_001_0000_000.json` · PDF str. 4, 12 | HDZ | OK |
+| Anita Curiš Krok | SDP, CENTAR, HSS, "DO i SIP" … | 3 | 648 | `r_02_003_0000_000.json` · PDF str. 23 | SDP | OK |
+| Saša Đujić | SDP, CENTAR, HSS, "DO i SIP", GLAS | 8 | 686 | `r_02_008_0000_000.json` · PDF str. 71, 78 | SDP | OK |
+| Josip Dabro | DP, PRAVO I PRAVDA | 5 | 720 | `r_02_005_0000_000.json` · PDF str. 43, 50 | DP | OK |
+| Vesna Bedeković | HDZ, HSLS, HDS, HNS, HSU | 4 | 722 | `r_02_004_0000_000.json` · PDF str. 33 | HDZ | OK |
+
+Napomena: manjinski zastupnici (8) nisu u usporedbi — biraju se na posebnim
+listama bez preferencijalnog glasovanja (lista JE kandidat); navedeno u
+fusnoti sekcije.
+
 ## 9. Backlog v2+
 
 - **D1 pretraga kandidata** — verificirati aktualne D1 limite i FTS podršku

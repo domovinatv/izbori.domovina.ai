@@ -53,6 +53,14 @@ cd web && npm run deploy
 Portano: rezultati po ciklusima (9), sastav Sabora, choropleth, trendovi,
 preferencijali, **analiza pravednosti** (kompletna), **drill-down
 grad/općina** (svi ciklusi; lokalni = vijeće 08 + načelnik 17 finalni krug).
+Novo (isti dan, nastavak 2): **„Pravednost u brojkama"** (udio biračkog
+tijela vs. udio Sabora po koalicijskim obiteljima + manjine + propali;
+`fairness.json::brojke`) i **„Najveći gubitnici ↔ najveći dobitnici"**
+(preferencijalni ekstremi, zajednička skala) — obje sekcije prve na
+`/parlament-2024`, svih 50 osoba verificirano protiv DIP JSON + PDF +
+sabor.hr (tablica u PLAN_UI §8). Stvarna stranka zastupnika u UI-ju dolazi
+isključivo iz `sabor_2024_seating.json` (`sabor_stranka`), nikad iz
+`leading_party()` heuristike.
 
 Svjesno NIJE portano (backlog §9): FTS pretraga kandidata (čeka D1),
 razina biračkih mjesta (~35k datoteka — čeka D1), statistika baze,
