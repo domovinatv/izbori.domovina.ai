@@ -17,6 +17,10 @@ SQLite bazu s FTS5 pretragom.
 | `parlament-2024`   | `parlament/2024`      | 1       | JSON   |
 | `lokalni-2025`     | `lokalni/2025`        | 1, 2    | JSON   |
 | `euparlament-2024` | `euparlament/2024`    | 1       | JSON   |
+| `parlament-2020`   | `parlament/2020`      | 1       | JSON   |
+| `predsjednik-2019` | `predsjednik/2019`    | 1, 2    | JSON   |
+| `lokalni-2021`     | `lokalni/2021`        | 1, 2    | JSON   |
+| `euparlament-2019` | `euparlament/2019`    | 1       | JSON   |
 | `referendum-2013`  | `referendum/2013`     | 1       | CSV    |
 
 Strukture URL-a:
@@ -165,6 +169,13 @@ data/              gitignored — preuzeti rezultati i SQLite baza
   trenutni concurrency limit (12–16) iz pristojnosti.
 - Stranica vraća `404` za biračka mjesta koja su naknadno spojena/preimenovana —
   to je očekivano i ne znači grešku (stupac `404` u izvještaju mirrora).
+- Grad Zagreb (šifra GO `1333`) nema vlastitu agregatnu datoteku u lokalnim
+  izborima — agregat je datoteka županije 21 (`p2=0000`), a biračka mjesta žive
+  pod `p2=0021` (kvirk iz DAO JS-a). Mirror to rješava automatski od uvođenja
+  ciklusa 2021; stariji mirror `lokalni-2025` nije skidao zagrebačka BM za
+  vrste 06/15 — ponovni `mirror.py lokalni-2025` ih dohvaća.
+- Sabor (parlament-2020, parlament-2024) nema RH-agregatnu datoteku na serveru;
+  `build_index.py` sintetizira `rh` redak zbrajanjem IJ 001–011.
 - Šifre građe (`zup`, `grop`, `vrsta`, `manjina`) se s vremenom mijenjaju (npr. nove
   općine, nove vrste manjinskih izbora). Šifrarnici za svaki ciklus izbora su
   zasebne datoteke u `sifarnici/`.

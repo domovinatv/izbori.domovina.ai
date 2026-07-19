@@ -23,6 +23,10 @@ ELECTION_LABELS = {
     "parlament-2024": "Parlamentarni izbori 2024",
     "lokalni-2025": "Lokalni izbori 2025",
     "euparlament-2024": "EU parlament 2024",
+    "parlament-2020": "Parlamentarni izbori 2020",
+    "predsjednik-2019": "Predsjednički izbori 2019",
+    "lokalni-2021": "Lokalni izbori 2021",
+    "euparlament-2019": "EU parlament 2019",
     "referendum-2013": "Referendum 2013",
 }
 

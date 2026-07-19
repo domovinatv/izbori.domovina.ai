@@ -31,6 +31,7 @@ streamlit run app.py            # http://localhost:8501
 - Promjene u `scripts/fetch_sabor_seating.py` ili `scripts/build_index.py` zahtijevaju **rebuild** (`python3 scripts/build_index.py`) jer se `u_saboru` i `mandata` postavljaju u tom koraku, ne pri mirroriranju.
 - Saborski raspored se izvlači iz JSON API-ja `https://www.sabor.hr/api/interaktivna-sabornica-new?_format=json`. Stari PDF parser je deprekiran (`pdfplumber` uklonjen iz `requirements.txt`).
 - Manjinski zastupnici sjede u `rezultat_lista` (lista *je* kandidat), ne u `rezultat_kandidat`. Kolona `u_saboru` je na `rezultat_kandidat` pa ne pokriva manjine — to je dizajnerska odluka, ne bug.
+- Mirrorani su i povijesni JSON ciklusi: `parlament-2020`, `predsjednik-2019`, `lokalni-2021`, `euparlament-2019`. D'Hondt raspodjela mandata i sintetički RH-agregat rade za oba saborska ciklusa (2020 i 2024). Detalji i verifikacija: `docs/mirror_povijest_notes.md`.
 - Repo je javan na `github.com/domovinatv/izbori.domovina.ai`. Pretpostavi da se commit poruke i kod mogu javno čitati.
 
 ## Šira dokumentacija

@@ -91,13 +91,44 @@ ELECTIONS: dict[str, Election] = {
         rounds=(1, 2),
         kind="lokalni",
     ),
+    # ── Historical JSON cycles (same archive format as 2024/2025) ──
+    "parlament-2020": Election(
+        slug="parlament-2020",
+        data_path="parlament/2020",
+        sifarnik="parlament-2020.json",
+        rounds=(1,),
+        kind="parlament",
+    ),
+    "predsjednik-2019": Election(
+        slug="predsjednik-2019",
+        data_path="predsjednik/2019",
+        sifarnik="predsjednik-2019.json",
+        rounds=(1, 2),
+        kind="standard",
+    ),
+    "lokalni-2021": Election(
+        slug="lokalni-2021",
+        data_path="lokalni/2021",
+        sifarnik="lokalni-2021.json",
+        rounds=(1, 2),
+        kind="lokalni",
+    ),
+    "euparlament-2019": Election(
+        slug="euparlament-2019",
+        data_path="euparlament/2019",
+        sifarnik="eu-parlament-2019.json",
+        rounds=(1,),
+        kind="standard",
+    ),
 }
 
 
 # Election → list of `vrsta` codes used in the rezultati filename `r_{vrsta}_..`
 STANDARD_VRSTA = {
     "predsjednik-2024": "01",
+    "predsjednik-2019": "01",
     "euparlament-2024": "14",
+    "euparlament-2019": "14",
     "referendum-2013": "81",
 }
 
@@ -332,14 +363,35 @@ def jobs_parlament(election: Election, sifarnik: dict) -> list[Job]:
 
 
 def jobs_lokalni(election: Election, sifarnik: dict) -> list[Job]:
-    """Lokalni 2025 — multiple vrste; codetop of each vrsta entry says
-    where the race exists (a county code 01..21 or a 4-digit grop code)."""
+    """Lokalni 2021/2025 — multiple vrste; codetop of each vrsta entry says
+    where the race exists (a county code 01..21 or a 4-digit grop code).
+
+    Grad Zagreb quirk (from the DAO): grop 1333 has no own aggregate file —
+    its aggregate is the county-21 file (p2=0000), and its polling stations
+    live under p2=0021. Some cycles (2021) also list county races per-grop
+    in `vrsta`; job dedup in run() collapses the resulting duplicates.
+    """
     jobs: list[Job] = []
     grops_by_zup: dict[str, list[str]] = {}
     grop_zup: dict[str, str] = {}
     for go in sifarnik.get("gradOpcina", []):
         grops_by_zup.setdefault(go["codetop"], []).append(go["code"])
         grop_zup[go["code"]] = go["codetop"]
+
+    def grop_job(krug: int, vrsta: str, zup: str, grop: str) -> Job:
+        if grop == "1333":  # Grad Zagreb: aggregate = county file, BMs under 0021
+            return Job(
+                url=grop_url(election, krug, vrsta, zup, "0000", "000"),
+                dest=grop_dest(election, krug, vrsta, zup, "0000", "000"),
+                expand_bms=True,
+                krug=krug, vrsta=vrsta, p1=zup, p2="0021",
+            )
+        return Job(
+            url=grop_url(election, krug, vrsta, zup, grop, "000"),
+            dest=grop_dest(election, krug, vrsta, zup, grop, "000"),
+            expand_bms=True,
+            krug=krug, vrsta=vrsta, p1=zup, p2=grop,
+        )
 
     # Aggregate vrste by code → list of codetops
     by_vrsta: dict[str, list[str]] = {}
@@ -358,21 +410,11 @@ def jobs_lokalni(election: Election, sifarnik: dict) -> list[Job]:
                     ))
                     # per grop in that zup, with BMs (county results break down to BMs)
                     for grop in grops_by_zup.get(zup, []):
-                        jobs.append(Job(
-                            url=grop_url(election, krug, vrsta, zup, grop, "000"),
-                            dest=grop_dest(election, krug, vrsta, zup, grop, "000"),
-                            expand_bms=True,
-                            krug=krug, vrsta=vrsta, p1=zup, p2=grop,
-                        ))
+                        jobs.append(grop_job(krug, vrsta, zup, grop))
                 else:  # municipality-level race (GO vijeće, gradonačelnik...)
                     grop = codetop
                     zup = grop_zup.get(grop, "00")
-                    jobs.append(Job(
-                        url=grop_url(election, krug, vrsta, zup, grop, "000"),
-                        dest=grop_dest(election, krug, vrsta, zup, grop, "000"),
-                        expand_bms=True,
-                        krug=krug, vrsta=vrsta, p1=zup, p2=grop,
-                    ))
+                    jobs.append(grop_job(krug, vrsta, zup, grop))
 
     return jobs
 
@@ -403,10 +445,21 @@ def expand_bm_jobs(election: Election, body: bytes, j: Job) -> list[Job]:
     return out
 
 
+def dedupe_jobs(jobs: list[Job]) -> list[Job]:
+    """Collapse jobs targeting the same file. Some sifarniks (lokalni-2021)
+    list the same race twice; keep the variant that expands BMs, if any."""
+    by_dest: dict[Path, Job] = {}
+    for j in jobs:
+        prev = by_dest.get(j.dest)
+        if prev is None or (j.expand_bms and not prev.expand_bms):
+            by_dest[j.dest] = j
+    return list(by_dest.values())
+
+
 def run(election: Election, concurrency: int, force: bool) -> Stats:
     sifarnik = load_sifarnik(election.sifarnik)
     builder = JOB_BUILDERS[election.kind]
-    jobs = builder(election, sifarnik)
+    jobs = dedupe_jobs(builder(election, sifarnik))
     print(f"{election.slug}: {len(jobs)} top-level jobs queued", flush=True)
 
     stats = Stats()
@@ -470,7 +523,7 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.dry_run:
         sif = load_sifarnik(election.sifarnik)
-        jobs = JOB_BUILDERS[election.kind](election, sif)
+        jobs = dedupe_jobs(JOB_BUILDERS[election.kind](election, sif))
         print(f"{election.slug}: {len(jobs)} top-level jobs (BM expansion happens at runtime)")
         return 0
 

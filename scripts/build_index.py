@@ -293,10 +293,12 @@ def index_election(con: sqlite3.Connection, election_dir: Path) -> tuple[int, in
     return n_ok, n_err
 
 
-# ── Sabor 2024 seat allocation ──────────────────────────────────────────────
+# ── Sabor seat allocation (2020 and 2024 use identical rules) ──────────────
 # Each geographic IJ elects 14 seats by D'Hondt with a 5% threshold (within IJ).
 # IJ 011 (inozemstvo) elects 3 seats.
 # IJ 012 splits into 6 minority races; winners are top-N by candidate votes.
+
+PARLAMENT_ELECTIONS = ("parlament-2020", "parlament-2024")
 
 PARLAMENT_IJ_SEATS = {f"{i:03d}": 14 for i in range(1, 11)}
 PARLAMENT_IJ_SEATS["011"] = 3
@@ -330,31 +332,32 @@ def dhondt(votes: dict[str, int], seats: int, threshold_pct: float) -> dict[str,
     return awards
 
 
-def allocate_parlament_seats(con: sqlite3.Connection) -> int:
-    """Compute and persist mandata in rezultat_lista for parlament-2024:
+def allocate_parlament_seats(con: sqlite3.Connection, election: str) -> int:
+    """Compute and persist mandata in rezultat_lista for a Sabor election:
       - geographic IJs (001-010, 011): D'Hondt within each IJ, 5% threshold
       - minority IJ 012: top-N candidates per minority list (no threshold)
     Returns the number of IJ-level rezultat rows updated.
     """
     n_updated = 0
 
-    # Reset any prior values for parlament-2024.
+    # Reset any prior values for this election.
     con.execute(
         """UPDATE rezultat_lista SET mandata = 0
-           WHERE rezultat_id IN (SELECT id FROM rezultat WHERE election='parlament-2024')"""
+           WHERE rezultat_id IN (SELECT id FROM rezultat WHERE election=?)""",
+        (election,),
     )
 
     # 1) Geographic IJs.
     for ij, seats in PARLAMENT_IJ_SEATS.items():
         for krug, in con.execute(
             """SELECT DISTINCT krug FROM rezultat
-               WHERE election='parlament-2024' AND vrsta='02' AND p1=? AND level='zup'""",
-            (ij,),
+               WHERE election=? AND vrsta='02' AND p1=? AND level='zup'""",
+            (election, ij),
         ).fetchall():
             rez = con.execute(
-                """SELECT id FROM rezultat WHERE election='parlament-2024'
+                """SELECT id FROM rezultat WHERE election=?
                    AND krug=? AND vrsta='02' AND p1=? AND p2='0000' AND p3='000'""",
-                (krug, ij),
+                (election, krug, ij),
             ).fetchone()
             if not rez:
                 continue
@@ -378,13 +381,13 @@ def allocate_parlament_seats(con: sqlite3.Connection) -> int:
     for vrsta, seats in PARLAMENT_MANJINE_SEATS.items():
         for krug, in con.execute(
             """SELECT DISTINCT krug FROM rezultat
-               WHERE election='parlament-2024' AND vrsta=? AND p1='012' AND p2='0000' AND p3='000'""",
-            (vrsta,),
+               WHERE election=? AND vrsta=? AND p1='012' AND p2='0000' AND p3='000'""",
+            (election, vrsta),
         ).fetchall():
             rez = con.execute(
-                """SELECT id FROM rezultat WHERE election='parlament-2024'
+                """SELECT id FROM rezultat WHERE election=?
                    AND krug=? AND vrsta=? AND p1='012' AND p2='0000' AND p3='000'""",
-                (krug, vrsta),
+                (election, krug, vrsta),
             ).fetchone()
             if not rez:
                 continue
@@ -547,9 +550,9 @@ def mark_sabor_attendance(con: sqlite3.Connection) -> int:
     return n
 
 
-def synthesize_parlament_rh(con: sqlite3.Connection) -> int:
-    """Sabor 2024 has no national-aggregate file in the DIP archive — only
-    one per izborna jedinica. Compute the RH aggregate by summing the 11
+def synthesize_parlament_rh(con: sqlite3.Connection, election: str) -> int:
+    """Sabor elections have no national-aggregate file in the DIP archive —
+    only one per izborna jedinica. Compute the RH aggregate by summing the 11
     geographic IJs (001..010 + 011 inozemstvo). Skip IJ 012 (manjine) since
     those are 6 separate races, not one.
     """
@@ -557,16 +560,17 @@ def synthesize_parlament_rh(con: sqlite3.Connection) -> int:
               "009", "010", "011")
     n = 0
     for krug, in con.execute(
-        "SELECT DISTINCT krug FROM rezultat WHERE election='parlament-2024' AND level='zup'"
+        "SELECT DISTINCT krug FROM rezultat WHERE election=? AND level='zup'",
+        (election,),
     ).fetchall():
         ij_rows = con.execute(
             f"""SELECT id, biraci_ukupno, biraci_glasovalo,
                        listici_ukupno, listici_vazeci, listici_nevazeci,
                        bm_zatvoreno, bm_ukupno, datum, vrijeme, izbori_naziv
                 FROM rezultat
-                WHERE election='parlament-2024' AND krug=? AND level='zup'
+                WHERE election=? AND krug=? AND level='zup'
                   AND p1 IN ({','.join('?'*len(GEO_IJ))})""",
-            (krug, *GEO_IJ),
+            (election, krug, *GEO_IJ),
         ).fetchall()
         if not ij_rows:
             continue
@@ -581,7 +585,10 @@ def synthesize_parlament_rh(con: sqlite3.Connection) -> int:
         bm_ukupno = sum((r[7] or 0) for r in ij_rows)
         datum = max((r[8] or "") for r in ij_rows)
         vrijeme = max((r[9] or "") for r in ij_rows)
-        izbori_naziv = next((r[10] for r in ij_rows if r[10]), "Parlamentarni izbori 2024")
+        izbori_naziv = next(
+            (r[10] for r in ij_rows if r[10]),
+            f"Parlamentarni izbori {election.rsplit('-', 1)[-1]}",
+        )
         biraci_glasovalo_posto = (
             round(100.0 * biraci_glasovalo / biraci_ukupno, 2) if biraci_ukupno else None
         )
@@ -595,14 +602,14 @@ def synthesize_parlament_rh(con: sqlite3.Connection) -> int:
                 biraci_glasovalo, biraci_glasovalo_posto,
                 listici_ukupno, listici_vazeci, listici_nevazeci,
                 napomena, source_file)
-               VALUES ('parlament-2024', ?, '02', '00', '0000', '000', 'rh',
+               VALUES (?, ?, '02', '00', '0000', '000', 'rh',
                 ?, ?, ?,
                 '', 'UKUPNO RH (sintetizirano: IJ 001-011)', '',
                 ?, ?, ?, ?, ?, ?, ?, ?,
                 'Sintetiziran agregat: SUM po izbornim jedinicama 001-011 (geografske + inozemstvo). Manjine (IJ 012) nisu uključene.',
                 NULL)""",
             (
-                krug, izbori_naziv, datum, vrijeme,
+                election, krug, izbori_naziv, datum, vrijeme,
                 bm_zatvoreno, bm_ukupno, biraci_ukupno,
                 biraci_glasovalo, biraci_glasovalo_posto,
                 listici_ukupno, listici_vazeci, listici_nevazeci,
@@ -684,20 +691,22 @@ def main() -> int:
         total_err += err
         con.commit()
 
-    print("Allocating parlament-2024 seats (D'Hondt + manjine top-N) …")
-    n_alloc = allocate_parlament_seats(con)
-    print(f"  updated {n_alloc} IJ-level rezultat rows")
-    con.commit()
+    for parl in PARLAMENT_ELECTIONS:
+        print(f"Allocating {parl} seats (D'Hondt + manjine top-N) …")
+        n_alloc = allocate_parlament_seats(con, parl)
+        print(f"  updated {n_alloc} IJ-level rezultat rows")
+        con.commit()
 
     print("Cross-referencing parlament-2024 names with Sabor seating plan …")
     n_marked = mark_sabor_attendance(con)
     print(f"  flagged u_saboru for {n_marked} candidates")
     con.commit()
 
-    print("Synthesizing RH aggregate for parlament-2024 …")
-    n_synth = synthesize_parlament_rh(con)
-    print(f"  inserted {n_synth} synthetic RH rows")
-    con.commit()
+    for parl in PARLAMENT_ELECTIONS:
+        print(f"Synthesizing RH aggregate for {parl} …")
+        n_synth = synthesize_parlament_rh(con, parl)
+        print(f"  inserted {n_synth} synthetic RH rows")
+        con.commit()
 
     print("Rebuilding FTS …")
     for fts in ("rezultat_kandidat_fts", "rezultat_lista_fts"):
