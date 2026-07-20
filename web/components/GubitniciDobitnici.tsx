@@ -77,7 +77,8 @@ function PairSide({
       </div>
       <p className="tabular mt-0.5 truncate text-[11px] text-muted">
         <span className="font-semibold text-ink">{fmtInt(k.glasova)}</span>{" "}
-        glasova · {fmtPct(k.pct_biraci, 3)} b. tijela
+        glasova · {fmtPct(k.pct_izaslo, 3)} izašlih · {fmtPct(k.pct_biraci, 3)}{" "}
+        upisanih
       </p>
       <p className="truncate text-[11px] text-muted">
         <span
@@ -86,12 +87,21 @@ function PairSide({
           style={{ background: partyColor(k.stranka) }}
         />
         {left ? (
-          <>lista: {k.lista}</>
+          <>
+            lista: {k.lista} → <span className="font-semibold text-[#B42318]">0 % Sabora</span>
+          </>
         ) : (
           <>
             {k.sabor_stranka ? <span className="text-ink">{k.sabor_stranka}</span> : k.lista}
             {" · "}
-            {k.dhondt ? "D'Hondt mandat" : "zamjenik"}
+            {k.dhondt ? "D'Hondt mandat" : "zamjenik"} →{" "}
+            <span
+              className="tabular font-semibold text-[#2E8540]"
+              title={`1 mandat = ${fmtPct(k.pct_sabora, 2)} Sabora; podijeljeno s udjelom osobe među izašlima odnosno svim upisanim biračima`}
+            >
+              {fmtPct(k.pct_sabora, 2)} Sabora = vlast ×{fmtInt(k.vlast_izaslo)} /
+              ×{fmtInt(k.vlast_biraci)}
+            </span>
           </>
         )}
       </p>
@@ -143,7 +153,9 @@ export function GubitniciDobitnici({ ekstremi }: { ekstremi: FairnessEkstremi })
           sub={
             <>
               {fmtPct(gub.pct_izaslo, 2)} izašlih birača ({fmtPct(gub.pct_biraci, 2)}{" "}
-              biračkog tijela) → <strong className="text-[#B42318]">0 mandata</strong>
+              biračkog tijela) →{" "}
+              <strong className="text-[#B42318]">0 mandata = 0 % Sabora</strong> —
+              vlast ×0
             </>
           }
         />
@@ -157,7 +169,10 @@ export function GubitniciDobitnici({ ekstremi }: { ekstremi: FairnessEkstremi })
               biračkog tijela) →{" "}
               <strong className="text-[#2E8540]">
                 {dob.mandata} mandata = {fmtPct(dob.pct_sabora, 1)} Sabora
-              </strong>
+              </strong>{" "}
+              — vlast ×{(dob.vlast_izaslo ?? 0).toLocaleString("hr-HR")} naspram
+              izašlih, ×{(dob.vlast_biraci ?? 0).toLocaleString("hr-HR")} naspram
+              svih upisanih
             </>
           }
         />
@@ -179,11 +194,16 @@ export function GubitniciDobitnici({ ekstremi }: { ekstremi: FairnessEkstremi })
             sub={
               <>
                 {me.naziv}: {fmtInt(me.glasova)} glasova ={" "}
-                {fmtPct(me.pct_biraci, 3)} biračkog tijela, a drži 1 od{" "}
-                {ekstremi.denominatori.sabor} mandata ={" "}
-                {fmtPct(me.pct_sabora_mandata, 2)} Sabora — {""}
-                {(me.vlast_faktor ?? 0).toLocaleString("hr-HR")}× veći udio vlasti
-                nego glasova, četiri godine
+                {fmtPct(me.pct_izaslo, 3)} izašlih ({fmtPct(me.pct_biraci, 3)}{" "}
+                biračkog tijela), a drži 1 od {ekstremi.denominatori.sabor}{" "}
+                mandata = {fmtPct(me.pct_sabora_mandata, 2)} Sabora —{" "}
+                <strong>
+                  ×{(me.vlast_izaslo_faktor ?? 0).toLocaleString("hr-HR")} veći
+                  udio vlasti nego udio među izašlima, ×
+                  {(me.vlast_faktor ?? 0).toLocaleString("hr-HR")} naspram svih
+                  upisanih
+                </strong>{" "}
+                — četiri godine
               </>
             }
           />
@@ -232,17 +252,20 @@ export function GubitniciDobitnici({ ekstremi }: { ekstremi: FairnessEkstremi })
             Tablica: svi parovi s listama, udjelima i statusom
           </summary>
           <div className="mt-3 overflow-x-auto">
-            <table className="w-full min-w-[880px] text-left text-[13px]">
+            <table className="w-full min-w-[1080px] text-left text-[13px]">
               <thead>
                 <tr className="border-b border-line text-xs text-muted uppercase">
                   <th className="py-1.5 pr-2 text-right font-semibold">#</th>
                   <th className="py-1.5 pr-2 font-semibold">Bez Sabora</th>
                   <th className="py-1.5 pr-2 text-right font-semibold">Glasova</th>
-                  <th className="py-1.5 pr-2 text-right font-semibold">% b. tijela</th>
+                  <th className="py-1.5 pr-2 text-right font-semibold">% izašlih</th>
+                  <th className="py-1.5 pr-2 text-right font-semibold">% upisanih</th>
                   <th className="py-1.5 pr-2 text-center font-semibold">Omjer</th>
                   <th className="py-1.5 pr-2 font-semibold">U Saboru</th>
                   <th className="py-1.5 pr-2 text-right font-semibold">Glasova</th>
-                  <th className="py-1.5 pr-2 text-right font-semibold">% b. tijela</th>
+                  <th className="py-1.5 pr-2 text-right font-semibold">% izašlih</th>
+                  <th className="py-1.5 pr-2 text-right font-semibold">% upisanih</th>
+                  <th className="py-1.5 pr-2 text-right font-semibold">Vlast ×izašli/×upisani</th>
                   <th className="py-1.5 font-semibold">Stranka (sabor.hr) · status</th>
                 </tr>
               </thead>
@@ -257,6 +280,7 @@ export function GubitniciDobitnici({ ekstremi }: { ekstremi: FairnessEkstremi })
                       </span>
                     </td>
                     <td className="tabular py-1.5 pr-2 text-right">{fmtInt(p.gubitnik.glasova)}</td>
+                    <td className="tabular py-1.5 pr-2 text-right">{fmtPct(p.gubitnik.pct_izaslo, 3)}</td>
                     <td className="tabular py-1.5 pr-2 text-right">{fmtPct(p.gubitnik.pct_biraci, 3)}</td>
                     <td className="tabular py-1.5 pr-2 text-center font-semibold text-navy">
                       ×{p.faktor.toLocaleString("hr-HR")}
@@ -268,7 +292,11 @@ export function GubitniciDobitnici({ ekstremi }: { ekstremi: FairnessEkstremi })
                       </span>
                     </td>
                     <td className="tabular py-1.5 pr-2 text-right">{fmtInt(p.dobitnik.glasova)}</td>
+                    <td className="tabular py-1.5 pr-2 text-right">{fmtPct(p.dobitnik.pct_izaslo, 3)}</td>
                     <td className="tabular py-1.5 pr-2 text-right">{fmtPct(p.dobitnik.pct_biraci, 3)}</td>
+                    <td className="tabular py-1.5 pr-2 text-right font-semibold text-[#2E8540]">
+                      ×{fmtInt(p.dobitnik.vlast_izaslo)} / ×{fmtInt(p.dobitnik.vlast_biraci)}
+                    </td>
                     <td className="py-1.5">
                       {p.dobitnik.sabor_stranka ?? "—"} ·{" "}
                       {p.dobitnik.dhondt ? "D'Hondt" : "zamjenik"}
@@ -283,6 +311,10 @@ export function GubitniciDobitnici({ ekstremi }: { ekstremi: FairnessEkstremi })
         <p className="mt-4 max-w-4xl text-xs leading-relaxed text-muted">
           Denominatori: {fmtInt(ekstremi.denominatori.biraci)} upisanih birača
           (IJ I.–XI.), {fmtInt(ekstremi.denominatori.izaslo)} izašlo na izbore.
+          „Vlast" = udio jednog mandata u Saboru (
+          {fmtPct(ekstremi.denominatori.pct_sabora_mandat, 2)}) podijeljen s
+          udjelom osobe među izašlim biračima odnosno svim upisanima — koliko
+          je puta glas te osobe „teži" od prosječnog birača kojeg predstavlja.
           „Bez mjesta u Saboru" = bez D&apos;Hondtova mandata i bez mjesta u
           aktualnom sazivu (kandidati koji su mandat osvojili pa odbili — npr.
           ministri — nisu gubitnici i nisu u usporedbi). „Sjede u Saboru" ={" "}

@@ -414,6 +414,19 @@ među izašlima, agregatni ekstremi.
   službeni DIP PDF + sabornica; ista trojna metodologija kao za prve top
   liste). Puna tablica: `docs/verifikacija_gubitnici_dobitnici_2024.md`.
 
+### 2026-07-20 (nastavak 4) — faktor vlasti po osobi (izašli + upisani)
+
+Feedback: uz svaku osobu prikazati ekstrem udjela u Saboru naspram udjela
+među izašlim biračima I naspram svih upisanih. Novo u exportu (sve Python):
+`pct_sabora` po osobi (1 mandat = 0,66 %; 0 za gubitnike), `vlast_izaslo` i
+`vlast_biraci` po dobitniku (udio Sabora ÷ udio osobe), isti faktori na
+agregatima (dobitnici ukupno: vlast ×17,2 naspram izašlih, ×27,8 naspram
+upisanih) i u max ekstremu (Vuletić ×81 izašli / ×132 upisani). UI: po retku
+"… % izašlih · … % upisanih → 0 % Sabora" (gubitnik) odnosno "0,66 % Sabora
+= vlast ×N/×M" (dobitnik), definicija u fusnoti, tablica dobila stupce
+% izašlih i Vlast. Spot-check 26 → 27 (vlast faktori preračunati iz JSON-a).
+Osobe i glasovi nepromijenjeni — verifikacija 120/120 i dalje vrijedi.
+
 ## 9. Backlog v2+
 
 - **D1 pretraga kandidata** — verificirati aktualne D1 limite i FTS podršku

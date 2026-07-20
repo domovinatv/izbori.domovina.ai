@@ -749,14 +749,25 @@ def export_fairness(con: sqlite3.Connection, slug: str = "parlament-2024") -> di
     nat_izaslo = sum(r["biraci_glasovalo"] or 0 for r in ij_rows)
     rang_by_id = {c["id"]: i for i, c in indexed}
 
+    seat_share = round(100 / sabor_ukupno, 2) if sabor_ukupno else None
+
     def pair_cand(c: dict, seated: bool) -> dict:
         d = cand_row(c, rang_by_id[c["id"]])
         g = c["glasova"] or 0
         d["pct_biraci"] = round(100 * g / nat_biraci, 4) if nat_biraci else None
         d["pct_izaslo"] = round(100 * g / nat_izaslo, 4) if nat_izaslo else None
+        # Power factor: one seat's share of the Sabor vs this person's share
+        # of the turnout / the whole electorate. 0 for the unseated.
+        d["pct_sabora"] = seat_share if seated else 0
         if seated:
             mp = sabor_party_for(c["naziv"], sabor_mps)
             d["sabor_stranka"] = mp["stranka"] if mp else None
+            d["vlast_izaslo"] = (
+                round(seat_share / d["pct_izaslo"]) if d["pct_izaslo"] else None
+            )
+            d["vlast_biraci"] = (
+                round(seat_share / d["pct_biraci"]) if d["pct_biraci"] else None
+            )
         return d
 
     unseated_desc = [
@@ -796,8 +807,19 @@ def export_fairness(con: sqlite3.Connection, slug: str = "parlament-2024") -> di
     dob_tot["pct_sabora"] = (
         round(100 * len(parovi) / sabor_ukupno, 2) if sabor_ukupno else None
     )
+    dob_tot["vlast_izaslo"] = (
+        round(dob_tot["pct_sabora"] / dob_tot["pct_izaslo"], 1)
+        if dob_tot["pct_sabora"] and dob_tot["pct_izaslo"]
+        else None
+    )
+    dob_tot["vlast_biraci"] = (
+        round(dob_tot["pct_sabora"] / dob_tot["pct_biraci"], 1)
+        if dob_tot["pct_sabora"] and dob_tot["pct_biraci"]
+        else None
+    )
     gub_tot = totals("gubitnik")
     gub_tot["mandata"] = 0
+    gub_tot["pct_sabora"] = 0
     najslabiji = parovi[0]["dobitnik"] if parovi else None
     ekstremi = {
         "denominatori": {
@@ -805,6 +827,7 @@ def export_fairness(con: sqlite3.Connection, slug: str = "parlament-2024") -> di
             "izaslo": nat_izaslo,
             "sabor": sabor_ukupno,
             "geo_u_sazivu": len(seated_asc),
+            "pct_sabora_mandat": seat_share,
         },
         "parovi": parovi,
         "prag": {
@@ -827,12 +850,10 @@ def export_fairness(con: sqlite3.Connection, slug: str = "parlament-2024") -> di
                 "naziv": najslabiji["naziv"],
                 "glasova": najslabiji["glasova"],
                 "pct_biraci": najslabiji["pct_biraci"],
-                "pct_sabora_mandata": round(100 / sabor_ukupno, 2) if sabor_ukupno else None,
-                "vlast_faktor": (
-                    round((100 / sabor_ukupno) / najslabiji["pct_biraci"], 0)
-                    if sabor_ukupno and najslabiji["pct_biraci"]
-                    else None
-                ),
+                "pct_izaslo": najslabiji["pct_izaslo"],
+                "pct_sabora_mandata": seat_share,
+                "vlast_faktor": najslabiji["vlast_biraci"],
+                "vlast_izaslo_faktor": najslabiji["vlast_izaslo"],
             }
             if najslabiji
             else None
@@ -1370,6 +1391,18 @@ def spot_check(con: sqlite3.Connection) -> bool:
     add(
         "ekstremi: sabor.hr stranka razrijesena za sve dobitnike",
         sum(1 for p in eks["parovi"] if p["dobitnik"].get("sabor_stranka")),
+        len(eks["parovi"]),
+    )
+    add(
+        "ekstremi: vlast faktori dosljedni (svaki dobitnik)",
+        sum(
+            1
+            for p in eks["parovi"]
+            if p["dobitnik"]["vlast_biraci"]
+            == round(eks["denominatori"]["pct_sabora_mandat"] / p["dobitnik"]["pct_biraci"])
+            and p["dobitnik"]["vlast_izaslo"]
+            == round(eks["denominatori"]["pct_sabora_mandat"] / p["dobitnik"]["pct_izaslo"])
+        ),
         len(eks["parovi"]),
     )
     add(

@@ -176,6 +176,11 @@ export interface FairnessBrojke {
 export interface EkstremKandidat extends FairnessKandidat {
   pct_biraci: number | null;
   pct_izaslo: number | null;
+  /** One seat's share of the Sabor (0 for the unseated). */
+  pct_sabora: number;
+  /** Sabor share ÷ share of the turnout / electorate (seated only). */
+  vlast_izaslo?: number | null;
+  vlast_biraci?: number | null;
 }
 
 export interface EkstremPar {
@@ -191,10 +196,18 @@ export interface EkstremTotals {
   pct_izaslo: number | null;
   mandata: number;
   pct_sabora?: number | null;
+  vlast_izaslo?: number | null;
+  vlast_biraci?: number | null;
 }
 
 export interface FairnessEkstremi {
-  denominatori: { biraci: number; izaslo: number; sabor: number; geo_u_sazivu: number };
+  denominatori: {
+    biraci: number;
+    izaslo: number;
+    sabor: number;
+    geo_u_sazivu: number;
+    pct_sabora_mandat: number | null;
+  };
   parovi: EkstremPar[];
   prag: {
     parova: number;
@@ -212,8 +225,10 @@ export interface FairnessEkstremi {
     naziv: string;
     glasova: number;
     pct_biraci: number | null;
+    pct_izaslo: number | null;
     pct_sabora_mandata: number | null;
     vlast_faktor: number | null;
+    vlast_izaslo_faktor: number | null;
   } | null;
 }
 
