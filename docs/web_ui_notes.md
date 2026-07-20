@@ -66,6 +66,26 @@ Svjesno NIJE portano (backlog §9): FTS pretraga kandidata (čeka D1),
 razina biračkih mjesta (~35k datoteka — čeka D1), statistika baze,
 tehnički detalji p1/p2/p3.
 
+## Gotche iz sessiona 2026-07-20 (nastavci 2–4)
+
+- **Produkcijski grep protiv SSG HTML-a**: React static export ubacuje
+  `<!-- -->` između susjednih tekstualnih čvorova (granice JSX izraza), pa
+  `grep "vlast ×81"` ili `grep "stranka: HSS"` NE matcha („vlast ×<!-- -->81").
+  U curl provjerama matchati samo literale koji su u JSX-u jedan string,
+  nikad tekst koji prelazi granicu `{izraza}`. (Dva puta pojelo vrijeme.)
+- **Tailwind 4 translate**: `-translate-y-1/2` ide kroz CSS `translate`
+  svojstvo, a ne `transform` — inline `style={{transform}}` se KOMBINIRA s
+  klasom (offseti se zbroje, label završi izvan pruge). Za oznake unutar
+  bara koristiti `left`/`right` pozicioniranje, ne transform.
+- **Saziv ≠ 151**: snimka sabornice (2026-04-30) ima 150 zastupnika, od
+  toga 142 iz geografskih IJ — desni stupac gubitnici↔dobitnici zato broji
+  142 „sjede", navedeno u fusnoti sekcije.
+- **Verifikacija osoba je skriptirana**: `python3
+  scripts/verify_fairness_persons.py` (170 person-checkova: 25+25 top
+  liste + 60+60 parovi; DIP JSON preko source_file + DIP PDF + sabornica).
+  Pokrenuti nakon svake promjene fairness exporta; rezultat 2026-07-20:
+  0 failova (tablice: `docs/verifikacija_gubitnici_dobitnici_2024.md`).
+
 ## Podatkovni oprezi za buduće sekcije
 
 - `posto` u `rezultat_lista` zna biti NULL (npr. predsjednik-2019 krug 2)
