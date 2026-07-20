@@ -173,6 +173,50 @@ export interface FairnessBrojke {
   ostatak: { glasova: number; pct_biraci: number | null };
 }
 
+export interface EkstremKandidat extends FairnessKandidat {
+  pct_biraci: number | null;
+  pct_izaslo: number | null;
+}
+
+export interface EkstremPar {
+  gubitnik: EkstremKandidat;
+  dobitnik: EkstremKandidat;
+  faktor: number;
+}
+
+export interface EkstremTotals {
+  n: number;
+  glasova: number;
+  pct_biraci: number | null;
+  pct_izaslo: number | null;
+  mandata: number;
+  pct_sabora?: number | null;
+}
+
+export interface FairnessEkstremi {
+  denominatori: { biraci: number; izaslo: number; sabor: number; geo_u_sazivu: number };
+  parovi: EkstremPar[];
+  prag: {
+    parova: number;
+    gubitnik_min: number | null;
+    dobitnik_max: number | null;
+    crossover: {
+      gubitnik: { naziv: string; glasova: number };
+      dobitnik: { naziv: string; glasova: number };
+    } | null;
+  };
+  gubitnici_ukupno: EkstremTotals;
+  dobitnici_ukupno: EkstremTotals;
+  omjer_ukupno: number | null;
+  max_ekstrem: {
+    naziv: string;
+    glasova: number;
+    pct_biraci: number | null;
+    pct_sabora_mandata: number | null;
+    vlast_faktor: number | null;
+  } | null;
+}
+
 export interface Fairness {
   election: string;
   propali_rh: {
@@ -216,6 +260,7 @@ export interface Fairness {
   gubitnici: FairnessKandidat[];
   odbili: { ukupno: number; od: number; kandidati: FairnessKandidat[] };
   namjestenici: FairnessKandidat[];
+  ekstremi: FairnessEkstremi;
   sabor_po_pref: {
     preklapanje: number;
     novi: number;

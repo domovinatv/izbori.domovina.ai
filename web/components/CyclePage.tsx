@@ -167,10 +167,13 @@ export async function CyclePage({
               kicker="Preferencijalni glasovi"
               title="Najveći gubitnici ↔ najveći dobitnici"
             >
-              <GubitniciDobitnici
-                gubitnici={fairness.gubitnici}
-                namjestenici={fairness.namjestenici}
-              />
+              <p className="mb-4 max-w-3xl text-sm text-muted">
+                Svaki redak je par: kandidat bez mjesta u Saboru nasuprot
+                zastupniku koji sjedi — a ima manje preferencijalnih glasova od
+                njega. Lista ide do matematičkog preloma: točke nakon koje
+                neizabrani više nemaju više glasova od izabranih.
+              </p>
+              <GubitniciDobitnici ekstremi={fairness.ekstremi} />
             </Section>
           </>
         ) : null}

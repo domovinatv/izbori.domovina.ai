@@ -741,6 +741,104 @@ def export_fairness(con: sqlite3.Connection, slug: str = "parlament-2024") -> di
         k["sabor_stranka"] = mp["stranka"] if mp else None
         k["sabor_klub"] = mp["klub"] if mp else None
 
+    # ── Full loser↔winner pairing down to the mathematical breakeven ───────
+    # Pair the i-th best unseated candidate (no D'Hondt mandate, not in the
+    # current saziv) with the i-th weakest seated MP, while the unseated one
+    # has strictly MORE preferential votes. The last such pair defines the
+    # breakeven; the pair count is the objective size of the distortion.
+    nat_izaslo = sum(r["biraci_glasovalo"] or 0 for r in ij_rows)
+    rang_by_id = {c["id"]: i for i, c in indexed}
+
+    def pair_cand(c: dict, seated: bool) -> dict:
+        d = cand_row(c, rang_by_id[c["id"]])
+        g = c["glasova"] or 0
+        d["pct_biraci"] = round(100 * g / nat_biraci, 4) if nat_biraci else None
+        d["pct_izaslo"] = round(100 * g / nat_izaslo, 4) if nat_izaslo else None
+        if seated:
+            mp = sabor_party_for(c["naziv"], sabor_mps)
+            d["sabor_stranka"] = mp["stranka"] if mp else None
+        return d
+
+    unseated_desc = [
+        c for _, c in indexed if c["id"] not in mandate_ranks and not c["u_saboru"]
+    ]  # `indexed` is already ordered by votes desc
+    seated_asc = sorted(
+        (c for _, c in indexed if c["u_saboru"]), key=lambda c: c["glasova"] or 0
+    )
+    parovi = []
+    crossover = None
+    for g, s in zip(unseated_desc, seated_asc):
+        if (g["glasova"] or 0) <= (s["glasova"] or 0):
+            crossover = {
+                "gubitnik": {"naziv": g["naziv"], "glasova": g["glasova"]},
+                "dobitnik": {"naziv": s["naziv"], "glasova": s["glasova"]},
+            }
+            break
+        parovi.append(
+            {
+                "gubitnik": pair_cand(g, seated=False),
+                "dobitnik": pair_cand(s, seated=True),
+                "faktor": round((g["glasova"] or 0) / max(s["glasova"] or 1, 1), 2),
+            }
+        )
+
+    def totals(kljuc: str) -> dict:
+        glas = sum(p[kljuc]["glasova"] or 0 for p in parovi)
+        return {
+            "n": len(parovi),
+            "glasova": glas,
+            "pct_biraci": round(100 * glas / nat_biraci, 3) if nat_biraci else None,
+            "pct_izaslo": round(100 * glas / nat_izaslo, 3) if nat_izaslo else None,
+        }
+
+    dob_tot = totals("dobitnik")
+    dob_tot["mandata"] = len(parovi)
+    dob_tot["pct_sabora"] = (
+        round(100 * len(parovi) / sabor_ukupno, 2) if sabor_ukupno else None
+    )
+    gub_tot = totals("gubitnik")
+    gub_tot["mandata"] = 0
+    najslabiji = parovi[0]["dobitnik"] if parovi else None
+    ekstremi = {
+        "denominatori": {
+            "biraci": nat_biraci,
+            "izaslo": nat_izaslo,
+            "sabor": sabor_ukupno,
+            "geo_u_sazivu": len(seated_asc),
+        },
+        "parovi": parovi,
+        "prag": {
+            "parova": len(parovi),
+            "gubitnik_min": parovi[-1]["gubitnik"]["glasova"] if parovi else None,
+            "dobitnik_max": parovi[-1]["dobitnik"]["glasova"] if parovi else None,
+            "crossover": crossover,
+        },
+        "gubitnici_ukupno": gub_tot,
+        "dobitnici_ukupno": dob_tot,
+        "omjer_ukupno": (
+            round(gub_tot["glasova"] / dob_tot["glasova"], 2)
+            if dob_tot["glasova"]
+            else None
+        ),
+        # The single wildest case: one seat (100/151 = 0.66 % of the Sabor) held
+        # on a vote share of ~0.005 % of the electorate.
+        "max_ekstrem": (
+            {
+                "naziv": najslabiji["naziv"],
+                "glasova": najslabiji["glasova"],
+                "pct_biraci": najslabiji["pct_biraci"],
+                "pct_sabora_mandata": round(100 / sabor_ukupno, 2) if sabor_ukupno else None,
+                "vlast_faktor": (
+                    round((100 / sabor_ukupno) / najslabiji["pct_biraci"], 0)
+                    if sabor_ukupno and najslabiji["pct_biraci"]
+                    else None
+                ),
+            }
+            if najslabiji
+            else None
+        ),
+    }
+
     # ── 'Sabor elected like a president': top 143 by preferential votes ────
     top143 = [c for _, c in indexed[:143]]
     top143_ids = {c["id"] for c in top143}
@@ -808,6 +906,7 @@ def export_fairness(con: sqlite3.Connection, slug: str = "parlament-2024") -> di
         "gubitnici": gubitnici,
         "odbili": {"ukupno": len(odbili), "od": 143, "kandidati": odbili},
         "namjestenici": namjestenici,
+        "ekstremi": ekstremi,
         "sabor_po_pref": {
             "preklapanje": len(top143_ids & actual_ids),
             "novi": len(top143_ids - actual_ids),
@@ -1219,6 +1318,68 @@ def spot_check(con: sqlite3.Connection) -> bool:
         "fairness namjestenici: sabor.hr stranka razrijesena za svih 25",
         sum(1 for k in fair["namjestenici"] if k.get("sabor_stranka")),
         len(fair["namjestenici"]),
+    )
+    eks = fair["ekstremi"]
+    add(
+        "ekstremi: svaki par gubitnik > dobitnik po glasovima",
+        sum(
+            1
+            for p in eks["parovi"]
+            if (p["gubitnik"]["glasova"] or 0) > (p["dobitnik"]["glasova"] or 0)
+        ),
+        len(eks["parovi"]),
+    )
+    add(
+        "ekstremi: svi gubitnici u parovima potvrdjeni u bazi (glasovi, u_saboru=0)",
+        sum(
+            1
+            for p in eks["parovi"]
+            if cand_facts(p["gubitnik"]) == (p["gubitnik"]["glasova"], 0)
+        ),
+        len(eks["parovi"]),
+    )
+    add(
+        "ekstremi: svi dobitnici u parovima potvrdjeni u bazi (glasovi, u_saboru=1)",
+        sum(
+            1
+            for p in eks["parovi"]
+            if cand_facts(p["dobitnik"]) == (p["dobitnik"]["glasova"], 1)
+        ),
+        len(eks["parovi"]),
+    )
+    add(
+        "ekstremi: crossover zaista ispod praga",
+        bool(
+            eks["prag"]["crossover"] is None
+            or eks["prag"]["crossover"]["gubitnik"]["glasova"]
+            <= eks["prag"]["crossover"]["dobitnik"]["glasova"]
+        ),
+        True,
+    )
+    add(
+        "ekstremi: zbrojevi parova konzistentni",
+        (
+            eks["gubitnici_ukupno"]["glasova"],
+            eks["dobitnici_ukupno"]["glasova"],
+        ),
+        (
+            sum(p["gubitnik"]["glasova"] or 0 for p in eks["parovi"]),
+            sum(p["dobitnik"]["glasova"] or 0 for p in eks["parovi"]),
+        ),
+    )
+    add(
+        "ekstremi: sabor.hr stranka razrijesena za sve dobitnike",
+        sum(1 for p in eks["parovi"] if p["dobitnik"].get("sabor_stranka")),
+        len(eks["parovi"]),
+    )
+    add(
+        "ekstremi: izaslo == SUM(biraci_glasovalo) IJ 1-11",
+        eks["denominatori"]["izaslo"],
+        one(
+            """SELECT sum(biraci_glasovalo) FROM rezultat
+               WHERE election='parlament-2024' AND vrsta='02' AND level='zup'
+                 AND CAST(p1 AS INT) BETWEEN 1 AND 11"""
+        ),
     )
     grop01 = json.load(open(OUT_DIR / "grop" / "predsjednik-2024" / "01.json"))
     add(

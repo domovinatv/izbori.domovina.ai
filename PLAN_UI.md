@@ -378,6 +378,42 @@ Napomena: manjinski zastupnici (8) nisu u usporedbi — biraju se na posebnim
 listama bez preferencijalnog glasovanja (lista JE kandidat); navedeno u
 fusnoti sekcije.
 
+### 2026-07-20 (nastavak 3) — gubitnici↔dobitnici: puna lista do preloma, upareni retci
+
+Feedback korisnika: poravnati stupce, prikazati cijelu listu (ne top N),
+matematički prelom, faktor između svakog retka, udjeli u biračkom tijelu i
+među izašlima, agregatni ekstremi.
+
+- **Nova definicija prikaza** (`fairness.json::ekstremi`, sve u
+  `export_web.py`): i-ti najbolji kandidat BEZ mandata i bez mjesta u sazivu
+  uparuje se s i-tim najslabijim zastupnikom koji sjedi, dok god neizabrani
+  ima strogo više preferencijalnih glasova. **60 parova**; prelom nakon 60.
+  para (1.620 > 1.569; 61. bi bio Špika 1.599 < Zadro 1.635 — prikazano u
+  UI-ju). Kandidati koji su mandat osvojili pa odbili (ministri itd.) nisu
+  „gubitnici" i isključeni su.
+- **Agregati** (sve u exportu, u UI-ju kao stat kartice): 60 gubitnika =
+  173.594 glasova = 7,96 % izašlih (4,93 % biračkog tijela) → 0 mandata;
+  60 dobitnika = 50.282 glasova = 2,30 % izašlih (1,43 % biračkog tijela) →
+  60 mandata = **39,74 % Sabora**; ukupni omjer **×3,45**; najveći ekstrem
+  Vuletić 176 glasova = 0,005 % biračkog tijela → 1/151 mandata = 0,66 %
+  Sabora = **×132 veći udio vlasti nego glasova**. Denominatori: 3.523.270
+  upisanih, 2.181.944 izašlih (IJ 001–011).
+- **UI**: tornado layout — grid `[1fr 52px 1fr]`, lijeve pruge rastu zdesna
+  ulijevo, desne slijeva udesno, faktor (×35 … ×1,03) u sredini; retci
+  poravnati po konstrukciji (uvodni opisi maknuti iz stupaca). Zajednička
+  skala glasova, izravne oznake (glasovi + % biračkog tijela na 3 decimale),
+  status D'Hondt/zamjenik + stvarna stranka sa sabor.hr, potpuna tablica u
+  `<details>`, prelom kao istaknuta bilješka ispod liste.
+- **Napomena o sazivu**: u snimci sabornice 150 zastupnika, od toga 142 iz
+  geografskih IJ — zato desna strana broji 142 „sjede", navedeno u fusnoti.
+- Spot-check proširen 19 → **26 provjera** (svih 26 OK): svaki par
+  gubitnik>dobitnik, svih 60+60 osoba potvrđeno u bazi (glasovi + u_saboru),
+  crossover ispod praga, zbrojevi parova, sabor.hr stranka za svih 60,
+  izašlo == SQL.
+- **Verifikacija osoba: 120/120 OK, 0 ispravaka** (mirror DIP JSON +
+  službeni DIP PDF + sabornica; ista trojna metodologija kao za prve top
+  liste). Puna tablica: `docs/verifikacija_gubitnici_dobitnici_2024.md`.
+
 ## 9. Backlog v2+
 
 - **D1 pretraga kandidata** — verificirati aktualne D1 limite i FTS podršku
