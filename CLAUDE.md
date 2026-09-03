@@ -16,6 +16,11 @@ python3 scripts/build_index.py
 
 # Aplikacija
 streamlit run app.py            # http://localhost:8501
+
+# Izborni simulator (web) — export pa obavezno regresijski test
+python3 scripts/export_simulator.py --check
+node web/lib/sim/verify.mjs     # 109 provjera, mora proći prije diranja UI-a
+cd web && npm run dev           # http://localhost:3000/simulator
 ```
 
 ## Konvencije
@@ -33,6 +38,9 @@ streamlit run app.py            # http://localhost:8501
 - Manjinski zastupnici sjede u `rezultat_lista` (lista *je* kandidat), ne u `rezultat_kandidat`. Kolona `u_saboru` je na `rezultat_kandidat` pa ne pokriva manjine — to je dizajnerska odluka, ne bug.
 - Mirrorani su i povijesni JSON ciklusi: `parlament-2020`, `predsjednik-2019`, `lokalni-2021`, `euparlament-2019`. D'Hondt raspodjela mandata i sintetički RH-agregat rade za oba saborska ciklusa (2020 i 2024). Detalji i verifikacija: `docs/mirror_povijest_notes.md`.
 - Repo je javan na `github.com/domovinatv/izbori.domovina.ai`. Pretpostavi da se commit poruke i kod mogu javno čitati.
+- **Izborni simulator** (`/simulator`) je jedina iznimka od pravila „svi izračuni u Pythonu": matematika je u `web/lib/sim/` jer interaktivni recompute ne može ići kroz build. Iznimka vrijedi samo za taj direktorij i uvjetovana je `node web/lib/sim/verify.mjs` koji dokazuje da engine reproducira službeni rezultat 2024. i 2020. mandat za mandat.
+- Pravna činjenična osnova izbornog sustava (članci ZIZHS-a, odluke Ustavnog suda, provjerene brojke, popis nepotvrđenog) je u `docs/izborni_sustav_cinjenice.md`. Nijedna brojka koja ondje nije potvrđena ne smije u UI.
+- „Propali glasovi" imaju **tri** različite točne definicije koje daju 194.147 / 236.881 / 270.135 za 2024. Uvijek navesti koju koristiš — vidi `docs/izborni_sustav_cinjenice.md` §9.
 
 ## Šira dokumentacija
 

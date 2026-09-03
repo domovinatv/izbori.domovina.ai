@@ -100,3 +100,92 @@ tehnički detalji p1/p2/p3.
 - Mandat po D'Hondtu ≠ sjedi u Saboru: 48 izabranih drži mandat u
   mirovanju; `u_saboru` odražava trenutni saziv (snapshot
   `sifarnici/sabor_2024_seating.json`).
+
+---
+
+## Izborni simulator (`/simulator`)
+
+*Dodano 2026-09-03.*
+
+### Runbook
+
+```bash
+python3 scripts/export_simulator.py --check   # SQLite → web/public/data/simulator/
+node web/lib/sim/verify.mjs                   # 109 provjera, MORA proći
+cd web && npm run dev                         # http://localhost:3000/simulator
+```
+
+`verify.mjs` je uvjet, ne formalnost: dokazuje da TypeScript engine reproducira
+službeni rezultat 2024. i 2020. **mandat za mandat, po listi i po jedinici**.
+To je ono što opravdava odstupanje od pravila „svi izračuni u Pythonu"
+(`PLAN_UI.md` §2). Ako padne, ne diraj UI dok ne prođe.
+
+Node ≥ 22.6 sam skida TypeScript tipove pri importu, pa `verify.mjs` testira
+**isti** kod koji ide u bundle. `lib/sim/ts-loader.mjs` samo pomiruje
+extensionless importe (koje traži `moduleResolution: "bundler"`) s Nodeovim
+resolverom — nije transpiler.
+
+### Zašto je matematika u TS-u
+
+Interaktivni simulator mora preračunati raspodjelu na svaki pomak klizača.
+Podaci su sitni (165 lista + 2.277 kandidata za 2024. = 89 KB), pa se oba
+ciklusa čitaju u build-timeu i inline-aju — bez fetcha, bez loading statea.
+
+### Gotchas
+
+- **`toFixed()` daje točku, ne zarez.** Sve decimalne vrijednosti idu kroz
+  `fmtDec()` iz `lib/format.ts`. Prvi prolaz je pokazivao „7.04" pored „13,1 %".
+- **Hrvatski navodnici u TS stringu.** `„…"` mora završiti U+201C, a ne ASCII
+  `"` — ASCII zatvara string literal i Node javlja
+  `ERR_INVALID_TYPESCRIPT_SYNTAX`. Pojelo jedan build.
+- **Root layout ima `min-h-screen` na `<body>`.** `/simulator` iz toga izlazi
+  preko `fixed inset-0 overflow-hidden` u vlastitom `app/simulator/layout.tsx`,
+  a NE mijenjanjem `globals.css` — to bi razbilo 9 stranica koje scrollaju.
+- **Za nula unutarnjeg scrolla treba ≥ 957 px visine viewporta.** Na 1080p
+  monitoru to prolazi i u prozoru (~990) i fullscreen. Ispod toga scrollaju
+  samo dvije lijeve ploče, ne stranica.
+- **Jedinstvena IJ mora spajati po obitelji, ne po nazivu liste.** Spajanje po
+  nazivu (kako radi `export_web.py::export_fairness`) razbije koaliciju koja je
+  u različitim jedinicama nastupala pod različitim imenom na više podpražnih
+  lista i onda je izbriše: DP 2024. je pokazivao **0 mandata na 9,6 % glasova**.
+  To je artefakt imenovanja, ne svojstvo sustava.
+- **Kompenzacijski mandati moraju biti korektivni, ne paralelni.** Paralelna
+  D'Hondt raspodjela nagrađuje iste velike liste koje je nagradila i ona po
+  jedinicama, pa nerazmjernost *raste* (7,04 → 7,20). Korektivna raspodjela
+  (cilj = razmjeran udio u uvećanom saboru, dodjela onima koji zaostaju) daje
+  7,04 → 5,19.
+
+### Nalazi vrijedni citiranja
+
+- **Spuštanje praga na 0 % ne mijenja nijedan mandat.** Efektivni prag u
+  14-mandatnoj jedinici je ~5,5–6,5 %, dakle već viši od zakonskih 5 %.
+  Prag djeluje samo prema gore (10 % → Gallagher 7,04 → 11,46).
+- **Pet lista je 2024. prešlo 5 % i ostalo bez mandata** (npr. MOŽEMO!+Srđ je
+  grad, IJ X, 11.407 = 5,27 %).
+- **HDZ + DP = 75**, jedan mandat manje od većine — stvarna situacija 2024.
+
+### Tri različite definicije „propalih glasova"
+
+Ne miješati; sve tri su točne i odgovaraju na različita pitanja (puni izračun i
+izvori: `docs/izborni_sustav_cinjenice.md` §9):
+
+| Definicija | 2024, IJ I–X |
+|---|---:|
+| Rollup po nacionalnom nazivu liste — **definicija `fairness.json`** | 194.147 (9,15 %) |
+| Liste ispod praga, po jedinici | 236.881 (11,39 %) |
+| Liste bez ijednog mandata, po jedinici | 270.135 (12,98 %) |
+
+Brojka „194.000" koja kruži javno **potječe iz ovog repoa**, ne iz DIP-a.
+Simulator prikazuje drugu i treću, s eksplicitnim nazivnikom.
+
+### Što simulator NE radi
+
+Ne predviđa glasove i nema model javnog mnijenja. Klizači pomaka su
+pretpostavka koju zadaje korisnik; rezultat je determinističa posljedica te
+pretpostavke, ne prognoza. Zato svaki broj u UI-u nosi oznaku podrijetla
+(`ZAKON` / `PODACI` / `KONTRAFAKTUAL` / `PRETPOSTAVKA` / `KONSTRUKCIJA`).
+
+Također: broj parova gubitnik↔dobitnik u simulatoru (45 za 2024.) **nije** isti
+kao u `fairness.json` (60). Simulator pita *tko je osvojio mandat po zakonu*,
+`fairness.json` pita *tko danas sjedi u Saboru* (`u_saboru`, nakon 48 odbijenih
+mandata). Različita pitanja, oba točna.
