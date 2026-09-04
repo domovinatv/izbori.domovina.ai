@@ -182,10 +182,14 @@ export function SimShell({ cycles }: { cycles: RawCycle[] }) {
               </label>
 
               {preset ? (
-                <span className="flex min-w-0 items-center gap-1.5">
+                <span className="flex min-w-0 flex-1 items-center gap-1.5">
                   <SourceBadge source={preset.oznaka} />
+                  {/* Two lines fit inside the 46px bar; the full text stays in
+                      the tooltip. Without flex-1 + min-w-0 on both the wrapper
+                      and the text, this grew past its share of the row and ran
+                      under the neighbouring select. */}
                   <span
-                    className="truncate text-[10px] text-hero-ink/75"
+                    className="line-clamp-2 min-w-0 text-[10px] leading-tight text-hero-ink/75"
                     title={preset.opis}
                   >
                     {preset.opis}
