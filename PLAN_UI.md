@@ -24,6 +24,7 @@ bude dostupna u Cloudflare accountu).
 | Data layer v1 | **Statički JSON eksporti** iz `data/izbori.sqlite` u `web/public/data/` | baza je ~0.5–1 GiB i gitignorana — ne ide u cloud; agregati su nekoliko MB, brzi i besplatni |
 | Export skripta | `scripts/export_web.py` — **NOVA datoteka**, ne mijenjati postojeće skripte | paralelni sessioni (S1–S6) rade na `mirror.py`/`build_index.py` |
 | Izračuni | SVI izračuni (D'Hondt, agregati, trendovi) rade se u exportu (Python), frontend samo prikazuje | jedna istina, bez duplikacije logike u TS-u |
+| **Iznimka: `/simulator`** | Izborna matematika u TypeScriptu (`web/lib/sim/`), export šalje samo sirove ulaze | interaktivni recompute ne može ići kroz build; iznimka je plaćena regresijskim testom `web/lib/sim/verify.mjs` koji dokazuje da TS engine reproducira službeni rezultat 2024. i 2020. mandat za mandat. Vrijedi SAMO za `web/lib/sim/`; ostale stranice ostaju na Python exportu. |
 | Pretraga kandidata | v2 (Cloudflare D1) — NIJE u v1 | limiti D1/FTS5 se moraju verificirati kroz docs prije obećavanja |
 | UI jezik | hrvatski | konvencija repoa |
 

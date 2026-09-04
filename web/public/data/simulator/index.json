@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-09-04T05:54:53+00:00",
+  "cycles": [
+    {
+      "slug": "parlament-2024",
+      "godina": 2024,
+      "label": "Zastupnički izbori 2024.",
+      "file": "parlament-2024.json"
+    },
+    {
+      "slug": "parlament-2020",
+      "godina": 2020,
+      "label": "Zastupnički izbori 2020.",
+      "file": "parlament-2020.json"
+    }
+  ]
+}

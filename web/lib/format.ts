@@ -34,3 +34,10 @@ export const TYPE_LABELS: Record<string, string> = {
   lokalni: "Lokalni",
   referendum: "Referendum",
 };
+
+/** Plain decimal in Croatian notation (comma), for indices and ratios. */
+export function fmtDec(n: number | null | undefined, digits: 1 | 2 | 3 = 2): string {
+  if (n == null || !Number.isFinite(n)) return "–";
+  const f = digits === 1 ? nf1 : digits === 2 ? nf2 : nf3;
+  return f.format(n);
+}
