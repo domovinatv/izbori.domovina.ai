@@ -133,16 +133,10 @@ export function SimShell({ cycles }: { cycles: RawCycle[] }) {
             <header className="flex h-[46px] shrink-0 items-center gap-3 rounded-md bg-navy-deep px-3 text-hero-ink">
               <Link
                 href="/"
-                className="flex items-center gap-2 transition-opacity hover:opacity-80"
+                className="shrink-0 font-serif text-[15px] font-bold text-white transition-opacity hover:opacity-80"
                 title="Natrag na izbori.domovina.ai"
               >
-                <span
-                  className="tricolor-rule tricolor-rule--dark !w-8"
-                  aria-hidden="true"
-                />
-                <span className="font-serif text-[15px] font-bold text-white">
-                  Izborni simulator
-                </span>
+                Izborni simulator
               </Link>
 
               <span className="h-4 w-px bg-hero-ink/25" aria-hidden="true" />
@@ -196,15 +190,6 @@ export function SimShell({ cycles }: { cycles: RawCycle[] }) {
                   </span>
                 </span>
               ) : null}
-
-              <button
-                type="button"
-                onClick={reset}
-                disabled={!izmijenjeno}
-                className="ml-auto shrink-0 rounded-[4px] border border-hero-ink/30 px-2 py-1 text-[11px] transition-colors enabled:hover:border-white enabled:hover:text-white disabled:opacity-35"
-              >
-                ⟲ stvarni sustav
-              </button>
             </header>
 
             <KpiStrip res={res} />
@@ -226,7 +211,7 @@ export function SimShell({ cycles }: { cycles: RawCycle[] }) {
                 </button>
               ))}
               {res.napomene.length > 0 ? (
-                <span className="ml-2 flex min-w-0 items-center gap-1.5">
+                <span className="ml-2 flex min-w-0 flex-1 items-center gap-1.5">
                   <SourceBadge source="PRETPOSTAVKA" />
                   <span
                     className="truncate text-[10px] text-muted"
@@ -236,6 +221,16 @@ export function SimShell({ cycles }: { cycles: RawCycle[] }) {
                   </span>
                 </span>
               ) : null}
+
+              <button
+                type="button"
+                onClick={reset}
+                disabled={!izmijenjeno}
+                title="Vrati sva pravila i pomake na zakonsko stanje — rezultat je tada identičan službenom."
+                className="ml-auto shrink-0 rounded-[4px] border px-2.5 py-1 text-[11px] transition-colors enabled:border-accent/40 enabled:text-accent enabled:hover:border-accent enabled:hover:bg-accent enabled:hover:text-white disabled:border-line disabled:text-muted disabled:opacity-45"
+              >
+                ⟲ stvarni sustav
+              </button>
             </div>
 
             <div className="min-h-0 flex-1">
