@@ -428,6 +428,48 @@ upisanih) i u max ekstremu (Vuletić ×81 izašli / ×132 upisani). UI: po retku
 % izašlih i Vlast. Spot-check 26 → 27 (vlast faktori preračunati iz JSON-a).
 Osobe i glasovi nepromijenjeni — verifikacija 120/120 i dalje vrijedi.
 
+### Session 5 — izborni simulator (2026-09-03/04)
+
+Polazište su bila **dva prompta koje su napisali Gemini modeli**, bez pristupa
+repou i bez provjere zakona. Prije koda su provjereni protiv baze i primarnih
+izvora (zakon.hr, NN, izbori.hr) — puna činjenična osnova s citatima je u
+`docs/izborni_sustav_cinjenice.md`, runbook i zamke u `docs/web_ui_notes.md`.
+
+**Što je u promptovima bilo krivo:**
+
+| Tvrdnja | Stvarno |
+|---|---|
+| „194.000 propalih glasova" | Točno, ali to je **brojka iz ovog repoa** (`fairness.json`, darežljiva definicija). Po jedinicama 236.881 / 270.135. |
+| Alarm na amplifikaciji >1,8× | Stvarni maksimum u RH je **1,24×** — alarm se ne bi upalio nikad. |
+| „Gerrymandering" ako cijena mandata >1,25× | Zakonski test je *birača*/mandat = 1,064× (uredno). 1,333× je razlika u **odazivu**. |
+| Streamlit | Ne može 100vh dashboard bez scrolla; ruta u postojećem Next.js appu može. |
+| Izbori „svibanj 2028." | Nije rok. Vanjski ustavni limit je ~15. 7. 2028. |
+
+**Odstupanje od §2 (svi izračuni u Pythonu).** Interaktivni recompute ne može
+kroz build, pa matematika živi u `web/lib/sim/`. Iznimka je plaćena s
+`node web/lib/sim/verify.mjs` — 109 provjera, uključujući reprodukciju
+službenog rezultata 2024. i 2020. **mandat za mandat, po listi i po jedinici**.
+Vrijedi samo za taj direktorij.
+
+**Layout.** Prvo je bio header preko cijele širine pa tri stupca ispod; lijeve
+ploče su scrollale. Matija je tražio da lijevi stupac ide punom visinom, a
+header samo nad sredinom — to vraća 46 px i miče scroll. Izmjereno: prije je
+trebalo 965 px visine za nula scrolla, sada **0 px preljeva na 823 px**.
+Ispod `lg` ide `MobileNotice` sa skicom desktop rasporeda i obrazloženjem;
+mobilni dizajn je svjesno odgođen kao **zaseban** dizajn, ne stisnuti desktop.
+
+**Nalazi koje je engine iznio:** spuštanje praga na 0 % ne mijenja nijedan
+mandat (efektivni prag ~5,5–6,5 % je već viši od zakonskih 5 %); pet lista je
+2024. prešlo 5 % i ostalo bez mandata; HDZ+DP = 75, jedan od većine.
+
+**Dva buga uhvaćena tek u pregledniku:** hidracijski mismatch na svakom
+mandatu u luku (`Math.cos/sin` nisu bit-identični Node vs V8 — koordinate se
+sada zaokružuju); i klizač odaziva koji je čitao „61,9 % 61,9 %" jer je baza
+bila zaokružena na drugu preciznost od koraka klizača.
+
+**Deploy:** `4f78c39` na main, live na izbori.domovina.ai/simulator
+(Version ID `20470e07-2feb-4c43-986c-f3268e9bd4f2`).
+
 ## 9. Backlog v2+
 
 - **D1 pretraga kandidata** — verificirati aktualne D1 limite i FTS podršku
@@ -437,3 +479,6 @@ Osobe i glasovi nepromijenjeni — verifikacija 120/120 i dalje vrijedi.
 - **OG image generator** po ciklusu (social sharing).
 - **Usporedni mod** — dva ciklusa side-by-side sa swing strelicama.
 - **i18n EN** — engleski toggle za međunarodnu publiku.
+- **Mobilni dizajn simulatora** — zaseban dizajn (npr. korak-po-korak: pravila → rezultat → jedinice), ne responzivni stisnuti desktop. Trenutno stoji `MobileNotice`.
+- **`SeatArc.tsx` dijeli `seatSlots()` sa simulatorom** i vjerojatno ima isti hidracijski mismatch (nije provjereno) — popraviti zaokruživanjem koordinata kao u `components/sim/Hemicycle.tsx`.
+- **Simulator za starije cikluse** — traži S2 (CSV mirror 2003–2017); engine i export su spremni, treba samo `parlament-{2003..2016}` u istom obliku.

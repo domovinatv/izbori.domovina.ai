@@ -189,3 +189,18 @@ Također: broj parova gubitnik↔dobitnik u simulatoru (45 za 2024.) **nije** is
 kao u `fairness.json` (60). Simulator pita *tko je osvojio mandat po zakonu*,
 `fairness.json` pita *tko danas sjedi u Saboru* (`u_saboru`, nakon 48 odbijenih
 mandata). Različita pitanja, oba točna.
+
+### Otvoreno nakon ovog sessiona
+
+- **`components/charts/SeatArc.tsx` vjerojatno ima isti hidracijski mismatch.**
+  Dijeli originalni `seatSlots()` iz kojeg je preslikan simulatorov luk, a
+  `Math.cos/Math.sin` nisu bit-identični između Nodea i V8. U simulatoru je
+  riješeno zaokruživanjem koordinata na 3 decimale
+  (`components/sim/Hemicycle.tsx`, helper `px()`). **Nije provjereno** na
+  postojećim stranicama — provjeriti konzolu na `/parlament-2024`.
+- **Prag u XI. izbornoj jedinici** je prekidač s defaultom „primjenjuje se".
+  Tekstualno stoji, ali je izričita uputnica na čl. 41 obrisana 2015. i nikad
+  nije bilo ishodovno relevantno. Ako se nađe DIP dokument koji to razrješava,
+  maknuti prekidač.
+- **Mobilni dizajn** stoji na `MobileNotice`. Kad se radi, radi se kao zaseban
+  tok, ne kao responzivni desktop.
