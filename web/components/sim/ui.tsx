@@ -119,11 +119,18 @@ export function Slider({
   return (
     <label className={`block ${disabled ? "opacity-40" : ""}`}>
       <span className="flex items-baseline justify-between gap-2">
-        <span className="text-[11px] text-ink">{label}</span>
-        <span
-          className={`tabular text-[11px] font-semibold ${odstupa ? "text-accent" : "text-navy"}`}
-        >
-          {format(value)}
+        <span className="truncate text-[11px] text-ink">{label}</span>
+        <span className="flex shrink-0 items-baseline gap-1">
+          {odstupa ? (
+            <span className="text-[9px] text-muted line-through">
+              {format(zakonska!)}
+            </span>
+          ) : null}
+          <span
+            className={`tabular text-[11px] font-semibold ${odstupa ? "text-accent" : "text-navy"}`}
+          >
+            {format(value)}
+          </span>
         </span>
       </span>
       <input
@@ -134,14 +141,9 @@ export function Slider({
         value={value}
         disabled={disabled}
         onChange={(e) => onChange(Number(e.target.value))}
-        className="mt-1 h-1 w-full cursor-pointer accent-navy"
+        className="mt-0.5 h-1 w-full cursor-pointer accent-navy"
         aria-label={label}
       />
-      {odstupa ? (
-        <span className="mt-0.5 block text-[9px] text-muted">
-          zakon: {format(zakonska!)}
-        </span>
-      ) : null}
     </label>
   );
 }
@@ -158,9 +160,9 @@ export function Choice<T extends string>({
   onChange: (v: T) => void;
 }) {
   return (
-    <div>
-      <span className="mb-1 block text-[11px] text-ink">{label}</span>
-      <div className="flex flex-wrap gap-1" role="group" aria-label={label}>
+    <div className="flex items-baseline gap-1.5">
+      <span className="shrink-0 text-[11px] text-ink">{label}</span>
+      <div className="flex flex-wrap justify-end gap-1" role="group" aria-label={label}>
         {options.map((o) => (
           <button
             key={o.value}

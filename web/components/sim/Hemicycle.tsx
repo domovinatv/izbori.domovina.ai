@@ -47,6 +47,16 @@ function seatSlots(total: number) {
   return slots;
 }
 
+/**
+ * Round coordinates before they reach the DOM.
+ *
+ * Math.cos/Math.sin are not required to be bit-identical across engines, so
+ * Node's server render and V8's client render disagree in the ~15th digit and
+ * React reports a hydration mismatch on every seat. Three decimals is far
+ * below one device pixel and makes both sides produce the same string.
+ */
+const px = (n: number) => Math.round(n * 1000) / 1000;
+
 export interface SeatGroup {
   key: string;
   label: string;
@@ -127,8 +137,8 @@ export function Hemicycle({
           return (
             <circle
               key={i}
-              cx={cx + s.x * R}
-              cy={cy + s.y * R}
+              cx={px(cx + s.x * R)}
+              cy={px(cy + s.y * R)}
               r={seatR}
               fill={seat.color}
               opacity={dim ? 0.18 : 1}

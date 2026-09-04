@@ -23,7 +23,7 @@ export function RulesPanel({
     onChange({ ...rules, [k]: v });
 
   return (
-    <div className="flex flex-col gap-2 px-3 py-2">
+    <div className="flex flex-col gap-1.5 px-3 py-1.5">
       <Slider
         label="Izborni prag"
         value={rules.prag}
@@ -35,7 +35,7 @@ export function RulesPanel({
         zakonska={ZAKONSKA_PRAVILA.prag}
       />
       <Slider
-        label="Prag preferencijala"
+        label="Pref. prag"
         value={rules.pragPreferencijala}
         min={0}
         max={15}
@@ -46,7 +46,7 @@ export function RulesPanel({
       />
       <Slider
         label={
-          rules.jedinstvenaJedinica ? "Mandata (×10 za nacionalnu IJ)" : "Mandata po jedinici"
+          rules.jedinstvenaJedinica ? "Mandata ×10" : "Mandata po IJ"
         }
         value={rules.mandataPoJedinici}
         min={5}
@@ -60,7 +60,7 @@ export function RulesPanel({
       <hr className="border-line/70" />
 
       <Choice<DiasporaMode>
-        label="XI. jedinica (dijaspora)"
+        label="Dijaspora"
         value={rules.dijaspora}
         onChange={(v) => set("dijaspora", v)}
         options={[
@@ -83,7 +83,7 @@ export function RulesPanel({
       <hr className="border-line/70" />
 
       <Choice<Method>
-        label="Metoda raspodjele"
+        label="Metoda"
         value={rules.metoda}
         onChange={(v) => set("metoda", v)}
         options={[
@@ -104,13 +104,13 @@ export function RulesPanel({
       <hr className="border-line/70" />
 
       <Toggle
-        label="Jedna nacionalna izborna jedinica"
+        label="Jedna nacionalna IJ"
         checked={rules.jedinstvenaJedinica}
         onChange={(v) => set("jedinstvenaJedinica", v)}
         hint="Kontrafaktual. Liste se spajaju po obitelji jer bi u takvom sustavu svaka nastupila jednom."
       />
       <Slider
-        label="Kompenzacijski mandati"
+        label="Kompenzacijski"
         value={rules.kompenzacijskiMandati}
         min={0}
         max={40}
@@ -120,7 +120,7 @@ export function RulesPanel({
         zakonska={0}
       />
       <Toggle
-        label="Uključi 8 manjinskih mandata"
+        label="Uključi 8 manjinskih"
         checked={rules.ukljuciManjine}
         onChange={(v) => set("ukljuciManjine", v)}
         hint="ZIZHS čl. 17 — fiksna podjela, većinski izbor, bez preferencijala."

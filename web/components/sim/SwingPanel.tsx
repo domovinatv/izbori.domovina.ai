@@ -25,22 +25,24 @@ export function SwingPanel({
   scenario: Scenario;
   onChange: (s: Scenario) => void;
 }) {
-  const obitelji = rankedFamilies(cycle, 6);
+  const obitelji = rankedFamilies(cycle, 5);
   const totals = familyTotals(cycle);
   const ukupno = [...totals.values()].reduce((a, x) => a + x, 0);
 
+  // Rounded to the slider's own step, so an untouched slider does not read as
+  // a departure from itself.
   const stvarniOdaziv =
     cycle.ukupno.biraci > 0
-      ? (100 * cycle.ukupno.glasovalo) / cycle.ukupno.biraci
+      ? Math.round(((100 * cycle.ukupno.glasovalo) / cycle.ukupno.biraci) * 2) / 2
       : 0;
 
   const setSwing = (obitelj: string, v: number) =>
     onChange({ ...scenario, swing: { ...scenario.swing, [obitelj]: v } });
 
   return (
-    <div className="flex flex-col gap-1.5 px-3 py-2">
+    <div className="flex flex-col gap-1.5 px-3 py-1.5">
       <Choice<SwingMode>
-        label="Model pomaka"
+        label="Pomak"
         value={scenario.mode}
         onChange={(v) => onChange({ ...scenario, mode: v })}
         options={[
@@ -57,7 +59,7 @@ export function SwingPanel({
         ]}
       />
 
-      <div className="flex flex-col gap-1">
+      <div className="flex flex-col gap-0.5">
         {obitelji.map((o) => {
           const bazniUdio = ukupno > 0 ? (100 * (totals.get(o) ?? 0)) / ukupno : 0;
           const d = scenario.swing[o] ?? 0;
@@ -100,7 +102,7 @@ export function SwingPanel({
                 step={0.5}
                 value={d}
                 onChange={(e) => setSwing(o, Number(e.target.value))}
-                className="h-1 w-full cursor-pointer accent-navy"
+                className="mt-0.5 h-1 w-full cursor-pointer accent-navy"
                 aria-label={`Pomak za ${o}, u postotnim bodovima`}
               />
             </div>
@@ -118,7 +120,7 @@ export function SwingPanel({
         step={0.5}
         onChange={(v) => onChange({ ...scenario, odaziv: v })}
         format={(v) => fmtPct(v, 1)}
-        zakonska={Math.round(stvarniOdaziv * 10) / 10}
+        zakonska={stvarniOdaziv}
       />
       <p
         className="text-[9px] leading-tight text-muted"

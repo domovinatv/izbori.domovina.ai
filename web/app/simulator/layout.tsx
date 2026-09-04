@@ -8,19 +8,19 @@ export const metadata: Metadata = {
 };
 
 /**
- * Full-viewport shell for the simulator.
+ * Route wrapper for the simulator.
  *
- * The root layout gives body `min-h-screen` and the site's scrolling pages
- * depend on that, so this route opts out with a fixed overlay instead of
- * changing globals.css. Desktop-only by design (16:9, no scrolling) — the
- * responsive pass is deliberately deferred.
+ * The full-viewport overlay lives in SimShell (lg and up) rather than here, so
+ * that the small-screen notice below that breakpoint can scroll normally. The
+ * root layout's `min-h-screen` on body is left alone — changing globals.css
+ * would break the nine scrolling cycle pages.
  */
 export default function SimulatorLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <div className="fixed inset-0 overflow-hidden bg-surface">{children}</div>
-  );
+  // The dashboard itself is a fixed full-viewport overlay; below `lg` that
+  // wrapper is dropped so MobileNotice can scroll like an ordinary page.
+  return <>{children}</>;
 }
