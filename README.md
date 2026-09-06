@@ -150,6 +150,28 @@ Svi izračuni (D'Hondt, agregati, trendovi, preferencijali) rade se u
 `scripts/export_web.py`; frontend samo prikazuje. Detalji i dnevnik
 deploya: `PLAN_UI.md`.
 
+## Zagreb po mjesnim odborima
+
+Za Grad Zagreb naziv biračkog mjesta u DIP arhivi (`bmNaziv`) **jest naziv
+mjesnog odbora** — ne škole ni ulice. To registar mjesne samouprave Grada
+Zagreba čini ključem spoja i daje razinu koju ne objavljuje ni DIP ni Grad:
+rezultate na **218 mjesnih odbora i 17 gradskih četvrti**, na gradskim
+poligonima.
+
+```bash
+python3 scripts/export_zagreb_mo.py --check   # provjeri spoj (218/218 imena)
+python3 scripts/export_zagreb_mo.py           # zapiši izlaze u data/zagreb/
+```
+
+Izlazi (`data/zagreb/`): `zagreb_mo_odaziv.csv`, `zagreb_gc_odaziv.csv`,
+`zagreb_mo_liste.csv`, `zagreb_mo.geojson` i `izvjestaj.md`.
+
+Konfiguracija — koje datoteke arhive čine Zagreb u kojem ciklusu, URL-ovi
+gradskih skupova i tablica ispravaka imena s obrazloženjem svakog uparivanja —
+je u `sifarnici/zagreb_mjesna_samouprava.json`. Gradski izvori (`mjesni-odbori`
+CSV i `geoportal-mjesna-samouprava` GeoJSON, oba pod Otvorenom dozvolom) se
+keširaju u `data/zagreb/izvori/`.
+
 ## Struktura repozitorija
 
 ```
@@ -169,11 +191,14 @@ data/              gitignored — preuzeti rezultati i SQLite baza
   trenutni concurrency limit (12–16) iz pristojnosti.
 - Stranica vraća `404` za biračka mjesta koja su naknadno spojena/preimenovana —
   to je očekivano i ne znači grešku (stupac `404` u izvještaju mirrora).
-- Grad Zagreb (šifra GO `1333`) nema vlastitu agregatnu datoteku u lokalnim
-  izborima — agregat je datoteka županije 21 (`p2=0000`), a biračka mjesta žive
-  pod `p2=0021` (kvirk iz DAO JS-a). Mirror to rješava automatski od uvođenja
-  ciklusa 2021; stariji mirror `lokalni-2025` nije skidao zagrebačka BM za
-  vrste 06/15 — ponovni `mirror.py lokalni-2025` ih dohvaća.
+- Grad Zagreb (šifra GO `1333`) nema vlastitu agregatnu datoteku — agregat je
+  datoteka županije 21 (`p2=0000`). U **lokalnim** izborima biračka mjesta žive
+  pod `p2=0021`, u **državnim** (predsjednik, EU, referendum) pod `p2=1333`.
+  Od ciklusa 2024. `r_{vrsta}_21_1333_000` vraća 404 iako datoteke pojedinih
+  biračkih mjesta pod `1333` postoje, pa `mirror.py` `bmUkupno` za Zagreb čita
+  iz županijske datoteke i tek onda širi biračka mjesta. U saborskim izborima
+  Zagreb je podijeljen po izbornim jedinicama i ima druge šifre
+  (2024: `1331`/`1332`/`1336`; 2020: `1333`/`2333`/`6333`/`7333`).
 - Sabor (parlament-2020, parlament-2024) nema RH-agregatnu datoteku na serveru;
   `build_index.py` sintetizira `rh` redak zbrajanjem IJ 001–011.
 - Šifre građe (`zup`, `grop`, `vrsta`, `manjina`) se s vremenom mijenjaju (npr. nove

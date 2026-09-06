@@ -1,0 +1,209 @@
+{
+  "opis": "Spoj DIP arhive i registra mjesne samouprave Grada Zagreba. Za Grad Zagreb naziv biračkog mjesta (bmNaziv) u DIP arhivi JEST naziv mjesnog odbora, pa se rezultati mogu agregirati na 218 mjesnih odbora i 17 gradskih četvrti. Koristi scripts/export_zagreb_mo.py.",
+  "provjereno": "2026-09-06",
+  "izvori": {
+    "mjesni_odbori_csv": {
+      "skup": "mjesni-odbori",
+      "url": "https://data.zagreb.hr/dataset/4dc300c3-ab50-454d-98d1-47cd739b1132/resource/de825f7b-9d87-4159-9500-475651e0acb3/download/mjesniodborii.csv",
+      "portal": "https://data.zagreb.hr/dataset/mjesni-odbori",
+      "licenca": "Otvorena dozvola (OD)",
+      "daje": "naziv MO, adresa sjedišta, gradska četvrt, površina (ha), broj stanovnika",
+      "napomena": "Zbroj stupca 'Broj stanovnika' je 790.017, što je točno popis stanovništva 2011. za Grad Zagreb (2021: 767.131). Podatak je star i portal to nigdje ne navodi."
+    },
+    "geoportal_mjesna_samouprava_geojson": {
+      "skup": "geoportal-mjesna-samouprava",
+      "url": "https://opendata.arcgis.com/api/v3/datasets/f8f6eaeae11b408eaadf20474809a1b3_0/downloads/data?format=geojson&spatialRefId=4326&where=1%3D1",
+      "portal": "https://data.zagreb.hr/dataset/geoportal-mjesna-samouprava",
+      "licenca": "Otvorena dozvola (OD)",
+      "daje": "poligone 218 mjesnih odbora (WGS84), adresu sjedišta, e-poštu, web",
+      "napomena": "Zadnja promjena metapodataka 2024-02-28."
+    }
+  },
+  "aliases": {
+    "dip": {
+      "DONJA KUSTOŠIJA": "Matija Gubec",
+      "VUGROVEC": "Vugrovec Donji",
+      "JANKO MATKO": "Oton Župančič"
+    },
+    "geoportal": {
+      "Janko Matko": "Oton Župančič",
+      "Sasinovec Šija Vrh": "Sasinovec"
+    }
+  },
+  "obrazlozenja": {
+    "Matija Gubec": "DIP zove taj MO 'DONJA KUSTOŠIJA'. Uparen eliminacijom: svih 8 MO-ova u Črnomercu ima svoje biračko mjesto, a jedini MO bez biračkog mjesta u cijelom gradu koji preostaje je 'Matija Gubec' (Stenjevec, Lermanova 51, područje Kustošije). Nijedan izvor ne navodi obje varijante imena.",
+    "Vugrovec Donji": "DIP zove taj MO 'VUGROVEC'; Grad u oba svoja skupa 'Vugrovec Donji' (Sesvete, Ul. Augusta Šenoe 51). Skraćenica, nedvojbeno.",
+    "Oton Župančič": "Isti MO ima DVA imena u dva skupa Grada: 'Oton Župančič' u skupu mjesni-odbori, 'Janko Matko' u geoportalu mjesne samouprave. Ista adresa sjedišta (Ul. Franje Horvata Kiša 12, Peščenica - Žitnjak), pa je riječ o istom tijelu. DIP koristi 'JANKO MATKO'. Kanonski je uzet naziv iz skupa mjesni-odbori jer taj skup nosi gradsku četvrt i broj stanovnika.",
+    "Sasinovec": "Geoportal ga zove 'Sasinovec Šija Vrh', skup mjesni-odbori i DIP 'Sasinovec'."
+  },
+  "kontejneri": {
+    "predsjednik-2024": [
+      {
+        "vrsta": "01",
+        "p1": "21",
+        "p2": "1333",
+        "krugovi": [
+          1,
+          2
+        ],
+        "naziv": "predsjednik"
+      }
+    ],
+    "predsjednik-2019": [
+      {
+        "vrsta": "01",
+        "p1": "21",
+        "p2": "1333",
+        "krugovi": [
+          1,
+          2
+        ],
+        "naziv": "predsjednik"
+      }
+    ],
+    "euparlament-2024": [
+      {
+        "vrsta": "14",
+        "p1": "21",
+        "p2": "1333",
+        "krugovi": [
+          1
+        ],
+        "naziv": "europski parlament"
+      }
+    ],
+    "euparlament-2019": [
+      {
+        "vrsta": "14",
+        "p1": "21",
+        "p2": "1333",
+        "krugovi": [
+          1
+        ],
+        "naziv": "europski parlament"
+      }
+    ],
+    "referendum-2013": [
+      {
+        "vrsta": "81",
+        "p1": "21",
+        "p2": "1333",
+        "krugovi": [
+          1
+        ],
+        "naziv": "referendum",
+        "format": "csv",
+        "izbori": "Referendum o ustavnoj definiciji braka 2013."
+      }
+    ],
+    "parlament-2024": [
+      {
+        "vrsta": "02",
+        "p1": "001",
+        "p2": "1331",
+        "krugovi": [
+          1
+        ],
+        "naziv": "sabor (I. IJ)"
+      },
+      {
+        "vrsta": "02",
+        "p1": "002",
+        "p2": "1332",
+        "krugovi": [
+          1
+        ],
+        "naziv": "sabor (II. IJ)"
+      },
+      {
+        "vrsta": "02",
+        "p1": "006",
+        "p2": "1336",
+        "krugovi": [
+          1
+        ],
+        "naziv": "sabor (VI. IJ)"
+      }
+    ],
+    "parlament-2020": [
+      {
+        "vrsta": "02",
+        "p1": "001",
+        "p2": "1333",
+        "krugovi": [
+          1
+        ],
+        "naziv": "sabor (I. IJ)"
+      },
+      {
+        "vrsta": "02",
+        "p1": "002",
+        "p2": "2333",
+        "krugovi": [
+          1
+        ],
+        "naziv": "sabor (II. IJ)"
+      },
+      {
+        "vrsta": "02",
+        "p1": "006",
+        "p2": "6333",
+        "krugovi": [
+          1
+        ],
+        "naziv": "sabor (VI. IJ)"
+      },
+      {
+        "vrsta": "02",
+        "p1": "007",
+        "p2": "7333",
+        "krugovi": [
+          1
+        ],
+        "naziv": "sabor (VII. IJ)"
+      }
+    ],
+    "lokalni-2025": [
+      {
+        "vrsta": "06",
+        "p1": "21",
+        "p2": "0021",
+        "krugovi": [
+          1
+        ],
+        "naziv": "gradska skupština"
+      },
+      {
+        "vrsta": "15",
+        "p1": "21",
+        "p2": "0021",
+        "krugovi": [
+          1,
+          2
+        ],
+        "naziv": "gradonačelnik"
+      }
+    ],
+    "lokalni-2021": [
+      {
+        "vrsta": "06",
+        "p1": "21",
+        "p2": "0021",
+        "krugovi": [
+          1
+        ],
+        "naziv": "gradska skupština"
+      },
+      {
+        "vrsta": "15",
+        "p1": "21",
+        "p2": "0021",
+        "krugovi": [
+          1,
+          2
+        ],
+        "naziv": "gradonačelnik"
+      }
+    ]
+  }
+}
