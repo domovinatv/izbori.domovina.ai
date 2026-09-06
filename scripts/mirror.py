@@ -291,6 +291,19 @@ def jobs_standard(election: Election, sifarnik: dict) -> list[Job]:
         for go in sifarnik.get("gradOpcina", []):
             zup = go["codetop"]
             grop = go["code"]
+            if grop == "1333":
+                # Grad Zagreb: from the 2024 cycles on, the archive serves no
+                # grop-level aggregate (r_{vrsta}_21_1333_000 is a 404) even
+                # though the per-BM files under p2=1333 exist. Read bmUkupno
+                # from the county file and expand the polling stations under
+                # 1333. In 2019 both files exist and this yields the same set.
+                jobs.append(Job(
+                    url=grop_url(election, krug, vrsta, zup, "0000", "000"),
+                    dest=grop_dest(election, krug, vrsta, zup, "0000", "000"),
+                    expand_bms=True,
+                    krug=krug, vrsta=vrsta, p1=zup, p2=grop,
+                ))
+                continue
             jobs.append(Job(
                 url=grop_url(election, krug, vrsta, zup, grop, "000"),
                 dest=grop_dest(election, krug, vrsta, zup, grop, "000"),
