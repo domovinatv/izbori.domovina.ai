@@ -75,6 +75,14 @@ osoba) → **S4** (longitudinalne analize) ∥ **S5** (odaziv/BM screening) →
   rekonstruirati bez vanjskog izvora (SDP-ov 4. mandat aktiviran tek po Brexitu).
 - Šifre gradova/općina mijenjaju se kroz cikluse — za usporedbe kroz vrijeme
   spajati po (županija, naziv) uz dokumentirane iznimke.
+- ⚠️ **Indeks je zastario od 6.9.2026.** Tada su dovučena zagrebačka biračka
+  mjesta za `predsjednik-2024` (1.212 datoteka), `euparlament-2024` (606) i
+  `lokalni-2025` (1.815) — `build_index.py` **nije** ponovo pokrenut. Streamlit,
+  `export_web.py` i simulator ih ne vide; `export_zagreb_mo.py` ih vidi jer
+  čita JSON izravno. Rebuild prije bilo koje nove analize iz baze.
+- Granice zagrebačkih mjesnih odbora kroz vrijeme nisu provjerene — spoj u
+  `docs/zagreb_mjesna_samouprava.md` koristi današnji popis za sve cikluse od
+  2013. Prije longitudinalnih tvrdnji o pojedinom MO provjeriti Sesvete.
 
 ## 4. Naučeno o načinu rada (orkestracija)
 
@@ -92,6 +100,14 @@ osoba) → **S4** (longitudinalne analize) ∥ **S5** (odaziv/BM screening) →
 - Subagenti nasljeđuju model orkestratora. Za mehaničke faze (S1/S2/S6) model
   je manje bitan; za S3/S4 (prosudba o spajanju entiteta, metodološke odluke)
   koristiti najjači dostupni model.
+
+## 4a. Zagreb i mjesna samouprava (6.9.2026.)
+
+Rezultati za Grad Zagreb agregiraju se na 218 mjesnih odbora i 17 gradskih
+četvrti jer je `bmNaziv` u DIP arhivi za Zagreb naziv mjesnog odbora. Metoda,
+kontrola protiv službenog agregata, četiri ispravke imena i zamke:
+**`docs/zagreb_mjesna_samouprava.md`**. Prijava na natječaj Grada Zagreba koja
+na tome stoji: `../karta-hrvatske/docs/natjecaj-otvoreni-podaci-zg-2026/projekt-c-mjesni-odbori.md`.
 
 ## 5. Brand i deploy (sve lokalno, ne tražiti po webu)
 
